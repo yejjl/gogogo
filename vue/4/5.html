@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        {{title}}
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#root',
+        data: {
+            title: 'hello',
+        },
+
+        beforeCreate() {
+            // console.log('hello');
+            // console.log(this)//yes
+            // console.log(this.title)//no
+            // console.log(document.querySelector('#root'))//maybe,模板未渲染
+            //应用场景：给实例自定义内容
+            // this.x=100//yes
+        },
+        created() {
+            // console.log(this)//yes
+            // console.log(this.title)//yes
+            // console.log(document.querySelector('#root'))//maybe
+            //应用场景：修改data的值
+            // this.title='world'
+        },
+        beforeMount() {
+            // console.log(this)//yes
+            // console.log(this.title)//yes
+            // console.log(document.querySelector('#root'))//maybe
+            //应用场景：修改data的值
+            // this.title='world'
+        },
+        mounted() {
+            // console.log(this)//yes
+            // console.log(this.title)//yes
+            // console.log(document.querySelector('#root'))//yes
+            // //应用场景：一般在第一次页面渲染完毕后的工作都在这完成
+            // setTimeout(() => {
+            //     this.title='world'
+            // },5000) 
+            // //ajax放这； 
+        },
+        beforeUpdata(){
+
+        },
+        updated(){
+
+        },
+        beforeDestroy(){
+
+        },
+        destroyed(){
+            
+        }
+    })
+</script>
+
+</html>
