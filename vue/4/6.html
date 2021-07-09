@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>template</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template</title>
-</head>
-
-<body>
-    <div id="root">
-        <div v-once>
-            <!-- 插值表达式 -->
-            {{title}}
-
-        </div>
-    </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script>
-
-    const data = {
-        title: 'hello',
-    }
-    var vm = new Vue({
-        el: '#root',
-        data,
-        mounted(){
-            setTimeout(() => {
-                this.title='world'
-            },2000)
-        }
-
-    })
-</script>
-
+	<body>
+		<div id="root">
+			<div v-once>
+				<!-- 插值表达式 -->
+				{{title}}
+			</div>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script>
+		const data = {
+			title: 'hello',
+		}
+		var vm = new Vue({
+			el: '#root',
+			data,
+			mounted() {
+				setTimeout(() => {
+					this.title = 'world'
+				}, 2000)
+			},
+		})
+	</script>
 </html>
