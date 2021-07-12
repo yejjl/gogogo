@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		a {
+			text-decoration: none;
+		}
+		.box {
+			position: relative;
+			height: 400px;
+			width: 600px;
+			display: flex;
+			overflow: hidden;
+		}
+		ul {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: auto;
+			margin: 0;
+			padding: 0;
+		}
+		ul > li {
+			display: flex;
+			width: 600px;
+			height: 400px;
+		}
+		.box > a {
+			position: absolute;
+			top: 200px;
+		}
+		.l_a {
+			left: 0;
+			z-index: 2;
+			background-color: violet;
+		}
+		.r_a {
+			right: 0;
+			z-index: 2;
+			background-color: violet;
+		}
+		ol {
+			position: absolute;
+			bottom: 20px;
+			width: 100px;
+			height: 50px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ol > li {
+			float: left;
+			border: 1px solid black;
+			height: 10px;
+			width: 10px;
+			cursor: pointer;
+			margin-left: 15px;
+		}
+		.clicked {
+			background-color: black;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<a href="javascript:;" class="l_a">&lt;</a>
+			<a href="javascript:;" class="r_a">></a>
+			<ul>
+				<li style="background-color: blue">
+					<a href=""> </a>
+				</li>
+				<li style="background-color: yellow">
+					<a href=""> </a>
+				</li>
+				<li style="background-color: red">
+					<a href=""> </a>
+				</li>
+			</ul>
+			<ol></ol>
+		</div>
+	</body>
+	<script src="myJS.js"></script>
+	<script>
+		//动态生成小圆圈
+		;(function (window, document) {
+			var box = document.querySelector('.box')
+			var ul = document.querySelector('ul')
+			var ol = document.querySelector('ol')
+			var r_a = document.querySelector('.r_a')
+			var l_a = document.querySelector('.l_a')
+			var boxWidth = box.offsetWidth
+			for (var i = 0; i < ul.children.length; i++) {
+				var li = document.createElement('li')
+				li.setAttribute('index', i)
+				ol.appendChild(li)
+				li.addEventListener('click', function () {
+					for (var i = 0; i < ol.children.length; i++) {
+						ol.children[i].className = ''
+					}
+					this.className = 'clicked'
+
+					var index = this.getAttribute('index')
+					num = index
+					circle = index
+					animate(ul, -index * boxWidth)
+				})
+			}
+			ol.children[0].className = 'clicked'
+
+			//克隆第一张轮播图
+			var first = ul.children[0].cloneNode(true)
+			ul.appendChild(first)
+
+			var num = 0
+			var circle = 0
+
+			r_a.addEventListener('click', function () {
+				if (num == ul.children.length - 1) {
+					ul.style.left = 0
+					num = 0
+				}
+				num++
+				animate(ul, -num * boxWidth)
+				circle++
+				// if (circle == ol.children.length) {
+				// 	circle = 0
+				// }
+				circle = circle == ol.children.length ? 0 : circle
+				circleChange()
+			})
+			l_a.addEventListener('click', function () {
+				if (num == 0) {
+					num = ul.children.length - 1
+					ul.style.left = -num * boxWidth + 'px'
+				}
+				num--
+				animate(ul, -num * boxWidth)
+				circle--
+				// if (circle < 0) {
+				// 	circle = ol.children.length - 1
+				// }
+				circle = circle < 0 ? ol.children.length - 1 : circle
+				circleChange()
+			})
+			function circleChange() {
+				for (var i = 0; i < ol.children.length; i++) {
+					ol.children[i].className = ''
+				}
+				ol.children[circle].className = 'clicked'
+			}
+			var timer = setInterval(function () {
+				r_a.click()
+			}, 2000)
+
+			ul.addEventListener('mouseenter', function () {
+				clearInterval(timer)
+				timer = null
+			})
+			ul.addEventListener('mouseleave', function () {
+				timer = setInterval(function () {
+					r_a.click()
+				}, 2000)
+			})
+		})(window, document)
+	</script>
+</html>
