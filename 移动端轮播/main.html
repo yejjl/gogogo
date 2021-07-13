@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		a {
+			text-decoration: none;
+		}
+		.box {
+			position: relative;
+			height: 400px;
+			width: 600px;
+			display: flex;
+			overflow: hidden;
+		}
+		ul {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: auto;
+			margin: 0;
+			padding: 0;
+            left: -100%;
+		}
+		ul > li {
+			display: flex;
+			width: 600px;
+			height: 400px;
+		}
+		.box > a {
+			position: absolute;
+			top: 200px;
+		}
+		.l_a {
+			left: 0;
+			z-index: 2;
+			background-color: violet;
+		}
+		.r_a {
+			right: 0;
+			z-index: 2;
+			background-color: violet;
+		}
+		ol {
+			position: absolute;
+			bottom: 20px;
+			right: 50px;
+			width: 100px;
+			height: 50px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ol > li {
+			float: left;
+			height: 10px;
+			width: 10px;
+			cursor: pointer;
+			margin-left: 15px;
+			background-color: #fff;
+			border-radius: 5px;
+            transition: all .3s;
+		}
+		.clicked {
+			width: 30px;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<a href="javascript:;" class="l_a">&lt;</a>
+			<a href="javascript:;" class="r_a">></a>
+			<ul>
+                <li style="background-color: red">
+					<a href="">3 </a>
+				<li style="background-color: blue">
+					<a href="">1 </a>
+				</li>
+				<li style="background-color: yellow">
+					<a href="">2 </a>
+				</li>
+				<li style="background-color: red">
+					<a href="">3 </a>
+                <li style="background-color: blue">
+                    <a href="">1 </a>
+                </li>
+				</li>
+			</ul>
+			<ol>
+                <li class="clicked"></li>
+                <li></li>
+                <li></li>
+            </ol>
+		</div>
+	</body>
+	<script src="myJS.js"></script>
+	<script>
+		window.addEventListener('load', function () {
+			//获取元素
+			var box = document.querySelector('.box')
+			var ul = box.querySelector('ul')
+            var ol = box.querySelector('ol')
+			var w = box.offsetWidth
+
+			//定时器自动轮播
+			var index = 0
+			var timer = setInterval(function () {
+				index++
+				var translatex = -index * w
+				ul.style.transition = 'all .3s'
+				ul.style.transform = 'translateX(' + translatex + 'px'
+			}, 2000)
+			//监听过度完成的事件
+			ul.addEventListener('transitionend', function () {
+				//无缝滚动
+				if (index >= 3) {
+					//console.log('1')
+					index = 0
+					var translatex = -index * w
+					ul.style.transition = 'none'
+					ul.style.transform = 'translateX(' + translatex + 'px'
+				}else if (index <0) {
+					index = 2
+					var translatex = -index * w
+					ul.style.transition = 'none'
+					ul.style.transform = 'translateX(' + translatex + 'px'
+				}
+                //小圆点跟随变化
+                ol.querySelector('.clicked').classList.remove('clicked')
+                ol.children[index].classList.add('clicked')
+                 
+			})
+            var startX=0 //初始距离
+            var moveX=0 //移动距离
+            var flag=false
+            //手指滑动轮播图
+            ul.addEventListener("touchstart",function(e){
+                startX=e.targetTouches[0].pageX
+                clearInterval(timer)
+            })
+            ul.addEventListener('touchmove',function(e){
+                moveX=e.targetTouches[0].pageX-startX
+                var translatex=-index*w+moveX
+                ul.style.transition = 'none'
+                ul.style.transform = 'translateX(' + translatex + 'px'
+                flag=true
+                e.preventDefault();//阻止滚动屏幕的行为
+            })
+            ul.addEventListener('touchend',function(e){
+                //移动距离大于50px，跳到下一张
+                if(flag==true){
+                    if(Math.abs(moveX)>50){
+                    if(moveX>0){
+                        index--
+                    }else{
+                        index++
+                    }
+                    var translatex=-index*w
+                    ul.style.transition = 'all .3s'
+				    ul.style.transform = 'translateX(' + translatex + 'px'
+			
+                }else{
+                    //拖动不足50px，回弹
+                    var translatex=-index*w
+                    ul.style.transition = 'all .2s'
+				    ul.style.transform = 'translateX(' + translatex + 'px'
+                }
+                }
+                clearInterval(timer)
+                timer = null
+                timer = setInterval(function () {
+				index++
+				var translatex = -index * w
+				ul.style.transition = 'all .3s'
+				ul.style.transform = 'translateX(' + translatex + 'px'
+			}, 2000)
+            })
+		})
+	</script>
+</html>

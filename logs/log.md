@@ -771,7 +771,7 @@
 
         parent.appendChild(child)//在后面添加
 
-        parent.insertBefore(child,parent.child[0])
+        parent.insertBefore(child,parent.children[0])
 
         //效率best
         var array=[]
@@ -800,6 +800,8 @@
 ##### 注册事件
 
     两种方式：传统、方法监听
+    传统DOM绑定只有第一个生效；脚本绑定只有最后一个生效
+    方法监听都生效
 
 1. addEventListener//i9+
     ```
@@ -841,6 +843,19 @@
 ##### 事件委托
 
 注册事件写在父元素，利用 e.属性完成事件
+
+```
+// 给父层元素绑定事件
+document.getElementById('list').addEventListener('click', function (e) {
+  // 兼容性处理
+  var event = e || window.event;
+  var target = event.target || event.srcElement;
+  // 判断是否匹配目标元素
+  if (target.nodeName.toLocaleLowerCase === 'li') {
+    console.log('the content is: ', target.innerHTML);
+  }
+});
+```
 
 ##### 鼠标事件对象
 
@@ -1059,3 +1074,138 @@ function animate(obj,target,callback){
     },15);
 }
 ```
+
+### 移动端网页特效
+
+##### 触屏事件
+
+1.  | 触屏 touch 事件 |                                 |
+    | :-------------- | :------------------------------ |
+    | touchstart      | 手指触摸到一个 DOM 元素时触发   |
+    | touchmove       | 手指在一个 DOM 上滑动时触发     |
+    | touchend        | 手指从一个 DOM 元素上移开时触发 |
+
+2.  触摸事件对象
+
+| 触摸列表               | 说明                                           |
+| :--------------------- | :--------------------------------------------- |
+| touches                | 正在触摸屏幕的手指的一个列表                   |
+| targetTouches //最常用 | 正在触摸当前 DOM 元素上的手指的一个列表        |
+| changedTouches         | 手指状态发生了改变队列，从无到有，从有到无变化 |
+
+```
+element.addEventListener('touchstar',function(e){
+    console.log(e.targetTouches[o])
+})
+```
+
+3. 拖到元素
+
+```
+var startX=0  //手指的初始坐标
+var startY=o
+var x=0     //盒子的原位置
+var y=0
+
+element.addEventListener('touchstart',function(e){
+    startX=e.targetTouches[o].pageX
+    startY=e.targetTouches[o].pageY
+    x=this.offsetLeft
+    y=this.offsetTop
+})
+element.addEventListener('touchmove',function(e){
+    var moveX=e.targetTouches[o].pageX-startX  //移动的距离
+    var moveY=e.targetTouches[o].pageX-startY
+    this.style.left=x+moveX+'px' //移动
+    this.style.top=y+moveY+'px'
+})
+
+```
+
+4. 移动端点击事件延迟问题
+
+解决方案
+
+-   禁止缩放//user-scalable=no
+-   重新封装 touch 函数
+-   fastclick 插件
+
+5. 常用插件
+
+    1. swiper//轮播插件
+    2. zy.media.js//视频插件
+    3. superSlide//tab 切换
+    4. iscroll
+
+### 本地存储
+
+1.  -   数据存储在用户浏览器
+    -   设置、读取方便、页面刷新不丢失数据
+    -   容量较大
+    -   只能存储字符串
+
+2.  sessionStorage
+
+        - 生命周期为关闭浏览器
+        - 在同一个窗口、页面下数据可以共享
+        - 以键值对的形式存储使用
+
+        ```
+            // 存储数据
+            //sessionStorage.setItem(key,value)
+            sessionStorage.setItem('uname',input.value)
+
+            //获取数据
+            sessionStorage.getItem('uname')
+
+            //删除数据
+            sessionStorage.removeItem('uname')
+
+            //清除所有数据
+            sessionStorage.clear()
+        ```
+
+3.  localStorage
+
+        - 生命周期永久生效，除非手动删除，否则页面关闭也会存在
+        - 可以多窗口、页面共享数据
+        - 以键值对的形式存储使用
+
+        ```
+            // 存储数据
+            //localStorage.setItem(key,value)
+            localStorage.setItem('uname',input.value)
+
+            //获取数据
+            localStorage.getItem('uname')
+
+            //删除数据
+            localStorage.removeItem('uname')
+
+            //清除所有数据
+            localStorage.clear()
+        ```
+
+### 数据可视化
+
+##### 什么是数据可视化
+
+1. 目的
+    - 借助图形化手段，清晰有效的表达与沟通信息
+    - 把数据图形化
+2. 场景
+
+3. 常见的数据可视化库
+    - D3.js Web 端评价最高的库（上手难）
+    - ECharts.js 百度出品
+    - Highcharts.js 国外库，非商用免费
+    - AntV 蚂蚁金服
+
+##### ECharts
+
+1. 基本使用
+    - 引入文件
+    - 准备一个 DOM 容器
+    - 初始化 echarts 实例对象
+    - 指定配置和数据
+    - 将配置给 echarts 实例对象
