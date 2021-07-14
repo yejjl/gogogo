@@ -1693,3 +1693,73 @@ btn.onclick=function(){
 > 闭包指有权访问另一个函数作用域中变量的函数。
 
 简单理解：一个作用域可以访问另一个函数内部的局部变量
+
+```
+function fn(){
+    var num=10
+    function fun(){
+        console.lo(num)
+    }
+    fun();
+}
+fn();
+```
+
+###### 作用
+
+**主要作用：延伸变量的作用范围**
+
+```
+function fn(){
+    var num=10
+    function fun(){
+        console.lo(num)
+    }
+    return fun();
+}
+var f=fn();
+```
+
+###### 案例
+
+1.  ```
+    for(var i=0;i<lis.length;i++){
+        (function(i){
+            lis[i].omclick=function(){
+                console.log(i)
+            }
+        })(i)
+    //立即执行函数也称为小闭包
+    }
+    ```
+2.  ```
+    for(var i=0 ;i<lis.ength;i++){
+        (function(i){
+           setTimerout(function(){
+               console.log(i)
+        },3000)
+        })(i)
+    }
+    ```
+3.  出租车计费
+
+```javascript
+var car = function () {
+	var start = 13
+	var total = 0
+	return {
+		price: function (n) {
+			if (n <= 3) {
+				total = start
+			} else {
+				total = start + (n - 3) * 5
+			}
+			return total
+		},
+		yd: function (flag) {
+			return flag ? total + 10 : total
+		},
+	}
+}
+car.price()
+```
