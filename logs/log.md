@@ -1209,3 +1209,487 @@ element.addEventListener('touchmove',function(e){
     - 初始化 echarts 实例对象
     - 指定配置和数据
     - 将配置给 echarts 实例对象
+
+### es6
+
+###### 面向对象概述
+
+-   pop/面向过程：按照步骤解决问题
+    1. 优点：性能较高，适合跟硬件联系紧密的东西
+    2. 缺点：没有面向对象以维护、复用、扩展
+-   oop/面向对象：以对象的功能来划分问题
+
+-   面向对象的特征
+
+    -   封装性
+    -   继承性
+    -   多态性
+
+###### 类和对象
+
+-   类：设计图
+-   对象：通过设计图产生的具体物品
+
+1. 创建类
+
+    ```
+        class Star{
+
+        }
+        new Star();
+    ```
+
+2. 类 constructor 构造函数
+    ```
+    class Star{
+        constructor(uname,age){
+            this.uname=uname
+            this.age=age
+        }
+        }
+        var ldh=new Star('ldh');
+        var zxy=new Star('zxy')
+        //通过calss关键字创建类，类名首字母大写
+        //constructor对象可以接受传递过来的参数，同时返回实例对象
+        //生成实例new不能略
+    ```
+3. 类中添加公有方法
+
+    ```
+        class Star{
+            constructor(uname,age){
+                this.uname=uname
+                this.age=age
+            }
+            sing(sang){
+                console.log(sang);
+            }
+        }
+        var ldh=new Star('ldh',18);
+        var zxy=new Star('zxy',18);
+        ldh.sing('a')
+        //多个函数方法之间不需要逗号
+    ```
+
+4. 类的继承
+
+    ```
+        class Father{
+            constructor(x,y){
+                this.x=x
+                this.y=y
+            }
+            sum(){
+                console.log(this.x+this.y)
+            }
+        }
+        class Son extends Father{
+            constructor(x,y){
+                super(x,y)//调用父类的constructor
+            }
+        }
+        var son=new Son(1,2);
+        son.sum()
+
+    ```
+
+5. super 关键字
+
+    ```
+        class Father{
+            say(){
+                return 'f'
+            }
+        }
+        class Son extends Father{
+            say(){
+                console.log(super.say()+'s')
+            }
+        }
+        var son=new Son()
+        son.say()
+
+
+        //执行子类方法采用就近原则
+
+        class Father{
+            constructor(x,y){
+                this.x=x
+                this.y=y
+            }
+            sum(){
+                console.log(this.x+this.y)
+            }
+        }
+        class Son extends Father{
+            constructor(x,y){
+                super(x,y)//必须在子类this前调用
+                this.x=x
+                this.y=y
+
+            }
+            subtract(){
+                console.log(this.x-this.y)
+            }
+        }
+        var son=new Son(1,2);
+        son.subtract()
+        son.sum()
+    ```
+
+6. 注意点
+    - 必须先定义类，才能实例化对象
+    - 类里面的共有属性和方法一定要加 this 使用
+    - this 的指向问题
+        1. constructor 里面的 this 指向创建的实例对象
+        2. 方法里面的 this，指向方法的调用者//解决：用变量存储 this
+
+### 构造函数和原型
+
+##### 概述
+
+**构造函数存在浪费内存的问题**
+
+```
+    //创建函数
+    var obj1=new Object();
+
+    var obj2={}
+
+    function Star(uname){
+        this.uname=uname//实例成员
+    }
+    Star.sex='男' //静态成员
+    var ldh=new Star('ldh');
+
+    //实例成员只能通过实例对象来访问
+    //静态成员只能通过构造函数访问
+```
+
+##### 原型 prototype
+
+```
+    //  共享的函数可以存放在 原型对象 内
+    function Star(uname){
+        this.uname=uname//实例成员
+    }
+    Star.prototype.sing=function(){
+
+    }
+    Star.sex='男' //静态成员
+    var ldh=new Star('ldh');
+    //一般公共的属性定义到构造函数里，公共的方法定义在prototype中
+
+    //在实例对象身上系统自己添加一个__proto__指向我们构造函数的原型对象
+    //方法的查找原则：首先看实例对象身上是否有查找的方法，若没有，因为有__proto__存在，则去构造函数原型对象prototype上去找
+```
+
+###### 构造函数 constructor
+
+用于记录该对象引用于哪个构造函数
+
+```
+    function Star(uname){
+        this.uname=uname
+    }
+    var ldh=new Star('ldh');
+    Star.prototype={
+        constructor:Star,
+    }//该方法会覆盖constructor对象
+    console.log(Star.prototype.constructor); //Star(uname){}
+    console.log(ldh.__proto__.constructor);//Star(uname){}
+```
+
+###### 构造函数、实例、原型对象三者关系
+
+![](/media/img/构造函数.PNG)
+
+###### 原型链
+
+![](/media/img/原型链.PNG)
+
+###### js 的成员查找机制
+
+1. 当访问一个对象的属性（包括方法）时，首先查找这个==对象自身==有没有该属性
+2. 如果没有就查找它的原型（也就是**proto**指向的==prototype 原型对象==）
+3. 如果还没有就查找原型对象的原型（==Object 的原型对象==）
+4. 依次类推一直找到 Object 为止（==null==）
+5. **proto**对象原型的意义就在于为对象成员查找机制提供一个方向
+
+###### 原型对象的 this 指向
+
+1. 在构造函数中，里面的 this 指向对象实例
+2. 原型对象函数里面的 this 指向实例对象
+
+###### 扩展内置对象
+
+```
+    Array.prototype.sum=function(){
+        var sum=0
+        for(var i=0;i<this.length;i++){
+            sum+=this[i]
+        }
+        return sum
+    }
+    var arr=[1,2,3]
+    console.log(arr.sum())
+```
+
+##### 继承
+
+###### call
+
+```
+// 调用函数，并修改this指向
+function fn(x,y){
+    console.log(this)
+    console.log(x+y)
+
+}
+var o={
+    name:'andy'
+}
+//fn.call();
+fn.call(o,1,2);//此时this指向o
+```
+
+###### 利用父构造函数继承属性
+
+```
+    function Father(uname,age){
+        //this指向父构造函数的实例对象
+        this.uname=uname
+        this.age=age
+    }
+    Father.prototype.money=function(){
+        console.log('100000')
+    }
+    function Son(uname,age){
+        //this指向子构造函数的实例对象
+        Father.call(this,uname,age)
+    }
+    Son.prototype=Father.prototype
+```
+
+###### 利用原型对象继承方法
+
+```
+function Father(uname,age){
+        //this指向父构造函数的实例对象
+        this.uname=uname
+        this.age=age
+    }
+    Father.prototype.money=function(){
+        console.log('100000')
+    }
+    function Son(uname,age){
+        //this指向子构造函数的实例对象
+        Father.call(this,uname,age)
+    }
+    //Son.prototype=Father.prototype//这种方法会同时修改父原型对象
+    Son.prototype=new Father()
+    Son.prototype.constructor=Son
+```
+
+### 函数进阶
+
+##### 函数定义
+
+1. 声明函数
+2. 匿名函数
+3. new Function()
+    ```
+    var f=new Function('a','b','console.log(a+b)');
+    //所有函数都是Function的实例
+    //函数也属于对象
+    ```
+
+##### 函数调用方式
+
+1. 普通函数
+    ```
+    fn();
+    fn.call();
+    ```
+2. 对象的方法
+
+    ```
+    var o ={
+        sayHi:function(){
+
+        }
+    }
+    o.sayHi()
+    ```
+
+3. 构造函数
+
+    ```
+    function Star(){}
+    new Star();
+    ```
+
+4. 绑定事件函数
+
+    ```
+    btn.onclick=function(){}
+    //触发事件调用
+    ```
+
+5. 定时器函数
+
+    ```
+    setInterval(function(){},1000)//定时器自动调用
+    ```
+
+6. 立即执行函数
+
+    ```
+    (function(){
+
+    })();
+    //自动调用
+    ```
+
+##### 函数内部 this 指向
+
+1. 普通函数
+    ```
+    fn();
+    fn.call();
+    //指向window
+    ```
+2. 对象的方法
+
+    ```
+    var o ={
+        sayHi:function(){
+
+        }
+    }
+    o.sayHi()
+    //指向对象o
+    ```
+
+3. 构造函数
+
+    ```
+    function Star(){}
+    var ldh = new Star();
+    //指向ldh实例对象
+
+    ```
+
+4. 绑定事件函数
+
+    ```
+    btn.onclick=function(){}
+    //触发事件调用
+    //指向btn
+    ```
+
+5. 定时器函数
+
+    ```
+    setInterval(function(){},1000)//定时器自动调用
+
+    //指向window
+    ```
+
+6. 立即执行函数
+
+    ```
+    (function(){
+
+    })();
+    //自动调用
+    //指向window
+    ```
+
+##### call 方法
+
+```
+var o = {
+    name:'andy'
+}
+function fn(){
+
+}
+fn.call(o)
+//call可以改变函数内部this的指向
+//call可以实现继承
+function Father(){
+
+}
+function Son(){
+    Father.call(this)
+}
+```
+
+##### apply 方法
+
+```
+var o = {
+    name:'andy'
+}
+function fn(){
+
+}
+fn.apply(o)
+//apply可以改变函数内部this的指向
+//apply的参数必须是数组
+var arr=[1,12,33]
+Math.max.apply(Math,arr);
+```
+
+##### bind 方法
+
+-   改变函数的调用者
+-   语法规范同 apply，不会调用函数
+-   返回值为函数的拷贝
+
+###### bind 应用
+
+```
+btn.onclick=function(){
+    setTimerout(function(){
+
+    }.bind(this),1000)
+}
+
+```
+
+##### 严格模式//ie10+
+
+1. 消除了 js 语法的一些不合理之处
+2. 消除了一些不安全之处
+3. 提高了编译效率
+4. 禁用了一些未来可能会定义的语法，为新版本铺垫
+
+###### 开启严格模式
+
+-   为整个脚本
+    写在开头'use strict'
+-   为个别函数
+    写在函数内部'use strict'
+
+###### 严格模式的变化
+
+1. 变量必须先声明再使用
+2. 严禁删除已经声明的变量
+3. 全局模式下函数 this 指向 undefined
+4. 构造函数不加 new 调用，this 会报错
+5. 函数不能有重名参数
+6. 函数必须声明在顶层
+
+##### 高阶函数
+
+-   作为参数的或 return 的是函数
+
+##### 闭包
+
+###### 定义
+
+> 闭包指有权访问另一个函数作用域中变量的函数。
+
+简单理解：一个作用域可以访问另一个函数内部的局部变量
