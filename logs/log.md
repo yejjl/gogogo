@@ -1763,3 +1763,267 @@ var car = function () {
 }
 car.price()
 ```
+
+##### 递归
+
+如果一个函数在内部可以调用其本身，那么就是递归函数。
+**为避免栈溢出，要添加推出条件 return**
+
+###### 根据 id 返回数据对象
+
+```javascript
+var data = [
+	{
+		id: 1,
+		name: '家电',
+		goods: [
+			{
+				id: 11,
+				gname: '冰箱',
+			},
+			{
+				id: 12,
+				gname: '洗衣机',
+			},
+		],
+	},
+	{
+		id: 2,
+		name: '服饰',
+	},
+]
+
+function getID(json, id) {
+	var o = []
+	json.forEach(function (item) {
+		//console.log(item)
+		if (item.id == id) {
+			o = item
+			return item
+		} else if (item.goods && item.goods.length > 0) {
+			o = getID(item.goods, id)
+		}
+	})
+	return o
+}
+console.log(getID(data, 11))
+```
+
+##### 拷贝
+
+###### 浅拷贝
+
+```javascript
+var obj = {
+	id: 1,
+	name: 'andy',
+}
+var o = {}
+// for (var k in obj) {
+// 	o[k] = obj[k]
+// }
+// console.log(o)
+Object.assign(o, obj)
+console.log(o)
+```
+
+###### 深拷贝
+
+```javascript
+var obj = {
+	id: 1,
+	name: 'andy',
+	msg: {
+		age: '18',
+	},
+	color: ['a', 'b', 'c'],
+}
+var o = {}
+function deepCopy(newobj, oldobj) {
+	for (var k in oldobj) {
+		//判断属性值属于哪种数据类型
+		var item = oldobj[k]
+		//判断是否数组
+		if (item instanceof Array) {
+			newobj[k] = []
+			deepCopy(newobj[k], item)
+		}
+		//判断是否对象
+		else if (item instanceof Object) {
+			newobj[k] = {}
+			deepCopy(newobj[k], item)
+		} else {
+			newobj[k] = item
+		}
+	}
+}
+deepCopy(o, obj)
+console.log(o)
+```
+
+### 正则表达式
+
+用于匹配字符串中字符组合，匹配、替换、提取字符
+
+-   灵活性
+-   可以简单的达到字符串的复杂控制
+-   对新人来说晦涩难懂
+-   实际开发一般直接复制写好的正则表达式
+
+##### 使用
+
+1. 通过 RegExp 创建
+
+```javascript
+var regexp = new RegExp(/123/)
+```
+
+2. 字面量创建
+
+```javascript
+var rg = /123/
+```
+
+###### 测试正则
+
+```javascript
+var rg = /123/
+console.log(rg.test(123))
+```
+
+##### 正则表达式中的特殊字符
+
+###### 边界符
+
+| 边界符 | 说明     |
+| :----- | :------- |
+| ^      | 以谁开始 |
+| $      | 以谁结束 |
+
+###### 字符类
+
+| 符号     | 说明                                   |
+| :------- | :------------------------------------- |
+| []       | 可供选择的字符，多选一，有任意一个即可 |
+| [a-z]    | 表示 26 个小写字母                     |
+| [a-zA-Z] | 大小写字母都可                         |
+| [^a-z]   | 取反，不能包含小写字母                 |
+
+###### 量词符
+
+|       |                   |
+| :---- | :---------------- |
+| \*    | 重复零次或更多次  |
+| +     | 重复一次或更多次  |
+| ？    | 重复零次或一次    |
+| {n}   | 重复 n 次         |
+| {n,}  | 重复 n 次或更多次 |
+| {n,m} | 重复 n 到 m 次    |
+
+```javascript
+var reg = /^[a-zA-Z0-9_-]{6,16}$/
+console.log(reg.test('aaaaaa')) //true
+```
+
+###### 预定义类
+
+| 预定类 | 说明                |
+| :----- | :------------------ |
+| \d     | 相当于[0-9]         |
+| \D     | 相当于[^0-9]        |
+| \w     | 相当于[a-zA-Z0-9]   |
+| \W     | 相当于[^a-za-z0-9]  |
+| \s     | 相当于[\t\r\n\v\f]  |
+| \S     | 相当于[^\t\r\n\v\f] |
+
+##### 正则替换
+
+```javascript
+var str = 'andy和red'
+var newstr = str.replace(/andy|red/gi, 'dady')
+//正则后加g，全局匹配
+//加i，忽略大小写
+```
+
+### es6 新增语法
+
+##### let
+
+-   let 声明的变量只在所在块级有效
+
+```javascript
+if (true) {
+	let a = 10
+}
+console.log(a)
+```
+
+-   let 声明的变量,不存在提升
+
+```javascript
+console.log(a)
+let a = 100
+```
+
+-   暂时性死区
+
+```javascript
+var num = 10
+if (true) {
+	console.log(num)
+	let num = 20
+}
+```
+
+###### 经典面试题
+
+```javascript
+var arr = []
+for (var i = 0; i < 2; i++) {
+	arr[i] = function () {
+		console.log(i)
+	}
+}
+arr[0]() //2
+arr[1]() //2
+//退出循环时全局变量i=2
+```
+
+```javascript
+var arr = []
+for (let i = 0; i < 2; i++) {
+	arr[i] = function () {
+		console.log(i)
+	}
+}
+arr[0]() //0
+arr[1]() //1
+```
+
+##### const
+
+作用：声明常量
+
+-   块级作用域
+-   声明时必须赋初始值
+-   声明的常量值不能修改，数组内部值可以修改,不能重新赋值
+
+##### 解构赋值
+
+```javascript
+let ary = [1, 2, 3]
+let [a, b, c] = ary
+```
+
+###### 对象解构
+
+```javascript
+let ary = { name: 'zs', age: 18 }
+let { name, age } = ary
+console.log(name)
+console.log(age)
+
+let { name: myname, age: myage } = ary
+console.log(myname)
+console.log(myage)
+```
