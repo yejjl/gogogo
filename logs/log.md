@@ -2027,3 +2027,419 @@ let { name: myname, age: myage } = ary
 console.log(myname)
 console.log(myage)
 ```
+
+##### 箭头函数
+
+```javascript
+const fn = () => {}
+```
+
+###### 箭头函数 this
+
+指向函数定义位置的上下文 this
+
+###### 箭头函数面试题
+
+```javascript
+age = 100
+var obj = {
+	age: 20,
+	say: () => {
+		alert(this.age)
+	},
+}
+obj.say() //100
+//对象不能产生作用域
+```
+
+##### 剩余参数
+
+剩余参数语法允许我们将一个不定数量的参数表示为一个数组
+
+```javascript
+const sum = (...args) => {
+	let total = 0
+	args.forEach((item) => (total += item))
+
+	return total
+}
+sum(10, 20)
+sum(10, 20, 30)
+```
+
+###### 剩余参数和结构
+
+```javascript
+let students = ['a', 'b', 'c']
+let [s1, ...s2] = students
+console.log(s1)
+console.log(s2)
+//a
+//(2) ["b", "c"]
+```
+
+##### 扩展运算符
+
+允许运算符可以将数组或者对象转为用逗号分隔的参数序列
+
+```javascript
+let ary = [1, 2, 3]
+...ary//1,2,3
+console.log(...ary) //1 2 3
+```
+
+###### 运用
+
+```javascript
+//数组合并
+//1.
+let ary1 = [1, 2, 3]
+let ary2 = [4, 5, 6]
+let ary3 = [...ary1, ary2]
+//2.
+ary1.push(...ary2)
+
+//将伪数组转化为真数组
+```
+
+##### Array 扩展方法
+
+```javascript
+//将伪数组转化为真数组
+var arrayLike = {
+	0: 'a',
+	1: 'b',
+	2: 'c',
+	length: 3,
+}
+var ary = Array.from(arrayLike, (item) => item + 'd')
+console.log(ary)
+```
+
+```javascript
+//find方法
+var ary = [
+	{
+		id: 1,
+		name: 'zs',
+	},
+	{
+		id: 2,
+		name: 'ls',
+	},
+]
+var target = ary.find((item, index) => item.id == 2)
+console.log(target) //{id: 2, name: "ls"}
+```
+
+```javascript
+//findIndex方法
+var ary = [
+	{
+		id: 1,
+		name: 'zs',
+	},
+	{
+		id: 2,
+		name: 'ls',
+	},
+]
+var target = ary.findIndex((item, index) => item.id == 2)
+console.log(target) //1
+```
+
+```javascript
+//includes方法
+;[1, 2, 3].includes(2)
+```
+
+##### String 扩展方法
+
+###### 模板字符串
+
+-   以`字符串`表示
+-   内部可以换行
+-   可以调用函数
+
+```javascript
+let name = `zs`
+let sayHello = `hello,i'm zs`
+console.log(sayHello)
+```
+
+###### startsWith()\endsWith()
+
+-   startsWith(),判断参数字符串是否在原字符串头部
+-   endsWith(),判断参数字符串是否在原字符串结尾
+
+###### repeat()
+
+'x'.repeat(3)//'xxx'
+
+-   将原字符串重复 x 次，输出新字符串
+
+##### Set
+
+**类似数组，没有重复值**
+
+```javascript
+var ary = [1, 1, 2, 3]
+var s1 = new Set(ary)
+console.log(s1) //Set(3) {1, 2, 3}
+console.log(s1.size) //3
+//利用Set去重
+var ary2 = [...s1]
+console.log(ary2) //(3) [1, 2, 3]
+
+//Set方法
+s1.add(4).add(5)
+console.log(s1)
+s1.delete(1)
+console.log(s1)
+s1.has(1)
+console.log(s1.has(1))
+s1.clear()
+console.log(s1)
+
+//Set遍历
+s1.forEach((value) => {
+	console.log(value)
+})
+```
+
+### 请按后端交互
+
+##### 服务器和客户端
+
+###### 服务器
+
+负责存放对外提供资源的电脑叫服务器
+
+###### 客户端
+
+负责获取和消费资源的电脑叫服务器
+
+##### URL
+
+-   统一资源定位符
+
+###### 组成
+
+1. 客户端和服务器之间的==通信协议==
+2. 存有资源的==服务器名称==
+3. 资源在服务器上==具体的存放位置==
+   http://www.cnblogs.com/lll/p/2222.html
+
+-   http：通信协议
+-   www.cnblogs.com：服务器名称
+-   lll/p/2222.html：资源在服务器上具体的存放位置
+
+##### 网页打开的过程
+
+-   客户端
+    1. 打开浏览器
+    2. 输入要访问的网站网址
+    3. 回车，向服务器发起资源请求
+-   服务器
+    1. 服务器接收到客户端收到客户端发来的资源请求
+    2. 服务器在内部处理这次请求，找到相关的资源
+    3. 服务器把找到的资源，响应（发送）给客户端
+
+**过程分为请求-处理-响应三个过程**
+**网页中的每一个资源都是通过请求-处理-响应的方式从服务器获取回来的**
+
+###### 网页如何请求数据
+
+1. 发起数据请求
+2. 服务器处理请求
+3. 服务器发送数据
+
+###### 资源请求方式
+
+-   get :用于获取服务器数据
+-   push:用于提交数据
+
+##### Ajax
+
+###### $.get()
+
+```javascript
+$.get('url', { data }, callback)
+```
+
+| 参数名   | 参数类型 | 必选 | 说明       |
+| :------- | :------- | :--- | :--------- |
+| url      | string   | 是   | 资源地址   |
+| data     | object   | 否   | 携带的参数 |
+| callbacl | function | 否   | 回调函数   |
+
+###### $.post()
+
+```javascript
+$.post('url', { data }, function (res) {})
+```
+
+| 参数名   | 参数类型 | 必选 | 说明           |
+| :------- | :------- | :--- | :------------- |
+| url      | string   | 是   | 提交数据的地址 |
+| data     | object   | 否   | 携带的数据     |
+| callbacl | function | 否   | 回调函数       |
+
+###### $.ajax()
+
+```javascript
+$.ajax({
+	type: '', //请求的方式
+	url: '', //请求的url地址
+	data: '', //这次请求要携带的数据
+	success: function (res) {}, //成功后的回调函数
+})
+```
+
+##### 接口
+
+**使用 ajax 请求数据时，被请求的 url 地址，就叫做接口**
+
+###### 接口的测试工具
+
+-   postman
+
+###### 接口文档
+
+-   组成
+    1. 接口名称
+    2. 接口 URL
+    3. 调用方式
+    4. 参数格式
+    5. 响应格式
+    6. 返回实例（可选）
+
+### form 表单
+
+表单在网页中负责数据采集功能
+
+##### 表单的组成
+
+-   表单标签
+-   表单域
+-   表单按钮
+
+##### <form>标签
+
+1. action：向何处发送表单，默认为当前 url
+   提交后，立即跳转到 action 指定的 url
+2. target：在何处打开 action URL
+
+    | 值        | 描述                     |
+    | :-------- | :----------------------- |
+    | \_blank   | 在新窗口打开             |
+    | \_self    | 默认。在相同框架中打开   |
+    | \_parent  | 在父框架打开 /很少用     |
+    | \_top     | 在整个窗口打开 /很少用   |
+    | framename | 在指定的框架打开 /很少用 |
+
+3. method：以何种方式把表单提交到 action URL
+    - 默认为 get
+    - get 适合提交少量、简单的数据，post 适合提交大量的、复杂的或包含文件上传的数据
+4. enctype：发送数据前如何对数据进行编码
+
+    | 值                                | 描述                                     |
+    | :-------------------------------- | :--------------------------------------- |
+    | application/x-www-form-urlencoded | 发送前编码所有字符（默认）               |
+    | multipart/form-data               | 不对字符编码//上传文件时，必填该值       |
+    | text/plain                        | 空格转化为加号，不对特殊字符编码//很少用 |
+
+##### 表单同步提交
+
+-   缺点
+    1. 提交后，页面后跳转，用户体验差
+    2. 页面之前的状态和数据会丢失
+-   解决
+    表单只采集数据，ajax 负责将数据提交到服务器
+
+##### ajax 提交表单
+
+###### 监听表单提交事件
+
+```javascript
+$('#form').submit(function (e) {})
+
+$('#form').on('submit', function (e) {})
+```
+
+###### 阻止表单默认提交行为
+
+```javascript
+$('#form').submit(function (e) {
+	e.preventDefault()
+})
+
+$('#form').on('submit', function (e) {
+	e.preventDefault()
+})
+```
+
+###### 快速获取表单数据
+
+**$(selector).serialize()**
+可以一次性获取表单的所有数据
+==使用 serialize()时，必须为每个表单元素添加 name 属性==
+
+```javascript
+$('#form').submit(function (e) {
+	e.preventDefault()
+	var data = $(this).serialize()
+})
+```
+
+##### 模板引擎
+
+根据指定的模板结构和数据，自动生成一个完整的 HTML 页面
+
+-   好处：
+    1. 减少字符串拼接操作
+    2. 使代码结构更清晰
+    3. 使代码更易于阅读与维护
+
+###### art-template
+
+-   使用步骤
+    1. 导入 art-template
+    2. 定义数据
+    3. 定义模板
+    4. 调用 template 函数
+    5. 渲染 HTML 结构
+-   标准语法
+
+    1. 输出
+
+        |                |
+        | :------------- |
+        | {{value}}      |
+        | {{obj.key}}    |
+        | {{obj['key']}} |
+        | {{a?b:c}}      |
+        | {{a\| \|b}}    |
+        | {{a+b}}        |
+
+    2. 原文输出
+       {{@ value}}
+       //输出的内容包含 html 语句时使用
+    3. 条件输出
+       {{if v1}} {{else if v2}} {{/if}}
+    4. 循环输出
+       {{each arr}}
+       {{$index}} {{$value}}
+       {{/each}}
+    5. 过滤器
+       {{value|**filterName**}}
+       template.defaults.imports.**filterName**=function(value){ return 处理的结果}
+
+        ```javascript
+        template.defaults.imports.dataFormat = function (date) {
+        	var y = date.getFullYear()
+        	var m = date.getMonth() + 1
+        	var d = date.getDate()
+        	return y + '-' + m + '-' + d
+        }
+        ```
