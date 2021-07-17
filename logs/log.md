@@ -1745,23 +1745,23 @@ var f=fn();
 
 ```javascript
 var car = function () {
-	var start = 13
-	var total = 0
+	var start = 13;
+	var total = 0;
 	return {
 		price: function (n) {
 			if (n <= 3) {
-				total = start
+				total = start;
 			} else {
-				total = start + (n - 3) * 5
+				total = start + (n - 3) * 5;
 			}
-			return total
+			return total;
 		},
 		yd: function (flag) {
-			return flag ? total + 10 : total
+			return flag ? total + 10 : total;
 		},
-	}
-}
-car.price()
+	};
+};
+car.price();
 ```
 
 ##### 递归
@@ -1791,22 +1791,22 @@ var data = [
 		id: 2,
 		name: '服饰',
 	},
-]
+];
 
 function getID(json, id) {
-	var o = []
+	var o = [];
 	json.forEach(function (item) {
 		//console.log(item)
 		if (item.id == id) {
-			o = item
-			return item
+			o = item;
+			return item;
 		} else if (item.goods && item.goods.length > 0) {
-			o = getID(item.goods, id)
+			o = getID(item.goods, id);
 		}
-	})
-	return o
+	});
+	return o;
 }
-console.log(getID(data, 11))
+console.log(getID(data, 11));
 ```
 
 ##### 拷贝
@@ -1817,14 +1817,14 @@ console.log(getID(data, 11))
 var obj = {
 	id: 1,
 	name: 'andy',
-}
-var o = {}
+};
+var o = {};
 // for (var k in obj) {
 // 	o[k] = obj[k]
 // }
 // console.log(o)
-Object.assign(o, obj)
-console.log(o)
+Object.assign(o, obj);
+console.log(o);
 ```
 
 ###### 深拷贝
@@ -1837,28 +1837,28 @@ var obj = {
 		age: '18',
 	},
 	color: ['a', 'b', 'c'],
-}
-var o = {}
+};
+var o = {};
 function deepCopy(newobj, oldobj) {
 	for (var k in oldobj) {
 		//判断属性值属于哪种数据类型
-		var item = oldobj[k]
+		var item = oldobj[k];
 		//判断是否数组
 		if (item instanceof Array) {
-			newobj[k] = []
-			deepCopy(newobj[k], item)
+			newobj[k] = [];
+			deepCopy(newobj[k], item);
 		}
 		//判断是否对象
 		else if (item instanceof Object) {
-			newobj[k] = {}
-			deepCopy(newobj[k], item)
+			newobj[k] = {};
+			deepCopy(newobj[k], item);
 		} else {
-			newobj[k] = item
+			newobj[k] = item;
 		}
 	}
 }
-deepCopy(o, obj)
-console.log(o)
+deepCopy(o, obj);
+console.log(o);
 ```
 
 ### 正则表达式
@@ -1875,20 +1875,20 @@ console.log(o)
 1. 通过 RegExp 创建
 
 ```javascript
-var regexp = new RegExp(/123/)
+var regexp = new RegExp(/123/);
 ```
 
 2. 字面量创建
 
 ```javascript
-var rg = /123/
+var rg = /123/;
 ```
 
 ###### 测试正则
 
 ```javascript
-var rg = /123/
-console.log(rg.test(123))
+var rg = /123/;
+console.log(rg.test(123));
 ```
 
 ##### 正则表达式中的特殊字符
@@ -1921,8 +1921,8 @@ console.log(rg.test(123))
 | {n,m} | 重复 n 到 m 次    |
 
 ```javascript
-var reg = /^[a-zA-Z0-9_-]{6,16}$/
-console.log(reg.test('aaaaaa')) //true
+var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+console.log(reg.test('aaaaaa')); //true
 ```
 
 ###### 预定义类
@@ -1939,8 +1939,8 @@ console.log(reg.test('aaaaaa')) //true
 ##### 正则替换
 
 ```javascript
-var str = 'andy和red'
-var newstr = str.replace(/andy|red/gi, 'dady')
+var str = 'andy和red';
+var newstr = str.replace(/andy|red/gi, 'dady');
 //正则后加g，全局匹配
 //加i，忽略大小写
 ```
@@ -1953,51 +1953,51 @@ var newstr = str.replace(/andy|red/gi, 'dady')
 
 ```javascript
 if (true) {
-	let a = 10
+	let a = 10;
 }
-console.log(a)
+console.log(a);
 ```
 
 -   let 声明的变量,不存在提升
 
 ```javascript
-console.log(a)
-let a = 100
+console.log(a);
+let a = 100;
 ```
 
 -   暂时性死区
 
 ```javascript
-var num = 10
+var num = 10;
 if (true) {
-	console.log(num)
-	let num = 20
+	console.log(num);
+	let num = 20;
 }
 ```
 
 ###### 经典面试题
 
 ```javascript
-var arr = []
+var arr = [];
 for (var i = 0; i < 2; i++) {
 	arr[i] = function () {
-		console.log(i)
-	}
+		console.log(i);
+	};
 }
-arr[0]() //2
-arr[1]() //2
+arr[0](); //2
+arr[1](); //2
 //退出循环时全局变量i=2
 ```
 
 ```javascript
-var arr = []
+var arr = [];
 for (let i = 0; i < 2; i++) {
 	arr[i] = function () {
-		console.log(i)
-	}
+		console.log(i);
+	};
 }
-arr[0]() //0
-arr[1]() //1
+arr[0](); //0
+arr[1](); //1
 ```
 
 ##### const
@@ -2011,27 +2011,27 @@ arr[1]() //1
 ##### 解构赋值
 
 ```javascript
-let ary = [1, 2, 3]
-let [a, b, c] = ary
+let ary = [1, 2, 3];
+let [a, b, c] = ary;
 ```
 
 ###### 对象解构
 
 ```javascript
-let ary = { name: 'zs', age: 18 }
-let { name, age } = ary
-console.log(name)
-console.log(age)
+let ary = { name: 'zs', age: 18 };
+let { name, age } = ary;
+console.log(name);
+console.log(age);
 
-let { name: myname, age: myage } = ary
-console.log(myname)
-console.log(myage)
+let { name: myname, age: myage } = ary;
+console.log(myname);
+console.log(myage);
 ```
 
 ##### 箭头函数
 
 ```javascript
-const fn = () => {}
+const fn = () => {};
 ```
 
 ###### 箭头函数 this
@@ -2041,14 +2041,14 @@ const fn = () => {}
 ###### 箭头函数面试题
 
 ```javascript
-age = 100
+age = 100;
 var obj = {
 	age: 20,
 	say: () => {
-		alert(this.age)
+		alert(this.age);
 	},
-}
-obj.say() //100
+};
+obj.say(); //100
 //对象不能产生作用域
 ```
 
@@ -2058,22 +2058,22 @@ obj.say() //100
 
 ```javascript
 const sum = (...args) => {
-	let total = 0
-	args.forEach((item) => (total += item))
+	let total = 0;
+	args.forEach((item) => (total += item));
 
-	return total
-}
-sum(10, 20)
-sum(10, 20, 30)
+	return total;
+};
+sum(10, 20);
+sum(10, 20, 30);
 ```
 
 ###### 剩余参数和结构
 
 ```javascript
-let students = ['a', 'b', 'c']
-let [s1, ...s2] = students
-console.log(s1)
-console.log(s2)
+let students = ['a', 'b', 'c'];
+let [s1, ...s2] = students;
+console.log(s1);
+console.log(s2);
 //a
 //(2) ["b", "c"]
 ```
@@ -2093,11 +2093,11 @@ console.log(...ary) //1 2 3
 ```javascript
 //数组合并
 //1.
-let ary1 = [1, 2, 3]
-let ary2 = [4, 5, 6]
-let ary3 = [...ary1, ary2]
+let ary1 = [1, 2, 3];
+let ary2 = [4, 5, 6];
+let ary3 = [...ary1, ary2];
 //2.
-ary1.push(...ary2)
+ary1.push(...ary2);
 
 //将伪数组转化为真数组
 ```
@@ -2111,9 +2111,9 @@ var arrayLike = {
 	1: 'b',
 	2: 'c',
 	length: 3,
-}
-var ary = Array.from(arrayLike, (item) => item + 'd')
-console.log(ary)
+};
+var ary = Array.from(arrayLike, (item) => item + 'd');
+console.log(ary);
 ```
 
 ```javascript
@@ -2127,9 +2127,9 @@ var ary = [
 		id: 2,
 		name: 'ls',
 	},
-]
-var target = ary.find((item, index) => item.id == 2)
-console.log(target) //{id: 2, name: "ls"}
+];
+var target = ary.find((item, index) => item.id == 2);
+console.log(target); //{id: 2, name: "ls"}
 ```
 
 ```javascript
@@ -2143,14 +2143,14 @@ var ary = [
 		id: 2,
 		name: 'ls',
 	},
-]
-var target = ary.findIndex((item, index) => item.id == 2)
-console.log(target) //1
+];
+var target = ary.findIndex((item, index) => item.id == 2);
+console.log(target); //1
 ```
 
 ```javascript
 //includes方法
-;[1, 2, 3].includes(2)
+[1, 2, 3].includes(2);
 ```
 
 ##### String 扩展方法
@@ -2162,9 +2162,9 @@ console.log(target) //1
 -   可以调用函数
 
 ```javascript
-let name = `zs`
-let sayHello = `hello,i'm zs`
-console.log(sayHello)
+let name = `zs`;
+let sayHello = `hello,i'm zs`;
+console.log(sayHello);
 ```
 
 ###### startsWith()\endsWith()
@@ -2183,28 +2183,28 @@ console.log(sayHello)
 **类似数组，没有重复值**
 
 ```javascript
-var ary = [1, 1, 2, 3]
-var s1 = new Set(ary)
-console.log(s1) //Set(3) {1, 2, 3}
-console.log(s1.size) //3
+var ary = [1, 1, 2, 3];
+var s1 = new Set(ary);
+console.log(s1); //Set(3) {1, 2, 3}
+console.log(s1.size); //3
 //利用Set去重
-var ary2 = [...s1]
-console.log(ary2) //(3) [1, 2, 3]
+var ary2 = [...s1];
+console.log(ary2); //(3) [1, 2, 3]
 
 //Set方法
-s1.add(4).add(5)
-console.log(s1)
-s1.delete(1)
-console.log(s1)
-s1.has(1)
-console.log(s1.has(1))
-s1.clear()
-console.log(s1)
+s1.add(4).add(5);
+console.log(s1);
+s1.delete(1);
+console.log(s1);
+s1.has(1);
+console.log(s1.has(1));
+s1.clear();
+console.log(s1);
 
 //Set遍历
 s1.forEach((value) => {
-	console.log(value)
-})
+	console.log(value);
+});
 ```
 
 ### 请按后端交互
@@ -2264,7 +2264,7 @@ s1.forEach((value) => {
 ###### $.get()
 
 ```javascript
-$.get('url', { data }, callback)
+$.get('url', { data }, callback);
 ```
 
 | 参数名   | 参数类型 | 必选 | 说明       |
@@ -2276,7 +2276,7 @@ $.get('url', { data }, callback)
 ###### $.post()
 
 ```javascript
-$.post('url', { data }, function (res) {})
+$.post('url', { data }, function (res) {});
 ```
 
 | 参数名   | 参数类型 | 必选 | 说明           |
@@ -2293,7 +2293,7 @@ $.ajax({
 	url: '', //请求的url地址
 	data: '', //这次请求要携带的数据
 	success: function (res) {}, //成功后的回调函数
-})
+});
 ```
 
 ##### 接口
@@ -2362,21 +2362,21 @@ $.ajax({
 ###### 监听表单提交事件
 
 ```javascript
-$('#form').submit(function (e) {})
+$('#form').submit(function (e) {});
 
-$('#form').on('submit', function (e) {})
+$('#form').on('submit', function (e) {});
 ```
 
 ###### 阻止表单默认提交行为
 
 ```javascript
 $('#form').submit(function (e) {
-	e.preventDefault()
-})
+	e.preventDefault();
+});
 
 $('#form').on('submit', function (e) {
-	e.preventDefault()
-})
+	e.preventDefault();
+});
 ```
 
 ###### 快速获取表单数据
@@ -2387,9 +2387,9 @@ $('#form').on('submit', function (e) {
 
 ```javascript
 $('#form').submit(function (e) {
-	e.preventDefault()
-	var data = $(this).serialize()
-})
+	e.preventDefault();
+	var data = $(this).serialize();
+});
 ```
 
 ##### 模板引擎
@@ -2437,9 +2437,264 @@ $('#form').submit(function (e) {
 
         ```javascript
         template.defaults.imports.dataFormat = function (date) {
-        	var y = date.getFullYear()
-        	var m = date.getMonth() + 1
-        	var d = date.getDate()
-        	return y + '-' + m + '-' + d
-        }
+        	var y = date.getFullYear();
+        	var m = date.getMonth() + 1;
+        	var d = date.getDate();
+        	return y + '-' + m + '-' + d;
+        };
         ```
+
+### XMLHttpRequest
+
+##### xhr get 请求
+
+1. 创建 xhr 对象
+2. 调用 xhr.open()函数
+3. 调用 xhr.send()函数
+4. 监听 xhr.onreadystatechange 事件
+
+```javascript
+var xhr =new XHRHttpRequest()
+
+xhr.open('GET'，'http://www.liulongbin.top:3006/api/getbooks')
+
+xhr.send()
+
+xhr.onreadystatechange=function(){
+
+    if(xhr.readyState===4&&xhr.status===200){
+        //数据获取成功
+        console.log(xhr.requestText)
+    }
+}
+
+```
+
+##### xhr readyState 属性
+
+| 值  |       状态       | 描述                                              |
+| :-: | :--------------: | :------------------------------------------------ |
+|  0  |      UNSENT      | XMLHttpRequest 对象已创建，但未调用 open 方法     |
+|  1  |      OPENED      | open()方法已经被调用                              |
+|  2  | HEADERS_RECEIVED | send()方已经被调用，响应头也已经被接收            |
+|  3  |     LOADING      | 数据接收中，此时 response 属性已经包含部分数据    |
+|  4  |       DONE       | Ajax 请求完成，这意味着数据传输已经彻底完成或失败 |
+
+##### xhr 带参数的 get 请求
+
+在 url 后拼接参数
+
+```javascript
+xhr.open('GET'，'http://www.liulongbin.top:3006/api/getbooks?id=1')
+```
+
+##### xhr 查询字符串
+
+-   定义：查询字符串（URL 参数）是指在 url 的末尾加上用于向服务器发送信息的字符串（变量）
+
+-   格式：将英文的 **?** 放在 url 末尾，再加上 **参数=值** ，想加上多个参数的话，以 **&**进行分隔
+
+##### 什么是 url 编码
+
+-   **原则**：使用安全的字符（没有特殊用途或特殊意义的可打印字符）去表示不安全的字符
+
+##### 如何进行 url 编码
+
+-   encodeURI()
+-   decodeURI()
+
+```javascript
+console.log(encodeURI('你好')); //%E4%BD%A0%E5%A5%BD
+
+console.log(decodeURI('%E4%BD%A0%E5%A5%BD')); //你好
+```
+
+##### xhr post 请求
+
+1. 创建 xhr 对象
+2. 调用 xhr.open()函数
+3. 设置 Content-Type 属性（固定写法）
+4. 调用 xhr.send()函数，同时指定发送数据
+5. 监听 xhr.onreadystatechange 事件
+
+```javascript
+var xhr = new XMLHttpRequest();
+
+xhr.open('post', 'http://www.liulongbin.top:3006/api/addbook');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.send('bookname=xxx&author=xxx');
+xhr.onreadystatechange = function () {
+	if (xhr.readyState === 4 && xhr.state === 200) {
+		console.log(xhr.responseText);
+	}
+};
+```
+
+### 数据交换格式
+
+服务器端与客户端之间进行数据传输与交换的格式
+
+##### json
+
+-   概念 JSON 全称 JavaScript Object Notation，即 JavaScript 对象表示法，json 本质是字符串
+
+###### json 的两种结构
+
+-   对象结构：对象结构在 json 中表示为{ }括起来的内容。数据结构为{key:value,key:value,...}的键值对结构。其中，key 必须是使用英文的双引号包裹的字符串，value 的数据类型可以是数字、字符串、布尔值、null、数组、对象 6 种类型
+
+-   数组结构：数组结构在 json 中表示为{ }括起来的内容。数据结构为{"java","javascript",30,true...},数组中数据的类型可以是数字、字符串、布尔值、null、数组、对象 6 种类型
+
+###### json 注意事项
+
+1. 属性名必须使用双引号包裹
+2. 字符串类型的值必须使用双引号包裹
+3. json 中不允许使用单引号表示字符串
+4. json 中不允许写注释
+5. json 的最外层必须是对象或数组格式
+6. 不能使用 undefined 或函数作为 json 的值
+
+-   作用：在计算机与网络之间存储和传输数据
+-   本质：用字符串表示 javascript 对象或数组数据
+
+###### json 和 js 对象的转换
+
+```javascript
+var obj = JSON.parse('{"a":"hello"}');
+console.log(obj);
+
+var json = JSON.stringify({ a: 'hello' });
+console.log(json);
+```
+
+###### 序列化、反序列化
+
+把数据对象转化为字符串的过程，叫做序列化
+把字符串转化为数据对象的过程，叫做反序列化
+
+##### xhr level2
+
+旧版缺点
+
+1. 支支持文本数据的传输，无法用来读取和上传文件
+2. 传送和接收数据时，没有进度信息，只能提示有没有完成
+
+level2 新特性
+
+1. 可以设置 HTTP 请求的时限
+2. 可以使用 FormData 对象管理表单数据
+3. 可以上传文件
+4. 可以获取数据传输的进度信息
+
+###### 设置请求时限
+
+```javascript
+xhr.timeout = 3000;
+xhr.ontimeout = function (event) {
+	alert('请求超时');
+};
+```
+
+###### FormData 管理表单数据
+
+```javascript
+var fd = new FormData();
+
+fd.append('uname', 'zs');
+fd.append('upwd', '123');
+var xhr = new XMLHttpRespect();
+xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata');
+xhr.send(fd);
+
+////
+var form = document.querySeletor('form1');
+
+form.addEventListener('submit', function (e) {
+	e.preventDefault();
+
+	var fd = new FormData(form);
+	myAjax({});
+});
+```
+
+###### 上传文件
+
+1. 定义 UI 结构
+2. 验证是否选择了文件
+3. 向 FormData 中追加文件
+4. 向 xhr 发起上传文件的请求
+5. 监听 onreadystatechange 事件
+
+```javascript
+var fd = new FormData();
+fd.append('', files[0]);
+```
+
+##### jQuery 高级用法
+
+###### 上传文件
+
+```javascript
+$.ajax({
+	method: 'POST',
+	url: 'http://....',
+	data: fd,
+	contentType: false,
+	processData: false,
+	success: function (res) {},
+});
+```
+
+###### loading 效果
+
+```javascript
+$(document).ajaxStart(function () {
+	$('#loading').show();
+});
+$(document).ajaxStop(function () {
+	$('#loading').hide();
+});
+// $(document).ajaxStart()会监听当前文档内所有Ajax请求
+```
+
+##### axios
+
+专注于网络数据请求的库
+
+###### axios GET\POST 请求
+
+```javascript
+axios.get('地址'?key=value&key2=value2).then(function(res){response},function(err){err})
+
+axios.post('地址',{key:value,key2:value2}).then(function(res){response},function(err){err})
+
+```
+
+### 跨域和 jsonp
+
+##### 同源策略
+
+同源：如果两个页面的**协议、域名**和**端口**都相同，则两个页面具有相同的源
+同源策略：浏览器提供的一个安全功能
+
+1. 无法读取非同源网页的 Cookie、LocalStorage 和 IndexedDB
+2. 无法接触非同源的 DOM
+3. 无法向非同源地址发送 Ajax 请求
+
+##### 跨域
+
+不同源就是跨域
+
+###### 拦截跨域请求
+
+-   跨域请求可以正常发起
+-   浏览器能正常接收跨域响应的数据
+-   同源策略拦截数据
+
+###### 实现跨域数据请求
+
+-   jsonp：临时解决方案，只支持 get
+-   cors：官方方法，部分低版本浏览器不支持
+
+##### jsonp
+
+**原理：sctipt 标签不受同源策略影响**
