@@ -2811,4 +2811,188 @@ const fs = require('fs');
 //path：必选参数，字符串，表示文件路径
 //options：可选参数，表示什么编码格式来读取文件
 //callback：必选参数，文件读取完成后，通过回调函数拿到读取的结果
+
+// -------------------
+//fs.writeFile(file,data[,options],callback)
+//file：必选，指定一个文件路径的字符串，表示文件的存放路径
+//data：必选，表示要写入到内容
+//options：可选，表示写入格式，默认utf8
+//callback：必选，文件写入完成后的回调函数
 ```
+
+###### fs-路径动态拼接问题
+
+代码在执行的时候，会以执行 node 命令时所处的目录，动态拼接处被操作文件的完整路径
+
+-   解决方法：
+    1. 提供完整路径
+    2. \_\_dirname 表示当前文件路径
+
+##### path 路径模块
+
+-   path.join()，用来将多个路径片段拼接成一个完整的路径字符串
+-   path.basename()，用来从路径字符串中，将文件名解析出来
+
+```javascript
+//导入path
+const path = require('path');
+```
+
+###### 路径拼接
+
+```javascript
+path.join('/a', '/b/c', '../', './d', 'e');
+//\a\b\d\e
+```
+
+###### 获取路径名
+
+```javascript
+path.basename(path[,ext])
+//path<string>必选，表示一个路径字符串
+//ext<string>可选，表示移除的文件扩展名
+//返回：<string>表示路径的最后一部分
+```
+
+###### 获取文件扩展名
+
+```javascript
+path.extname(path);
+//path<string>，必选，表示一个路径的字符串
+//返回：<string>返回得到的扩展名字符串
+```
+
+##### HTTP 模块
+
+http 模块是 node.js 提供的、用来创建 web 服务器的模块。通过 http 模块提供的 http.createServer()方法，就能方便的把一台普通电脑，变成一台 web 服务器，从而对外提供资源服务
+
+```javascript
+const http = require('http');
+```
+
+###### 服务器相关概念
+
+1. IP 地址：互联网上每台电脑的唯一标识
+2. 域名和域名服务器：域名服务器就是提供 IP 地址和域名之间的转换服务的服务器
+3. 端口号：相当于门牌号
+
+##### 创建基本服务器
+
+1. 导入 HTTP 模块
+2. 创建服务器实例
+3. 为服务器绑定 request 事件，监听客户端请求
+4. 启动服务器
+
+```javascript
+const http = require('http');
+const server = http.createServer();
+
+server.on('request', function (req, res) {
+	//console.log('Someone visit our web server.');
+	const url = req.url;
+	const method = req.method;
+	const str = `Your request url is ${url},and request method is ${method}`;
+	//解决乱码
+	res.setHeader('Content-Type', 'text/html;charset=utf-8');
+	console.log(str);
+	res.end(str);
+});
+
+server.listen(8080, function () {
+	console.log('server running at http://127.0.0.1:8080');
+});
+```
+
+###### 根据不同的 url 响应不同的 html 内容
+
+1. 获取 url 地址
+2. 设置默认响应内容
+3. 判断用户请求
+4. 设置 Content-Type 响应头，防止乱码
+5. 使用 res.end()把内容响应给客户端
+
+```javascript
+const http = require('http');
+const server = http.createServer();
+
+server.on('request', function (req, res) {
+	//console.log('Someone visit our web server.');
+	const url = req.url;
+	let content = '404 Not Found';
+	if (url === '/' || url === '/index.html') {
+		content = '<h1>首页</h1>';
+	} else if (url === '/about.html') {
+		content = '<h1>关于页面</h1>';
+	}
+	const method = req.method;
+	const str = `Your request url is ${url},and request method is ${method}`;
+	//解决乱码
+	res.setHeader('Content-Type', 'text/html;charset=utf-8');
+	console.log(str);
+	res.end(content);
+});
+
+server.listen(8080, function () {
+	console.log('server running at http://127.0.0.1:8080');
+});
+```
+
+### 模块化
+
+遵守固定的规则，把一个大文件拆成独立并互相依赖的多个小模块
+
+好处：
+
+1. 提高代码的复用性
+2. 提高了代码的可维护性
+3. 可以实现按需加载
+
+##### 相关概念
+
+-   使用什么样的语法格式来引用模块
+-   在模块中使用什么样的语法格式向外暴露成员
+
+##### 模块分类
+
+-   内置模块：
+-   自定义模块
+-   第三方模块
+
+###### 加载模块
+
+```javascript
+//内置模块
+const fs = require('fs');
+//自定义模块
+const custom = require('./custom.js');
+//第三方模块
+const moment = require('moment');
+//使用require()方法加载其他模块时，会执行被加载模块中的代码
+```
+
+###### require()注意点
+
+-   .js 后缀名可以省略
+
+##### 模块作用域
+
+1. module 对象：在每个.js 自定义模块中都有一个 module 对象，它里面存储了和当前模块有关的信息
+2. modele.exports：将模块内的成员共享出去，供外界使用；外界用 require()方法导入自定义模块时，得到的就是 module.exports 所指向的对象
+3. exports 对象：exports 和 module.exports 指向同一对象
+
+###### modele.exports
+
+```javascript
+module.exports.username = 'zs';
+module.exports.sayHello = function () {
+	console.log('hi');
+};
+```
+
+**使用 require()方法导入模块时，导入的结果，永远以 module.exports 指向的对象为准**
+
+##### CommonJS
+
+1. 每个模块内部，module 变量代表当前模块
+2. module 变量是一个对象，它的 exports 属性是对外接口
+3. 加载某个模块，其实是加载该模块的 module.exports 属性。require()方法用于加载模块
