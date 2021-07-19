@@ -2698,3 +2698,117 @@ axios.post('地址',{key:value,key2:value2}).then(function(res){response},functi
 ##### jsonp
 
 **原理：sctipt 标签不受同源策略影响**
+
+### 防抖和节流
+
+-   防抖策略：当事件被触发后，延迟 n 秒后再执行回调，如果在这 n 秒内事件再次触发，则重新计时
+-   节流策略：减少一段时间内事件的触发频率
+
+##### 输入框防抖
+
+```javascript
+var timer = null;
+function debounceSearch(keyup) {
+	timer = setTimeout(function () {
+		setSuggestList(keywords);
+	}, 500);
+}
+$('#ipt').on('keyup', function () {
+	clearTimeout(timer);
+	debounceSearch(keywords);
+});
+```
+
+##### 输入框缓存建议列表
+
+```javascript
+var cacheObj = {};
+function renderSuggestList(res) {
+	var k = $('#ipt').val().trim();
+	cacheObj[k] = res;
+}
+$('#ipt').on('keyup', function () {
+	if (cacheObj[keywords]) {
+		return renderSuggestList(cacheObj[keywords]);
+	}
+
+	debounceSearch(keywords);
+});
+```
+
+##### 节流和防抖的区别
+
+-   防抖：如果事件频繁触发，防抖能保证只有最后一次触发生效
+-   节流：如果事件频繁触发，节流能够减少事件触发的频率，节流是有选择的执行一部分事件
+
+### http 协议
+
+-   通信三要素：
+    1. 主体
+    2. 内容
+    3. 方式
+-   通信协议：通信双方必须遵守的规则和约定
+-   http 协议：规定了客户端与服务器之间进行网页内容传输时必须遵守的传输协议
+
+##### HTTP 请求消息
+
+客户端发起的请求叫做 HTTP 请求，客户端发送到服务器的消息叫做 HTTP 请求消息
+
+-   组成：
+    1. 请求行：请求方式、URL、HTTP 协议版本
+    2. 请求头部：描述客户端的基本信息，从而把客户端相关的信息告知服务器
+    3. 空行：通知服务器请求头部至此结束
+    4. 请求体：存放 post 方式提交到服务器的数据
+
+##### HTTP 响应消息
+
+-   组成：
+    1. 状态行：HTTP 协议版本、状态码、状态码的描述，三者之间以空格分开
+    2. 响应头部：描述服务器的基本信息，由多行键/值对组成
+    3. 空行：响应头部至此结束
+    4. 响应体：存放服务器响应给客户端的资源内容
+
+##### 请求方法
+
+表明要对服务器上的资源执行的操作
+
+| 序号 |  方法   | 描述 |
+| :--: | :-----: | :--- |
+|  1   |   GET   | 查询 |
+|  2   |  POST   | 新增 |
+|  3   |   PUT   | 修改 |
+|  4   | DELETE  | 删除 |
+|  5   |  HEAD   |      |
+|  6   | OPTIONS |      |
+|  7   | CONNECT |      |
+|  8   |  TRACE  |      |
+|  9   |  PATCH  |      |
+
+##### http 响应状态码
+
+-   组成：三个十进制数字，第一个定义了状态码的类型，后两个用来对状态码进行细分
+
+| 分类  | 描述                                         |
+| :---: | :------------------------------------------- |
+| 1\*\* | 信息，服务器收到请求，需要请求者继续执行操作 |
+| 2\*\* | 成功                                         |
+| 3\*\* | 重定向，需要进一步的操作以完成请求           |
+| 4\*\* | 客户端错误                                   |
+| 5\*\* | 服务器错误                                   |
+
+### NODE
+
+##### fs 文件系统模块
+
+-   fs.readFile():用来读取指定文件中的内容
+-   fs.writeFile():用来向指定的文件中写入内容
+
+```javascript
+//在js中使用fs
+const fs = require('fs');
+
+//fs.readFile(path[,options],callback)
+//path：必选参数，字符串，表示文件路径
+//options：可选参数，表示什么编码格式来读取文件
+//callback：必选参数，文件读取完成后，通过回调函数拿到读取的结果
+```
