@@ -2992,3 +2992,21 @@ module.exports.sayHello = function () {
 1. 每个模块内部，module 变量代表当前模块
 2. module 变量是一个对象，它的 exports 属性是对外接口
 3. 加载某个模块，其实是加载该模块的 module.exports 属性。require()方法用于加载模块
+
+### 包
+
+node 模块中第三方模块叫做包
+
+-   www.npmjs.com 搜索
+-   registry.npmjs.org 下载
+
+### npm
+
+1. 使用 npm 包管理工具，在项目中安装格式化时间的包 moment
+2. 使用 require()导入格式化时间的包
+3. 参考 moment 的官方 API 文档对时间进行格式化
+
+##### npm 安装
+
+-   npm install 包的完整名称
+-   简写：npm i 包的完整名称
