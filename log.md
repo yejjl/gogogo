@@ -2991,5 +2991,11 @@ package.json:
 
 -   开发依赖包：被记录到 devDependencies 节点中，只在开发期间使用
 -   核心依赖包：被记录到 dependencies 节点中，在开发和项目上线后都会用到
-
 -   全局包：-g 参数
+
+##### 发布包
+
+```
+//包目录下
+npm publish
+```
