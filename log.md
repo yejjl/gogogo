@@ -3016,3 +3016,209 @@ npm publish
     1. 在加载目录下查找 package.json 文件，并寻找 main 属性，作为 require()加载到入口
     2. 如果没找到 package 文件，或者 main 入口无法解析，则会试图加载 index.js 文件
     3. 上两步都失败，则报告模块缺失：Error:Cannot find module 'xxx'
+
+## express
+
+用来创建 Web 服务器
+
+#### 安装
+
+```
+npm i express@4.17.1
+```
+
+#### 使用
+
+```js
+//导入
+const express = require('express');
+//创建web服务器
+const app = express();
+//调用app.listen(端口号,回调函数)，启动服务器
+app.listen(80, () => {
+	console.log('express server running at http://127.0.0.1:8080');
+});
+```
+
+#### 监听请求
+
+```js
+//get
+app.get('请求url', function (req, res) {
+	res.send({ name: 'zs', age: '18', gender: '男' });
+});
+//post
+app.post('请求url', function (req, res) {
+	res.send('请求成功');
+});
+```
+
+#### 获取 url 中的参数
+
+```js
+//req.query对象可以访问到客户端通过查询字符串的形式，发送到服务器的查询参数
+app.get('/', (req, res) => {
+	console.log(req.query);
+});
+
+//获取动态参数
+app.get('/user:id', function (req, res) {
+	console.log(req.params);
+});
+```
+
+**通过 req.params 对象，可以访问到 url 中，通过:（冒号）匹配到的动态参数**
+
+#### 托管静态资源
+
+```js
+app.use(express.static('public'));
+
+//添加前缀地址
+app.use('/static', express.static('public'));
+```
+
+#### nodemon
+
+自动重启项目
+
+#### express 中的路由
+
+-   在 Express 中，路由指的是客户端的请求和服务器处理函数之间的映射关系
+-   组成：
+    1. 请求类型
+    2. 请求的 url 地址
+    3. 处理函数
+-   格式
+    ```js
+    app.METHOD(PATH, HANDLER);
+    ```
+
+##### 路由的匹配过程
+
+每当一个请求到达服务器之后，需要先经过路由的匹配，只有匹配成功才会处理对应函数
+
+##### 最简单用法
+
+```js
+//挂载路由
+app.get('/', (req, res) => {});
+```
+
+##### 模块化路由
+
+1. 创建路由模块对应的.js 文件
+2. 调用 express.Router()函数创建路由对象
+3. 向路由对象上挂载具体的路由
+4. 使用 module.esports 向外共享路由对象
+5. 使用 app.use()函数注册路由模块
+
+```js
+var express = require('express');
+var router = express.Router();
+
+router.get('/', (req, res) => {});
+
+module.exports = router;
+```
+
+##### 注册路由模块
+
+```js
+//导入路由模块
+const router = require('./router.js');
+app.use(router);
+```
+
+**app.use 的作用就是注册全局中间件**
+
+##### 为路由模块添加访问前缀
+
+```js
+app.use('/api', router);
+```
+
+## 中间件
+
+#### Express 中间件的调用流程
+
+当一个请求到达 express 服务器之后，可以连续调用多个中间件，从而对这次请求进行预处理
+
+#### Express 中间件格式
+
+Express 的中间件，本质上就是一个 function 处理函数，**中间件函数的形参列表中，必须包含 next 参数。而路由处理函数中只包含 req、res**
+
+##### next 函数
+
+是实现多个中间件连续调用的关键，它表示把流派关系转交给下一个中间件或路由
+
+#### 定义中间件函数
+
+```js
+const mw = function (req, res, next) {
+	next();
+};
+```
+
+#### 全局生效中间件
+
+客户端发起任何请求，到达服务器之后，都会触发的中间件，叫做全局生效的中间件。
+
+```js
+const mw = function (req, res, next) {
+	next();
+};
+app.use(mw);
+
+//简化形式
+app.use(function (req, res, next) {
+	next();
+};)
+```
+
+#### 中间件的作用
+
+多个中间件之间，共享同一份 req 和 res。基于这样的特性，我们可以在上游的中间件中，统一为 req、res 对象添加自定义的属性或方法，供下游的中间件或路由进行使用。
+
+#### 局部生效的中间件
+
+不使用 app.use()定义的中间件，叫做局部生效中间件
+
+```js
+const mw1 = function (req, res, next) {
+	next();
+};
+const mw2 = function (req, res, next) {
+	next();
+};
+app.get('/', mw1, mw2, function (req, res) {});
+```
+
+#### 中间件的注意事项
+
+1. 要在路由之前注册中间件
+2. 不要忘记调用 next 函数
+
+#### Express 中间件的分类
+
+1. 应用级别的中间件：
+   通过 app.use()或 app.get()、app.post()，绑定到 app 实例上的中间件，叫应用级别中间件
+2. 路由级别的中间件：
+   绑定到 app.Router()的中间件，叫做路由级别的中间件。与应用级别中间件无异
+3. 错误级别的中间件：
+   专门用来捕获整个项目中发生的异常错误，从而防止项目异常崩溃问题。
+   必须有 4 个参数(err,erq,ers,next)
+4. Express 内置中间件：
+    1. express.static
+    2. express.json 解析 json 格式请求数据 req.body
+    3. express.urlencoded 解析 URL-encoded 格式的请求数据
+5. 第三方中间件
+
+#### 自定义中间件
+
+1. 定义中间件
+2. 监听 req 的 data 事件
+3. 监听 req 的 end 事件
+4. 使用 querystring 模块解析请求体数据
+5. 将解析出来的数据对象挂载为 req.body
+6. 将自定义中间件封装为模块
