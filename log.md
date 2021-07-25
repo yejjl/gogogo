@@ -3222,3 +3222,10 @@ app.get('/', mw1, mw2, function (req, res) {});
 4. 使用 querystring 模块解析请求体数据
 5. 将解析出来的数据对象挂载为 req.body
 6. 将自定义中间件封装为模块
+
+#### 使用 Express 写接口
+
+1. 创建基本服务器
+2. 创建 api 路由模块
+3. 编写 get 接口
+4. 编写 post 请求
