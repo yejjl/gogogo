@@ -3229,3 +3229,59 @@ app.get('/', mw1, mw2, function (req, res) {});
 2. 创建 api 路由模块
 3. 编写 get 接口
 4. 编写 post 请求
+
+## cors+jsonp
+
+#### 接口跨域问题
+
+解决方法：
+
+1. cors（主流）
+2. jsonp
+
+#### cors 中间件
+
+-   使用：
+    1. 运行 npm i cors 安装中间件
+    2. 使用 const cors = require('cors')导入
+    3. 在路由前调用 app.use(cors())配置中间件
+-   注意事项：
+    1. cors 主要在服务器进行配置。客户端无需任何额外的配置
+    2. cors 只有在支持 XMLHttpRequest Level2 的浏览器中可以使用（ie10+,chrome4+,firfox3.5+）
+
+##### cors 响应头部
+
+-   Access-Cintrol-Allow-Origin：指定允许访问的外域资源 URL
+    **\***代表允许任何域的请求
+
+    ```js
+    res.setHeader('Access-Cintrol-Allow-Origin', 'http://itcast.cn');
+    ```
+
+-   Access-Cintrol-Allow-Header：对额外的请求头进行声明，否则请求失败
+    ```js
+    res.setHeader(
+    	'Access-Cintrol-Allow-Header',
+    	'Content-type,X-Custom-Header'
+    );
+    ```
+-   Access-Cintrol-Allow-Methods：默认只支持 GET、POST、HEAD 请求，若希望通过其他方式请求资源，则需要指明所允许使用的 HTTP 方法
+    ```js
+    res.setHeader('Access-Cintrol-Allow-Methods', 'GET,POST,HEAD,DELETE');
+    ```
+    **\***代表支持任何请求方式
+
+##### cors 请求分类
+
+-   简单请求：
+    1. 请求方式：get、post、head 三者之一
+    2. http 头部信息不超过以下几种：无自定义头部字段\ Accept\Accept-Language\DPR\Downlink\Save-Data\Viewport-Width\Width\Content-Type
+-   预检请求：
+
+    1. 请求方式：get、post、head 之外的 method 类型
+    2. 请求头部包含自定义头部
+    3. 向服务器发送了 application/json 格式的数据
+
+-   区别：
+    1. 简单：客户端与服务器之间只会发生一次请求
+    2. 预检：发生两次请求，OPTION 预检请求成功之后，才会发起真正的请求
