@@ -3285,3 +3285,77 @@ app.get('/', mw1, mw2, function (req, res) {});
 -   区别：
     1. 简单：客户端与服务器之间只会发生一次请求
     2. 预检：发生两次请求，OPTION 预检请求成功之后，才会发起真正的请求
+
+## 数据库
+
+#### 常见数据库及分类
+
+1. MySQL 数据库（Community+Enterprise）
+2. Oracle（收费）
+3. SQL Server 数据库（收费）
+4. Mongodb 数据库（Community+Enterprise）
+   其中 Mysq、Oracle、SQL Server 属于传统数据库，用法相似
+   Mongodb 属于新型数据库，弥补了传统型数据库的缺陷
+
+## sql
+
+#### select 语句
+
+```sql
+select username,password from user
+```
+
+#### insert into 语句
+
+```sql
+insert into table_name(list1,list2,...) values(value1,value2)
+```
+
+#### update 语句
+
+```sql
+update table_name set list_name = new_value where list_name = xxx
+```
+
+#### delete 语句
+
+```sql
+delete from table_name where list_name = xxx
+```
+
+#### where 子句
+
+```sql
+... where list_name 运算符 xxx
+```
+
+| 操作符  | 描述         |
+| :------ | :----------- |
+| =       | 等于         |
+| <>、!=  | 不等于       |
+| >       | 大于         |
+| <       | 小于         |
+| >=      | 大于等于     |
+| <=      | 小于等于     |
+| between | 在某个范围   |
+| like    | 搜索某种模式 |
+
+#### and\or 运算符
+
+在 where 子句中把多个条件结合起来
+
+#### order by 子句
+
+```sql
+... order by desc --降序，asc为升序
+-- 多重排序,先按status降序，再按username升序排列
+select * form user order by status DESC,username ASC
+```
+
+#### count 函数
+
+```sql
+select count(*) from table_name where ...
+--as 关键字，起别名
+select count(*) as total from table_name where ...
+```
