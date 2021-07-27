@@ -56,12 +56,46 @@
 // 	console.log('express server running at http://127.0.0.1:8080');
 // });
 //导入
-const express = require('express');
+// const express = require('express');
 
-//创建web服务器
-const app = express();
+// //创建web服务器
+// const app = express();
 
-//调用app.listen(端口号,回调函数)，启动服务器
-app.listen(8080, () => {
-	console.log('express server running at http://127.0.0.1:8080');
+// //调用app.listen(端口号,回调函数)，启动服务器
+// app.listen(8080, () => {
+// 	console.log('express server running at http://127.0.0.1:8080');
+// });
+const mysql = require('mysql');
+const db = mysql.createPool({
+	host: '127.0.0.1',
+	user: 'root',
+	password: '0000',
+	database: 'test',
+});
+// //测试
+// db.query('select 1', (err, results) => {
+// 	if (err) return console.log(err.message);
+
+// 	console.log(results);
+// });
+
+// const user_in = { id: 3, username: 'ccc', password: '2222', status: 1 };
+// const sqlStr2 =
+// 	'insert into user (id,username,password,status) values(?,?,?,?)';
+// db.query(
+// 	sqlStr2,
+// 	[user_in.id, user_in.username, user_in.password, user_in.status],
+// 	(err, results) => {
+// 		if (err) return console.log(err.message);
+// 		if (results.affectedRows === 1) {
+// 			console.log('插入成功');
+// 		}
+// 	}
+// );
+
+db.query('update user set status =1 where id=?', 3, (err, results) => {
+	if (err) return console.log(err.message);
+	if (results.affectedRows === 1) {
+		console.log('删除成功');
+	}
 });

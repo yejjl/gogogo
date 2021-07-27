@@ -3359,3 +3359,121 @@ select count(*) from table_name where ...
 --as 关键字，起别名
 select count(*) as total from table_name where ...
 ```
+
+#### 在项目中操作 mysql
+
+1. 安装 MySQL 数据库的第三方模块（**mysql**）
+2. 通过 MySQL 模块连接到 MySQL 数据库
+3. 通过 mysql 模块执行 sql 语句
+
+##### 安装、配置 mysql 模块
+
+```
+npm i mysql
+```
+
+```js
+//配置
+const mysql = require('mysql');
+const db = mysql.createPool({
+	host: '127.0.0.1',
+	user: 'root',
+	password: '0000',
+	database: 'test',
+});
+```
+
+##### 测试是否正常工作
+
+```js
+db.query('select 1', (err, results) => {
+	if (err) return console.log(err.message);
+
+	console.log(results);
+});
+```
+
+##### 查询数据
+
+**select 语句，执行结果为数组**
+
+```js
+const sqlStr = 'select * from user';
+db.query(sqlStr, (err, results) => {
+	if (err) return console.log(err.message);
+
+	console.log(results);
+});
+```
+
+##### 插入数据
+
+```js
+const user_in = { username: 'ccc', password: '2222', status: 1 };
+const sqlStr = 'insert into user (id,username,password,status) values(?,?,?,?)';
+db.query(
+	sqlStr,
+	[user_in.username, user_in.password, user_in.status],
+	(err, results) => {
+		if (err) return console.log(err.message);
+		if (results.affectedRows === 1) {
+			console.log('插入成功');
+		}
+	}
+);
+
+//便捷方法
+const user_in = { username: 'ccc', password: '2222', status: 1 };
+const sqlStr = 'insert into user set ?';
+db.query(sqlStr, user_in, (err, results) => {
+	if (err) return console.log(err.message);
+	if (results.affectedRows === 1) {
+		console.log('插入成功');
+	}
+});
+```
+
+##### 更新数据
+
+```js
+const user_in2 = { id: 2, username: 'bbb', status: 1 };
+const sqlStr2 = 'update user set username=? where id=?';
+db.query(sqlStr2, [user_in2.username, user_in2.id], (err, results) => {
+	if (err) return console.log(err.message);
+	if (results.affectedRows === 1) {
+		console.log('更新成功');
+	}
+});
+//便捷方式
+const user_in2 = { id: 2, username: 'bbb', status: 1 };
+const sqlStr2 = 'update user set ? where id=?';
+db.query(sqlStr2, [user_in2, user_in2.id], (err, results) => {
+	if (err) return console.log(err.message);
+	if (results.affectedRows === 1) {
+		console.log('更新成功');
+	}
+});
+```
+
+##### 删除数据
+
+**推荐根据唯一标识删除数据**
+
+```js
+const sqlStr3 = 'delete from user where id=?';
+
+db.query(sqlStr3, 1, (err, results) => {
+	if (err) return console.log(err.message);
+	if (results.affectedRows === 1) {
+		console.log('删除数据');
+	}
+});
+
+//标记删除
+db.query('update user set status =1 where id=?', 3, (err, results) => {
+	if (err) return console.log(err.message);
+	if (results.affectedRows === 1) {
+		console.log('删除成功');
+	}
+});
+```
