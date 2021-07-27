@@ -1,7 +1,7 @@
 <html>
   <head>
 	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>i5ting_ztree_toc:</title>
+    <title>i5ting_ztree_toc:log</title>
 		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
 		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
 		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
@@ -3181,11 +3181,507 @@ module.exports.sayHello = function () {
 <h5 id="-">包的分类</h5>
 <ul>
 <li>开发依赖包：被记录到 devDependencies 节点中，只在开发期间使用</li>
-<li><p>核心依赖包：被记录到 dependencies 节点中，在开发和项目上线后都会用到</p>
+<li>核心依赖包：被记录到 dependencies 节点中，在开发和项目上线后都会用到</li>
+<li>全局包：-g 参数</li>
+</ul>
+<h5 id="-">发布包</h5>
+<pre><code>//包目录下
+npm publish
+</code></pre><h5 id="-">模块的加载机制</h5>
+<ul>
+<li>模块第一次加载后会被缓存。优先从缓存加载模块</li>
+<li>内置模块的加载优先级最高</li>
+<li>没有&quot;./&quot;或者&quot;../&quot;开头，会被当作内置模块或者第三方模块进行加载</li>
+<li>省略后缀名的加载顺序：<ol>
+<li>按照确切的文件名进行加载</li>
+<li>补全.js 扩展名进行加载</li>
+<li>补全.json</li>
+<li>补全.node</li>
+<li>终端报错</li>
+</ol>
 </li>
-<li><p>全局包：-g 参数</p>
+<li>第三方模块会在父目录/node_modules 文件中加载，如果没找到会移动到再上一层进行加载，直到文件的根目录</li>
+<li>目录作为模块加载时：<ol>
+<li>在加载目录下查找 package.json 文件，并寻找 main 属性，作为 require()加载到入口</li>
+<li>如果没找到 package 文件，或者 main 入口无法解析，则会试图加载 index.js 文件</li>
+<li>上两步都失败，则报告模块缺失：Error:Cannot find module &#39;xxx&#39;</li>
+</ol>
 </li>
 </ul>
+<h2 id="express">express</h2>
+<p>用来创建 Web 服务器</p>
+<h4 id="-">安装</h4>
+<pre><code>npm i express@4.17.1
+</code></pre><h4 id="-">使用</h4>
+<pre><code class="lang-js">//导入
+const express = require(&#39;express&#39;);
+//创建web服务器
+const app = express();
+//调用app.listen(端口号,回调函数)，启动服务器
+app.listen(80, () =&gt; {
+    console.log(&#39;express server running at http://127.0.0.1:8080&#39;);
+});
+</code></pre>
+<h4 id="-">监听请求</h4>
+<pre><code class="lang-js">//get
+app.get(&#39;请求url&#39;, function (req, res) {
+    res.send({ name: &#39;zs&#39;, age: &#39;18&#39;, gender: &#39;男&#39; });
+});
+//post
+app.post(&#39;请求url&#39;, function (req, res) {
+    res.send(&#39;请求成功&#39;);
+});
+</code></pre>
+<h4 id="-url-">获取 url 中的参数</h4>
+<pre><code class="lang-js">//req.query对象可以访问到客户端通过查询字符串的形式，发送到服务器的查询参数
+app.get(&#39;/&#39;, (req, res) =&gt; {
+    console.log(req.query);
+});
+
+//获取动态参数
+app.get(&#39;/user:id&#39;, function (req, res) {
+    console.log(req.params);
+});
+</code></pre>
+<p><strong>通过 req.params 对象，可以访问到 url 中，通过:（冒号）匹配到的动态参数</strong></p>
+<h4 id="-">托管静态资源</h4>
+<pre><code class="lang-js">app.use(express.static(&#39;public&#39;));
+
+//添加前缀地址
+app.use(&#39;/static&#39;, express.static(&#39;public&#39;));
+</code></pre>
+<h4 id="nodemon">nodemon</h4>
+<p>自动重启项目</p>
+<h4 id="express-">express 中的路由</h4>
+<ul>
+<li>在 Express 中，路由指的是客户端的请求和服务器处理函数之间的映射关系</li>
+<li>组成：<ol>
+<li>请求类型</li>
+<li>请求的 url 地址</li>
+<li>处理函数</li>
+</ol>
+</li>
+<li>格式<pre><code class="lang-js">app.METHOD(PATH, HANDLER);
+</code></pre>
+</li>
+</ul>
+<h5 id="-">路由的匹配过程</h5>
+<p>每当一个请求到达服务器之后，需要先经过路由的匹配，只有匹配成功才会处理对应函数</p>
+<h5 id="-">最简单用法</h5>
+<pre><code class="lang-js">//挂载路由
+app.get(&#39;/&#39;, (req, res) =&gt; {});
+</code></pre>
+<h5 id="-">模块化路由</h5>
+<ol>
+<li>创建路由模块对应的.js 文件</li>
+<li>调用 express.Router()函数创建路由对象</li>
+<li>向路由对象上挂载具体的路由</li>
+<li>使用 module.esports 向外共享路由对象</li>
+<li>使用 app.use()函数注册路由模块</li>
+</ol>
+<pre><code class="lang-js">var express = require(&#39;express&#39;);
+var router = express.Router();
+
+router.get(&#39;/&#39;, (req, res) =&gt; {});
+
+module.exports = router;
+</code></pre>
+<h5 id="-">注册路由模块</h5>
+<pre><code class="lang-js">//导入路由模块
+const router = require(&#39;./router.js&#39;);
+app.use(router);
+</code></pre>
+<p><strong>app.use 的作用就是注册全局中间件</strong></p>
+<h5 id="-">为路由模块添加访问前缀</h5>
+<pre><code class="lang-js">app.use(&#39;/api&#39;, router);
+</code></pre>
+<h2 id="-">中间件</h2>
+<h4 id="express-">Express 中间件的调用流程</h4>
+<p>当一个请求到达 express 服务器之后，可以连续调用多个中间件，从而对这次请求进行预处理</p>
+<h4 id="express-">Express 中间件格式</h4>
+<p>Express 的中间件，本质上就是一个 function 处理函数，<strong>中间件函数的形参列表中，必须包含 next 参数。而路由处理函数中只包含 req、res</strong></p>
+<h5 id="next-">next 函数</h5>
+<p>是实现多个中间件连续调用的关键，它表示把流派关系转交给下一个中间件或路由</p>
+<h4 id="-">定义中间件函数</h4>
+<pre><code class="lang-js">const mw = function (req, res, next) {
+    next();
+};
+</code></pre>
+<h4 id="-">全局生效中间件</h4>
+<p>客户端发起任何请求，到达服务器之后，都会触发的中间件，叫做全局生效的中间件。</p>
+<pre><code class="lang-js">const mw = function (req, res, next) {
+    next();
+};
+app.use(mw);
+
+//简化形式
+app.use(function (req, res, next) {
+    next();
+};)
+</code></pre>
+<h4 id="-">中间件的作用</h4>
+<p>多个中间件之间，共享同一份 req 和 res。基于这样的特性，我们可以在上游的中间件中，统一为 req、res 对象添加自定义的属性或方法，供下游的中间件或路由进行使用。</p>
+<h4 id="-">局部生效的中间件</h4>
+<p>不使用 app.use()定义的中间件，叫做局部生效中间件</p>
+<pre><code class="lang-js">const mw1 = function (req, res, next) {
+    next();
+};
+const mw2 = function (req, res, next) {
+    next();
+};
+app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
+</code></pre>
+<h4 id="-">中间件的注意事项</h4>
+<ol>
+<li>要在路由之前注册中间件</li>
+<li>不要忘记调用 next 函数</li>
+</ol>
+<h4 id="express-">Express 中间件的分类</h4>
+<ol>
+<li>应用级别的中间件：
+通过 app.use()或 app.get()、app.post()，绑定到 app 实例上的中间件，叫应用级别中间件</li>
+<li>路由级别的中间件：
+绑定到 app.Router()的中间件，叫做路由级别的中间件。与应用级别中间件无异</li>
+<li>错误级别的中间件：
+专门用来捕获整个项目中发生的异常错误，从而防止项目异常崩溃问题。
+必须有 4 个参数(err,erq,ers,next)</li>
+<li>Express 内置中间件：<ol>
+<li>express.static</li>
+<li>express.json 解析 json 格式请求数据 req.body</li>
+<li>express.urlencoded 解析 URL-encoded 格式的请求数据</li>
+</ol>
+</li>
+<li>第三方中间件</li>
+</ol>
+<h4 id="-">自定义中间件</h4>
+<ol>
+<li>定义中间件</li>
+<li>监听 req 的 data 事件</li>
+<li>监听 req 的 end 事件</li>
+<li>使用 querystring 模块解析请求体数据</li>
+<li>将解析出来的数据对象挂载为 req.body</li>
+<li>将自定义中间件封装为模块</li>
+</ol>
+<h4 id="-express-">使用 Express 写接口</h4>
+<ol>
+<li>创建基本服务器</li>
+<li>创建 api 路由模块</li>
+<li>编写 get 接口</li>
+<li>编写 post 请求</li>
+</ol>
+<h2 id="cors-jsonp">cors+jsonp</h2>
+<h4 id="-">接口跨域问题</h4>
+<p>解决方法：</p>
+<ol>
+<li>cors（主流）</li>
+<li>jsonp</li>
+</ol>
+<h4 id="cors-">cors 中间件</h4>
+<ul>
+<li>使用：<ol>
+<li>运行 npm i cors 安装中间件</li>
+<li>使用 const cors = require(&#39;cors&#39;)导入</li>
+<li>在路由前调用 app.use(cors())配置中间件</li>
+</ol>
+</li>
+<li>注意事项：<ol>
+<li>cors 主要在服务器进行配置。客户端无需任何额外的配置</li>
+<li>cors 只有在支持 XMLHttpRequest Level2 的浏览器中可以使用（ie10+,chrome4+,firfox3.5+）</li>
+</ol>
+</li>
+</ul>
+<h5 id="cors-">cors 响应头部</h5>
+<ul>
+<li><p>Access-Cintrol-Allow-Origin：指定允许访问的外域资源 URL
+<strong>*</strong>代表允许任何域的请求</p>
+<pre><code class="lang-js">res.setHeader(&#39;Access-Cintrol-Allow-Origin&#39;, &#39;http://itcast.cn&#39;);
+</code></pre>
+</li>
+<li><p>Access-Cintrol-Allow-Header：对额外的请求头进行声明，否则请求失败</p>
+<pre><code class="lang-js">res.setHeader(
+    &#39;Access-Cintrol-Allow-Header&#39;,
+    &#39;Content-type,X-Custom-Header&#39;
+);
+</code></pre>
+</li>
+<li>Access-Cintrol-Allow-Methods：默认只支持 GET、POST、HEAD 请求，若希望通过其他方式请求资源，则需要指明所允许使用的 HTTP 方法<pre><code class="lang-js">res.setHeader(&#39;Access-Cintrol-Allow-Methods&#39;, &#39;GET,POST,HEAD,DELETE&#39;);
+</code></pre>
+<strong>*</strong>代表支持任何请求方式</li>
+</ul>
+<h5 id="cors-">cors 请求分类</h5>
+<ul>
+<li>简单请求：<ol>
+<li>请求方式：get、post、head 三者之一</li>
+<li>http 头部信息不超过以下几种：无自定义头部字段\ Accept\Accept-Language\DPR\Downlink\Save-Data\Viewport-Width\Width\Content-Type</li>
+</ol>
+</li>
+<li><p>预检请求：</p>
+<ol>
+<li>请求方式：get、post、head 之外的 method 类型</li>
+<li>请求头部包含自定义头部</li>
+<li>向服务器发送了 application/json 格式的数据</li>
+</ol>
+</li>
+<li><p>区别：</p>
+<ol>
+<li>简单：客户端与服务器之间只会发生一次请求</li>
+<li>预检：发生两次请求，OPTION 预检请求成功之后，才会发起真正的请求</li>
+</ol>
+</li>
+</ul>
+<h2 id="-">数据库</h2>
+<h4 id="-">常见数据库及分类</h4>
+<ol>
+<li>MySQL 数据库（Community+Enterprise）</li>
+<li>Oracle（收费）</li>
+<li>SQL Server 数据库（收费）</li>
+<li>Mongodb 数据库（Community+Enterprise）
+其中 Mysq、Oracle、SQL Server 属于传统数据库，用法相似
+Mongodb 属于新型数据库，弥补了传统型数据库的缺陷</li>
+</ol>
+<h2 id="sql">sql</h2>
+<h4 id="select-">select 语句</h4>
+<pre><code class="lang-sql">select username,password from user
+</code></pre>
+<h4 id="insert-into-">insert into 语句</h4>
+<pre><code class="lang-sql">insert into table_name(list1,list2,...) values(value1,value2)
+</code></pre>
+<h4 id="update-">update 语句</h4>
+<pre><code class="lang-sql">update table_name set list_name = new_value where list_name = xxx
+</code></pre>
+<h4 id="delete-">delete 语句</h4>
+<pre><code class="lang-sql">delete from table_name where list_name = xxx
+</code></pre>
+<h4 id="where-">where 子句</h4>
+<pre><code class="lang-sql">... where list_name 运算符 xxx
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&gt;、!=</td>
+<td style="text-align:left">不等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">大于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">小于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;=</td>
+<td style="text-align:left">小于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">between</td>
+<td style="text-align:left">在某个范围</td>
+</tr>
+<tr>
+<td style="text-align:left">like</td>
+<td style="text-align:left">搜索某种模式</td>
+</tr>
+</tbody>
+</table>
+<h4 id="and-or-">and\or 运算符</h4>
+<p>在 where 子句中把多个条件结合起来</p>
+<h4 id="order-by-">order by 子句</h4>
+<pre><code class="lang-sql">... order by desc --降序，asc为升序
+-- 多重排序,先按status降序，再按username升序排列
+select * form user order by status DESC,username ASC
+</code></pre>
+<h4 id="count-">count 函数</h4>
+<pre><code class="lang-sql">select count(*) from table_name where ...
+--as 关键字，起别名
+select count(*) as total from table_name where ...
+</code></pre>
+<h4 id="-mysql">在项目中操作 mysql</h4>
+<ol>
+<li>安装 MySQL 数据库的第三方模块（<strong>mysql</strong>）</li>
+<li>通过 MySQL 模块连接到 MySQL 数据库</li>
+<li>通过 mysql 模块执行 sql 语句</li>
+</ol>
+<h5 id="-mysql-">安装、配置 mysql 模块</h5>
+<pre><code>npm i mysql
+</code></pre><pre><code class="lang-js">//配置
+const mysql = require(&#39;mysql&#39;);
+const db = mysql.createPool({
+    host: &#39;127.0.0.1&#39;,
+    user: &#39;root&#39;,
+    password: &#39;0000&#39;,
+    database: &#39;test&#39;,
+});
+</code></pre>
+<h5 id="-">测试是否正常工作</h5>
+<pre><code class="lang-js">db.query(&#39;select 1&#39;, (err, results) =&gt; {
+    if (err) return console.log(err.message);
+
+    console.log(results);
+});
+</code></pre>
+<h5 id="-">查询数据</h5>
+<p><strong>select 语句，执行结果为数组</strong></p>
+<pre><code class="lang-js">const sqlStr = &#39;select * from user&#39;;
+db.query(sqlStr, (err, results) =&gt; {
+    if (err) return console.log(err.message);
+
+    console.log(results);
+});
+</code></pre>
+<h5 id="-">插入数据</h5>
+<pre><code class="lang-js">const user_in = { username: &#39;ccc&#39;, password: &#39;2222&#39;, status: 1 };
+const sqlStr = &#39;insert into user (id,username,password,status) values(?,?,?,?)&#39;;
+db.query(
+    sqlStr,
+    [user_in.username, user_in.password, user_in.status],
+    (err, results) =&gt; {
+        if (err) return console.log(err.message);
+        if (results.affectedRows === 1) {
+            console.log(&#39;插入成功&#39;);
+        }
+    }
+);
+
+//便捷方法
+const user_in = { username: &#39;ccc&#39;, password: &#39;2222&#39;, status: 1 };
+const sqlStr = &#39;insert into user set ?&#39;;
+db.query(sqlStr, user_in, (err, results) =&gt; {
+    if (err) return console.log(err.message);
+    if (results.affectedRows === 1) {
+        console.log(&#39;插入成功&#39;);
+    }
+});
+</code></pre>
+<h5 id="-">更新数据</h5>
+<pre><code class="lang-js">const user_in2 = { id: 2, username: &#39;bbb&#39;, status: 1 };
+const sqlStr2 = &#39;update user set username=? where id=?&#39;;
+db.query(sqlStr2, [user_in2.username, user_in2.id], (err, results) =&gt; {
+    if (err) return console.log(err.message);
+    if (results.affectedRows === 1) {
+        console.log(&#39;更新成功&#39;);
+    }
+});
+//便捷方式
+const user_in2 = { id: 2, username: &#39;bbb&#39;, status: 1 };
+const sqlStr2 = &#39;update user set ? where id=?&#39;;
+db.query(sqlStr2, [user_in2, user_in2.id], (err, results) =&gt; {
+    if (err) return console.log(err.message);
+    if (results.affectedRows === 1) {
+        console.log(&#39;更新成功&#39;);
+    }
+});
+</code></pre>
+<h5 id="-">删除数据</h5>
+<p><strong>推荐根据唯一标识删除数据</strong></p>
+<pre><code class="lang-js">const sqlStr3 = &#39;delete from user where id=?&#39;;
+
+db.query(sqlStr3, 1, (err, results) =&gt; {
+    if (err) return console.log(err.message);
+    if (results.affectedRows === 1) {
+        console.log(&#39;删除数据&#39;);
+    }
+});
+
+//标记删除
+db.query(&#39;update user set status =1 where id=?&#39;, 3, (err, results) =&gt; {
+    if (err) return console.log(err.message);
+    if (results.affectedRows === 1) {
+        console.log(&#39;删除成功&#39;);
+    }
+});
+</code></pre>
+<h2 id="web-">web 开发模式</h2>
+<ol>
+<li>基于服务端渲染的传统 web 开发模式</li>
+<li>基于前后端分离的新型 web 开发模式<ul>
+<li>优点：<ol>
+<li>开发体验好</li>
+<li>用户体验好</li>
+<li>减轻了服务器端的渲染压力</li>
+</ol>
+</li>
+<li>缺点：<ol>
+<li>不利于 seo</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="-">身份认证</h2>
+<p>方案：</p>
+<ol>
+<li>服务端渲染推荐 session</li>
+<li>前后端分离推荐 jwt</li>
+</ol>
+<h4 id="session-">session 认证机制</h4>
+<h5 id="http-">http 协议的无状态性</h5>
+<p>客户端的每次 HTTP 请求都是独立的，服务器不会主动保留每次 HTTP 请求的状态</p>
+<h6 id="-">突破无状态限制</h6>
+<ul>
+<li>cookie：存储在浏览器的一段不超过 4KB 的字符串。由一个名称、一个值和其它用于控制有效期、安全性、使用范围的可选属性组成</li>
+<li>不同域名下 cookie 各自独立</li>
+<li>特性：<ol>
+<li>自动发送</li>
+<li>域名独立</li>
+<li>过期时限</li>
+<li>4KB 限制</li>
+</ol>
+</li>
+</ul>
+<h5 id="session-">session 中间件使用</h5>
+<ul>
+<li>安装</li>
+</ul>
+<pre><code>npm i express-session
+</code></pre><ul>
+<li>配置</li>
+</ul>
+<pre><code class="lang-js">const session = require(&#39;express-session&#39;);
+
+app.use(
+    session({
+        secret: &#39;keyboard cat&#39;, //secert的值可以为任意字符串
+        resave: false, //固定写法
+        saveUninitialized: true, //固定写法
+    })
+);
+</code></pre>
+<ul>
+<li>存数据</li>
+</ul>
+<pre><code class="lang-js">req.session.user = req.body; //存储用户信息
+req.session.isLogin = true; //存储用户状态
+</code></pre>
+<ul>
+<li>取数据</li>
+</ul>
+<pre><code class="lang-js">if (req.session.isLogin) {
+    return;
+}
+res.send({
+    username: req.session.user.username,
+});
+</code></pre>
+<ul>
+<li>清空</li>
+</ul>
+<pre><code class="lang-js">//仅当前用户
+req.session.destroy();
+</code></pre>
 
           	</article>
         </div>

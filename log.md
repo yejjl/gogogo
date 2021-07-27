@@ -10,7 +10,7 @@
 2. 结构伪类结构选择器  
    ![](media/img/伪类结构选择器.png)
 
-#### nth-child(n)
+### nth-child(n)
 
 ![](media/img/nth-child.png)
 ==能否实现:hover:nth-child(x)?==
@@ -33,17 +33,17 @@
 
 ## javascript
 
-#### 浏览器执行过程
+### 浏览器执行过程
 
     js引擎将js语言逐行转为机  器语言。
 
-#### js 组成
+### js 组成
 
 -   ECMAScript：规定了 js 编程语法和核心知识
 -   DOM：文档模型
 -   BOM：浏览器对象模型
 
-#### 输入输出语句
+### 输入输出语句
 
 -   prompt("输入框");//得到字符型
 -   console.log("控制台输出");
@@ -54,7 +54,7 @@
 用于存放数据的容器；
 程序在内存中申请的一块存放数据的空间；
 
-#### 变量的使用
+### 变量的使用
 
 1. 声明变量
     ```javascript
@@ -67,7 +67,7 @@
     age = 18;
     ```
 
-#### 声明变量的特殊情况
+### 声明变量的特殊情况
 
 1. 只声明不赋值
     ```javascript
@@ -87,7 +87,7 @@
         --110
     ```
 
-#### 变量命名规范
+### 变量命名规范
 
 -   由字母、数字、下划线、美元符号组成；
 -   严格区分大小写；
@@ -102,7 +102,7 @@
 变量会在程序运行过程中，根据等号右边的值来确定；
 变量的数据类型可以变化；
 
-#### 简单数据类型
+### 简单数据类型
 
 | 类型      | 默认值    |
 | :-------- | :-------- |
@@ -152,14 +152,14 @@
 5. null
     - 值为空；
 
-#### typeof
+### typeof
 
 ```javascript
 var num = 10;
 console.log(typeof num); //number
 ```
 
-#### 字符类型转换
+### 字符类型转换
 
 -   转换为字符串
     |方式|案例|
@@ -447,7 +447,7 @@ console.log(typeof num); //number
 -   属性：事物的特征
 -   方法：事物的行为
 
-#### 创建对象
+### 创建对象
 
 1. 利用字面量创建
 
@@ -628,18 +628,18 @@ ldh.sing('sang');
 2. Web API
    浏览器提供的一套操作浏览器功能和页面元素的 api（BOM\DOM）
 
-#### DOM
+### DOM
 
     文档对象模型，处理可扩展标记语言的编程接口
 
-##### DOM 树
+#### DOM 树
 
 1. 文档：一个页面就是一个文档，DOM 中用 document 表示
 2. 元素：页面中所有标签都是元素，DOM 中用 element 表示
 3. 节点：网页中所有内容都是节点，DOM 中用 node 表示
    ==dom 把以上内容都看作对象==
 
-##### 获取元素
+#### 获取元素
 
 -   根据 id 获取
     document.getElementById(id)方法
@@ -662,7 +662,7 @@ ldh.sing('sang');
     -   html
         document.documentElement
 
-##### 事件基础
+#### 事件基础
 
 事件：触发响应的机制
 
@@ -680,7 +680,7 @@ ldh.sing('sang');
     - 注册事件
     - 添加事件处理程序
 
-##### 操作元素
+#### 操作元素
 
 1. 改变元素内容
 
@@ -698,7 +698,7 @@ ldh.sing('sang');
 3. 修改样式属性
    元素.style.样式属性（驼峰）= '';
 
-##### 节点操作
+#### 节点操作
 
 1. 父级节点
     ```javascript
@@ -774,7 +774,7 @@ ldh.sing('sang');
 
 ## 事件
 
-#### 注册事件
+### 注册事件
 
     两种方式：传统、方法监听
     传统DOM绑定只有第一个生效；脚本绑定只有最后一个生效
@@ -793,7 +793,7 @@ ldh.sing('sang');
        eventTarget.removeEventListener('type',listener[,useCapture])
     ```
 
-#### DOM 事件流
+### DOM 事件流
 
 事件传播的过程
 三阶段：
@@ -805,7 +805,7 @@ ldh.sing('sang');
     **js 代码只能执行捕获或者冒泡的其中一个阶段**
     **onclick 和 attachEvent 只能得到冒泡阶段**
 
-#### 常见的对象属性和方法
+### 常见的对象属性和方法
 
 | 方法               | 说明                           |
 | :----------------- | :----------------------------- |
@@ -817,7 +817,7 @@ ldh.sing('sang');
 | e.preventDefault() | 阻止默认事件如链接跳转         |
 | e.stopPropagation  | 阻止冒泡                       |
 
-#### 事件委托
+### 事件委托
 
 注册事件写在父元素，利用 e.属性完成事件
 
@@ -834,7 +834,7 @@ document.getElementById('list').addEventListener('click', function (e) {
 });
 ```
 
-#### 鼠标事件对象
+### 鼠标事件对象
 
 | 鼠标事件对象 | 说明                          |
 | :----------- | :---------------------------- |
@@ -853,7 +853,7 @@ document.getElementById('list').addEventListener('click', function (e) {
 -   BOM 学习的是浏览器窗口交互的一些对象
 -   BOM 是浏览器厂商在各自浏览器上定义的，兼容性差
 
-#### 常用事件
+### 常用事件
 
 1. 窗口加载事件
 
@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', function () {});
 window.addEventListener('resize', function () {});
 ```
 
-#### 定时器
+### 定时器
 
 1. setTimeout()
 
@@ -896,7 +896,7 @@ window.clearTimer(timer);
 5. clearInterval
    同 clearTimer()
 
-##### this 指向问题
+#### this 指向问题
 
 指向调用者
 
@@ -924,9 +924,9 @@ function Fun() {
 var fun = new fun();
 ```
 
-#### js 执行队列
+### js 执行队列
 
-##### 同步、异步
+#### 同步、异步
 
 1. 同步任务
    同步任务在主线程上执行，形成一个执行栈
@@ -936,13 +936,13 @@ var fun = new fun();
     - 资源加载，load、error 等
     - 定时器，setInterval、setTimer 等
 
-##### 执行机制
+#### 执行机制
 
 1. 先执行栈中的同步任务
 2. 异步任务（回调函数）放入任务队列
 3. 同步任务执行完毕，依次执行任务队列中的任务，被读取的任务结束等待状态，进入执行栈
 
-#### location 对象
+### location 对象
 
 用于获取或设置窗体的 URL，并且可以解析 URL
 
@@ -961,11 +961,11 @@ var fun = new fun();
 | location.replace() | 替换当前页面，不记录历史，不能后退页面 |
 | location.reload()  | 刷新页面 参数为 true 时 强制刷新       |
 
-#### navigator 对象
+### navigator 对象
 
 包含浏览器的相关信息
 
-#### histor
+### histor
 
 | history 对象方法 | 作用                                                         |
 | :--------------- | :----------------------------------------------------------- |
@@ -975,7 +975,7 @@ var fun = new fun();
 
 ## offset\client\scroll
 
-#### offset
+### offset
 
 动态的得到元素的偏移量
 
@@ -987,11 +987,11 @@ var fun = new fun();
 | element.offsetWidth  | 返回自身包括 padding、边框、内容区的宽度，无单位 |
 | element.offsetHeight | 返回自身包括 padding、边框、内容区的高度，无单位 |
 
-##### client
+#### client
 
 与 offset 相似，不包含边框
 
-##### 立即执行函数
+#### 立即执行函数
 
 独立创建了一个作用域，里面所有的变量都是局部变量，不会命名冲突
 
@@ -999,7 +999,7 @@ var fun = new fun();
 (function () {})();
 ```
 
-##### scroll
+#### scroll
 
 | scroll 属性          | 作用                      |
 | :------------------- | :------------------------ |
@@ -1042,7 +1042,7 @@ function animate(obj, target, callback) {
 
 ## 移动端网页特效
 
-#### 触屏事件
+### 触屏事件
 
 1.  | 触屏 touch 事件 |                                 |
     | :-------------- | :------------------------------ |
@@ -1152,7 +1152,7 @@ element.addEventListener('touchmove', function (e) {
 
 ## 数据可视化
 
-#### 什么是数据可视化
+### 什么是数据可视化
 
 1. 目的
     - 借助图形化手段，清晰有效的表达与沟通信息
@@ -1165,7 +1165,7 @@ element.addEventListener('touchmove', function (e) {
     - Highcharts.js 国外库，非商用免费
     - AntV 蚂蚁金服
 
-#### ECharts
+### ECharts
 
 1. 基本使用
     - 引入文件
@@ -1176,7 +1176,7 @@ element.addEventListener('touchmove', function (e) {
 
 ## es6
 
-#### 面向对象概述
+### 面向对象概述
 
 -   pop/面向过程：按照步骤解决问题
     1. 优点：性能较高，适合跟硬件联系紧密的东西
@@ -1189,7 +1189,7 @@ element.addEventListener('touchmove', function (e) {
     -   继承性
     -   多态性
 
-#### 类和对象
+### 类和对象
 
 -   类：设计图
 -   对象：通过设计图产生的具体物品
@@ -1305,7 +1305,7 @@ element.addEventListener('touchmove', function (e) {
 
 ## 构造函数和原型
 
-#### 概述
+### 概述
 
 **构造函数存在浪费内存的问题**
 
@@ -1325,7 +1325,7 @@ var ldh = new Star('ldh');
 //静态成员只能通过构造函数访问
 ```
 
-#### 原型 prototype
+### 原型 prototype
 
 ```javascript
 //  共享的函数可以存放在 原型对象 内
@@ -1341,7 +1341,7 @@ var ldh = new Star('ldh');
 //方法的查找原则：首先看实例对象身上是否有查找的方法，若没有，因为有__proto__存在，则去构造函数原型对象prototype上去找
 ```
 
-##### 构造函数 constructor
+#### 构造函数 constructor
 
 用于记录该对象引用于哪个构造函数
 
@@ -1357,15 +1357,15 @@ console.log(Star.prototype.constructor); //Star(uname){}
 console.log(ldh.__proto__.constructor); //Star(uname){}
 ```
 
-##### 构造函数、实例、原型对象三者关系
+#### 构造函数、实例、原型对象三者关系
 
 ![](/media/img/构造函数.PNG)
 
-##### 原型链
+#### 原型链
 
 ![](/media/img/原型链.PNG)
 
-##### js 的成员查找机制
+#### js 的成员查找机制
 
 1. 当访问一个对象的属性（包括方法）时，首先查找这个==对象自身==有没有该属性
 2. 如果没有就查找它的原型（也就是**proto**指向的==prototype 原型对象==）
@@ -1373,12 +1373,12 @@ console.log(ldh.__proto__.constructor); //Star(uname){}
 4. 依次类推一直找到 Object 为止（==null==）
 5. **proto**对象原型的意义就在于为对象成员查找机制提供一个方向
 
-##### 原型对象的 this 指向
+#### 原型对象的 this 指向
 
 1. 在构造函数中，里面的 this 指向对象实例
 2. 原型对象函数里面的 this 指向实例对象
 
-##### 扩展内置对象
+#### 扩展内置对象
 
 ```javascript
 Array.prototype.sum = function () {
@@ -1392,9 +1392,9 @@ var arr = [1, 2, 3];
 console.log(arr.sum());
 ```
 
-#### 继承
+### 继承
 
-##### call
+#### call
 
 ```javascript
 // 调用函数，并修改this指向
@@ -1409,7 +1409,7 @@ var o = {
 fn.call(o, 1, 2); //此时this指向o
 ```
 
-##### 利用父构造函数继承属性
+#### 利用父构造函数继承属性
 
 ```javascript
 function Father(uname, age) {
@@ -1427,7 +1427,7 @@ function Son(uname, age) {
 Son.prototype = Father.prototype;
 ```
 
-##### 利用原型对象继承方法
+#### 利用原型对象继承方法
 
 ```javascript
 function Father(uname, age) {
@@ -1449,7 +1449,7 @@ Son.prototype.constructor = Son;
 
 ## 函数进阶
 
-#### 函数定义
+### 函数定义
 
 1. 声明函数
 2. 匿名函数
@@ -1460,7 +1460,7 @@ Son.prototype.constructor = Son;
     //函数也属于对象
     ```
 
-#### 函数调用方式
+### 函数调用方式
 
 1. 普通函数
     ```javascript
@@ -1503,7 +1503,7 @@ Son.prototype.constructor = Son;
     //自动调用
     ```
 
-#### 函数内部 this 指向
+### 函数内部 this 指向
 
 1. 普通函数
     ```javascript
@@ -1553,7 +1553,7 @@ Son.prototype.constructor = Son;
     //指向window
     ```
 
-#### call 方法
+### call 方法
 
 ```javascript
 var o = {
@@ -1569,7 +1569,7 @@ function Son() {
 }
 ```
 
-#### apply 方法
+### apply 方法
 
 ```javascript
 var o = {
@@ -1583,13 +1583,13 @@ var arr = [1, 12, 33];
 Math.max.apply(Math, arr);
 ```
 
-#### bind 方法
+### bind 方法
 
 -   改变函数的调用者
 -   语法规范同 apply，不会调用函数
 -   返回值为函数的拷贝
 
-##### bind 应用
+#### bind 应用
 
 ```javascript
 btn.onclick = function () {
@@ -1597,21 +1597,21 @@ btn.onclick = function () {
 };
 ```
 
-#### 严格模式//ie10+
+### 严格模式//ie10+
 
 1. 消除了 js 语法的一些不合理之处
 2. 消除了一些不安全之处
 3. 提高了编译效率
 4. 禁用了一些未来可能会定义的语法，为新版本铺垫
 
-##### 开启严格模式
+#### 开启严格模式
 
 -   为整个脚本
     写在开头'use strict'
 -   为个别函数
     写在函数内部'use strict'
 
-##### 严格模式的变化
+#### 严格模式的变化
 
 1. 变量必须先声明再使用
 2. 严禁删除已经声明的变量
@@ -1620,13 +1620,13 @@ btn.onclick = function () {
 5. 函数不能有重名参数
 6. 函数必须声明在顶层
 
-#### 高阶函数
+### 高阶函数
 
 -   作为参数的或 return 的是函数
 
-#### 闭包
+### 闭包
 
-##### 定义
+#### 定义
 
 > 闭包指有权访问另一个函数作用域中变量的函数。
 
@@ -1643,7 +1643,7 @@ function fn() {
 fn();
 ```
 
-##### 作用
+#### 作用
 
 **主要作用：延伸变量的作用范围**
 
@@ -1658,7 +1658,7 @@ function fn() {
 var f = fn();
 ```
 
-##### 案例
+#### 案例
 
 1.  ```javascript
     for (var i = 0; i < lis.length; i++) {
@@ -1702,12 +1702,12 @@ var car = function () {
 car.price();
 ```
 
-#### 递归
+### 递归
 
 如果一个函数在内部可以调用其本身，那么就是递归函数。
 **为避免栈溢出，要添加推出条件 return**
 
-##### 根据 id 返回数据对象
+#### 根据 id 返回数据对象
 
 ```javascript
 var data = [
@@ -1747,9 +1747,9 @@ function getID(json, id) {
 console.log(getID(data, 11));
 ```
 
-#### 拷贝
+### 拷贝
 
-##### 浅拷贝
+#### 浅拷贝
 
 ```javascript
 var obj = {
@@ -1765,7 +1765,7 @@ Object.assign(o, obj);
 console.log(o);
 ```
 
-##### 深拷贝
+#### 深拷贝
 
 ```javascript
 var obj = {
@@ -1808,7 +1808,7 @@ console.log(o);
 -   对新人来说晦涩难懂
 -   实际开发一般直接复制写好的正则表达式
 
-#### 使用
+### 使用
 
 1. 通过 RegExp 创建
 
@@ -1822,23 +1822,23 @@ var regexp = new RegExp(/123/);
 var rg = /123/;
 ```
 
-##### 测试正则
+#### 测试正则
 
 ```javascript
 var rg = /123/;
 console.log(rg.test(123));
 ```
 
-#### 正则表达式中的特殊字符
+### 正则表达式中的特殊字符
 
-##### 边界符
+#### 边界符
 
 | 边界符 | 说明     |
 | :----- | :------- |
 | ^      | 以谁开始 |
 | $      | 以谁结束 |
 
-##### 字符类
+#### 字符类
 
 | 符号     | 说明                                   |
 | :------- | :------------------------------------- |
@@ -1847,7 +1847,7 @@ console.log(rg.test(123));
 | [a-zA-Z] | 大小写字母都可                         |
 | [^a-z]   | 取反，不能包含小写字母                 |
 
-##### 量词符
+#### 量词符
 
 |       |                   |
 | :---- | :---------------- |
@@ -1863,7 +1863,7 @@ var reg = /^[a-zA-Z0-9_-]{6,16}$/;
 console.log(reg.test('aaaaaa')); //true
 ```
 
-##### 预定义类
+#### 预定义类
 
 | 预定类 | 说明                |
 | :----- | :------------------ |
@@ -1874,7 +1874,7 @@ console.log(reg.test('aaaaaa')); //true
 | \s     | 相当于[\t\r\n\v\f]  |
 | \S     | 相当于[^\t\r\n\v\f] |
 
-#### 正则替换
+### 正则替换
 
 ```javascript
 var str = 'andy和red';
@@ -1885,7 +1885,7 @@ var newstr = str.replace(/andy|red/gi, 'dady');
 
 ## es6 新增语法
 
-#### let
+### let
 
 -   let 声明的变量只在所在块级有效
 
@@ -1913,7 +1913,7 @@ if (true) {
 }
 ```
 
-##### 经典面试题
+#### 经典面试题
 
 ```javascript
 var arr = [];
@@ -1938,7 +1938,7 @@ arr[0](); //0
 arr[1](); //1
 ```
 
-#### const
+### const
 
 作用：声明常量
 
@@ -1946,14 +1946,14 @@ arr[1](); //1
 -   声明时必须赋初始值
 -   声明的常量值不能修改，数组内部值可以修改,不能重新赋值
 
-#### 解构赋值
+### 解构赋值
 
 ```javascript
 let ary = [1, 2, 3];
 let [a, b, c] = ary;
 ```
 
-##### 对象解构
+#### 对象解构
 
 ```javascript
 let ary = { name: 'zs', age: 18 };
@@ -1966,17 +1966,17 @@ console.log(myname);
 console.log(myage);
 ```
 
-#### 箭头函数
+### 箭头函数
 
 ```javascript
 const fn = () => {};
 ```
 
-##### 箭头函数 this
+#### 箭头函数 this
 
 指向函数定义位置的上下文 this
 
-##### 箭头函数面试题
+#### 箭头函数面试题
 
 ```javascript
 age = 100;
@@ -1990,7 +1990,7 @@ obj.say(); //100
 //对象不能产生作用域
 ```
 
-#### 剩余参数
+### 剩余参数
 
 剩余参数语法允许我们将一个不定数量的参数表示为一个数组
 
@@ -2005,7 +2005,7 @@ sum(10, 20);
 sum(10, 20, 30);
 ```
 
-##### 剩余参数和结构
+#### 剩余参数和结构
 
 ```javascript
 let students = ['a', 'b', 'c'];
@@ -2016,7 +2016,7 @@ console.log(s2);
 //(2) ["b", "c"]
 ```
 
-#### 扩展运算符
+### 扩展运算符
 
 允许运算符可以将数组或者对象转为用逗号分隔的参数序列
 
@@ -2026,7 +2026,7 @@ let ary = [1, 2, 3]
 console.log(...ary) //1 2 3
 ```
 
-##### 运用
+#### 运用
 
 ```javascript
 //数组合并
@@ -2040,7 +2040,7 @@ ary1.push(...ary2);
 //将伪数组转化为真数组
 ```
 
-#### Array 扩展方法
+### Array 扩展方法
 
 ```javascript
 //将伪数组转化为真数组
@@ -2091,9 +2091,9 @@ console.log(target); //1
 [1, 2, 3].includes(2);
 ```
 
-#### String 扩展方法
+### String 扩展方法
 
-##### 模板字符串
+#### 模板字符串
 
 -   以`字符串`表示
 -   内部可以换行
@@ -2105,18 +2105,18 @@ let sayHello = `hello,i'm zs`;
 console.log(sayHello);
 ```
 
-##### startsWith()\endsWith()
+#### startsWith()\endsWith()
 
 -   startsWith(),判断参数字符串是否在原字符串头部
 -   endsWith(),判断参数字符串是否在原字符串结尾
 
-##### repeat()
+#### repeat()
 
 'x'.repeat(3)//'xxx'
 
 -   将原字符串重复 x 次，输出新字符串
 
-#### Set
+### Set
 
 **类似数组，没有重复值**
 
@@ -2147,21 +2147,21 @@ s1.forEach((value) => {
 
 ## 请按后端交互
 
-#### 服务器和客户端
+### 服务器和客户端
 
-##### 服务器
+#### 服务器
 
 负责存放对外提供资源的电脑叫服务器
 
-##### 客户端
+#### 客户端
 
 负责获取和消费资源的电脑叫服务器
 
-#### URL
+### URL
 
 -   统一资源定位符
 
-##### 组成
+#### 组成
 
 1. 客户端和服务器之间的==通信协议==
 2. 存有资源的==服务器名称==
@@ -2172,7 +2172,7 @@ s1.forEach((value) => {
 -   www.cnblogs.com：服务器名称
 -   lll/p/2222.html：资源在服务器上具体的存放位置
 
-#### 网页打开的过程
+### 网页打开的过程
 
 -   客户端
     1. 打开浏览器
@@ -2186,20 +2186,20 @@ s1.forEach((value) => {
 **过程分为请求-处理-响应三个过程**
 **网页中的每一个资源都是通过请求-处理-响应的方式从服务器获取回来的**
 
-##### 网页如何请求数据
+#### 网页如何请求数据
 
 1. 发起数据请求
 2. 服务器处理请求
 3. 服务器发送数据
 
-##### 资源请求方式
+#### 资源请求方式
 
 -   get :用于获取服务器数据
 -   push:用于提交数据
 
-#### Ajax
+### Ajax
 
-##### $.get()
+#### $.get()
 
 ```javascript
 $.get('url', { data }, callback);
@@ -2211,7 +2211,7 @@ $.get('url', { data }, callback);
 | data     | object   | 否   | 携带的参数 |
 | callbacl | function | 否   | 回调函数   |
 
-##### $.post()
+#### $.post()
 
 ```javascript
 $.post('url', { data }, function (res) {});
@@ -2223,7 +2223,7 @@ $.post('url', { data }, function (res) {});
 | data     | object   | 否   | 携带的数据     |
 | callbacl | function | 否   | 回调函数       |
 
-##### $.ajax()
+#### $.ajax()
 
 ```javascript
 $.ajax({
@@ -2234,15 +2234,15 @@ $.ajax({
 });
 ```
 
-#### 接口
+### 接口
 
 **使用 ajax 请求数据时，被请求的 url 地址，就叫做接口**
 
-##### 接口的测试工具
+#### 接口的测试工具
 
 -   postman
 
-##### 接口文档
+#### 接口文档
 
 -   组成
     1. 接口名称
@@ -2256,13 +2256,13 @@ $.ajax({
 
 表单在网页中负责数据采集功能
 
-#### 表单的组成
+### 表单的组成
 
 -   表单标签
 -   表单域
 -   表单按钮
 
-#### <form>标签
+### <form>标签
 
 1. action：向何处发送表单，默认为当前 url
    提交后，立即跳转到 action 指定的 url
@@ -2287,7 +2287,7 @@ $.ajax({
     | multipart/form-data               | 不对字符编码//上传文件时，必填该值       |
     | text/plain                        | 空格转化为加号，不对特殊字符编码//很少用 |
 
-#### 表单同步提交
+### 表单同步提交
 
 -   缺点
     1. 提交后，页面后跳转，用户体验差
@@ -2295,9 +2295,9 @@ $.ajax({
 -   解决
     表单只采集数据，ajax 负责将数据提交到服务器
 
-#### ajax 提交表单
+### ajax 提交表单
 
-##### 监听表单提交事件
+#### 监听表单提交事件
 
 ```javascript
 $('#form').submit(function (e) {});
@@ -2305,7 +2305,7 @@ $('#form').submit(function (e) {});
 $('#form').on('submit', function (e) {});
 ```
 
-##### 阻止表单默认提交行为
+#### 阻止表单默认提交行为
 
 ```javascript
 $('#form').submit(function (e) {
@@ -2317,7 +2317,7 @@ $('#form').on('submit', function (e) {
 });
 ```
 
-##### 快速获取表单数据
+#### 快速获取表单数据
 
 **$(selector).serialize()**
 可以一次性获取表单的所有数据
@@ -2330,7 +2330,7 @@ $('#form').submit(function (e) {
 });
 ```
 
-#### 模板引擎
+### 模板引擎
 
 根据指定的模板结构和数据，自动生成一个完整的 HTML 页面
 
@@ -2339,7 +2339,7 @@ $('#form').submit(function (e) {
     2. 使代码结构更清晰
     3. 使代码更易于阅读与维护
 
-##### art-template
+#### art-template
 
 -   使用步骤
     1. 导入 art-template
@@ -2384,7 +2384,7 @@ $('#form').submit(function (e) {
 
 ## XMLHttpRequest
 
-#### xhr get 请求
+### xhr get 请求
 
 1. 创建 xhr 对象
 2. 调用 xhr.open()函数
@@ -2408,7 +2408,7 @@ xhr.onreadystatechange=function(){
 
 ```
 
-#### xhr readyState 属性
+### xhr readyState 属性
 
 | 值  |       状态       | 描述                                              |
 | :-: | :--------------: | :------------------------------------------------ |
@@ -2418,7 +2418,7 @@ xhr.onreadystatechange=function(){
 |  3  |     LOADING      | 数据接收中，此时 response 属性已经包含部分数据    |
 |  4  |       DONE       | Ajax 请求完成，这意味着数据传输已经彻底完成或失败 |
 
-#### xhr 带参数的 get 请求
+### xhr 带参数的 get 请求
 
 在 url 后拼接参数
 
@@ -2426,17 +2426,17 @@ xhr.onreadystatechange=function(){
 xhr.open('GET'，'http://www.liulongbin.top:3006/api/getbooks?id=1')
 ```
 
-#### xhr 查询字符串
+### xhr 查询字符串
 
 -   定义：查询字符串（URL 参数）是指在 url 的末尾加上用于向服务器发送信息的字符串（变量）
 
 -   格式：将英文的 **?** 放在 url 末尾，再加上 **参数=值** ，想加上多个参数的话，以 **&**进行分隔
 
-#### 什么是 url 编码
+### 什么是 url 编码
 
 -   **原则**：使用安全的字符（没有特殊用途或特殊意义的可打印字符）去表示不安全的字符
 
-#### 如何进行 url 编码
+### 如何进行 url 编码
 
 -   encodeURI()
 -   decodeURI()
@@ -2447,7 +2447,7 @@ console.log(encodeURI('你好')); //%E4%BD%A0%E5%A5%BD
 console.log(decodeURI('%E4%BD%A0%E5%A5%BD')); //你好
 ```
 
-#### xhr post 请求
+### xhr post 请求
 
 1. 创建 xhr 对象
 2. 调用 xhr.open()函数
@@ -2472,17 +2472,17 @@ xhr.onreadystatechange = function () {
 
 服务器端与客户端之间进行数据传输与交换的格式
 
-#### json
+### json
 
 -   概念 JSON 全称 JavaScript Object Notation，即 JavaScript 对象表示法，json 本质是字符串
 
-##### json 的两种结构
+#### json 的两种结构
 
 -   对象结构：对象结构在 json 中表示为{ }括起来的内容。数据结构为{key:value,key:value,...}的键值对结构。其中，key 必须是使用英文的双引号包裹的字符串，value 的数据类型可以是数字、字符串、布尔值、null、数组、对象 6 种类型
 
 -   数组结构：数组结构在 json 中表示为{ }括起来的内容。数据结构为{"java","javascript",30,true...},数组中数据的类型可以是数字、字符串、布尔值、null、数组、对象 6 种类型
 
-##### json 注意事项
+#### json 注意事项
 
 1. 属性名必须使用双引号包裹
 2. 字符串类型的值必须使用双引号包裹
@@ -2494,7 +2494,7 @@ xhr.onreadystatechange = function () {
 -   作用：在计算机与网络之间存储和传输数据
 -   本质：用字符串表示 javascript 对象或数组数据
 
-##### json 和 js 对象的转换
+#### json 和 js 对象的转换
 
 ```javascript
 var obj = JSON.parse('{"a":"hello"}');
@@ -2504,12 +2504,12 @@ var json = JSON.stringify({ a: 'hello' });
 console.log(json);
 ```
 
-##### 序列化、反序列化
+#### 序列化、反序列化
 
 把数据对象转化为字符串的过程，叫做序列化
 把字符串转化为数据对象的过程，叫做反序列化
 
-#### xhr level2
+### xhr level2
 
 旧版缺点
 
@@ -2523,7 +2523,7 @@ level2 新特性
 3. 可以上传文件
 4. 可以获取数据传输的进度信息
 
-##### 设置请求时限
+#### 设置请求时限
 
 ```javascript
 xhr.timeout = 3000;
@@ -2532,7 +2532,7 @@ xhr.ontimeout = function (event) {
 };
 ```
 
-##### FormData 管理表单数据
+#### FormData 管理表单数据
 
 ```javascript
 var fd = new FormData();
@@ -2554,7 +2554,7 @@ form.addEventListener('submit', function (e) {
 });
 ```
 
-##### 上传文件
+#### 上传文件
 
 1. 定义 UI 结构
 2. 验证是否选择了文件
@@ -2567,9 +2567,9 @@ var fd = new FormData();
 fd.append('', files[0]);
 ```
 
-#### jQuery 高级用法
+### jQuery 高级用法
 
-##### 上传文件
+#### 上传文件
 
 ```javascript
 $.ajax({
@@ -2582,7 +2582,7 @@ $.ajax({
 });
 ```
 
-##### loading 效果
+#### loading 效果
 
 ```javascript
 $(document).ajaxStart(function () {
@@ -2594,11 +2594,11 @@ $(document).ajaxStop(function () {
 // $(document).ajaxStart()会监听当前文档内所有Ajax请求
 ```
 
-#### axios
+### axios
 
 专注于网络数据请求的库
 
-##### axios GET\POST 请求
+#### axios GET\POST 请求
 
 ```javascript
 axios.get('地址'?key=value&key2=value2).then(function(res){response},function(err){err})
@@ -2609,7 +2609,7 @@ axios.post('地址',{key:value,key2:value2}).then(function(res){response},functi
 
 ## 跨域和 jsonp
 
-#### 同源策略
+### 同源策略
 
 同源：如果两个页面的**协议、域名**和**端口**都相同，则两个页面具有相同的源
 同源策略：浏览器提供的一个安全功能
@@ -2618,22 +2618,22 @@ axios.post('地址',{key:value,key2:value2}).then(function(res){response},functi
 2. 无法接触非同源的 DOM
 3. 无法向非同源地址发送 Ajax 请求
 
-#### 跨域
+### 跨域
 
 不同源就是跨域
 
-##### 拦截跨域请求
+#### 拦截跨域请求
 
 -   跨域请求可以正常发起
 -   浏览器能正常接收跨域响应的数据
 -   同源策略拦截数据
 
-##### 实现跨域数据请求
+#### 实现跨域数据请求
 
 -   jsonp：临时解决方案，只支持 get
 -   cors：官方方法，部分低版本浏览器不支持
 
-#### jsonp
+### jsonp
 
 **原理：sctipt 标签不受同源策略影响**
 
@@ -2642,7 +2642,7 @@ axios.post('地址',{key:value,key2:value2}).then(function(res){response},functi
 -   防抖策略：当事件被触发后，延迟 n 秒后再执行回调，如果在这 n 秒内事件再次触发，则重新计时
 -   节流策略：减少一段时间内事件的触发频率
 
-#### 输入框防抖
+### 输入框防抖
 
 ```javascript
 var timer = null;
@@ -2657,7 +2657,7 @@ $('#ipt').on('keyup', function () {
 });
 ```
 
-#### 输入框缓存建议列表
+### 输入框缓存建议列表
 
 ```javascript
 var cacheObj = {};
@@ -2674,7 +2674,7 @@ $('#ipt').on('keyup', function () {
 });
 ```
 
-#### 节流和防抖的区别
+### 节流和防抖的区别
 
 -   防抖：如果事件频繁触发，防抖能保证只有最后一次触发生效
 -   节流：如果事件频繁触发，节流能够减少事件触发的频率，节流是有选择的执行一部分事件
@@ -2688,7 +2688,7 @@ $('#ipt').on('keyup', function () {
 -   通信协议：通信双方必须遵守的规则和约定
 -   http 协议：规定了客户端与服务器之间进行网页内容传输时必须遵守的传输协议
 
-#### HTTP 请求消息
+### HTTP 请求消息
 
 客户端发起的请求叫做 HTTP 请求，客户端发送到服务器的消息叫做 HTTP 请求消息
 
@@ -2698,7 +2698,7 @@ $('#ipt').on('keyup', function () {
     3. 空行：通知服务器请求头部至此结束
     4. 请求体：存放 post 方式提交到服务器的数据
 
-#### HTTP 响应消息
+### HTTP 响应消息
 
 -   组成：
     1. 状态行：HTTP 协议版本、状态码、状态码的描述，三者之间以空格分开
@@ -2706,7 +2706,7 @@ $('#ipt').on('keyup', function () {
     3. 空行：响应头部至此结束
     4. 响应体：存放服务器响应给客户端的资源内容
 
-#### 请求方法
+### 请求方法
 
 表明要对服务器上的资源执行的操作
 
@@ -2722,7 +2722,7 @@ $('#ipt').on('keyup', function () {
 |  8   |  TRACE  |      |
 |  9   |  PATCH  |      |
 
-#### http 响应状态码
+### http 响应状态码
 
 -   组成：三个十进制数字，第一个定义了状态码的类型，后两个用来对状态码进行细分
 
@@ -2736,7 +2736,7 @@ $('#ipt').on('keyup', function () {
 
 ## NODE
 
-#### fs 文件系统模块
+### fs 文件系统模块
 
 -   fs.readFile():用来读取指定文件中的内容
 -   fs.writeFile():用来向指定的文件中写入内容
@@ -2758,7 +2758,7 @@ const fs = require('fs');
 //callback：必选，文件写入完成后的回调函数
 ```
 
-##### fs-路径动态拼接问题
+#### fs-路径动态拼接问题
 
 代码在执行的时候，会以执行 node 命令时所处的目录，动态拼接处被操作文件的完整路径
 
@@ -2766,7 +2766,7 @@ const fs = require('fs');
     1. 提供完整路径
     2. \_\_dirname 表示当前文件路径
 
-#### path 路径模块
+### path 路径模块
 
 -   path.join()，用来将多个路径片段拼接成一个完整的路径字符串
 -   path.basename()，用来从路径字符串中，将文件名解析出来
@@ -2776,14 +2776,14 @@ const fs = require('fs');
 const path = require('path');
 ```
 
-##### 路径拼接
+#### 路径拼接
 
 ```javascript
 path.join('/a', '/b/c', '../', './d', 'e');
 //\a\b\d\e
 ```
 
-##### 获取路径名
+#### 获取路径名
 
 ```javascript
 path.basename(path[,ext])
@@ -2792,7 +2792,7 @@ path.basename(path[,ext])
 //返回：<string>表示路径的最后一部分
 ```
 
-##### 获取文件扩展名
+#### 获取文件扩展名
 
 ```javascript
 path.extname(path);
@@ -2800,7 +2800,7 @@ path.extname(path);
 //返回：<string>返回得到的扩展名字符串
 ```
 
-#### HTTP 模块
+### HTTP 模块
 
 http 模块是 node.js 提供的、用来创建 web 服务器的模块。通过 http 模块提供的 http.createServer()方法，就能方便的把一台普通电脑，变成一台 web 服务器，从而对外提供资源服务
 
@@ -2808,13 +2808,13 @@ http 模块是 node.js 提供的、用来创建 web 服务器的模块。通过 
 const http = require('http');
 ```
 
-##### 服务器相关概念
+#### 服务器相关概念
 
 1. IP 地址：互联网上每台电脑的唯一标识
 2. 域名和域名服务器：域名服务器就是提供 IP 地址和域名之间的转换服务的服务器
 3. 端口号：相当于门牌号
 
-#### 创建基本服务器
+### 创建基本服务器
 
 1. 导入 HTTP 模块
 2. 创建服务器实例
@@ -2841,7 +2841,7 @@ server.listen(8080, function () {
 });
 ```
 
-##### 根据不同的 url 响应不同的 html 内容
+#### 根据不同的 url 响应不同的 html 内容
 
 1. 获取 url 地址
 2. 设置默认响应内容
@@ -2885,18 +2885,18 @@ server.listen(8080, function () {
 2. 提高了代码的可维护性
 3. 可以实现按需加载
 
-#### 相关概念
+### 相关概念
 
 -   使用什么样的语法格式来引用模块
 -   在模块中使用什么样的语法格式向外暴露成员
 
-#### 模块分类
+### 模块分类
 
 -   内置模块：
 -   自定义模块
 -   第三方模块
 
-##### 加载模块
+#### 加载模块
 
 ```javascript
 //内置模块
@@ -2908,17 +2908,17 @@ const moment = require('moment');
 //使用require()方法加载其他模块时，会执行被加载模块中的代码
 ```
 
-##### require()注意点
+#### require()注意点
 
 -   .js 后缀名可以省略
 
-#### 模块作用域
+### 模块作用域
 
 1. module 对象：在每个.js 自定义模块中都有一个 module 对象，它里面存储了和当前模块有关的信息
 2. modele.exports：将模块内的成员共享出去，供外界使用；外界用 require()方法导入自定义模块时，得到的就是 module.exports 所指向的对象
 3. exports 对象：exports 和 module.exports 指向同一对象
 
-##### modele.exports
+#### modele.exports
 
 ```javascript
 module.exports.username = 'zs';
@@ -2929,7 +2929,7 @@ module.exports.sayHello = function () {
 
 **使用 require()方法导入模块时，导入的结果，永远以 module.exports 指向的对象为准**
 
-#### CommonJS
+### CommonJS
 
 1. 每个模块内部，module 变量代表当前模块
 2. module 变量是一个对象，它的 exports 属性是对外接口
@@ -2948,7 +2948,7 @@ node 模块中第三方模块叫做包
 2. 使用 require()导入格式化时间的包
 3. 参考 moment 的官方 API 文档对时间进行格式化
 
-#### npm 安装
+### npm 安装
 
 -   npm install 包的完整名称
 -   简写：npm i 包的完整名称
@@ -2962,7 +2962,7 @@ node 模块中第三方模块叫做包
     3. 第三位数字：Bug 修复版本
     4. 前面的版本号增长了，后面的版本号归零
 
-#### 包管理文件
+### 包管理文件
 
 package.json:
 
@@ -2971,36 +2971,36 @@ package.json:
 3. 哪些包只在开发期间会用到
 4. 哪些包在开发和部署时都会用到
 
-##### dependencies 节点
+#### dependencies 节点
 
 记录安装的包
 
-##### 一次性安装所有包
+#### 一次性安装所有包
 
 -   npm install:一次性下载所有包
 
-##### 卸载包
+#### 卸载包
 
 -   npm uninstall 包名
 
-##### devDependencies 节点
+#### devDependencies 节点
 
 记录只在开发阶段会用到的包
 
-##### 包的分类
+#### 包的分类
 
 -   开发依赖包：被记录到 devDependencies 节点中，只在开发期间使用
 -   核心依赖包：被记录到 dependencies 节点中，在开发和项目上线后都会用到
 -   全局包：-g 参数
 
-##### 发布包
+#### 发布包
 
 ```
 //包目录下
 npm publish
 ```
 
-##### 模块的加载机制
+#### 模块的加载机制
 
 -   模块第一次加载后会被缓存。优先从缓存加载模块
 -   内置模块的加载优先级最高
@@ -3021,13 +3021,13 @@ npm publish
 
 用来创建 Web 服务器
 
-#### 安装
+### 安装
 
 ```
 npm i express@4.17.1
 ```
 
-#### 使用
+### 使用
 
 ```js
 //导入
@@ -3040,7 +3040,7 @@ app.listen(80, () => {
 });
 ```
 
-#### 监听请求
+### 监听请求
 
 ```js
 //get
@@ -3053,7 +3053,7 @@ app.post('请求url', function (req, res) {
 });
 ```
 
-#### 获取 url 中的参数
+### 获取 url 中的参数
 
 ```js
 //req.query对象可以访问到客户端通过查询字符串的形式，发送到服务器的查询参数
@@ -3069,7 +3069,7 @@ app.get('/user:id', function (req, res) {
 
 **通过 req.params 对象，可以访问到 url 中，通过:（冒号）匹配到的动态参数**
 
-#### 托管静态资源
+### 托管静态资源
 
 ```js
 app.use(express.static('public'));
@@ -3078,11 +3078,11 @@ app.use(express.static('public'));
 app.use('/static', express.static('public'));
 ```
 
-#### nodemon
+### nodemon
 
 自动重启项目
 
-#### express 中的路由
+### express 中的路由
 
 -   在 Express 中，路由指的是客户端的请求和服务器处理函数之间的映射关系
 -   组成：
@@ -3094,18 +3094,18 @@ app.use('/static', express.static('public'));
     app.METHOD(PATH, HANDLER);
     ```
 
-##### 路由的匹配过程
+#### 路由的匹配过程
 
 每当一个请求到达服务器之后，需要先经过路由的匹配，只有匹配成功才会处理对应函数
 
-##### 最简单用法
+#### 最简单用法
 
 ```js
 //挂载路由
 app.get('/', (req, res) => {});
 ```
 
-##### 模块化路由
+#### 模块化路由
 
 1. 创建路由模块对应的.js 文件
 2. 调用 express.Router()函数创建路由对象
@@ -3122,7 +3122,7 @@ router.get('/', (req, res) => {});
 module.exports = router;
 ```
 
-##### 注册路由模块
+#### 注册路由模块
 
 ```js
 //导入路由模块
@@ -3132,7 +3132,7 @@ app.use(router);
 
 **app.use 的作用就是注册全局中间件**
 
-##### 为路由模块添加访问前缀
+#### 为路由模块添加访问前缀
 
 ```js
 app.use('/api', router);
@@ -3140,19 +3140,19 @@ app.use('/api', router);
 
 ## 中间件
 
-#### Express 中间件的调用流程
+### Express 中间件的调用流程
 
 当一个请求到达 express 服务器之后，可以连续调用多个中间件，从而对这次请求进行预处理
 
-#### Express 中间件格式
+### Express 中间件格式
 
 Express 的中间件，本质上就是一个 function 处理函数，**中间件函数的形参列表中，必须包含 next 参数。而路由处理函数中只包含 req、res**
 
-##### next 函数
+#### next 函数
 
 是实现多个中间件连续调用的关键，它表示把流派关系转交给下一个中间件或路由
 
-#### 定义中间件函数
+### 定义中间件函数
 
 ```js
 const mw = function (req, res, next) {
@@ -3160,7 +3160,7 @@ const mw = function (req, res, next) {
 };
 ```
 
-#### 全局生效中间件
+### 全局生效中间件
 
 客户端发起任何请求，到达服务器之后，都会触发的中间件，叫做全局生效的中间件。
 
@@ -3176,11 +3176,11 @@ app.use(function (req, res, next) {
 };)
 ```
 
-#### 中间件的作用
+### 中间件的作用
 
 多个中间件之间，共享同一份 req 和 res。基于这样的特性，我们可以在上游的中间件中，统一为 req、res 对象添加自定义的属性或方法，供下游的中间件或路由进行使用。
 
-#### 局部生效的中间件
+### 局部生效的中间件
 
 不使用 app.use()定义的中间件，叫做局部生效中间件
 
@@ -3194,12 +3194,12 @@ const mw2 = function (req, res, next) {
 app.get('/', mw1, mw2, function (req, res) {});
 ```
 
-#### 中间件的注意事项
+### 中间件的注意事项
 
 1. 要在路由之前注册中间件
 2. 不要忘记调用 next 函数
 
-#### Express 中间件的分类
+### Express 中间件的分类
 
 1. 应用级别的中间件：
    通过 app.use()或 app.get()、app.post()，绑定到 app 实例上的中间件，叫应用级别中间件
@@ -3214,7 +3214,7 @@ app.get('/', mw1, mw2, function (req, res) {});
     3. express.urlencoded 解析 URL-encoded 格式的请求数据
 5. 第三方中间件
 
-#### 自定义中间件
+### 自定义中间件
 
 1. 定义中间件
 2. 监听 req 的 data 事件
@@ -3223,7 +3223,7 @@ app.get('/', mw1, mw2, function (req, res) {});
 5. 将解析出来的数据对象挂载为 req.body
 6. 将自定义中间件封装为模块
 
-#### 使用 Express 写接口
+### 使用 Express 写接口
 
 1. 创建基本服务器
 2. 创建 api 路由模块
@@ -3232,14 +3232,14 @@ app.get('/', mw1, mw2, function (req, res) {});
 
 ## cors+jsonp
 
-#### 接口跨域问题
+### 接口跨域问题
 
 解决方法：
 
 1. cors（主流）
 2. jsonp
 
-#### cors 中间件
+### cors 中间件
 
 -   使用：
     1. 运行 npm i cors 安装中间件
@@ -3249,7 +3249,7 @@ app.get('/', mw1, mw2, function (req, res) {});
     1. cors 主要在服务器进行配置。客户端无需任何额外的配置
     2. cors 只有在支持 XMLHttpRequest Level2 的浏览器中可以使用（ie10+,chrome4+,firfox3.5+）
 
-##### cors 响应头部
+#### cors 响应头部
 
 -   Access-Cintrol-Allow-Origin：指定允许访问的外域资源 URL
     **\***代表允许任何域的请求
@@ -3271,7 +3271,7 @@ app.get('/', mw1, mw2, function (req, res) {});
     ```
     **\***代表支持任何请求方式
 
-##### cors 请求分类
+#### cors 请求分类
 
 -   简单请求：
     1. 请求方式：get、post、head 三者之一
@@ -3288,7 +3288,7 @@ app.get('/', mw1, mw2, function (req, res) {});
 
 ## 数据库
 
-#### 常见数据库及分类
+### 常见数据库及分类
 
 1. MySQL 数据库（Community+Enterprise）
 2. Oracle（收费）
@@ -3299,31 +3299,31 @@ app.get('/', mw1, mw2, function (req, res) {});
 
 ## sql
 
-#### select 语句
+### select 语句
 
 ```sql
 select username,password from user
 ```
 
-#### insert into 语句
+### insert into 语句
 
 ```sql
 insert into table_name(list1,list2,...) values(value1,value2)
 ```
 
-#### update 语句
+### update 语句
 
 ```sql
 update table_name set list_name = new_value where list_name = xxx
 ```
 
-#### delete 语句
+### delete 语句
 
 ```sql
 delete from table_name where list_name = xxx
 ```
 
-#### where 子句
+### where 子句
 
 ```sql
 ... where list_name 运算符 xxx
@@ -3340,11 +3340,11 @@ delete from table_name where list_name = xxx
 | between | 在某个范围   |
 | like    | 搜索某种模式 |
 
-#### and\or 运算符
+### and\or 运算符
 
 在 where 子句中把多个条件结合起来
 
-#### order by 子句
+### order by 子句
 
 ```sql
 ... order by desc --降序，asc为升序
@@ -3352,7 +3352,7 @@ delete from table_name where list_name = xxx
 select * form user order by status DESC,username ASC
 ```
 
-#### count 函数
+### count 函数
 
 ```sql
 select count(*) from table_name where ...
@@ -3360,13 +3360,13 @@ select count(*) from table_name where ...
 select count(*) as total from table_name where ...
 ```
 
-#### 在项目中操作 mysql
+### 在项目中操作 mysql
 
 1. 安装 MySQL 数据库的第三方模块（**mysql**）
 2. 通过 MySQL 模块连接到 MySQL 数据库
 3. 通过 mysql 模块执行 sql 语句
 
-##### 安装、配置 mysql 模块
+#### 安装、配置 mysql 模块
 
 ```
 npm i mysql
@@ -3383,7 +3383,7 @@ const db = mysql.createPool({
 });
 ```
 
-##### 测试是否正常工作
+#### 测试是否正常工作
 
 ```js
 db.query('select 1', (err, results) => {
@@ -3393,7 +3393,7 @@ db.query('select 1', (err, results) => {
 });
 ```
 
-##### 查询数据
+#### 查询数据
 
 **select 语句，执行结果为数组**
 
@@ -3406,7 +3406,7 @@ db.query(sqlStr, (err, results) => {
 });
 ```
 
-##### 插入数据
+#### 插入数据
 
 ```js
 const user_in = { username: 'ccc', password: '2222', status: 1 };
@@ -3433,7 +3433,7 @@ db.query(sqlStr, user_in, (err, results) => {
 });
 ```
 
-##### 更新数据
+#### 更新数据
 
 ```js
 const user_in2 = { id: 2, username: 'bbb', status: 1 };
@@ -3455,7 +3455,7 @@ db.query(sqlStr2, [user_in2, user_in2.id], (err, results) => {
 });
 ```
 
-##### 删除数据
+#### 删除数据
 
 **推荐根据唯一标识删除数据**
 
@@ -3477,3 +3477,165 @@ db.query('update user set status =1 where id=?', 3, (err, results) => {
 	}
 });
 ```
+
+## web 开发模式
+
+1. 基于服务端渲染的传统 web 开发模式
+2. 基于前后端分离的新型 web 开发模式
+    - 优点：
+        1. 开发体验好
+        2. 用户体验好
+        3. 减轻了服务器端的渲染压力
+    - 缺点：
+        1. 不利于 seo
+
+## 身份认证
+
+方案：
+
+1. 服务端渲染推荐 session
+2. 前后端分离推荐 jwt
+
+### session 认证机制
+
+#### http 协议的无状态性
+
+客户端的每次 HTTP 请求都是独立的，服务器不会主动保留每次 HTTP 请求的状态
+
+##### 突破无状态限制
+
+-   cookie：存储在浏览器的一段不超过 4KB 的字符串。由一个名称、一个值和其它用于控制有效期、安全性、使用范围的可选属性组成
+-   不同域名下 cookie 各自独立
+-   特性：
+    1. 自动发送
+    2. 域名独立
+    3. 过期时限
+    4. 4KB 限制
+
+#### session 工作原理
+
+1. 用户第一次请求服务器时，服务器端会生成一个 sessionid
+2. 服务器端将生成的 sessionid 返回给客户端，通过 set-cookie
+3. 客户端收到 sessionid 会将它保存在 cookie 中，当客户端再次访问服务端时会带上这个 sessionid
+4. 当服务端再次接收到来自客户端的请求时，会先去检查是否存在 sessionid，不存在就新建一个 sessionid 重复 1,2 的流程，如果存在就去遍历服务端的 session 文件，找到与这个 sessionid 相对应的文件，文件中的键值便是 sessionid，值为当前用户的一些信息
+5. 此后的请求都会交换这个 Session ID，进行有状态的会话。
+
+#### session 中间件使用
+
+-   安装
+
+```
+npm i express-session
+```
+
+-   配置
+
+```js
+const session = require('express-session');
+
+app.use(
+	session({
+		secret: 'keyboard cat', //secert的值可以为任意字符串
+		resave: false, //固定写法
+		saveUninitialized: true, //固定写法
+	})
+);
+```
+
+-   存数据
+
+```js
+req.session.user = req.body; //存储用户信息
+req.session.isLogin = true; //存储用户状态
+```
+
+-   取数据
+
+```js
+if (req.session.isLogin) {
+	return;
+}
+res.send({
+	username: req.session.user.username,
+});
+```
+
+-   清空
+
+```js
+//仅当前用户
+req.session.destroy();
+```
+
+## JWT
+
+**当前端存在跨域问题的时候，使用 JWT**
+
+### JWT 原理
+
+用户信息通过 Token 字符串的形式，保存在客户端浏览器中。服务器通过还原 Token 字符串的形式来认证用户的身份
+
+### JWT 的组成
+
+-   Header（头部）
+    安全相关
+-   Payload（有效荷载）
+    用户信息
+-   Signature（签名）
+    安全相关
+
+三者之间以“,”分隔
+
+### JWT 使用
+
+1. 把 JWT 放在 HTTP 请求头部的 Authorization 字段中
+
+    ```
+    Authorization:Bearer<token>
+    ```
+
+2. 安装相关包
+    ```
+    npm i jsonwebtoken express-jwt
+    ```
+    - jsonwebtoken 用于生成 JWT 字符串
+    - express-jwt 用于将 JWT 字符串解析还原成 JSON 对象
+3. 导入
+    ```js
+    const jwt = require('jsonwebtoken');
+    const expressJWT = require('express-jwt');
+    ```
+4. 定义 secret 密钥
+    ```js
+    const secretKey = 'xxxxx';
+    ```
+5. 生成 JWT 字符串
+    ```js
+    const tokenStr = jwt.sign({ username: userinfo.username }, secretKey, {
+    	expiresin: '1h',
+    });
+    //参数一：信息
+    //参数二：加密的密钥
+    //参数三：token有效期
+    res.send({
+    	status: 200,
+    	message: '',
+    	token: tokenStr,
+    });
+    ```
+6. 还原 JWT 字符串
+    ```js
+    //使用app.use()注册中间件
+    //expressJWT({ secret: secreKey })用来解析Token中间件
+    //.unless({ path: [/^\/api\//] })用来指定哪些接口不需要访问权限
+    app.use(expressJWT({ secret: secreKey }).unless({ path: [/^\/api\//] }));
+    ```
+7. 捕获解析 JWT 失败产生的错误
+    ```js
+    app.use((err, req, res, next) => {
+    	if (err.name === 'UnauthorizedError') {
+    		return re.send({ status: 401, message: '无效token' });
+    	}
+    	res.send({ status: 500, message: '未知错误' });
+    });
+    ```
