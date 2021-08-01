@@ -3639,3 +3639,144 @@ req.session.destroy();
     	res.send({ status: 500, message: '未知错误' });
     });
     ```
+
+## Vue
+
+-   概述：渐进式 JavaScript 框架
+    声明式渲染->组件系统->客户端路由->集中式状态管理->项目构建
+
+### Vue 基本使用
+
+-   传统方法
+    ```html
+    <div id="msg"></div>
+    <script type="text/javascript">
+    	var msg = 'helloWord';
+    	var div = document.getElementById('msg');
+    	div.innerHTML = msg;
+    </script>
+    ```
+-   Vue 方法
+    ```html
+    <div id="app">{{msg}}</div>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+    	new Vue({
+    		el: '#app',
+    		data: {
+    			msg: 'helloWord',
+    		},
+    	});
+    </script>
+    ```
+
+### Vue 模板语法
+
+-   插值表达式
+-   指令
+-   事件绑定
+-   属性绑定
+-   样式绑定
+-   分支循环结构
+
+#### 指令
+
+-   指令的本质就是自定义属性
+-   格式：以 v-开始
+
+##### v-cloak
+
+-   插值表达式存在问题：”闪动“
+-   解决方法：使用 v-cloak
+-   原理：先隐藏，替换好值后再显示最终的值
+
+```html
+<style type="text/css">
+	[v-cloak] {
+		display: none;
+	}
+</style>
+<div id="app" v-cloak>{{msg}}</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#app',
+		data: {
+			msg: 'helloWord',
+		},
+	});
+</script>
+```
+
+### 修改数组的两个特殊情况
+
+1. arr.leength=0,不具备响应特性
+2. arr[0]=100,不具备响应特性
+
+### 修改对象的特殊情况
+
+添加 obj.x,x 属性，也不具备响应特性
+
+### 修改方法；
+
+1. vm.$set(target,propertyName/index,value)
+2. Vue.set(target,propertyName/index,value)
+3. vm.forceupdate()
+
+### 生命周期
+
+    ```js
+        beforeCreate() {
+            // console.log('hello');
+            // console.log(this)//yes
+            // console.log(this.title)//no
+            // console.log(document.querySelector('#root'))//maybe,模板未渲染
+            //应用场景：给实例自定义内容
+            // this.x=100//yes
+        },
+        created() {
+            // console.log(this)//yes
+            // console.log(this.title)//yes
+            // console.log(document.querySelector('#root'))//maybe
+            //应用场景：修改data的值
+            // this.title='world'
+        },
+        beforeMount() {
+            // console.log(this)//yes
+            // console.log(this.title)//yes
+            // console.log(document.querySelector('#root'))//maybe
+            //应用场景：修改data的值
+            // this.title='world'
+        },
+        mounted() {
+            // console.log(this)//yes
+            // console.log(this.title)//yes
+            // console.log(document.querySelector('#root'))//yes
+            // //应用场景：一般在第一次页面渲染完毕后的工作都在这完成
+            // setTimeout(() => {
+            //     this.title='world'
+            // },5000)
+            // //ajax放这；
+        },
+        beforeUpdata(){
+            //将要发生数据更新时执行
+        },
+        updated(){
+            //数据后更新时执行
+        },
+        beforeDestroy(){
+
+        },
+        destroyed(){
+
+        }
+    ```
+
+### 模板语法
+
+1. v-once：只渲染一次
+2. v-html：输出 html（慎用！）
+3. v-text：完全替换原内容
+4. v-bind：绑定属性
+5. v-on：绑定函数
+6. v-model：双向绑定数据

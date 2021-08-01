@@ -65,13 +65,13 @@
 // app.listen(8080, () => {
 // 	console.log('express server running at http://127.0.0.1:8080');
 // });
-const mysql = require('mysql');
-const db = mysql.createPool({
-	host: '127.0.0.1',
-	user: 'root',
-	password: '0000',
-	database: 'test',
-});
+// const mysql = require('mysql');
+// const db = mysql.createPool({
+// 	host: '127.0.0.1',
+// 	user: 'root',
+// 	password: '0000',
+// 	database: 'test',
+// });
 // //测试
 // db.query('select 1', (err, results) => {
 // 	if (err) return console.log(err.message);
@@ -93,9 +93,9 @@ const db = mysql.createPool({
 // 	}
 // );
 
-db.query('update user set status =1 where id=?', 3, (err, results) => {
-	if (err) return console.log(err.message);
-	if (results.affectedRows === 1) {
-		console.log('删除成功');
-	}
-});
+// db.query('update user set status =1 where id=?', 3, (err, results) => {
+// 	if (err) return console.log(err.message);
+// 	if (results.affectedRows === 1) {
+// 		console.log('删除成功');
+// 	}
+// });
