@@ -3780,3 +3780,106 @@ req.session.destroy();
 4. v-bind：绑定属性
 5. v-on：绑定函数
 6. v-model：双向绑定数据
+
+### Vue 常用特性
+
+-   表单操作
+-   自定义指令
+-   计算属性
+-   过滤器
+-   侦听器
+-   生命周期
+
+#### 表单操作
+
+-   input 单行文本
+-   textarea 多行文本
+-   radio 单选框
+-   checkbox 多选框
+
+##### 表单域修饰符
+
+-   number：转化为数值
+-   trim：去掉开始和结尾的空格
+-   lazy：将 input 事件切换为 change 事件
+
+```html
+<input v-model.number="age" type="number" />
+```
+
+#### 自定义指令
+
+```js
+//默认获取焦点
+Vue.directive('focus', {
+	inserted: function (el) {
+		//获取元素焦点
+		el.focus();
+	},
+});
+```
+
+```html
+<input type="text" v-focus />
+```
+
+```js
+//改变元素背景颜色
+Vue.directive('color', {
+	inserted: function (el, binding) {
+		el.style.backgroundColor = binding.value.color;
+	},
+});
+```
+
+```html
+<input type="text" v-color="yellow" />
+```
+
+#### 计算属性
+
+```js
+var vm = new Vue({
+	computed: {
+		//反转字符串
+		reversedMessage: function () {
+			return this.msg.split('').reverse().join('');
+		},
+	},
+});
+```
+
+##### 计算属性和方法的区别
+
+-   计算属性是基于他们的依赖(data 数据)进行缓存的
+-   方法不存在缓存
+
+#### 侦听器
+
+数据一旦发生变化就通知侦听器所绑定方法
+
+```js
+var vm = new Vue({
+	watch: {
+		firstName: function (val) {
+			//val表示变化之后的值
+			this.fullName = val + '' + this.lastName;
+		},
+		lastName: function (val) {
+			this.fullName = this.firstName + '' + val;
+		},
+	},
+});
+```
+
+#### 过滤器
+
+```js
+Vue.filter('过滤器名称'，function(value，arg){
+    //业务逻辑
+})
+```
+
+```html
+<div>{{msg | 过滤器名称(arg)}}</div>
+```
