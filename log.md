@@ -3883,3 +3883,226 @@ Vue.filter('过滤器名称'，function(value，arg){
 ```html
 <div>{{msg | 过滤器名称(arg)}}</div>
 ```
+
+### Vue 组件化
+
+#### 使用
+
+-   注意事项：
+    1. data 必须是函数
+    2. 组件的模板必须是单个根元素
+    3. 组件模板内容可以是模板字符串
+
+```js
+Vue.component(组件名称, {
+	data: 组件数据,
+	template: 组件模板内容,
+});
+```
+
+```js
+Vue.component('button-counter', {
+	data: function () {
+		return {
+			count: 0,
+		};
+	},
+	template: '<button v-on:click="handle">点击了{{count}}次</button>',
+	methods: {
+		handle: function () {
+			this.count++;
+		},
+	},
+});
+```
+
+```html
+<div id="app">
+	<button-counter></button-counter>
+</div>
+```
+
+### Vue 调试工具用法
+
+4. 打开 chrome 开发者模式
+5. 加载 devtools 扩展
+
+### 组件间数据交互
+
+#### 父组件向子组件传值
+
+1. 组件内部通过 props 接受传递过来的值
+
+    ```js
+    Vue.component('menu-item', {
+    	props: ['title'],
+    	template: '<div>{{title}}</div>',
+    });
+    ```
+
+    ```html
+    <menu-item title="来自父组件的数据"></menu-item>
+
+    <menu-item :title="title"></menu-item>
+    ```
+
+    **在 props 中使用驼峰形式，模板需要使用单横的形式，字符串形式的模板没有这个限制**
+
+2. 子组件向父组件传值
+
+    ```js
+
+    ```
+
+3. 兄弟组件传值
+
+### 组件插槽
+
+-   作用：
+
+    -   父组件向子组件传递内容
+
+        ```js
+        // slot标签表示插槽位置
+        Vue.component('alert-box', {
+        	template: `
+                <div class="demo-alert-box" >
+                    <strong>Error</strong>
+                    <slot><slot>
+                </div>
+            `,
+        });
+        ```
+
+        ```html
+        <alert-box>something bad</alert-box>
+        ```
+
+## promise
+
+### 前后端交互模式
+
+1. 接口调用方式：
+    - 原生 ajax
+    - 基于 jQuery 的 ajax
+    - fetch
+    - axios
+2. Restful 形式的 URL
+    - http 请求方式：
+        1. GET 查询
+        2. POST 添加
+        3. PUT 修改
+        4. DELETE 删除
+
+### promise 用法
+
+-   异步效果分析
+    1. 定时任务
+    2. ajax
+    3. 事件函数
+-   多次异步调用的依赖关系 - 多次异步调用的结果顺序不确定 - 异步调用结果如果存在依赖需要嵌套
+
+Promise 是异步编程的一种解决方案，从语法上讲，Promise 是一个对象，从它可以获取异步操作的消息。
+好处：
+
+-   可以避免多层异步调用嵌套问题（回调地狱）
+-   Promise 对象提供了简洁的 API，使得控制异步操作更加容易
+
+#### promise 基本用法
+
+-   实例化 Promise 对象，构建函数中传递函数，该函数用于处理异步任务
+-   resolve 和 reject 两个参数用于处理成功和失败两种情况，并通过 p.then 获取处理结果
+
+```js
+var p = new Promise(function (resolve, reject) {
+	//成功时调用 resolve()
+	//失败时调用 reject()
+});
+p.then(
+	function (ret) {
+		//从resolve得到正常结果
+	},
+	function (ret) {
+		//从reject得到错误信息
+	}
+);
+```
+
+#### 基于 Promise 处理 Ajax 请求
+
+```js
+function queryData(url) {
+	return new Promise(function (resolve, reject) {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState != 4) return;
+			if (xhr.status == 200) {
+				resolve(xhr.responseText);
+			} else {
+				reject('出错了');
+			}
+		};
+		xhr.open('get', url);
+		xhr.send(null);
+	});
+}
+queryData('http://localhost:3000/data').then(
+	function (data) {
+		console.log(data);
+	},
+	function (err) {
+		console.log(err);
+	}
+);
+```
+
+#### then 参数中的返回值
+
+1. 返回 Promise 实例对象
+    - 返回的该实例对象会调用下一个 then
+2. 返回普通值
+    - 返回的普通值会直接传递给下一个 then，通过 then 参数中函数的参数接收该值
+
+#### promise 常用 api
+
+1. 实例方法
+
+    - p.then()得到异步任务的正确结果
+    - p.catch()获取异常信息
+    - p.finally()成功与否都会执行（尚且不是正是标准）
+
+    ```js
+    queryData()
+    	.then(function (data) {
+    		//成功时执行
+    		console.log(data);
+    	})
+    	.catch(function (data) {
+    		//失败时执行
+    		console.log(data);
+    	})
+    	.finally(function () {
+    		//成功与否都会执行
+    		console.log('finshed');
+    	});
+    ```
+
+2. 对象方法
+    - Promise.all()并发处理多个异步任务，所有任务都执行完成才能得到结果
+    - Promise.race()并发处理多个异步任务，只要有一个任务完成就能得到结果
+    ```js
+    Promise.all([p1, p2, p3]),
+    	then((result) => {
+    		console.log(result);
+    	});
+    Promise.race([p1, p2, p3]),
+    	then((result) => {
+    		console.log(result);
+    	});
+    ```
+
+### 接口调用-fetch 用法
+
+### 接口调用-axios 用法
+
+### 接口调用-async/await 用法

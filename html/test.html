@@ -6,20 +6,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
-	<body>
-		<style type="text/css">
-            [v-cloak] {
-                display: none;
-            }
-        </style>
-        <div id="app" v-cloak>{{msg}}</div>
-        <script type="text/javascript" src="../js/vue.js"></script>
-        <script type="text/javascript">
-            new Vue({
-                el: '#app',
-                data: {
-                    msg: 'helloWord',
-                },
-            });
-        </script>
+	<body></body>
+	<script>
+		function queryData() {
+			return new Promise(function (resolve, reject) {
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState != 4) return;
+					if (xhr.status == 200) {
+						resolve(xhr.responseText);
+					} else {
+						reject('出错了');
+					}
+				};
+				xhr.open('get', '/data');
+				xhr.send(null);
+			});
+			return p;
+		}
+		queryData('http://localhost:3000/data').then(
+			function (data) {
+				console.log(data);
+			},
+			function (err) {
+				console.log(err);
+			}
+		);
+	</script>
 </html>
