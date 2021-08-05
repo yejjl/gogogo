@@ -4398,3 +4398,181 @@ queryData.then((ret) => {
 	console.log(ret);
 });
 ```
+
+## vue 路由
+
+### 路由的基本概念与原理
+
+路由的本质就是对应关系
+
+-   后端路由
+    -   概念：根据不同的用户请求，返回不同的内容
+    -   本质：URL 请求地址与服务器资源之间的对应关系
+-   前端路由
+    -   概念：根据不同的用户事件，显示不同的页面内容
+    -   本质：用户事件与事件处理函数之间的对应关系
+
+### vue-router 的基本使用
+
+1. 功能：
+
+    - 支持 HTML5 历史模式或 hash 模式
+    - 支持嵌套路由
+    - 支持路由参数
+    - 支持编程式路由
+    - 支持命名路由
+
+2. 使用步骤：
+
+    1. 引入相关的库文件
+        ```js
+        //1.导入vue文件
+        //2.导入vue-router文件
+        ```
+    2. 添加路由链接
+        ```html
+        <!-- router-link是vue中提供的标签，默认会被渲染为a标签 -->
+        <!-- to属性默认会被渲染为href属性 -->
+        <!-- to属性的默认值会被渲染为#开头的hash地址 -->
+        <router-link to="/user">User</router-link>
+        <router-link to="/register">Register</router-link>
+        ```
+    3. 添加路由填充位
+        ```html
+        <!-- 路由填充位 -->
+        <!-- 将来通过规则匹配到的组件，将会被渲染到router-view所在位置 -->
+        <router-view></router-view>
+        ```
+    4. 定义路由组件
+        ```js
+        var User = {
+        	template: '<div>User</div>',
+        };
+        var Register = {
+        	template: '<div>Register</div>',
+        };
+        ```
+    5. 配置路由规划并创建路由实例
+        ```js
+        var router = new VueRouter({
+        	//routes是规则数组
+        	routes: [
+        		//每个路由规则都是一个配置对象，其中至少包含path和component两个属性
+        		//path表示当前路由规则匹配的hash地址
+        		//component表示当前路由规则对应要展示的组件
+        		{ path: '/user', component: User },
+        		{ path: '/register', component: Register },
+        	],
+        });
+        ```
+    6. 把路由挂载到 Vue 实例中
+        ```js
+        new Vue({
+        	el: '#app',
+        	//为了能够让路由规则生效，必须把路由对象挂载到vue实例对象上
+        	router,
+        });
+        ```
+
+3. 路由重定向
+
+    路由重定向指的是：用户在访问地址 A 的时候，强制用户跳转到地址 C，conger 展示特定的组件页面
+
+    通过路由规则的 redirect 属性，指定一个新的路 地址，可以很方便的设置路由的重定向
+
+    ```js
+    var router = new VueRouter({
+    	//routes是规则数组
+    	routes: [
+    		{ path: '/', redirect: '/user' },
+    		{ path: '/user', component: User },
+    		{ path: '/register', component: Register },
+    	],
+    });
+    ```
+
+### vue-router 嵌套路由
+
+1. 嵌套路由功能分析
+    - 点击父级路由链接显示模板内容
+    - 模板内容中又有自己路由链接
+    - 点击子级路由链接显示子级模板内容
+
+### vue-router 动态路由匹配
+
+应用场景：通过动态路由参数的模式进行路由匹配
+
+```js
+var router = new VueRouter({
+	routes: [{ path: '/user/:id', component: User }],
+});
+const User = {
+	//路由组件中通过$route.params获取路由参数
+	template: '<div>User{{$route.params.id}}</div>',
+};
+```
+
+```js
+var router = new VueRouter({
+    //如果props被设置为true，route.params将会被设置为组件属性
+	routes: [{ path: '/user/:id', component: User },props:true],
+});
+const User = {
+    props:['id'], //使用props接收参数
+	template: '<div>User{{id}}</div>',
+};
+```
+
+### vue-router 命名路由
+
+为了更加方便的表示路由的路径，可以给路由规则起一个别名，即为“命名路由”。
+
+```js
+const router = new VueRouter({
+	routes: [
+		{
+			path: '/user/:id',
+			name: 'user',
+			component: User,
+		},
+	],
+});
+```
+
+```html
+<router-link :to="{name:'user',params:{id:1}}"></router-link>
+```
+
+### vue-router 编程式导航
+
+-   声明式导航：通过点击链接实现导航的方式，叫做声明式导航
+    例如：普通网页中的<a></a>链接或 Vue 中的<router-link></router-link>
+-   编程式导航：通过 JavaScript 形式的 API 实现导航的方式
+    例如：普通网页中的 location.href
+
+常见的编程式导航 API：
+
+-   this.$router.push('hash 地址')
+-   this.$router.go(n)
+
+```js
+const User = {
+	template: '<div><button @click="goRegister">跳转到注册页面</button></div>',
+	methods: {
+		goRegister: function () {
+			//用编程的方式控制路由跳转
+			this.$router.push('/register');
+		},
+	},
+};
+```
+
+```js
+//后退
+
+[methods:{
+    goBack(){
+        this.$router.go(-1)
+    }
+}]
+```

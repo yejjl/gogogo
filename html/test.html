@@ -5,32 +5,86 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-router.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<div id="app">
+			<router-link :to="{name:'user',params:{id:1}}">User1</router-link>
+			<router-link :to="{name:'user',params:{id:2}}">User2</router-link>
+			<router-link :to="{name:'user',params:{id:3}}">User3</router-link>
+			<router-link to="/register">Register</router-link>
+			<router-view></router-view>
+		</div>
+	</body>
 	<script>
-		function queryData() {
-			return new Promise(function (resolve, reject) {
-				var xhr = new XMLHttpRequest();
-				xhr.onreadystatechange = function () {
-					if (xhr.readyState != 4) return;
-					if (xhr.status == 200) {
-						resolve(xhr.responseText);
-					} else {
-						reject('出错了');
-					}
-				};
-				xhr.open('get', '/data');
-				xhr.send(null);
-			});
-			return p;
-		}
-		queryData('http://localhost:3000/data').then(
-			function (data) {
-				console.log(data);
+		//<div><button @click="goRegister">跳转到注册页面</button></div>',
+
+		var User = {
+			props: ['id'],
+			template: `<div>用户ID:{{id}}
+                <button @click="goRegister">跳转到注册页面</button>
+                </div>
+            `,
+			methods: {
+				goRegister: function () {
+					//用编程的方式控制路由跳转
+					this.$router.push('/register');
+				},
 			},
-			function (err) {
-				console.log(err);
-			}
-		);
+		};
+		var Register = {
+			template: `
+		          <div>
+		              <div>register</div>
+		              <router-link to="/register/tab1">Tab1</router-link>
+			    <router-link to="/register/tab2">Tab2</router-link>
+			    <router-view></router-view>
+                <button @click="goBack">后退</button>
+		          </div>
+		          `,
+			methods: {
+				goBack() {
+					this.$router.go(-1);
+				},
+			},
+		};
+		var regTab1 = {
+			template: '<div>Tab1</div>',
+		};
+		var regTab2 = {
+			template: '<div>Tab2</div>',
+		};
+		var router = new VueRouter({
+			//routes是规则数组
+			routes: [
+				//每个路由规则都是一个配置对象，其中至少包含path和component两个属性
+				//path表示当前路由规则匹配的hash地址
+				//component表示当前路由规则对应要展示的组件
+				{ path: '/', redirect: '/user/1' },
+				{ path: '/user', redirect: '/user/1' },
+				{
+					path: '/user/:id',
+					name: 'user',
+					component: User,
+					props: true,
+				},
+				{
+					path: '/register',
+					component: Register,
+					children: [
+						{ path: '/register', component: regTab1 },
+						{ path: '/register/tab1', component: regTab1 },
+						{ path: '/register/tab2', component: regTab2 },
+					],
+				},
+				//{ path: '/register', redirect: '/register/tab1' },
+			],
+		});
+		const vm = new Vue({
+			el: '#app',
+			data: {},
+			router: router,
+		});
 	</script>
 </html>
