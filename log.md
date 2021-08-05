@@ -4576,3 +4576,128 @@ const User = {
     }
 }]
 ```
+
+## 前端工程化
+
+### 模块化相关规划
+
+-   传统开发模式的主要问题
+    1. 命名冲突
+    2. 文件依赖
+-   解决方法
+
+    -   模块化就是把单独的一个功能封装到一个模块文件中，模块之间相互隔离，但是可以通过特定的接口公开内部成员，也可以依赖别的模块
+    -   模块化的好处：方便代码的重用，从而提升开发效率，方便后期维护
+
+-   es6 模块化规范定义
+    -   每个 js 文件都是一个独立的模块
+    -   导入模块成员使用 import 关键字
+    -   暴露模块成员使用 export 关键字
+
+#### node.js 中通过 babel 体验 es6 模块化
+
+1.  ```
+    npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/node
+    ```
+2.  ```
+    npm install --save @babel/polyfill
+    ```
+3.  项目中创建文件 babel.config.js
+4.  babel.config.js 文件内容：
+    ```js
+    const presets = [
+    	[
+    		'@babel/env',
+    		{
+    			targets: {
+    				edge: '17',
+    				firefox: '60',
+    				chrome: '67',
+    				safari: '11.1',
+    			},
+    		},
+    	],
+    ];
+    module.exports = presets;
+    ```
+5.  通过 npx babel-node index.js 执行代码
+
+#### es6 模块化的基本语法
+
+1. 默认导出、导入
+
+    - 默认导出语法 export default 默认导出的成员
+
+        ```js
+        //当前文件模块 m1.js
+
+        //定义私有成员 a 和 b
+        let a=10
+        let b=20
+        //外界访问不到变量 c ,因为它没有暴露出去
+        let c=30
+        function shou(){}
+
+        //将本模块中的私有成员暴露出去，供其它模块使用
+        export dafault{
+            a,b,show
+        }
+        ```
+
+    - 默认导入语法 import 接收名称 from‘模块标识符’
+
+        ```js
+        //导入模块成员
+        import m1 from './m1.js';
+
+        console.log(m1);
+        //打印结果为：
+        //{a:10,b:20,show:[Function:show]}
+        ```
+
+2. 按需导出导入
+
+    - 按需导出语法 export let s1 = 10
+
+        ```js
+        //当前文件模块为m1.js
+
+        //向外按需导出变量s1
+        export let s1='aaa'
+        //向外按需导出变量s2
+        export let s2='ccc'
+        //向外按需导出方法say
+        export function say=function(){}
+
+        ```
+
+    - 按需导入语法 import{s1} from‘模块标识符’
+
+        ```js
+        //导入模块成员
+        import { s1, s2, as, ss2, say } from './m1.js';
+        ```
+
+3. 直接导入并执行模块代码
+
+    ```js
+    //当前文件模块为m2.js
+
+    //在当前模块中执行一个for循环操作
+    for (let i = 0; i < 3; i++) {
+    	console.log(i);
+    }
+    ```
+
+    ```js
+    //直接导入并执行模块代码
+    import './m2.js';
+    ```
+
+### webpack
+
+### Vue 单文件组件
+
+### Vue 脚手架
+
+### Element-UI 的基本使用
