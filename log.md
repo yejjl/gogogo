@@ -4696,7 +4696,263 @@ const User = {
 
 ### webpack
 
+webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js 兼容问题、性能优化等功能
+
+#### webpack 的基本使用
+
+1. 创建列表隔行变色项目
+    1. 新建项目空目录，并运行 npm init -y 命令，初始化包管理配置文件 package.json
+    2. 新建 src 源代码目录
+    3. 新建 src->index.html 首页
+    4. 初始化首页基本的结构
+    5. 运行 npm i jquery -s 命令，安装 jQuery
+    6. 通过模块化方式，实现效果
+2. 在项目中安装和配置 webpack
+    1. 运行 npm i webpack webpack-cli -D 命令，安装 webpack 相关包
+    2. 在项目根目录中，创建名为 webpack.congig.js 的 webpack 配置文件
+    3. 在 webpack 配置文件中初始化如下配置：
+        ```js
+        module.exports = {
+        	mode: 'development', //mode用来指定构建模式。。。。production/development
+        };
+        ```
+    4. 在 package.json 配置文件中的 script 节点下，新增 dev 脚本如下：
+        ```js
+        "scripts":{
+            "dev":"webpack"//script节点下的脚步，可以通过npm run执行
+        }
+        ```
+    5. 在终端运行 npm run dev 命令，启动 webpack 进行项目打包
+3. 配置打包的入口与出口
+   webpack 的 4.x 版本默认约定：
+    - 入口：src->index.js
+    - 出口：dist->main.js
+    - 如果需要修改打包的入口、出口，可以在 webpack.config.js 中新增如下配置：
+        ```js
+        const path = require('path'); //导入node.js中操作路径的模块
+        module.exports = {
+        	entry: path.join(__dirname, './src/index.js'), //打包入口文件的路径
+        	output: {
+        		path: path.join(__dirname, './dist'), //输出文件的存放路径
+        		filename: 'bundle.js', //输出文件的名称
+        	},
+        };
+        ```
+4. webpack 的自动打包功能
+    1. 运行 npm i webpack-dev-server -D 命令，安装支持自动打包的工具
+    2. 修改 package.json->script 中的 dev 命令如下：
+        ```js
+        "scripts":{
+            "dev":"webpack-dev-server"//script节点下的脚本，可以通过npm run 执行
+        }
+        ```
+    3. 将 src->index.html 中，script 脚本的引用路径，修改为“/buldle.js”
+    4. 运行 npm run dev 命令，重新进行打包
+    5. 在浏览器中访问 http://localhost:8080 地址
+5. 配置 html-webpack-plugin 生成预览页面
+    1. 运行 npm i html-webpack-plugin -D 命令，安装生成预览页面的插件
+    2. 修改 webpack.config.js 文件头部区域，添加如下配置信息：
+        ```js
+        //导入生成预览页面的插件，得到一个构造函数
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
+        const htmlPlugin = new HtmlWebpackPlugin({
+        	template: './src/index.html', //指定要用到的模板文件
+        	filename: 'index.html', //指定生成的文件的名称，该文件存放于内存中，在目录中不显示
+        });
+        ```
+    3. 修改 webpack.config.js 文件中向外暴露的配置对象，新增如下配置节点
+        ```js
+        module.exports = {
+        	plugins: [htmlPlugin], //plugins数组是webpack打包期间会用到的一些插件列表
+        };
+        ```
+6. 怕配置自动打包相关的参数
+    ```js
+    //package.json中的配置
+    //--open 打包完成后自动打开浏览器
+    //--host 配置IP地址
+    //--port 配置端口
+    "scripts":{
+        "dev":"webpack-dev-server --open --host 127.0.0.1 --port 8888",
+    }
+    ```
+
+#### webpack 中的加载器
+
+1. 通过 loader 打包非 js 模块
+    - less-loader 可以打包处理.less 相关的文件
+    - sass-loader 可以打包处理.scss 相关文件
+    - url-loader 可以打包处理 css 中与 url 路径相关的文件
+2. 基本使用
+    1. 打包处理 css 文件
+        1. 运行 npm i style-loader css-loader -D 命令，安装 css 文件的 loader
+        2. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
+            ```js
+            //test表示匹配的文件类型，use表示对应要调用的loader
+            module: {
+            	ruler: [
+            		{ test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            	];
+            }
+            ```
+    2. 打包处理 less 文件
+        1. 运行 npm i less-loader less -D 命令
+        2. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
+            ```js
+            //test表示匹配的文件类型，use表示对应要调用的loader
+            module: {
+            	ruler: [
+            		{
+            			test: /\.less$/,
+            			use: ['style-loader', 'css-loader', 'less-loader'],
+            		},
+            	];
+            }
+            ```
+    3. 打包处理 scss 文件
+        1. 运行 npm i sass-loader node-sass -D 命令
+        2. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
+            ```js
+            //test表示匹配的文件类型，use表示对应要调用的loader
+            module: {
+            	ruler: [
+            		{
+            			test: /\.sass$/,
+            			use: ['style-loader', 'css-loader', 'sass-loader'],
+            		},
+            	];
+            }
+            ```
+    4. 配置 postCSS 自动添加 css 的兼容前缀
+        1. 运行 npm i postcss-loader autoprefixer -D 命令
+        2. 在项目根目录中创建 postcss 的配置文件 postcss.config.js，并初始化如下配置：
+            ```js
+            const autoprefixer = require('autoprefixer'); //导入自动添加前缀的插件
+            module.exports = {
+            	plugins: [autoprefixer], //挂载插件
+            };
+            ```
+        3. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
+            ```js
+            //test表示匹配的文件类型，use表示对应要调用的loader
+            module: {
+            	ruler: [
+            		{
+            			test: /\.css$/,
+            			use: ['style-loader', 'css-loader', 'postcss-loader'],
+            		},
+            	];
+            }
+            ```
+    5. 打包样式表中的图片和字体文件
+        1. 运行 npm i url-loader file-loader -D 命令
+        2. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
+            ```js
+            module: {
+            	ruler: [
+            		{
+            			test: /\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/,
+            			use: 'url-loader?limit=16940', //其中 ? 之后的是loader的参数项。
+            			//limit用来指定图片的大小，单位byte
+            		},
+            	];
+            }
+            ```
+    6. 打包处理 js 文件中的高级语法
+        1. 安装 babel 转换器相关的包：npm i babel-loader @babel/core @babel/runtime -D
+        2. 安装 babel 语法插件相关的包：npm i @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D
+        3. 在项目根目录中，创建 babel 配置文件 babel.config.js 并初始化配置如下：
+            ```js
+            module.exports = {
+            	presets: ['@babel/preset-env'],
+            	plugins: [
+            		'@babel/plugin-transform-runtime',
+            		'@babel/plugin-proposal-class-properties',
+            	],
+            };
+            ```
+        4. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
+            ```js
+            //exclude为排除项，表示babel-loader不需要处理node_modules中的js文件
+            {test:/\.js$/,use:'babel-loader',exclude:/node_modules/}
+            ```
+
 ### Vue 单文件组件
+
+单文件组件：
+
+-   template 组件的模板区域
+-   script 业务逻辑区域
+-   style 样式区域
+
+```html
+<template>
+	<!-- 定义Vue组件的模板内容 -->
+</template>
+<script>
+	// 定义Vue组件的业务逻辑
+	export default {
+		data() {
+			return {};
+		}, //私有数据
+		methods: {}, //处理函数
+		//。。。其他业务逻辑
+	};
+</script>
+<style scoped>
+	/* 定义组件的样式 */
+</style>
+```
+
+-   在 webpack 中配置 vue 组件的加载器
+    1. 运行 npm i vue-loader vue-template-compiler -D 命令
+    2. 在 webpack.config.js 配置文件中，添加 vue-loader 的配置如下：
+        ```js
+        const VueLoaderPlugin = require('vue-loader/lib/plugin');
+        module.exports = {
+        	modules: {
+        		rules: [
+        			//其他规则
+        			{ test: /\.vue$/, loader: 'vue-loader' },
+        		],
+        	},
+        	plugins: [
+        		//...其他插件
+        		new VueLoaderPlugin(),
+        	],
+        };
+        ```
+-   在 webpack 项目中使用 Vue
+
+    1. 运行 npm i vue -s 安装 vue
+    2. 在 src->index.js 入口文件中，通过 import Vue from 'vue' 来导入 vue 构造函数
+    3. 创建 vue 的实例对象，并指定要控制的 el 区域
+    4. 通过人的人函数渲染 App 跟组件
+
+        ```js
+        //导入Vue构造函数
+        import Vue from 'vue';
+        //导入app组件
+        import App from './components/App.vue';
+
+        const vm = new Vue({
+        	el: '#app',
+        	//通过render函数，把指定的组件渲染到el区域中
+        	render: (h) => h(App),
+        });
+        ```
+
+-   webpack 打包发布
+
+    ```js
+    //在package.json文件中配置webpack打包命令
+    //该命令默认加载根目录中的webpack.config.js配置文件
+    "scripts":{
+        //用于打包的命令
+        "build":"webpack -p",
+
+    }
+    ```
 
 ### Vue 脚手架
 
