@@ -4956,4 +4956,52 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
 
 ### Vue 脚手架
 
+用于快速生成 Vue 项目基础架构
+
+#### 安装
+
+```
+npm install -g @vue/cli
+```
+
+#### 创建项目
+
+```
+<!-- 1. 基于交互式命令行的方式，创建新版vue项目 -->
+vue create my-project
+
+<!-- 2. 基于图形化界面的方式，创建新版vue项目 -->
+vue ui
+
+<!-- 基于2.x的旧模板，创建旧版vue项目 -->
+npm install -g @vue/cli-init
+vue init webpack my-project
+```
+
+#### 脚手架自定义配置
+
+1. 在项目的根目录创建文件 vue.config.js
+2. 在该文件中进行相关配置，从而覆盖默认配置
+    ```js
+    module.exports = {
+    	devServer: {
+    		port: 8888,
+    		open: true,
+    	},
+    };
+    ```
+
 ### Element-UI 的基本使用
+
+#### 安装
+
+1. 安装依赖包 npm i element-ui -S
+2. 导入 Element-UI 相关资源
+    ```js
+    //导入组件库
+    import ElementUI from 'element-ui';
+    //导入组件相关样式
+    import 'element-ui/lib/theme-chalk/index.css';
+    //配置Vue插件
+    Vue.use(ElementUI);
+    ```
