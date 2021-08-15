@@ -58,27 +58,27 @@
 
 1. 声明变量
     ```javascript
-    var age
-    var age = 18
+    var age;
+    var age = 18;
     ```
 2. 赋值
     ```javascript
-    var age = 18
-    age = 18
+    var age = 18;
+    age = 18;
     ```
 
 ### 声明变量的特殊情况
 
 1. 只声明不赋值
     ```javascript
-    var sex
-    console.log(sex)
-    --undefined
+    var sex;
+    console.log(sex);
+    --undefined;
     ```
 2. 不声明、不直接赋值直接使用
     ```javascript
-    console.log(tel)
-    --报错
+    console.log(tel);
+    --报错;
     ```
 3. 不声明直接赋值使用
     ```javascript
@@ -134,15 +134,15 @@
       |\b|空格|
     - 检测字符串长度
         ```javascript
-        var str = 'my name is yyjj'
-        console.log(str.length) //15
+        var str = 'my name is yyjj';
+        console.log(str.length); //15
         ```
     - 字符串拼接
         ```javascript
         //字符串类型+任意类型=拼接后的字符串类型
-        console.log('我' + 18) //我18
-        console.log('12' + 18) //1218
-        console.log('我' + 18 + 12) //我1812
+        console.log('我' + 18); //我18
+        console.log('12' + 18); //1218
+        console.log('我' + 18 + 12); //我1812
         ```
 3. Boolean
     - true 当 1 看；false 当 0 看
@@ -155,8 +155,8 @@
 ### typeof
 
 ```javascript
-var num = 10
-console.log(typeof num) //number
+var num = 10;
+console.log(typeof num); //number
 ```
 
 ### 字符类型转换
@@ -218,13 +218,13 @@ console.log(typeof num) //number
     ```javascript
     switch (表达式) {
     	case value1:
-    		执行语句1
-    		break
+    		执行语句1;
+    		break;
     	case value2:
-    		执行语句2
-    		break
+    		执行语句2;
+    		break;
     	default:
-    		执行语句
+    		执行语句;
     }
     //开发中表达式经常写成变量
     //表达式的结果和case的值相匹配时是全等（数值类型一致）
@@ -260,15 +260,15 @@ console.log(typeof num) //number
     1. new
 
     ```javascript
-    var 数组名 = new Array()
-    var arr = new Array() //创建一个空数组；
+    var 数组名 = new Array();
+    var arr = new Array(); //创建一个空数组；
     ```
 
     2. 利用数组字面量创建数组
 
     ```javascript
-    var 数组名 = []
-    var 数组名 = ['a', 'b', 'c']
+    var 数组名 = [];
+    var 数组名 = ['a', 'b', 'c'];
     ```
 
 2. 访问数组元素
@@ -276,7 +276,7 @@ console.log(typeof num) //number
     1. 数组索引（从 0 开始）
 
     ```javascript
-    数组名[索引号]
+    数组名[索引号];
     //超出的索引输出undefined
     ```
 
@@ -288,10 +288,10 @@ console.log(typeof num) //number
 
 5. 数组转换为字符串
     ```javascript
-    var arr = ['a', 'b', 'c']
-    var str = ''
+    var arr = ['a', 'b', 'c'];
+    var str = '';
     for (var i = 0; i < arr.length; i++) {
-    	str += arr[i]
+    	str += arr[i];
     }
     ```
 6. 数组新增元素
@@ -299,24 +299,24 @@ console.log(typeof num) //number
     1. 修改 length 长度
 
     ```javascript
-    var arr = ['a', 'b', 'c']
-    arr.length = 5
+    var arr = ['a', 'b', 'c'];
+    arr.length = 5;
     ```
 
     2. 修改索引
 
     ```javascript
-    var arr = ['a', 'b', 'c']
-    arr[3] = 'd'
+    var arr = ['a', 'b', 'c'];
+    arr[3] = 'd';
 
-    arr[0] = 'e' //也可以替换元素
+    arr[0] = 'e'; //也可以替换元素
     ```
 
     3. push
 
     ```javascript
-    var arr = [1, 2, 3]
-    arr.push(4)
+    var arr = [1, 2, 3];
+    arr.push(4);
     //在数组末尾添加
     ```
 
@@ -328,13 +328,13 @@ console.log(typeof num) //number
     1.
 
     ```javascript
-    var arr = ['1', '2', '3']
-    var newArr = []
-    var j = 0
+    var arr = ['1', '2', '3'];
+    var newArr = [];
+    var j = 0;
     for (var i = 0; i < arr.length; i++) {
     	if (arr[i] > 1) {
-    		newArr.push(arr[i])
-    		j++
+    		newArr.push(arr[i]);
+    		j++;
     	}
     }
     ```
@@ -342,14 +342,14 @@ console.log(typeof num) //number
     2.
 
     ```javascript
-    var arr = ['1', '2', '3']
-    var newArr = []
+    var arr = ['1', '2', '3'];
+    var newArr = [];
     for (var i = 0; i < arr.length; i++) {
     	if (arr[i] > 1) {
-    		newArr[newArr.length] = arr[i]
+    		newArr[newArr.length] = arr[i];
     	}
     }
-    console.log(newArr)
+    console.log(newArr);
     ```
 
 8. 数组删除元素（去重）
@@ -360,7 +360,7 @@ console.log(typeof num) //number
 
     ```javascript
     //删除数组最后一个元素
-    arr.pop()
+    arr.pop();
     //pop()返回值为删除的元素
     ```
 
@@ -370,35 +370,35 @@ console.log(typeof num) //number
         ```javascript
         //遍历旧数组，然后拿旧数组去查询新数组
         function unique(arr) {
-        	var newArr = []
+        	var newArr = [];
         	for (var i = 0; i < arr.length; i++) {
         		if (newArr.indexOf(arr[i]) === -1) {
-        			newArr.push(arr[i])
+        			newArr.push(arr[i]);
         		}
         	}
-        	return newArr
+        	return newArr;
         }
         ```
 
 9. 数组排序
 
     ```javascript
-    var arr = []
-    arr.reserse() //反转数组
+    var arr = [];
+    arr.reserse(); //反转数组
 
     arr.sort(function (a, b) {
-    	return a - b
-    	升序
+    	return a - b;
+    	升序;
     	//return b-a;(降序)
-    }) //冒泡排序
+    }); //冒泡排序
     ```
 
 10. 获取索引
 
     ```javascript
     //indexOf(数组元素，[起始位置])
-    arr.indexOf(数组元素) //只返回第一个满足条件的元素索引，若找不到返回-1
-    lastIndexOf
+    arr.indexOf(数组元素); //只返回第一个满足条件的元素索引，若找不到返回-1
+    lastIndexOf;
     ```
 
 11. 数组转字符串
@@ -420,14 +420,14 @@ console.log(typeof num) //number
 
     ```javascript
     function fn() {}
-    fn()
+    fn();
     ```
 
 2. 函数表达式（匿名函数）
 
     ```javascript
-    var 变量名 = function () {}
-    变量名()
+    var 变量名 = function () {};
+    变量名();
     ```
 
 ## JavaScript 作用域
@@ -457,23 +457,23 @@ console.log(typeof num) //number
 //方法冒号后跟一个匿名函数
 //调用对象的属性：对象名.属性名、对象名['属性名']
 //调用对象的方法：对象名.方法名()
-var obj = {} //创建一个空对象
+var obj = {}; //创建一个空对象
 var obj = {
 	uname: '',
 	age: '',
 	sex: '',
 	sauHi: function () {},
-}
+};
 ```
 
 2. new Object 创建
 
 ```javascript
-var obj = new Object()
-obj.uname = ''
-obj.age = ''
-obj.sex = ''
-obj.sayHi = function () {}
+var obj = new Object();
+obj.uname = '';
+obj.age = '';
+obj.sex = '';
+obj.sayHi = function () {};
 //利用等号赋值的方法添加对象的属性和方法
 ```
 
@@ -482,20 +482,20 @@ obj.sayHi = function () {}
 
 ```javascript
 function 构造函数名() {
-	this.属性 = 值
-	this.方法 = function () {}
+	this.属性 = 值;
+	this.方法 = function () {};
 }
-new 构造函数名()
+new 构造函数名();
 //构造函数名的首字母大写
 //不需要return就可以返回结果
 function Star(uname, age, sex) {
-	this.uname = uname
-	this.age = age
-	this.sex = sex
-	this.sing = function (sang) {}
+	this.uname = uname;
+	this.age = age;
+	this.sex = sex;
+	this.sing = function (sang) {};
 }
-var ldh = new Star('刘德华', 18, '男')
-ldh.sing('sang')
+var ldh = new Star('刘德华', 18, '男');
+ldh.sing('sang');
 ```
 
 -   new 关键字执行过程
@@ -508,8 +508,8 @@ ldh.sing('sang')
     ```javascript
     //for (变量 in 对象)
     for (var k in obj) {
-    	console.log(k) //输出属性名
-    	console.log(obj[k]) //输出属性值
+    	console.log(k); //输出属性名
+    	console.log(obj[k]); //输出属性值
     }
     ```
 
@@ -545,14 +545,14 @@ ldh.sing('sang')
 1. 字符串对象
 
     ```javascript
-    var str = 'andy'
-    console.log(str.length)
+    var str = 'andy';
+    console.log(str.length);
     //把简单数据类型包装成复杂数据类型
-    var temp = new String('andy')
+    var temp = new String('andy');
     //把临时变量的值给str
-    str = temp
+    str = temp;
     //销毁这个临时变量
-    temp = null
+    temp = null;
     ```
 
     - 字符串不可变
@@ -564,27 +564,27 @@ ldh.sing('sang')
     - 求某个字符串出现的位置及次数
 
     ```javascript
-    var str = 'abcoefoxyozzopp'
-    var index = str.indexOf('o')
+    var str = 'abcoefoxyozzopp';
+    var index = str.indexOf('o');
     while (index !== -1) {
-    	console.log(index)
-    	index = str.indexOf('o', index + 1)
+    	console.log(index);
+    	index = str.indexOf('o', index + 1);
     }
     ```
 
     - 根据位置返回字符
 
     ```javascript
-    var str = 'andy'
-    console.log(str.charAt(3))
+    var str = 'andy';
+    console.log(str.charAt(3));
 
-    str[index] //h5 新方法
+    str[index]; //h5 新方法
     ```
 
     - 返回索引字符的 ASCII 值
 
     ```javascript
-    console.log(str.charCodeAt(0)) //97
+    console.log(str.charCodeAt(0)); //97
     ```
 
     - 拼接、截取字符串
@@ -598,7 +598,7 @@ ldh.sing('sang')
     - replace
 
     ```javascript
-    str.replace('被替换的字符', '替换的字符') //只替换第一个字符
+    str.replace('被替换的字符', '替换的字符'); //只替换第一个字符
     while (str.indexOf('') !== -1) {}
     ```
 
@@ -606,7 +606,7 @@ ldh.sing('sang')
 
     ```javascript
     //字符串转数组
-    str.splice('分隔符')
+    str.splice('分隔符');
     ```
 
 ## 简单、复杂类型
@@ -703,73 +703,73 @@ ldh.sing('sang')
 1. 父级节点
     ```javascript
     //最近的父节点，找不到返回空
-    元素.parentNode
+    元素.parentNode;
     ```
 2. 子节点
 
     ```javascript
     //所有的子节点，包含元素、文本节点
-    元素.childNodes
+    元素.childNodes;
 
     //所有子元素节点
-    元素.children
+    元素.children;
 
-    元素.firstElementChild //ie9+
+    元素.firstElementChild; //ie9+
 
-    元素.lastElementChild //ie9+
+    元素.lastElementChild; //ie9+
 
-    元素.children[0]
-    元素.children[元素.children.length - 1]
+    元素.children[0];
+    元素.children[元素.children.length - 1];
     ```
 
 3. 兄弟节点
 
     ```javascript
     //包含元素、文本节点
-    元素.nextSibling
-    元素.previousSibling
+    元素.nextSibling;
+    元素.previousSibling;
 
-    元素.nextElementSibling //元素节点
-    元素.previousElementSibling //
+    元素.nextElementSibling; //元素节点
+    元素.previousElementSibling; //
 
     function getNextElementSibling(element) {
-    	var el = element
+    	var el = element;
     	while ((el = el.nextSibling)) {
     		if (el.nodeType == 1) {
-    			return el
+    			return el;
     		}
     	}
-    	return null
+    	return null;
     }
     ```
 
 4. 节点创建和添加
 
     ```javascript
-    document.createElement('tagName') //创建
+    document.createElement('tagName'); //创建
 
-    parent.appendChild(child) //在后面添加
+    parent.appendChild(child); //在后面添加
 
-    parent.insertBefore(child, parent.children[0])
+    parent.insertBefore(child, parent.children[0]);
 
     //效率best
-    var array = []
+    var array = [];
     for (var i = 0; i < 1000; i--) {
-    	array.push('<div></div>')
+    	array.push('<div></div>');
     }
-    document.body.innerHtml = array.join('')
+    document.body.innerHtml = array.join('');
     ```
 
 5. 删除节点
 
     ```javascript
-    element.removeChild(element.child[0])
+    element.removeChild(element.child[0]);
     ```
 
 6. 复制节点
 
     ```javascript
-    element.cloneNode(element.child[0])
+    element.cloneNode(element.child[0]);
     ```
 
 ## 事件
@@ -858,18 +858,18 @@ document.getElementById('list').addEventListener('click', function (e) {
 1. 窗口加载事件
 
 ```javascript
-window.onload = function () {} //只能写一次，多次以最后一个为准
+window.onload = function () {}; //只能写一次，多次以最后一个为准
 
-window.addEventListenner('load', function () {}) //没有限制
+window.addEventListenner('load', function () {}); //没有限制
 
-document.addEventListener('DOMContentLoaded', function () {})
+document.addEventListener('DOMContentLoaded', function () {});
 //仅DOM加载完成，不包括样式表，图片，flash等  ie9+
 ```
 
 2. 调整窗口大小
 
 ```javascript
-window.addEventListener('resize', function () {})
+window.addEventListener('resize', function () {});
 ```
 
 ### 定时器
@@ -887,7 +887,7 @@ window.addEventListener('resize', function () {})
 3. 定制定时器
 
 ```javascript
-window.clearTimer(timer)
+window.clearTimer(timer);
 ```
 
 4. setInterval()
@@ -902,26 +902,26 @@ window.clearTimer(timer)
 
 ```javascript
 //全局作用域或普通函数中指向window
-console.log(this)
+console.log(this);
 function fn() {
-	console.log(this)
+	console.log(this);
 }
 
 //指向调用者
 var o = {
 	sauHi: function () {
-		console.log(this) //指向对象o
+		console.log(this); //指向对象o
 	},
-}
-var btn = document.querySeletor('button')
+};
+var btn = document.querySeletor('button');
 btn.onclick = function () {
-	console.log(this) //指向btn
-}
+	console.log(this); //指向btn
+};
 
 function Fun() {
-	console.log(this) //指向fun
+	console.log(this); //指向fun
 }
-var fun = new fun()
+var fun = new fun();
 ```
 
 ### js 执行队列
@@ -996,7 +996,7 @@ var fun = new fun()
 独立创建了一个作用域，里面所有的变量都是局部变量，不会命名冲突
 
 ```javascript
-;(function () {})()
+(function () {})();
 ```
 
 #### scroll
@@ -1014,13 +1014,13 @@ var fun = new fun()
 
 ```javascript
 function animate(obj, target) {
-	clearInterval(obj.timer)
+	clearInterval(obj.timer);
 	obj.timer = setInterval(function () {
 		if (obj.offsetLeft >= target) {
-			clearInterval(obj.timer)
+			clearInterval(obj.timer);
 		}
-		obj.style.left = obj.offsetLeft + 1 + 'px'
-	}, 30)
+		obj.style.left = obj.offsetLeft + 1 + 'px';
+	}, 30);
 }
 ```
 
@@ -1028,15 +1028,15 @@ function animate(obj, target) {
 
 ```javascript
 function animate(obj, target, callback) {
-	clearInterval(obj.timer)
+	clearInterval(obj.timer);
 	obj.timer = setInterval(function () {
-		var step = (target - obj.offsetLeft) / 10 //步长值
+		var step = (target - obj.offsetLeft) / 10; //步长值
 		if (obj.offsetLeft == target) {
-			clearInterval(obj.timer)
-			if (callback) callback()
+			clearInterval(obj.timer);
+			if (callback) callback();
 		}
-		obj.style.left = obj.offsetLeft + step + 'px'
-	}, 15)
+		obj.style.left = obj.offsetLeft + step + 'px';
+	}, 15);
 }
 ```
 
@@ -1060,30 +1060,30 @@ function animate(obj, target, callback) {
 
 ```javascript
 element.addEventListener('touchstar', function (e) {
-	console.log(e.targetTouches[o])
-})
+	console.log(e.targetTouches[o]);
+});
 ```
 
 3. 拖到元素
 
 ```javascript
-var startX = 0 //手指的初始坐标
-var startY = o
-var x = 0 //盒子的原位置
-var y = 0
+var startX = 0; //手指的初始坐标
+var startY = o;
+var x = 0; //盒子的原位置
+var y = 0;
 
 element.addEventListener('touchstart', function (e) {
-	startX = e.targetTouches[o].pageX
-	startY = e.targetTouches[o].pageY
-	x = this.offsetLeft
-	y = this.offsetTop
-})
+	startX = e.targetTouches[o].pageX;
+	startY = e.targetTouches[o].pageY;
+	x = this.offsetLeft;
+	y = this.offsetTop;
+});
 element.addEventListener('touchmove', function (e) {
-	var moveX = e.targetTouches[o].pageX - startX //移动的距离
-	var moveY = e.targetTouches[o].pageX - startY
-	this.style.left = x + moveX + 'px' //移动
-	this.style.top = y + moveY + 'px'
-})
+	var moveX = e.targetTouches[o].pageX - startX; //移动的距离
+	var moveY = e.targetTouches[o].pageX - startY;
+	this.style.left = x + moveX + 'px'; //移动
+	this.style.top = y + moveY + 'px';
+});
 ```
 
 4. 移动端点击事件延迟问题
@@ -1198,19 +1198,19 @@ element.addEventListener('touchmove', function (e) {
 
     ```javascript
     class Star {}
-    new Star()
+    new Star();
     ```
 
 2. 类 constructor 构造函数
     ```javascript
     class Star {
     	constructor(uname, age) {
-    		this.uname = uname
-    		this.age = age
+    		this.uname = uname;
+    		this.age = age;
     	}
     }
-    var ldh = new Star('ldh')
-    var zxy = new Star('zxy')
+    var ldh = new Star('ldh');
+    var zxy = new Star('zxy');
     //通过calss关键字创建类，类名首字母大写
     //constructor对象可以接受传递过来的参数，同时返回实例对象
     //生成实例new不能略
@@ -1220,16 +1220,16 @@ element.addEventListener('touchmove', function (e) {
     ```javascript
     class Star {
     	constructor(uname, age) {
-    		this.uname = uname
-    		this.age = age
+    		this.uname = uname;
+    		this.age = age;
     	}
     	sing(sang) {
-    		console.log(sang)
+    		console.log(sang);
     	}
     }
-    var ldh = new Star('ldh', 18)
-    var zxy = new Star('zxy', 18)
-    ldh.sing('a')
+    var ldh = new Star('ldh', 18);
+    var zxy = new Star('zxy', 18);
+    ldh.sing('a');
     //多个函数方法之间不需要逗号
     ```
 
@@ -1238,20 +1238,20 @@ element.addEventListener('touchmove', function (e) {
     ```javascript
     class Father {
     	constructor(x, y) {
-    		this.x = x
-    		this.y = y
+    		this.x = x;
+    		this.y = y;
     	}
     	sum() {
-    		console.log(this.x + this.y)
+    		console.log(this.x + this.y);
     	}
     }
     class Son extends Father {
     	constructor(x, y) {
-    		super(x, y) //调用父类的constructor
+    		super(x, y); //调用父类的constructor
     	}
     }
-    var son = new Son(1, 2)
-    son.sum()
+    var son = new Son(1, 2);
+    son.sum();
     ```
 
 5. super 关键字
@@ -1259,41 +1259,41 @@ element.addEventListener('touchmove', function (e) {
     ```javascript
     class Father {
     	say() {
-    		return 'f'
+    		return 'f';
     	}
     }
     class Son extends Father {
     	say() {
-    		console.log(super.say() + 's')
+    		console.log(super.say() + 's');
     	}
     }
-    var son = new Son()
-    son.say()
+    var son = new Son();
+    son.say();
 
     //执行子类方法采用就近原则
 
     class Father {
     	constructor(x, y) {
-    		this.x = x
-    		this.y = y
+    		this.x = x;
+    		this.y = y;
     	}
     	sum() {
-    		console.log(this.x + this.y)
+    		console.log(this.x + this.y);
     	}
     }
     class Son extends Father {
     	constructor(x, y) {
-    		super(x, y) //必须在子类this前调用
-    		this.x = x
-    		this.y = y
+    		super(x, y); //必须在子类this前调用
+    		this.x = x;
+    		this.y = y;
     	}
     	subtract() {
-    		console.log(this.x - this.y)
+    		console.log(this.x - this.y);
     	}
     }
-    var son = new Son(1, 2)
-    son.subtract()
-    son.sum()
+    var son = new Son(1, 2);
+    son.subtract();
+    son.sum();
     ```
 
 6. 注意点
@@ -1311,15 +1311,15 @@ element.addEventListener('touchmove', function (e) {
 
 ```javascript
 //创建函数
-var obj1 = new Object()
+var obj1 = new Object();
 
-var obj2 = {}
+var obj2 = {};
 
 function Star(uname) {
-	this.uname = uname //实例成员
+	this.uname = uname; //实例成员
 }
-Star.sex = '男' //静态成员
-var ldh = new Star('ldh')
+Star.sex = '男'; //静态成员
+var ldh = new Star('ldh');
 
 //实例成员只能通过实例对象来访问
 //静态成员只能通过构造函数访问
@@ -1330,11 +1330,11 @@ var ldh = new Star('ldh')
 ```javascript
 //  共享的函数可以存放在 原型对象 内
 function Star(uname) {
-	this.uname = uname //实例成员
+	this.uname = uname; //实例成员
 }
-Star.prototype.sing = function () {}
-Star.sex = '男' //静态成员
-var ldh = new Star('ldh')
+Star.prototype.sing = function () {};
+Star.sex = '男'; //静态成员
+var ldh = new Star('ldh');
 //一般公共的属性定义到构造函数里，公共的方法定义在prototype中
 
 //在实例对象身上系统自己添加一个__proto__指向我们构造函数的原型对象
@@ -1347,14 +1347,14 @@ var ldh = new Star('ldh')
 
 ```javascript
 function Star(uname) {
-	this.uname = uname
+	this.uname = uname;
 }
-var ldh = new Star('ldh')
+var ldh = new Star('ldh');
 Star.prototype = {
 	constructor: Star,
-} //该方法会覆盖constructor对象
-console.log(Star.prototype.constructor) //Star(uname){}
-console.log(ldh.__proto__.constructor) //Star(uname){}
+}; //该方法会覆盖constructor对象
+console.log(Star.prototype.constructor); //Star(uname){}
+console.log(ldh.__proto__.constructor); //Star(uname){}
 ```
 
 #### 构造函数、实例、原型对象三者关系
@@ -1382,14 +1382,14 @@ console.log(ldh.__proto__.constructor) //Star(uname){}
 
 ```javascript
 Array.prototype.sum = function () {
-	var sum = 0
+	var sum = 0;
 	for (var i = 0; i < this.length; i++) {
-		sum += this[i]
+		sum += this[i];
 	}
-	return sum
-}
-var arr = [1, 2, 3]
-console.log(arr.sum())
+	return sum;
+};
+var arr = [1, 2, 3];
+console.log(arr.sum());
 ```
 
 ### 继承
@@ -1399,14 +1399,14 @@ console.log(arr.sum())
 ```javascript
 // 调用函数，并修改this指向
 function fn(x, y) {
-	console.log(this)
-	console.log(x + y)
+	console.log(this);
+	console.log(x + y);
 }
 var o = {
 	name: 'andy',
-}
+};
 //fn.call();
-fn.call(o, 1, 2) //此时this指向o
+fn.call(o, 1, 2); //此时this指向o
 ```
 
 #### 利用父构造函数继承属性
@@ -1414,17 +1414,17 @@ fn.call(o, 1, 2) //此时this指向o
 ```javascript
 function Father(uname, age) {
 	//this指向父构造函数的实例对象
-	this.uname = uname
-	this.age = age
+	this.uname = uname;
+	this.age = age;
 }
 Father.prototype.money = function () {
-	console.log('100000')
-}
+	console.log('100000');
+};
 function Son(uname, age) {
 	//this指向子构造函数的实例对象
-	Father.call(this, uname, age)
+	Father.call(this, uname, age);
 }
-Son.prototype = Father.prototype
+Son.prototype = Father.prototype;
 ```
 
 #### 利用原型对象继承方法
@@ -1432,19 +1432,19 @@ Son.prototype = Father.prototype
 ```javascript
 function Father(uname, age) {
 	//this指向父构造函数的实例对象
-	this.uname = uname
-	this.age = age
+	this.uname = uname;
+	this.age = age;
 }
 Father.prototype.money = function () {
-	console.log('100000')
-}
+	console.log('100000');
+};
 function Son(uname, age) {
 	//this指向子构造函数的实例对象
-	Father.call(this, uname, age)
+	Father.call(this, uname, age);
 }
 //Son.prototype=Father.prototype//这种方法会同时修改父原型对象
-Son.prototype = new Father()
-Son.prototype.constructor = Son
+Son.prototype = new Father();
+Son.prototype.constructor = Son;
 ```
 
 ## 函数进阶
@@ -1455,7 +1455,7 @@ Son.prototype.constructor = Son
 2. 匿名函数
 3. new Function()
     ```javascript
-    var f = new Function('a', 'b', 'console.log(a+b)')
+    var f = new Function('a', 'b', 'console.log(a+b)');
     //所有函数都是Function的实例
     //函数也属于对象
     ```
@@ -1464,42 +1464,42 @@ Son.prototype.constructor = Son
 
 1. 普通函数
     ```javascript
-    fn()
-    fn.call()
+    fn();
+    fn.call();
     ```
 2. 对象的方法
 
     ```javascript
     var o = {
     	sayHi: function () {},
-    }
-    o.sayHi()
+    };
+    o.sayHi();
     ```
 
 3. 构造函数
 
     ```javascript
     function Star() {}
-    new Star()
+    new Star();
     ```
 
 4. 绑定事件函数
 
     ```javascript
-    btn.onclick = function () {}
+    btn.onclick = function () {};
     //触发事件调用
     ```
 
 5. 定时器函数
 
     ```javascript
-    setInterval(function () {}, 1000) //定时器自动调用
+    setInterval(function () {}, 1000); //定时器自动调用
     ```
 
 6. 立即执行函数
 
     ```javascript
-    ;(function () {})()
+    (function () {})();
     //自动调用
     ```
 
@@ -1507,8 +1507,8 @@ Son.prototype.constructor = Son
 
 1. 普通函数
     ```javascript
-    fn()
-    fn.call()
+    fn();
+    fn.call();
     //指向window
     ```
 2. 对象的方法
@@ -1516,8 +1516,8 @@ Son.prototype.constructor = Son
     ```javascript
     var o = {
     	sayHi: function () {},
-    }
-    o.sayHi()
+    };
+    o.sayHi();
     //指向对象o
     ```
 
@@ -1525,14 +1525,14 @@ Son.prototype.constructor = Son
 
     ```javascript
     function Star() {}
-    var ldh = new Star()
+    var ldh = new Star();
     //指向ldh实例对象
     ```
 
 4. 绑定事件函数
 
     ```javascript
-    btn.onclick = function () {}
+    btn.onclick = function () {};
     //触发事件调用
     //指向btn
     ```
@@ -1540,7 +1540,7 @@ Son.prototype.constructor = Son
 5. 定时器函数
 
     ```javascript
-    setInterval(function () {}, 1000) //定时器自动调用
+    setInterval(function () {}, 1000); //定时器自动调用
 
     //指向window
     ```
@@ -1548,7 +1548,7 @@ Son.prototype.constructor = Son
 6. 立即执行函数
 
     ```javascript
-    ;(function () {})()
+    (function () {})();
     //自动调用
     //指向window
     ```
@@ -1558,14 +1558,14 @@ Son.prototype.constructor = Son
 ```javascript
 var o = {
 	name: 'andy',
-}
+};
 function fn() {}
-fn.call(o)
+fn.call(o);
 //call可以改变函数内部this的指向
 //call可以实现继承
 function Father() {}
 function Son() {
-	Father.call(this)
+	Father.call(this);
 }
 ```
 
@@ -1574,13 +1574,13 @@ function Son() {
 ```javascript
 var o = {
 	name: 'andy',
-}
+};
 function fn() {}
-fn.apply(o)
+fn.apply(o);
 //apply可以改变函数内部this的指向
 //apply的参数必须是数组
-var arr = [1, 12, 33]
-Math.max.apply(Math, arr)
+var arr = [1, 12, 33];
+Math.max.apply(Math, arr);
 ```
 
 ### bind 方法
@@ -1593,8 +1593,8 @@ Math.max.apply(Math, arr)
 
 ```javascript
 btn.onclick = function () {
-	setTimerout(function () {}.bind(this), 1000)
-}
+	setTimerout(function () {}.bind(this), 1000);
+};
 ```
 
 ### 严格模式//ie10+
@@ -1634,13 +1634,13 @@ btn.onclick = function () {
 
 ```javascript
 function fn() {
-	var num = 10
+	var num = 10;
 	function fun() {
-		console.lo(num)
+		console.lo(num);
 	}
-	fun()
+	fun();
 }
-fn()
+fn();
 ```
 
 #### 作用
@@ -1649,57 +1649,57 @@ fn()
 
 ```javascript
 function fn() {
-	var num = 10
+	var num = 10;
 	function fun() {
-		console.lo(num)
+		console.lo(num);
 	}
-	return fun()
+	return fun();
 }
-var f = fn()
+var f = fn();
 ```
 
 #### 案例
 
 1.  ```javascript
     for (var i = 0; i < lis.length; i++) {
-    	;(function (i) {
+    	(function (i) {
     		lis[i].omclick = function () {
-    			console.log(i)
-    		}
-    	})(i)
+    			console.log(i);
+    		};
+    	})(i);
     	//立即执行函数也称为小闭包
     }
     ```
 2.  ```javascript
     for (var i = 0; i < lis.ength; i++) {
-    	;(function (i) {
+    	(function (i) {
     		setTimerout(function () {
-    			console.log(i)
-    		}, 3000)
-    	})(i)
+    			console.log(i);
+    		}, 3000);
+    	})(i);
     }
     ```
 3.  出租车计费
 
 ```javascript
 var car = function () {
-	var start = 13
-	var total = 0
+	var start = 13;
+	var total = 0;
 	return {
 		price: function (n) {
 			if (n <= 3) {
-				total = start
+				total = start;
 			} else {
-				total = start + (n - 3) * 5
+				total = start + (n - 3) * 5;
 			}
-			return total
+			return total;
 		},
 		yd: function (flag) {
-			return flag ? total + 10 : total
+			return flag ? total + 10 : total;
 		},
-	}
-}
-car.price()
+	};
+};
+car.price();
 ```
 
 ### 递归
@@ -1729,22 +1729,22 @@ var data = [
 		id: 2,
 		name: '服饰',
 	},
-]
+];
 
 function getID(json, id) {
-	var o = []
+	var o = [];
 	json.forEach(function (item) {
 		//console.log(item)
 		if (item.id == id) {
-			o = item
-			return item
+			o = item;
+			return item;
 		} else if (item.goods && item.goods.length > 0) {
-			o = getID(item.goods, id)
+			o = getID(item.goods, id);
 		}
-	})
-	return o
+	});
+	return o;
 }
-console.log(getID(data, 11))
+console.log(getID(data, 11));
 ```
 
 ### 拷贝
@@ -1755,14 +1755,14 @@ console.log(getID(data, 11))
 var obj = {
 	id: 1,
 	name: 'andy',
-}
-var o = {}
+};
+var o = {};
 // for (var k in obj) {
 // 	o[k] = obj[k]
 // }
 // console.log(o)
-Object.assign(o, obj)
-console.log(o)
+Object.assign(o, obj);
+console.log(o);
 ```
 
 #### 深拷贝
@@ -1775,28 +1775,28 @@ var obj = {
 		age: '18',
 	},
 	color: ['a', 'b', 'c'],
-}
-var o = {}
+};
+var o = {};
 function deepCopy(newobj, oldobj) {
 	for (var k in oldobj) {
 		//判断属性值属于哪种数据类型
-		var item = oldobj[k]
+		var item = oldobj[k];
 		//判断是否数组
 		if (item instanceof Array) {
-			newobj[k] = []
-			deepCopy(newobj[k], item)
+			newobj[k] = [];
+			deepCopy(newobj[k], item);
 		}
 		//判断是否对象
 		else if (item instanceof Object) {
-			newobj[k] = {}
-			deepCopy(newobj[k], item)
+			newobj[k] = {};
+			deepCopy(newobj[k], item);
 		} else {
-			newobj[k] = item
+			newobj[k] = item;
 		}
 	}
 }
-deepCopy(o, obj)
-console.log(o)
+deepCopy(o, obj);
+console.log(o);
 ```
 
 ## 正则表达式
@@ -1813,20 +1813,20 @@ console.log(o)
 1. 通过 RegExp 创建
 
 ```javascript
-var regexp = new RegExp(/123/)
+var regexp = new RegExp(/123/);
 ```
 
 2. 字面量创建
 
 ```javascript
-var rg = /123/
+var rg = /123/;
 ```
 
 #### 测试正则
 
 ```javascript
-var rg = /123/
-console.log(rg.test(123))
+var rg = /123/;
+console.log(rg.test(123));
 ```
 
 ### 正则表达式中的特殊字符
@@ -1859,8 +1859,8 @@ console.log(rg.test(123))
 | {n,m} | 重复 n 到 m 次    |
 
 ```javascript
-var reg = /^[a-zA-Z0-9_-]{6,16}$/
-console.log(reg.test('aaaaaa')) //true
+var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+console.log(reg.test('aaaaaa')); //true
 ```
 
 #### 预定义类
@@ -1877,8 +1877,8 @@ console.log(reg.test('aaaaaa')) //true
 ### 正则替换
 
 ```javascript
-var str = 'andy和red'
-var newstr = str.replace(/andy|red/gi, 'dady')
+var str = 'andy和red';
+var newstr = str.replace(/andy|red/gi, 'dady');
 //正则后加g，全局匹配
 //加i，忽略大小写
 ```
@@ -1891,51 +1891,51 @@ var newstr = str.replace(/andy|red/gi, 'dady')
 
 ```javascript
 if (true) {
-	let a = 10
+	let a = 10;
 }
-console.log(a)
+console.log(a);
 ```
 
 -   let 声明的变量,不存在提升
 
 ```javascript
-console.log(a)
-let a = 100
+console.log(a);
+let a = 100;
 ```
 
 -   暂时性死区
 
 ```javascript
-var num = 10
+var num = 10;
 if (true) {
-	console.log(num)
-	let num = 20
+	console.log(num);
+	let num = 20;
 }
 ```
 
 #### 经典面试题
 
 ```javascript
-var arr = []
+var arr = [];
 for (var i = 0; i < 2; i++) {
 	arr[i] = function () {
-		console.log(i)
-	}
+		console.log(i);
+	};
 }
-arr[0]() //2
-arr[1]() //2
+arr[0](); //2
+arr[1](); //2
 //退出循环时全局变量i=2
 ```
 
 ```javascript
-var arr = []
+var arr = [];
 for (let i = 0; i < 2; i++) {
 	arr[i] = function () {
-		console.log(i)
-	}
+		console.log(i);
+	};
 }
-arr[0]() //0
-arr[1]() //1
+arr[0](); //0
+arr[1](); //1
 ```
 
 ### const
@@ -1949,27 +1949,27 @@ arr[1]() //1
 ### 解构赋值
 
 ```javascript
-let ary = [1, 2, 3]
-let [a, b, c] = ary
+let ary = [1, 2, 3];
+let [a, b, c] = ary;
 ```
 
 #### 对象解构
 
 ```javascript
-let ary = { name: 'zs', age: 18 }
-let { name, age } = ary
-console.log(name)
-console.log(age)
+let ary = { name: 'zs', age: 18 };
+let { name, age } = ary;
+console.log(name);
+console.log(age);
 
-let { name: myname, age: myage } = ary
-console.log(myname)
-console.log(myage)
+let { name: myname, age: myage } = ary;
+console.log(myname);
+console.log(myage);
 ```
 
 ### 箭头函数
 
 ```javascript
-const fn = () => {}
+const fn = () => {};
 ```
 
 #### 箭头函数 this
@@ -1979,14 +1979,14 @@ const fn = () => {}
 #### 箭头函数面试题
 
 ```javascript
-age = 100
+age = 100;
 var obj = {
 	age: 20,
 	say: () => {
-		alert(this.age)
+		alert(this.age);
 	},
-}
-obj.say() //100
+};
+obj.say(); //100
 //对象不能产生作用域
 ```
 
@@ -1996,22 +1996,22 @@ obj.say() //100
 
 ```javascript
 const sum = (...args) => {
-	let total = 0
-	args.forEach((item) => (total += item))
+	let total = 0;
+	args.forEach((item) => (total += item));
 
-	return total
-}
-sum(10, 20)
-sum(10, 20, 30)
+	return total;
+};
+sum(10, 20);
+sum(10, 20, 30);
 ```
 
 #### 剩余参数和结构
 
 ```javascript
-let students = ['a', 'b', 'c']
-let [s1, ...s2] = students
-console.log(s1)
-console.log(s2)
+let students = ['a', 'b', 'c'];
+let [s1, ...s2] = students;
+console.log(s1);
+console.log(s2);
 //a
 //(2) ["b", "c"]
 ```
@@ -2031,11 +2031,11 @@ console.log(...ary) //1 2 3
 ```javascript
 //数组合并
 //1.
-let ary1 = [1, 2, 3]
-let ary2 = [4, 5, 6]
-let ary3 = [...ary1, ary2]
+let ary1 = [1, 2, 3];
+let ary2 = [4, 5, 6];
+let ary3 = [...ary1, ary2];
 //2.
-ary1.push(...ary2)
+ary1.push(...ary2);
 
 //将伪数组转化为真数组
 ```
@@ -2049,9 +2049,9 @@ var arrayLike = {
 	1: 'b',
 	2: 'c',
 	length: 3,
-}
-var ary = Array.from(arrayLike, (item) => item + 'd')
-console.log(ary)
+};
+var ary = Array.from(arrayLike, (item) => item + 'd');
+console.log(ary);
 ```
 
 ```javascript
@@ -2065,9 +2065,9 @@ var ary = [
 		id: 2,
 		name: 'ls',
 	},
-]
-var target = ary.find((item, index) => item.id == 2)
-console.log(target) //{id: 2, name: "ls"}
+];
+var target = ary.find((item, index) => item.id == 2);
+console.log(target); //{id: 2, name: "ls"}
 ```
 
 ```javascript
@@ -2081,14 +2081,14 @@ var ary = [
 		id: 2,
 		name: 'ls',
 	},
-]
-var target = ary.findIndex((item, index) => item.id == 2)
-console.log(target) //1
+];
+var target = ary.findIndex((item, index) => item.id == 2);
+console.log(target); //1
 ```
 
 ```javascript
 //includes方法
-;[1, 2, 3].includes(2)
+[1, 2, 3].includes(2);
 ```
 
 ### String 扩展方法
@@ -2100,9 +2100,9 @@ console.log(target) //1
 -   可以调用函数
 
 ```javascript
-let name = `zs`
-let sayHello = `hello,i'm zs`
-console.log(sayHello)
+let name = `zs`;
+let sayHello = `hello,i'm zs`;
+console.log(sayHello);
 ```
 
 #### startsWith()\endsWith()
@@ -2121,28 +2121,28 @@ console.log(sayHello)
 **类似数组，没有重复值**
 
 ```javascript
-var ary = [1, 1, 2, 3]
-var s1 = new Set(ary)
-console.log(s1) //Set(3) {1, 2, 3}
-console.log(s1.size) //3
+var ary = [1, 1, 2, 3];
+var s1 = new Set(ary);
+console.log(s1); //Set(3) {1, 2, 3}
+console.log(s1.size); //3
 //利用Set去重
-var ary2 = [...s1]
-console.log(ary2) //(3) [1, 2, 3]
+var ary2 = [...s1];
+console.log(ary2); //(3) [1, 2, 3]
 
 //Set方法
-s1.add(4).add(5)
-console.log(s1)
-s1.delete(1)
-console.log(s1)
-s1.has(1)
-console.log(s1.has(1))
-s1.clear()
-console.log(s1)
+s1.add(4).add(5);
+console.log(s1);
+s1.delete(1);
+console.log(s1);
+s1.has(1);
+console.log(s1.has(1));
+s1.clear();
+console.log(s1);
 
 //Set遍历
 s1.forEach((value) => {
-	console.log(value)
-})
+	console.log(value);
+});
 ```
 
 ## 请按后端交互
@@ -2202,7 +2202,7 @@ s1.forEach((value) => {
 #### $.get()
 
 ```javascript
-$.get('url', { data }, callback)
+$.get('url', { data }, callback);
 ```
 
 | 参数名   | 参数类型 | 必选 | 说明       |
@@ -2214,7 +2214,7 @@ $.get('url', { data }, callback)
 #### $.post()
 
 ```javascript
-$.post('url', { data }, function (res) {})
+$.post('url', { data }, function (res) {});
 ```
 
 | 参数名   | 参数类型 | 必选 | 说明           |
@@ -2231,7 +2231,7 @@ $.ajax({
 	url: '', //请求的url地址
 	data: '', //这次请求要携带的数据
 	success: function (res) {}, //成功后的回调函数
-})
+});
 ```
 
 ### 接口
@@ -2300,21 +2300,21 @@ $.ajax({
 #### 监听表单提交事件
 
 ```javascript
-$('#form').submit(function (e) {})
+$('#form').submit(function (e) {});
 
-$('#form').on('submit', function (e) {})
+$('#form').on('submit', function (e) {});
 ```
 
 #### 阻止表单默认提交行为
 
 ```javascript
 $('#form').submit(function (e) {
-	e.preventDefault()
-})
+	e.preventDefault();
+});
 
 $('#form').on('submit', function (e) {
-	e.preventDefault()
-})
+	e.preventDefault();
+});
 ```
 
 #### 快速获取表单数据
@@ -2325,9 +2325,9 @@ $('#form').on('submit', function (e) {
 
 ```javascript
 $('#form').submit(function (e) {
-	e.preventDefault()
-	var data = $(this).serialize()
-})
+	e.preventDefault();
+	var data = $(this).serialize();
+});
 ```
 
 ### 模板引擎
@@ -2375,11 +2375,11 @@ $('#form').submit(function (e) {
 
         ```javascript
         template.defaults.imports.dataFormat = function (date) {
-        	var y = date.getFullYear()
-        	var m = date.getMonth() + 1
-        	var d = date.getDate()
-        	return y + '-' + m + '-' + d
-        }
+        	var y = date.getFullYear();
+        	var m = date.getMonth() + 1;
+        	var d = date.getDate();
+        	return y + '-' + m + '-' + d;
+        };
         ```
 
 ## XMLHttpRequest
@@ -2442,9 +2442,9 @@ xhr.open('GET'，'http://www.liulongbin.top:3006/api/getbooks?id=1')
 -   decodeURI()
 
 ```javascript
-console.log(encodeURI('你好')) //%E4%BD%A0%E5%A5%BD
+console.log(encodeURI('你好')); //%E4%BD%A0%E5%A5%BD
 
-console.log(decodeURI('%E4%BD%A0%E5%A5%BD')) //你好
+console.log(decodeURI('%E4%BD%A0%E5%A5%BD')); //你好
 ```
 
 ### xhr post 请求
@@ -2456,16 +2456,16 @@ console.log(decodeURI('%E4%BD%A0%E5%A5%BD')) //你好
 5. 监听 xhr.onreadystatechange 事件
 
 ```javascript
-var xhr = new XMLHttpRequest()
+var xhr = new XMLHttpRequest();
 
-xhr.open('post', 'http://www.liulongbin.top:3006/api/addbook')
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-xhr.send('bookname=xxx&author=xxx')
+xhr.open('post', 'http://www.liulongbin.top:3006/api/addbook');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.send('bookname=xxx&author=xxx');
 xhr.onreadystatechange = function () {
 	if (xhr.readyState === 4 && xhr.state === 200) {
-		console.log(xhr.responseText)
+		console.log(xhr.responseText);
 	}
-}
+};
 ```
 
 ## 数据交换格式
@@ -2497,11 +2497,11 @@ xhr.onreadystatechange = function () {
 #### json 和 js 对象的转换
 
 ```javascript
-var obj = JSON.parse('{"a":"hello"}')
-console.log(obj)
+var obj = JSON.parse('{"a":"hello"}');
+console.log(obj);
 
-var json = JSON.stringify({ a: 'hello' })
-console.log(json)
+var json = JSON.stringify({ a: 'hello' });
+console.log(json);
 ```
 
 #### 序列化、反序列化
@@ -2526,32 +2526,32 @@ level2 新特性
 #### 设置请求时限
 
 ```javascript
-xhr.timeout = 3000
+xhr.timeout = 3000;
 xhr.ontimeout = function (event) {
-	alert('请求超时')
-}
+	alert('请求超时');
+};
 ```
 
 #### FormData 管理表单数据
 
 ```javascript
-var fd = new FormData()
+var fd = new FormData();
 
-fd.append('uname', 'zs')
-fd.append('upwd', '123')
-var xhr = new XMLHttpRespect()
-xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
-xhr.send(fd)
+fd.append('uname', 'zs');
+fd.append('upwd', '123');
+var xhr = new XMLHttpRespect();
+xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata');
+xhr.send(fd);
 
 ////
-var form = document.querySeletor('form1')
+var form = document.querySeletor('form1');
 
 form.addEventListener('submit', function (e) {
-	e.preventDefault()
+	e.preventDefault();
 
-	var fd = new FormData(form)
-	myAjax({})
-})
+	var fd = new FormData(form);
+	myAjax({});
+});
 ```
 
 #### 上传文件
@@ -2563,8 +2563,8 @@ form.addEventListener('submit', function (e) {
 5. 监听 onreadystatechange 事件
 
 ```javascript
-var fd = new FormData()
-fd.append('', files[0])
+var fd = new FormData();
+fd.append('', files[0]);
 ```
 
 ### jQuery 高级用法
@@ -2579,18 +2579,18 @@ $.ajax({
 	contentType: false,
 	processData: false,
 	success: function (res) {},
-})
+});
 ```
 
 #### loading 效果
 
 ```javascript
 $(document).ajaxStart(function () {
-	$('#loading').show()
-})
+	$('#loading').show();
+});
 $(document).ajaxStop(function () {
-	$('#loading').hide()
-})
+	$('#loading').hide();
+});
 // $(document).ajaxStart()会监听当前文档内所有Ajax请求
 ```
 
@@ -2645,33 +2645,33 @@ axios.post('地址',{key:value,key2:value2}).then(function(res){response},functi
 ### 输入框防抖
 
 ```javascript
-var timer = null
+var timer = null;
 function debounceSearch(keyup) {
 	timer = setTimeout(function () {
-		setSuggestList(keywords)
-	}, 500)
+		setSuggestList(keywords);
+	}, 500);
 }
 $('#ipt').on('keyup', function () {
-	clearTimeout(timer)
-	debounceSearch(keywords)
-})
+	clearTimeout(timer);
+	debounceSearch(keywords);
+});
 ```
 
 ### 输入框缓存建议列表
 
 ```javascript
-var cacheObj = {}
+var cacheObj = {};
 function renderSuggestList(res) {
-	var k = $('#ipt').val().trim()
-	cacheObj[k] = res
+	var k = $('#ipt').val().trim();
+	cacheObj[k] = res;
 }
 $('#ipt').on('keyup', function () {
 	if (cacheObj[keywords]) {
-		return renderSuggestList(cacheObj[keywords])
+		return renderSuggestList(cacheObj[keywords]);
 	}
 
-	debounceSearch(keywords)
-})
+	debounceSearch(keywords);
+});
 ```
 
 ### 节流和防抖的区别
@@ -2743,7 +2743,7 @@ $('#ipt').on('keyup', function () {
 
 ```javascript
 //在js中使用fs
-const fs = require('fs')
+const fs = require('fs');
 
 //fs.readFile(path[,options],callback)
 //path：必选参数，字符串，表示文件路径
@@ -2773,13 +2773,13 @@ const fs = require('fs')
 
 ```javascript
 //导入path
-const path = require('path')
+const path = require('path');
 ```
 
 #### 路径拼接
 
 ```javascript
-path.join('/a', '/b/c', '../', './d', 'e')
+path.join('/a', '/b/c', '../', './d', 'e');
 //\a\b\d\e
 ```
 
@@ -2795,7 +2795,7 @@ path.basename(path[,ext])
 #### 获取文件扩展名
 
 ```javascript
-path.extname(path)
+path.extname(path);
 //path<string>，必选，表示一个路径的字符串
 //返回：<string>返回得到的扩展名字符串
 ```
@@ -2805,7 +2805,7 @@ path.extname(path)
 http 模块是 node.js 提供的、用来创建 web 服务器的模块。通过 http 模块提供的 http.createServer()方法，就能方便的把一台普通电脑，变成一台 web 服务器，从而对外提供资源服务
 
 ```javascript
-const http = require('http')
+const http = require('http');
 ```
 
 #### 服务器相关概念
@@ -2822,23 +2822,23 @@ const http = require('http')
 4. 启动服务器
 
 ```javascript
-const http = require('http')
-const server = http.createServer()
+const http = require('http');
+const server = http.createServer();
 
 server.on('request', function (req, res) {
 	//console.log('Someone visit our web server.');
-	const url = req.url
-	const method = req.method
-	const str = `Your request url is ${url},and request method is ${method}`
+	const url = req.url;
+	const method = req.method;
+	const str = `Your request url is ${url},and request method is ${method}`;
 	//解决乱码
-	res.setHeader('Content-Type', 'text/html;charset=utf-8')
-	console.log(str)
-	res.end(str)
-})
+	res.setHeader('Content-Type', 'text/html;charset=utf-8');
+	console.log(str);
+	res.end(str);
+});
 
 server.listen(8080, function () {
-	console.log('server running at http://127.0.0.1:8080')
-})
+	console.log('server running at http://127.0.0.1:8080');
+});
 ```
 
 #### 根据不同的 url 响应不同的 html 内容
@@ -2850,29 +2850,29 @@ server.listen(8080, function () {
 5. 使用 res.end()把内容响应给客户端
 
 ```javascript
-const http = require('http')
-const server = http.createServer()
+const http = require('http');
+const server = http.createServer();
 
 server.on('request', function (req, res) {
 	//console.log('Someone visit our web server.');
-	const url = req.url
-	let content = '404 Not Found'
+	const url = req.url;
+	let content = '404 Not Found';
 	if (url === '/' || url === '/index.html') {
-		content = '<h1>首页</h1>'
+		content = '<h1>首页</h1>';
 	} else if (url === '/about.html') {
-		content = '<h1>关于页面</h1>'
+		content = '<h1>关于页面</h1>';
 	}
-	const method = req.method
-	const str = `Your request url is ${url},and request method is ${method}`
+	const method = req.method;
+	const str = `Your request url is ${url},and request method is ${method}`;
 	//解决乱码
-	res.setHeader('Content-Type', 'text/html;charset=utf-8')
-	console.log(str)
-	res.end(content)
-})
+	res.setHeader('Content-Type', 'text/html;charset=utf-8');
+	console.log(str);
+	res.end(content);
+});
 
 server.listen(8080, function () {
-	console.log('server running at http://127.0.0.1:8080')
-})
+	console.log('server running at http://127.0.0.1:8080');
+});
 ```
 
 ### 模块化
@@ -2900,11 +2900,11 @@ server.listen(8080, function () {
 
 ```javascript
 //内置模块
-const fs = require('fs')
+const fs = require('fs');
 //自定义模块
-const custom = require('./custom.js')
+const custom = require('./custom.js');
 //第三方模块
-const moment = require('moment')
+const moment = require('moment');
 //使用require()方法加载其他模块时，会执行被加载模块中的代码
 ```
 
@@ -2921,10 +2921,10 @@ const moment = require('moment')
 #### modele.exports
 
 ```javascript
-module.exports.username = 'zs'
+module.exports.username = 'zs';
 module.exports.sayHello = function () {
-	console.log('hi')
-}
+	console.log('hi');
+};
 ```
 
 **使用 require()方法导入模块时，导入的结果，永远以 module.exports 指向的对象为准**
@@ -3031,13 +3031,13 @@ npm i express@4.17.1
 
 ```js
 //导入
-const express = require('express')
+const express = require('express');
 //创建web服务器
-const app = express()
+const app = express();
 //调用app.listen(端口号,回调函数)，启动服务器
 app.listen(80, () => {
-	console.log('express server running at http://127.0.0.1:8080')
-})
+	console.log('express server running at http://127.0.0.1:8080');
+});
 ```
 
 ### 监听请求
@@ -3045,12 +3045,12 @@ app.listen(80, () => {
 ```js
 //get
 app.get('请求url', function (req, res) {
-	res.send({ name: 'zs', age: '18', gender: '男' })
-})
+	res.send({ name: 'zs', age: '18', gender: '男' });
+});
 //post
 app.post('请求url', function (req, res) {
-	res.send('请求成功')
-})
+	res.send('请求成功');
+});
 ```
 
 ### 获取 url 中的参数
@@ -3058,13 +3058,13 @@ app.post('请求url', function (req, res) {
 ```js
 //req.query对象可以访问到客户端通过查询字符串的形式，发送到服务器的查询参数
 app.get('/', (req, res) => {
-	console.log(req.query)
-})
+	console.log(req.query);
+});
 
 //获取动态参数
 app.get('/user:id', function (req, res) {
-	console.log(req.params)
-})
+	console.log(req.params);
+});
 ```
 
 **通过 req.params 对象，可以访问到 url 中，通过:（冒号）匹配到的动态参数**
@@ -3072,10 +3072,10 @@ app.get('/user:id', function (req, res) {
 ### 托管静态资源
 
 ```js
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 //添加前缀地址
-app.use('/static', express.static('public'))
+app.use('/static', express.static('public'));
 ```
 
 ### nodemon
@@ -3091,7 +3091,7 @@ app.use('/static', express.static('public'))
     3. 处理函数
 -   格式
     ```js
-    app.METHOD(PATH, HANDLER)
+    app.METHOD(PATH, HANDLER);
     ```
 
 #### 路由的匹配过程
@@ -3102,7 +3102,7 @@ app.use('/static', express.static('public'))
 
 ```js
 //挂载路由
-app.get('/', (req, res) => {})
+app.get('/', (req, res) => {});
 ```
 
 #### 模块化路由
@@ -3114,20 +3114,20 @@ app.get('/', (req, res) => {})
 5. 使用 app.use()函数注册路由模块
 
 ```js
-var express = require('express')
-var router = express.Router()
+var express = require('express');
+var router = express.Router();
 
-router.get('/', (req, res) => {})
+router.get('/', (req, res) => {});
 
-module.exports = router
+module.exports = router;
 ```
 
 #### 注册路由模块
 
 ```js
 //导入路由模块
-const router = require('./router.js')
-app.use(router)
+const router = require('./router.js');
+app.use(router);
 ```
 
 **app.use 的作用就是注册全局中间件**
@@ -3135,7 +3135,7 @@ app.use(router)
 #### 为路由模块添加访问前缀
 
 ```js
-app.use('/api', router)
+app.use('/api', router);
 ```
 
 ## 中间件
@@ -3156,8 +3156,8 @@ Express 的中间件，本质上就是一个 function 处理函数，**中间件
 
 ```js
 const mw = function (req, res, next) {
-	next()
-}
+	next();
+};
 ```
 
 ### 全局生效中间件
@@ -3186,12 +3186,12 @@ app.use(function (req, res, next) {
 
 ```js
 const mw1 = function (req, res, next) {
-	next()
-}
+	next();
+};
 const mw2 = function (req, res, next) {
-	next()
-}
-app.get('/', mw1, mw2, function (req, res) {})
+	next();
+};
+app.get('/', mw1, mw2, function (req, res) {});
 ```
 
 ### 中间件的注意事项
@@ -3255,16 +3255,19 @@ app.get('/', mw1, mw2, function (req, res) {})
     **\***代表允许任何域的请求
 
     ```js
-    res.setHeader('Access-Cintrol-Allow-Origin', 'http://itcast.cn')
+    res.setHeader('Access-Cintrol-Allow-Origin', 'http://itcast.cn');
     ```
 
 -   Access-Cintrol-Allow-Header：对额外的请求头进行声明，否则请求失败
     ```js
-    res.setHeader('Access-Cintrol-Allow-Header', 'Content-type,X-Custom-Header')
+    res.setHeader(
+    	'Access-Cintrol-Allow-Header',
+    	'Content-type,X-Custom-Header'
+    );
     ```
 -   Access-Cintrol-Allow-Methods：默认只支持 GET、POST、HEAD 请求，若希望通过其他方式请求资源，则需要指明所允许使用的 HTTP 方法
     ```js
-    res.setHeader('Access-Cintrol-Allow-Methods', 'GET,POST,HEAD,DELETE')
+    res.setHeader('Access-Cintrol-Allow-Methods', 'GET,POST,HEAD,DELETE');
     ```
     **\***代表支持任何请求方式
 
@@ -3371,23 +3374,23 @@ npm i mysql
 
 ```js
 //配置
-const mysql = require('mysql')
+const mysql = require('mysql');
 const db = mysql.createPool({
 	host: '127.0.0.1',
 	user: 'root',
 	password: '0000',
 	database: 'test',
-})
+});
 ```
 
 #### 测试是否正常工作
 
 ```js
 db.query('select 1', (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 
-	console.log(results)
-})
+	console.log(results);
+});
 ```
 
 #### 查询数据
@@ -3395,61 +3398,61 @@ db.query('select 1', (err, results) => {
 **select 语句，执行结果为数组**
 
 ```js
-const sqlStr = 'select * from user'
+const sqlStr = 'select * from user';
 db.query(sqlStr, (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 
-	console.log(results)
-})
+	console.log(results);
+});
 ```
 
 #### 插入数据
 
 ```js
-const user_in = { username: 'ccc', password: '2222', status: 1 }
-const sqlStr = 'insert into user (id,username,password,status) values(?,?,?,?)'
+const user_in = { username: 'ccc', password: '2222', status: 1 };
+const sqlStr = 'insert into user (id,username,password,status) values(?,?,?,?)';
 db.query(
 	sqlStr,
 	[user_in.username, user_in.password, user_in.status],
 	(err, results) => {
-		if (err) return console.log(err.message)
+		if (err) return console.log(err.message);
 		if (results.affectedRows === 1) {
-			console.log('插入成功')
+			console.log('插入成功');
 		}
 	}
-)
+);
 
 //便捷方法
-const user_in = { username: 'ccc', password: '2222', status: 1 }
-const sqlStr = 'insert into user set ?'
+const user_in = { username: 'ccc', password: '2222', status: 1 };
+const sqlStr = 'insert into user set ?';
 db.query(sqlStr, user_in, (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 	if (results.affectedRows === 1) {
-		console.log('插入成功')
+		console.log('插入成功');
 	}
-})
+});
 ```
 
 #### 更新数据
 
 ```js
-const user_in2 = { id: 2, username: 'bbb', status: 1 }
-const sqlStr2 = 'update user set username=? where id=?'
+const user_in2 = { id: 2, username: 'bbb', status: 1 };
+const sqlStr2 = 'update user set username=? where id=?';
 db.query(sqlStr2, [user_in2.username, user_in2.id], (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 	if (results.affectedRows === 1) {
-		console.log('更新成功')
+		console.log('更新成功');
 	}
-})
+});
 //便捷方式
-const user_in2 = { id: 2, username: 'bbb', status: 1 }
-const sqlStr2 = 'update user set ? where id=?'
+const user_in2 = { id: 2, username: 'bbb', status: 1 };
+const sqlStr2 = 'update user set ? where id=?';
 db.query(sqlStr2, [user_in2, user_in2.id], (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 	if (results.affectedRows === 1) {
-		console.log('更新成功')
+		console.log('更新成功');
 	}
-})
+});
 ```
 
 #### 删除数据
@@ -3457,22 +3460,22 @@ db.query(sqlStr2, [user_in2, user_in2.id], (err, results) => {
 **推荐根据唯一标识删除数据**
 
 ```js
-const sqlStr3 = 'delete from user where id=?'
+const sqlStr3 = 'delete from user where id=?';
 
 db.query(sqlStr3, 1, (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 	if (results.affectedRows === 1) {
-		console.log('删除数据')
+		console.log('删除数据');
 	}
-})
+});
 
 //标记删除
 db.query('update user set status =1 where id=?', 3, (err, results) => {
-	if (err) return console.log(err.message)
+	if (err) return console.log(err.message);
 	if (results.affectedRows === 1) {
-		console.log('删除成功')
+		console.log('删除成功');
 	}
-})
+});
 ```
 
 ## web 开发模式
@@ -3528,7 +3531,7 @@ npm i express-session
 -   配置
 
 ```js
-const session = require('express-session')
+const session = require('express-session');
 
 app.use(
 	session({
@@ -3536,32 +3539,32 @@ app.use(
 		resave: false, //固定写法
 		saveUninitialized: true, //固定写法
 	})
-)
+);
 ```
 
 -   存数据
 
 ```js
-req.session.user = req.body //存储用户信息
-req.session.isLogin = true //存储用户状态
+req.session.user = req.body; //存储用户信息
+req.session.isLogin = true; //存储用户状态
 ```
 
 -   取数据
 
 ```js
 if (req.session.isLogin) {
-	return
+	return;
 }
 res.send({
 	username: req.session.user.username,
-})
+});
 ```
 
 -   清空
 
 ```js
 //仅当前用户
-req.session.destroy()
+req.session.destroy();
 ```
 
 ## JWT
@@ -3599,18 +3602,18 @@ req.session.destroy()
     - express-jwt 用于将 JWT 字符串解析还原成 JSON 对象
 3. 导入
     ```js
-    const jwt = require('jsonwebtoken')
-    const expressJWT = require('express-jwt')
+    const jwt = require('jsonwebtoken');
+    const expressJWT = require('express-jwt');
     ```
 4. 定义 secret 密钥
     ```js
-    const secretKey = 'xxxxx'
+    const secretKey = 'xxxxx';
     ```
 5. 生成 JWT 字符串
     ```js
     const tokenStr = jwt.sign({ username: userinfo.username }, secretKey, {
     	expiresin: '1h',
-    })
+    });
     //参数一：信息
     //参数二：加密的密钥
     //参数三：token有效期
@@ -3618,23 +3621,23 @@ req.session.destroy()
     	status: 200,
     	message: '',
     	token: tokenStr,
-    })
+    });
     ```
 6. 还原 JWT 字符串
     ```js
     //使用app.use()注册中间件
     //expressJWT({ secret: secreKey })用来解析Token中间件
     //.unless({ path: [/^\/api\//] })用来指定哪些接口不需要访问权限
-    app.use(expressJWT({ secret: secreKey }).unless({ path: [/^\/api\//] }))
+    app.use(expressJWT({ secret: secreKey }).unless({ path: [/^\/api\//] }));
     ```
 7. 捕获解析 JWT 失败产生的错误
     ```js
     app.use((err, req, res, next) => {
     	if (err.name === 'UnauthorizedError') {
-    		return re.send({ status: 401, message: '无效token' })
+    		return re.send({ status: 401, message: '无效token' });
     	}
-    	res.send({ status: 500, message: '未知错误' })
-    })
+    	res.send({ status: 500, message: '未知错误' });
+    });
     ```
 
 ## Vue
@@ -3648,9 +3651,9 @@ req.session.destroy()
     ```html
     <div id="msg"></div>
     <script type="text/javascript">
-    	var msg = 'helloWord'
-    	var div = document.getElementById('msg')
-    	div.innerHTML = msg
+    	var msg = 'helloWord';
+    	var div = document.getElementById('msg');
+    	div.innerHTML = msg;
     </script>
     ```
 -   Vue 方法
@@ -3663,7 +3666,7 @@ req.session.destroy()
     		data: {
     			msg: 'helloWord',
     		},
-    	})
+    	});
     </script>
     ```
 
@@ -3701,7 +3704,7 @@ req.session.destroy()
 		data: {
 			msg: 'helloWord',
 		},
-	})
+	});
 </script>
 ```
 
@@ -3811,9 +3814,9 @@ req.session.destroy()
 Vue.directive('focus', {
 	inserted: function (el) {
 		//获取元素焦点
-		el.focus()
+		el.focus();
 	},
-})
+});
 ```
 
 ```html
@@ -3824,9 +3827,9 @@ Vue.directive('focus', {
 //改变元素背景颜色
 Vue.directive('color', {
 	inserted: function (el, binding) {
-		el.style.backgroundColor = binding.value.color
+		el.style.backgroundColor = binding.value.color;
 	},
-})
+});
 ```
 
 ```html
@@ -3840,10 +3843,10 @@ var vm = new Vue({
 	computed: {
 		//反转字符串
 		reversedMessage: function () {
-			return this.msg.split('').reverse().join('')
+			return this.msg.split('').reverse().join('');
 		},
 	},
-})
+});
 ```
 
 ##### 计算属性和方法的区别
@@ -3860,13 +3863,13 @@ var vm = new Vue({
 	watch: {
 		firstName: function (val) {
 			//val表示变化之后的值
-			this.fullName = val + '' + this.lastName
+			this.fullName = val + '' + this.lastName;
 		},
 		lastName: function (val) {
-			this.fullName = this.firstName + '' + val
+			this.fullName = this.firstName + '' + val;
 		},
 	},
-})
+});
 ```
 
 #### 过滤器
@@ -3894,7 +3897,7 @@ Vue.filter('过滤器名称'，function(value，arg){
 Vue.component(组件名称, {
 	data: 组件数据,
 	template: 组件模板内容,
-})
+});
 ```
 
 ```js
@@ -3902,15 +3905,15 @@ Vue.component('button-counter', {
 	data: function () {
 		return {
 			count: 0,
-		}
+		};
 	},
 	template: '<button v-on:click="handle">点击了{{count}}次</button>',
 	methods: {
 		handle: function () {
-			this.count++
+			this.count++;
 		},
 	},
-})
+});
 ```
 
 ```html
@@ -3934,7 +3937,7 @@ Vue.component('button-counter', {
     Vue.component('menu-item', {
     	props: ['title'],
     	template: '<div>{{title}}</div>',
-    })
+    });
     ```
 
     ```html
@@ -3968,7 +3971,7 @@ Vue.component('button-counter', {
                     <slot><slot>
                 </div>
             `,
-        })
+        });
         ```
 
         ```html
@@ -4014,7 +4017,7 @@ Promise 是异步编程的一种解决方案，从语法上讲，Promise 是一�
 var p = new Promise(function (resolve, reject) {
 	//成功时调用 resolve()
 	//失败时调用 reject()
-})
+});
 p.then(
 	function (ret) {
 		//从resolve得到正常结果
@@ -4022,7 +4025,7 @@ p.then(
 	function (ret) {
 		//从reject得到错误信息
 	}
-)
+);
 ```
 
 #### 基于 Promise 处理 Ajax 请求
@@ -4030,27 +4033,27 @@ p.then(
 ```js
 function queryData(url) {
 	return new Promise(function (resolve, reject) {
-		var xhr = new XMLHttpRequest()
+		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function () {
-			if (xhr.readyState != 4) return
+			if (xhr.readyState != 4) return;
 			if (xhr.status == 200) {
-				resolve(xhr.responseText)
+				resolve(xhr.responseText);
 			} else {
-				reject('出错了')
+				reject('出错了');
 			}
-		}
-		xhr.open('get', url)
-		xhr.send(null)
-	})
+		};
+		xhr.open('get', url);
+		xhr.send(null);
+	});
 }
 queryData('http://localhost:3000/data').then(
 	function (data) {
-		console.log(data)
+		console.log(data);
 	},
 	function (err) {
-		console.log(err)
+		console.log(err);
 	}
-)
+);
 ```
 
 #### then 参数中的返回值
@@ -4072,16 +4075,16 @@ queryData('http://localhost:3000/data').then(
     queryData()
     	.then(function (data) {
     		//成功时执行
-    		console.log(data)
+    		console.log(data);
     	})
     	.catch(function (data) {
     		//失败时执行
-    		console.log(data)
+    		console.log(data);
     	})
     	.finally(function () {
     		//成功与否都会执行
-    		console.log('finshed')
-    	})
+    		console.log('finshed');
+    	});
     ```
 
 2. 对象方法
@@ -4090,12 +4093,12 @@ queryData('http://localhost:3000/data').then(
     ```js
     Promise.all([p1, p2, p3]),
     	then((result) => {
-    		console.log(result)
-    	})
+    		console.log(result);
+    	});
     Promise.race([p1, p2, p3]),
     	then((result) => {
-    		console.log(result)
-    	})
+    		console.log(result);
+    	});
     ```
 
 ### 接口调用-fetch 用法
@@ -4114,12 +4117,12 @@ queryData('http://localhost:3000/data').then(
 fetch('/abc')
 	.then((data) => {
 		//text()方法属于fetchAPI的一部分，它返回一个Promise对象，用与获取后台返回的数据
-		return data.text()
+		return data.text();
 	})
 	.then((ret) => {
 		//这里得到的才是最终数据
-		console.log(ret)
-	})
+		console.log(ret);
+	});
 ```
 
 #### fetch 请求参数
@@ -4134,12 +4137,12 @@ fetch('/abc')
     	method: 'get',
     })
     	.then((data) => {
-    		return data.text()
+    		return data.text();
     	})
     	.then((ret) => {
     		//这里得到的才是最终数据
-    		console.log(ret)
-    	})
+    		console.log(ret);
+    	});
     ```
 3. delete
     ```js
@@ -4147,12 +4150,12 @@ fetch('/abc')
     	method: 'delete',
     })
     	.then((data) => {
-    		return data.text()
+    		return data.text();
     	})
     	.then((ret) => {
     		//这里得到的才是最终数据
-    		console.log(ret)
-    	})
+    		console.log(ret);
+    	});
     ```
 4. post
     ```js
@@ -4169,12 +4172,12 @@ fetch('/abc')
     	},
     })
     	.then((data) => {
-    		return data.text()
+    		return data.text();
     	})
     	.then((ret) => {
     		//这里得到的才是最终数据
-    		console.log(ret)
-    	})
+    		console.log(ret);
+    	});
     ```
 5. put
     ```js
@@ -4191,12 +4194,12 @@ fetch('/abc')
     	},
     })
     	.then((data) => {
-    		return data.text()
+    		return data.text();
     	})
     	.then((ret) => {
     		//这里得到的才是最终数据
-    		console.log(ret)
-    	})
+    		console.log(ret);
+    	});
     ```
 
 #### fetch 响应结果
@@ -4208,12 +4211,12 @@ fetch('/abc')
     ```js
     fetch('/abc')
     	.then((data) => {
-    		return data.json()
+    		return data.json();
     	})
     	.then((ret) => {
     		//这里得到的才是最终数据
-    		console.log(ret)
-    	})
+    		console.log(ret);
+    	});
     ```
 
 ### 接口调用-axios 用法
@@ -4226,8 +4229,8 @@ fetch('/abc')
 2. 基本用法
     ```js
     axios.get('/getdata').then((ret) => {
-    	console.log(ret.data)
-    })
+    	console.log(ret.data);
+    });
     ```
 
 #### 常用 API
@@ -4244,8 +4247,8 @@ fetch('/abc')
 
     ```js
     axios.get('/getdata?id=123').then((ret) => {
-    	console.log(ret.data)
-    })
+    	console.log(ret.data);
+    });
 
     axios
     	.get('/getdata?id=123', {
@@ -4254,8 +4257,8 @@ fetch('/abc')
     		},
     	})
     	.then((ret) => {
-    		console.log(ret.data)
-    	})
+    		console.log(ret.data);
+    	});
     ```
 
 2.  delete 传递参数
@@ -4289,16 +4292,16 @@ fetch('/abc')
     		pwd: 123,
     	})
     	.then((ret) => {
-    		console.log(ret.data)
-    	})
+    		console.log(ret.data);
+    	});
     ```
     ```js
-    const params = new URLSearchParams()
-    params.append('param1', 'value1')
-    params.append('param2', 'value2')
+    const params = new URLSearchParams();
+    params.append('param1', 'value1');
+    params.append('param2', 'value2');
     axios.post('/adata', params).then((ret) => {
-    	console.log(ret.data)
-    })
+    	console.log(ret.data);
+    });
     ```
 4.  put 传递参数
     put 传递参数
@@ -4311,16 +4314,16 @@ fetch('/abc')
     		pwd: 123,
     	})
     	.then((ret) => {
-    		console.log(ret.data)
-    	})
+    		console.log(ret.data);
+    	});
     ```
     ```js
-    const params = new URLSearchParams()
-    params.append('param1', 'value1')
-    params.append('param2', 'value2')
+    const params = new URLSearchParams();
+    params.append('param1', 'value1');
+    params.append('param2', 'value2');
     axios.put('/adata', params).then((ret) => {
-    	console.log(ret.data)
-    })
+    	console.log(ret.data);
+    });
     ```
 
 #### axios 响应结果
@@ -4344,12 +4347,12 @@ fetch('/abc')
     axios.interceptors.request.use(
     	function (config) {
     		//在请求之前设置一些信息
-    		return config
+    		return config;
     	},
     	function (err) {
     		//处理错误信息
     	}
-    )
+    );
     ```
 2. 响应拦截器
    在获取数据前对数据做一些加工处理
@@ -4357,12 +4360,12 @@ fetch('/abc')
     axios.interceptors.response.use(
     	function (res) {
     		//在获取数据前对数据做一些加工处理
-    		return res
+    		return res;
     	},
     	function (err) {
     		//处理错误信息
     	}
-    )
+    );
     ```
 
 ### 接口调用-async/await 用法
@@ -4375,25 +4378,25 @@ fetch('/abc')
 
 ```js
 async function queryData(id) {
-	const ret = await axios.get('/data')
-	return ret
+	const ret = await axios.get('/data');
+	return ret;
 }
 queryData.then((ret) => {
-	console.log(ret)
-})
+	console.log(ret);
+});
 ```
 
 #### 处理多个异步请求
 
 ```js
 async function queryData(id) {
-	const info = await axios.get('/async')
-	const ret = await axios.get('/data?info=' + info.data)
-	return ret
+	const info = await axios.get('/async');
+	const ret = await axios.get('/data?info=' + info.data);
+	return ret;
 }
 queryData.then((ret) => {
-	console.log(ret)
-})
+	console.log(ret);
+});
 ```
 
 ## vue 路由
@@ -4444,10 +4447,10 @@ queryData.then((ret) => {
         ```js
         var User = {
         	template: '<div>User</div>',
-        }
+        };
         var Register = {
         	template: '<div>Register</div>',
-        }
+        };
         ```
     5. 配置路由规划并创建路由实例
         ```js
@@ -4460,7 +4463,7 @@ queryData.then((ret) => {
         		{ path: '/user', component: User },
         		{ path: '/register', component: Register },
         	],
-        })
+        });
         ```
     6. 把路由挂载到 Vue 实例中
         ```js
@@ -4468,7 +4471,7 @@ queryData.then((ret) => {
         	el: '#app',
         	//为了能够让路由规则生效，必须把路由对象挂载到vue实例对象上
         	router,
-        })
+        });
         ```
 
 3. 路由重定向
@@ -4485,7 +4488,7 @@ queryData.then((ret) => {
     		{ path: '/user', component: User },
     		{ path: '/register', component: Register },
     	],
-    })
+    });
     ```
 
 ### vue-router 嵌套路由
@@ -4502,11 +4505,11 @@ queryData.then((ret) => {
 ```js
 var router = new VueRouter({
 	routes: [{ path: '/user/:id', component: User }],
-})
+});
 const User = {
 	//路由组件中通过$route.params获取路由参数
 	template: '<div>User{{$route.params.id}}</div>',
-}
+};
 ```
 
 ```js
@@ -4533,7 +4536,7 @@ const router = new VueRouter({
 			component: User,
 		},
 	],
-})
+});
 ```
 
 ```html
@@ -4558,10 +4561,10 @@ const User = {
 	methods: {
 		goRegister: function () {
 			//用编程的方式控制路由跳转
-			this.$router.push('/register')
+			this.$router.push('/register');
 		},
 	},
-}
+};
 ```
 
 ```js
@@ -4614,8 +4617,8 @@ const User = {
     			},
     		},
     	],
-    ]
-    module.exports = presets
+    ];
+    module.exports = presets;
     ```
 5.  通过 npx babel-node index.js 执行代码
 
@@ -4645,9 +4648,9 @@ const User = {
 
         ```js
         //导入模块成员
-        import m1 from './m1.js'
+        import m1 from './m1.js';
 
-        console.log(m1)
+        console.log(m1);
         //打印结果为：
         //{a:10,b:20,show:[Function:show]}
         ```
@@ -4672,7 +4675,7 @@ const User = {
 
         ```js
         //导入模块成员
-        import { s1, s2, as, ss2, say } from './m1.js'
+        import { s1, s2, as, ss2, say } from './m1.js';
         ```
 
 3. 直接导入并执行模块代码
@@ -4682,13 +4685,13 @@ const User = {
 
     //在当前模块中执行一个for循环操作
     for (let i = 0; i < 3; i++) {
-    	console.log(i)
+    	console.log(i);
     }
     ```
 
     ```js
     //直接导入并执行模块代码
-    import './m2.js'
+    import './m2.js';
     ```
 
 ### webpack
@@ -4711,7 +4714,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
         ```js
         module.exports = {
         	mode: 'development', //mode用来指定构建模式。。。。production/development
-        }
+        };
         ```
     4. 在 package.json 配置文件中的 script 节点下，新增 dev 脚本如下：
         ```js
@@ -4726,14 +4729,14 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
     - 出口：dist->main.js
     - 如果需要修改打包的入口、出口，可以在 webpack.config.js 中新增如下配置：
         ```js
-        const path = require('path') //导入node.js中操作路径的模块
+        const path = require('path'); //导入node.js中操作路径的模块
         module.exports = {
         	entry: path.join(__dirname, './src/index.js'), //打包入口文件的路径
         	output: {
         		path: path.join(__dirname, './dist'), //输出文件的存放路径
         		filename: 'bundle.js', //输出文件的名称
         	},
-        }
+        };
         ```
 4. webpack 的自动打包功能
     1. 运行 npm i webpack-dev-server -D 命令，安装支持自动打包的工具
@@ -4751,17 +4754,17 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
     2. 修改 webpack.config.js 文件头部区域，添加如下配置信息：
         ```js
         //导入生成预览页面的插件，得到一个构造函数
-        const HtmlWebpackPlugin = require('html-webpack-plugin')
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
         const htmlPlugin = new HtmlWebpackPlugin({
         	template: './src/index.html', //指定要用到的模板文件
         	filename: 'index.html', //指定生成的文件的名称，该文件存放于内存中，在目录中不显示
-        })
+        });
         ```
     3. 修改 webpack.config.js 文件中向外暴露的配置对象，新增如下配置节点
         ```js
         module.exports = {
         	plugins: [htmlPlugin], //plugins数组是webpack打包期间会用到的一些插件列表
-        }
+        };
         ```
 6. 怕配置自动打包相关的参数
     ```js
@@ -4787,7 +4790,9 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
             ```js
             //test表示匹配的文件类型，use表示对应要调用的loader
             module: {
-            	ruler: [{ test: /\.css$/, use: ['style-loader', 'css-loader'] }]
+            	ruler: [
+            		{ test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            	];
             }
             ```
     2. 打包处理 less 文件
@@ -4801,7 +4806,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
             			test: /\.less$/,
             			use: ['style-loader', 'css-loader', 'less-loader'],
             		},
-            	]
+            	];
             }
             ```
     3. 打包处理 scss 文件
@@ -4815,17 +4820,17 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
             			test: /\.sass$/,
             			use: ['style-loader', 'css-loader', 'sass-loader'],
             		},
-            	]
+            	];
             }
             ```
     4. 配置 postCSS 自动添加 css 的兼容前缀
         1. 运行 npm i postcss-loader autoprefixer -D 命令
         2. 在项目根目录中创建 postcss 的配置文件 postcss.config.js，并初始化如下配置：
             ```js
-            const autoprefixer = require('autoprefixer') //导入自动添加前缀的插件
+            const autoprefixer = require('autoprefixer'); //导入自动添加前缀的插件
             module.exports = {
             	plugins: [autoprefixer], //挂载插件
-            }
+            };
             ```
         3. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
             ```js
@@ -4836,7 +4841,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
             			test: /\.css$/,
             			use: ['style-loader', 'css-loader', 'postcss-loader'],
             		},
-            	]
+            	];
             }
             ```
     5. 打包样式表中的图片和字体文件
@@ -4850,7 +4855,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
             			use: 'url-loader?limit=16940', //其中 ? 之后的是loader的参数项。
             			//limit用来指定图片的大小，单位byte
             		},
-            	]
+            	];
             }
             ```
     6. 打包处理 js 文件中的高级语法
@@ -4864,7 +4869,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
             		'@babel/plugin-transform-runtime',
             		'@babel/plugin-proposal-class-properties',
             	],
-            }
+            };
             ```
         4. 在 webpack.config.js 的 module->rules 数组中，添加 loader 规则如下：
             ```js
@@ -4888,11 +4893,11 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
 	// 定义Vue组件的业务逻辑
 	export default {
 		data() {
-			return {}
+			return {};
 		}, //私有数据
 		methods: {}, //处理函数
 		//。。。其他业务逻辑
-	}
+	};
 </script>
 <style scoped>
 	/* 定义组件的样式 */
@@ -4903,7 +4908,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
     1. 运行 npm i vue-loader vue-template-compiler -D 命令
     2. 在 webpack.config.js 配置文件中，添加 vue-loader 的配置如下：
         ```js
-        const VueLoaderPlugin = require('vue-loader/lib/plugin')
+        const VueLoaderPlugin = require('vue-loader/lib/plugin');
         module.exports = {
         	modules: {
         		rules: [
@@ -4915,7 +4920,7 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
         		//...其他插件
         		new VueLoaderPlugin(),
         	],
-        }
+        };
         ```
 -   在 webpack 项目中使用 Vue
 
@@ -4926,15 +4931,15 @@ webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js
 
         ```js
         //导入Vue构造函数
-        import Vue from 'vue'
+        import Vue from 'vue';
         //导入app组件
-        import App from './components/App.vue'
+        import App from './components/App.vue';
 
         const vm = new Vue({
         	el: '#app',
         	//通过render函数，把指定的组件渲染到el区域中
         	render: (h) => h(App),
-        })
+        });
         ```
 
 -   webpack 打包发布
@@ -4983,7 +4988,7 @@ vue init webpack my-project
     		port: 8888,
     		open: true,
     	},
-    }
+    };
     ```
 
 ### Element-UI 的基本使用
@@ -4994,11 +4999,11 @@ vue init webpack my-project
 2. 导入 Element-UI 相关资源
     ```js
     //导入组件库
-    import ElementUI from 'element-ui'
+    import ElementUI from 'element-ui';
     //导入组件相关样式
-    import 'element-ui/lib/theme-chalk/index.css'
+    import 'element-ui/lib/theme-chalk/index.css';
     //配置Vue插件
-    Vue.use(ElementUI)
+    Vue.use(ElementUI);
     ```
 
 ## veux
@@ -5013,8 +5018,8 @@ vue init webpack my-project
     ```
 2. 导入 vuex 包
     ```js
-    import Vuex from 'vuex'
-    Vue.use(Vuex)
+    import Vuex from 'vuex';
+    Vue.use(Vuex);
     ```
 3. 创建 store 对象
     ```js
@@ -5023,14 +5028,14 @@ vue init webpack my-project
     	state: {
     		count: 0,
     	},
-    })
+    });
     ```
 4. 将 store 对象挂载到 vue 实例中
     ```js
     new Vue({
     	el: '#app',
     	store,
-    })
+    });
     ```
 
 ### vuex 的核心概念
@@ -5040,7 +5045,7 @@ vue init webpack my-project
     -   组件访问 state 中数据的方式：
 
         1.  ```js
-            this.$store.state.全局数据名称
+            this.$store.state.全局数据名称;
             ```
         2.  ```js
             //从vuex中按需导入mapState函数
@@ -5125,20 +5130,20 @@ vue init webpack my-project
     	mutations: {
     		add(state) {
     			//变更状态
-    			state.count++
+    			state.count++;
     		},
     	},
     	action: {
     		addAsync(context) {
     			setTimeout(() => {
-    				context.commit('add')
-    			}, 1000)
+    				context.commit('add');
+    			}, 1000);
     		},
     	},
-    })
+    });
 
     //触发action
-    this.$store.dispatch('addAsync')
+    this.$store.dispatch('addAsync');
     ```
 
     -   第二种触发
@@ -5166,10 +5171,10 @@ vue init webpack my-project
     	},
     	getters: {
     		showNum: (state) => {
-    			return '当前最新的数量是【' + state.count + '】'
+    			return '当前最新的数量是【' + state.count + '】';
     		},
     	},
-    })
+    });
     //用法同state
     ```
 
@@ -5193,7 +5198,7 @@ vue init webpack my-project
     1. 引入 react 和 react-dom 两个 js 文件
     2. 创建 react 元素
         ```js
-        const title = React.createElement('h1', null, 'Hello React')
+        const title = React.createElement('h1', null, 'Hello React');
         ```
     3. 渲染 react 元素到页面中
 
@@ -5203,12 +5208,78 @@ vue init webpack my-project
         	//参数一：元素名称
         	//参数二：元素属性
         	//参数三及之后：元素的子节点
-        	const title = React.createElement('h1', null, 'Hello React')
+        	const title = React.createElement('h1', null, 'Hello React');
         	//渲染元素
         	//参数一：要渲染的元素
         	//参数二：挂载点
-        	ReactDom.render(title, document.getElementById('root'))
+        	ReactDom.render(title, document.getElementById('root'));
         </script>
         ```
 
-### 脚手架的使用
+## JSX
+
+JavaScript XML 的简写
+
+### 基本使用
+
+1. 使用 jsx 创建 react 元素
+    ```jsx
+    const title = <h1>Hello</h1>;
+    ```
+2. 使用 ReactDOM.render()方法渲染 react 元素到页面中
+    ```jsx
+    ReactDOM.render(title, root);
+    ```
+3. 注意点
+    1. React 元素的属性名使用驼峰命名法
+    2. 特殊属性名：class->className\for->htmlFor\tabindedx->tabIndex
+    3. 没有子节点的元素可以使用‘/>’结束
+
+### 在 JSX 中使用 JavaScript
+
+-   数据存储在 js 中
+-   语法{JavaScript 表达式}
+-   注意点
+    -   {}中可以使用任意合法的 js 表达式
+    -   jsx 自身也是 js 表达式
+    -   对象是个例外
+    -   不能再{}中出现语句（if、for 等）
+
+### jsx 条件渲染
+
+-   根据条件渲染特定的 jsx 结构
+
+```js
+const loadData = () => {
+	if (isLoading) {
+		return <div>加载中。。。</div>;
+	}
+	return <div>加载完成</div>;
+};
+const dv = <div>{loadData()}</div>;
+```
+
+### jsx 列表渲染
+
+-   如果要渲染一组数据，应该要使用数组的 map()方法
+-   注意：渲染列表时应该添加 key 属性，key 属性值要唯一
+-   原则：map()遍历谁，就给谁添加 key 属性
+-   注意：尽量避免使用索引作为 key
+
+```js
+const songs=[
+    {id:1,name:'a'},
+    {id:2,name:'b'},
+    {id:3,name:'c'},
+]
+const list=(
+    <ul>
+        {songs.map(item=><li key={item.id}>{item.name}</>)}
+    </ul>
+)
+```
+
+### 样式处理
+
+1. 行内样式-style
+2. 类名-className
