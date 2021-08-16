@@ -5274,7 +5274,7 @@ const songs=[
 ]
 const list=(
     <ul>
-        {songs.map(item=><li key={item.id}>{item.name}</>)}
+        {songs.map(item=><li key={item.id}>{item.name}<li/>)}
     </ul>
 )
 ```
@@ -5283,3 +5283,194 @@ const list=(
 
 1. 行内样式-style
 2. 类名-className
+
+## React 组件
+
+### 组件介绍
+
+-   组件是 React 的一等公民
+-   组件表示页面的部分功能
+-   特点：可复用、独立、可组合
+
+### 组件的两种创建方式
+
+1. 使用函数创建组件
+    - 函数组件：使用 js 的函数创建的组件
+    - 约定一：函数名必须以大写字母开头
+    - 约定二：函数组件必须有返回值，表示该组件的结构
+    ```js
+    function Hello() {
+    	return <div>hello components</div>;
+    }
+    ```
+2. 使用类创建组件
+    - 类组件：使用 es6 的 class 创建的组件
+    - 约定一：类名大写开头
+    - 约定二：应该继承 React.Component 父类
+    - 约定三：必须提供 render()方法
+    - 约定四：render 方法必须有返回值
+    ```js
+    class Hello extends React.Component {
+    	render() {
+    		return <div>Hello class component</div>;
+    	}
+    }
+    ReactDOM.render(<Hello />, root);
+    ```
+3. 抽离为独立 js 文件
+    1. 创建 js 文件
+    2. 在文件中导入 React
+    3. 创建组件
+    4. 在文件中导出组件
+    5. 在 index.js 中导入组件
+    6. 渲染组件
+
+### 事件处理
+
+-   事件绑定
+    -   语法：on+事件名称={事件处理程序}
+    ```js
+    class App extends React.Component {
+    	handleClick() {
+    		console.log('单击事件触发了');
+    	}
+    	render() {
+    		return <button onclick={this.handleClick}></button>;
+    	}
+    }
+    ```
+-   事件对象
+
+    -   可以通过事件处理程序的参数获取到事件对象
+    -   React 中的事件对象叫做：合成事件（对象）
+    -   合成事件：兼容所有浏览器
+
+    ```js
+    function handleClick(e) {
+    	e.preventDefalut();
+    	console.log('事件对象', e);
+    }
+    <a onClick={handleClick}></a>;
+    ```
+
+### 有状态组件和无状态组件
+
+-   函数组件又叫做无状态组件，类组件又叫做有状态组件
+-   状态（state）即数据
+-   函数组件没有自己的状态，只负责数据显示（静）
+-   类组件有自己的状态，负责更新 UI（动）
+
+### 组件中的 state 和 setState
+
+1. state 的基本使用
+    - 状态是组件内部的私有数据，只能在组件内部使用
+    - state 的值是对象，表示一个组件中可以有多个数据
+    ```js
+    class App extends React.Component {
+    	//constructor() {
+    	//	super();
+    	//	//初始化state
+    	//	this.state = {
+    	//		count: 0,
+    	//	};
+    	//}
+    	//简化语法
+    	state = {
+    		count: 0,
+    	};
+    	render() {
+    		return <div>count:{this.state.count}</div>;
+    	}
+    }
+    ```
+2. setState()修改状态
+    - 状态是可变的
+    - 语法：this.setState({要修改的数据})
+    - 注意：不能直接修改 state 中的值
+    - setState 作用：
+        1. 修改 state
+        2. 更新 UI
+
+#### 从 jsx 中抽离事件处理程序
+
+```js
+class App extends React.Component {
+	onIncrement() {
+		this.setState({
+			count: this.state.count + 1,
+		});
+	}
+	render() {
+		return <button onclick={() => this.onIncrement}></button>;
+	}
+}
+```
+
+### 事件绑定 this 指向
+
+-   箭头函数自身不绑定 this
+
+### 表单处理
+
+1. 受控组件
+
+    - html 的表单元素是可输入的，也就是自己的可变状态
+    - React 中可变状态通常保存在 state 中，并且只能通过 setState()方法来修改
+    - react 将 state 与表单元素值 value 绑定到一起，由 state 的值来控制表单元素的值
+
+    ```js
+    <input type="text" value={this.state.txt} />
+    ```
+
+    - 使用：
+
+        ```js
+        state = { txt: '' };
+
+        <input
+        	type="text"
+        	value={this.state.txt}
+        	onChange={(e) => this.setState({ txt: e.target.value })}
+        />;
+        ```
+
+    - 多表单元素优化
+
+        1. 给表单元素添加 name 属性，名称与 state 相同
+        2. 根据表单元素获取对应值
+        3. 在 change 事件处理程序中通过[name]来修改对应 state
+
+        ```js
+        handleChange = (e) => {
+        	const target = e.target;
+
+        	const value =
+        		target.type === 'checkbox' ? target.checked : target.value;
+        	const name = target.name;
+        	this.setStare({
+        		[name]: value,
+        	});
+        };
+        ```
+
+2. 非受控组件（DOM 方式）
+
+    - 借助 ref，使用原生 DOM 方式来获取表单元素
+    - ref 作用：获取 DOM 或组件
+
+    - 使用步骤：
+        1. 调用 React.createRef()方法创建一个 ref 对象
+            ```js
+            const constructor(){
+                super()
+                this.txtRef=React.createRef()
+            }
+            ```
+        2. 将创建好的 ref 对象添加到文本框中
+            ```js
+            <input typr='text' ref={this.txtRef}>
+            ```
+        3. 通过 ref 对象获取到文本框的值
+            ```js
+            console.log(this.txtRef.current.value);
+            ```
