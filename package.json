@@ -1,37 +1,40 @@
 {
-  "name": "dailyworking",
-  "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-jwt": "^6.0.0",
-    "express-session": "^1.17.2",
-    "jsonwebtoken": "^8.5.1",
-    "moment": "^2.29.1",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/node": "^7.14.9",
-    "@babel/preset-env": "^7.15.0",
-    "webpack": "^5.45.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yejjl/gogogo.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yejjl/gogogo/issues"
-  },
-  "homepage": "https://github.com/yejjl/gogogo#readme",
-  "keywords": [],
-  "description": ""
+	"name": "dailyworking",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"dependencies": {
+		"@babel/polyfill": "^7.12.1",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"express-jwt": "^6.0.0",
+		"express-session": "^1.17.2",
+		"jsonwebtoken": "^8.5.1",
+		"moment": "^2.29.1",
+		"mysql": "^2.18.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.14.8",
+		"@babel/core": "^7.15.0",
+		"@babel/node": "^7.14.9",
+		"@babel/preset-env": "^7.15.0",
+		"webpack": "^5.45.1"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yejjl/gogogo.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/yejjl/gogogo/issues"
+	},
+	"homepage": "https://github.com/yejjl/gogogo#readme",
+	"keywords": [],
+	"description": ""
 }

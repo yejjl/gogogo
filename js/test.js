@@ -99,3 +99,17 @@
 // 		console.log('删除成功');
 // 	}
 // });
+import React, { useState } from 'react';
+import { ReactDOM } from 'react-dom';
+
+const Mouse = () => {
+	const { client, setClient } = useState(0, 0);
+};
+
+class App extends React.Component {
+	render() {
+		return <div>aa</div>;
+	}
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
