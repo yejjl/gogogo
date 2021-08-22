@@ -5671,3 +5671,70 @@ App.defaultProps = {
 
   2. 高阶组件（HOC）
      采用包装模式实现状态逻辑的复用
+
+## React 原理
+
+### setState()的说明
+
+1. 更新数据
+
+   - 是异步更新数据的
+
+   ```js
+   this.state = { count: 1 };
+   this.setState({
+   	count: this.state.count + 1,
+   });
+   console.log(this.state.count); //1
+   ```
+
+   - 后面的 setState()不要依赖前面的 setState()
+   - 可以调用多次 setState()，只会触发一次重新渲染
+
+2. 推荐语法
+   - 使用 setState((state,props)=>{})语法
+   ```js
+   this.setState((state, pprops) => {
+   	return {
+   		count: state.count + 1,
+   	};
+   });
+   ```
+3. 第二个参数
+   - 在状态更新（页面完成重新渲染）后立即执行某个操作
+   - 语法：setState(update[,callback])
+   ```js
+   this.setState(
+   	(state, props) => {},
+   	() => {
+   		console.log('aa');
+   	}
+   );
+   ```
+
+### JSX 语法的转化过程
+
+- 是 createElement()方法的简化语法
+
+jsx 语法->createElement()->React 元素
+
+### 组件更新机制
+
+- 父组件更新时，直属子组件会一起更新
+
+### 组件性能优化
+
+- 减轻 state：只存储跟组件渲染相关的数据
+- 避免不必要的重新渲染
+- 纯组件：自动实现了 shouldComponentUpdate 钩子
+
+### 虚拟 DOM 和 Diff 算法
+
+虚拟 DOM：本质上就是一个 js 对象，用来描述你希望看到的内容（UI）
+
+- 执行过程
+  1. 初次渲染时，React 会根据初始 state（Model），创建一个虚拟 DOM 对象（树）
+  2. 根据虚拟 DOM 生成真正的 DOM，渲染到页面中
+  3. 当数据变化后（setState()）,重新根据新的数据，创建新的虚拟 DOM 对象（树）
+  4. 与上一次得到的虚拟 DOM 对象，使用 Diff 算法对比，得到需要更新的内容
+  5. 最终，React 只将变化的内容更新（patch）到 DOM 中，重新渲染页面
