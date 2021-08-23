@@ -5738,3 +5738,89 @@ jsx 语法->createElement()->React 元素
   3. 当数据变化后（setState()）,重新根据新的数据，创建新的虚拟 DOM 对象（树）
   4. 与上一次得到的虚拟 DOM 对象，使用 Diff 算法对比，得到需要更新的内容
   5. 最终，React 只将变化的内容更新（patch）到 DOM 中，重新渲染页面
+
+## react 路由
+
+### react 路由介绍
+
+- 功能：让用户从一个视图（页面）跳转到另一个试图（页面）
+- 前端路由是一套映射规则，在 React 中，是 URl 路径与组件的对应关系
+
+### 路由的基本使用
+
+1. 安装
+
+   ```js
+   yarn add react-roter-dom
+   ```
+
+2. 导入三个核心组件：Router/Route/Link
+   ```js
+   import { BrowserRouter as Router, route, Link } from 'react-router-dom';
+   ```
+3. 使用 Router 组件包裹整个应用
+   ```js
+   const App = () => {
+   	<Router>
+   		<div></div>
+   	</Router>;
+   };
+   ```
+4. 使用 Link 组件作为导航菜单（路由路口）
+   ```js
+   <Link to="/first">页面一</Link>
+   ```
+5. 使用 Route 组件配置路由规则和要展示的组件（路由出口）
+   ```js
+   const App = () => {
+   	<Router>
+   		<div>
+   			<Link to="/first">页面一</Link>
+   			<Route path="/first" component={First}></Route>
+   		</div>
+   	</Router>;
+   };
+   ```
+6. 常用组件
+   - Router 组件：包裹整个应用，一个 React 应用只需要使用一次
+   - Link 组件：用于指定导航链接（a 标签）
+   - Route 组件：指定路由展示组件相关信息
+     ```js
+     // path属性：路由规则
+     // component属性：展示组件
+     // Route组件写在哪，渲染出来的组件就展示在哪
+     ```
+
+### 路由的执行过程
+
+1. 点击 a 标签，修改浏览器地址栏的 url
+2. React 路由监听到地址栏 url 的变化
+3. React 路由内部遍历所有 Route 组件，使用路由规则（path）与 pathname 进行匹配
+4. 当路由规则（path）能够匹配地址栏的 pathname 时，就展示组件的内容
+
+### 编程式导航
+
+- 编程式导航：通过 js 代码实现页面跳转
+
+```js
+class Login extends Component {
+	handleLogin = () => {
+		//...
+		this.props.history.push('/home');
+	};
+	render() {
+		//...
+	}
+}
+```
+
+### 默认路由
+
+- 默认路由：path='/'
+
+### 匹配模式
+
+1. 模糊匹配模式
+   - 规则：只要 pathname 以’path‘开头就会匹配成功
+2. 精确匹配
+   - 给 route 组件添加 exact 属性
