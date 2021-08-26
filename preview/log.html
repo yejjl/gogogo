@@ -74,7 +74,7 @@
 类选择器、属性选择器、伪类选择器，权重为 10</li>
 <li>结构伪类结构选择器<br><img src="media/img/伪类结构选择器.png" alt=""></li>
 </ol>
-<h4 id="nth-child-n-">nth-child(n)</h4>
+<h3 id="nth-child-n-">nth-child(n)</h3>
 <p><img src="media/img/nth-child.png" alt="">
 ==能否实现:hover:nth-child(x)?==</p>
 <h2 id="-">伪元素选择器</h2>
@@ -91,15 +91,15 @@
     //伪元素选择器权重为1；
 </code></pre>
 <h2 id="javascript">javascript</h2>
-<h4 id="-">浏览器执行过程</h4>
+<h3 id="-">浏览器执行过程</h3>
 <pre><code>js引擎将js语言逐行转为机  器语言。
-</code></pre><h4 id="js-">js 组成</h4>
+</code></pre><h3 id="js-">js 组成</h3>
 <ul>
 <li>ECMAScript：规定了 js 编程语法和核心知识</li>
 <li>DOM：文档模型</li>
 <li>BOM：浏览器对象模型</li>
 </ul>
-<h4 id="-">输入输出语句</h4>
+<h3 id="-">输入输出语句</h3>
 <ul>
 <li>prompt(&quot;输入框&quot;);//得到字符型</li>
 <li>console.log(&quot;控制台输出&quot;);</li>
@@ -108,35 +108,35 @@
 <h2 id="-">变量</h2>
 <p>用于存放数据的容器；
 程序在内存中申请的一块存放数据的空间；</p>
-<h4 id="-">变量的使用</h4>
+<h3 id="-">变量的使用</h3>
 <ol>
-<li>声明变量<pre><code class="lang-javascript"> var age;
- var age = 18;
+<li>声明变量<pre><code class="lang-javascript">var age;
+var age = 18;
 </code></pre>
 </li>
-<li>赋值<pre><code class="lang-javascript"> var age = 18;
- age = 18;
+<li>赋值<pre><code class="lang-javascript">var age = 18;
+age = 18;
 </code></pre>
 </li>
 </ol>
-<h4 id="-">声明变量的特殊情况</h4>
+<h3 id="-">声明变量的特殊情况</h3>
 <ol>
-<li>只声明不赋值<pre><code class="lang-javascript"> var sex;
- console.log(sex);
- --undefined;
+<li>只声明不赋值<pre><code class="lang-javascript">var sex;
+console.log(sex);
+--undefined;
 </code></pre>
 </li>
-<li>不声明、不直接赋值直接使用<pre><code class="lang-javascript"> console.log(tel);
- --报错;
+<li>不声明、不直接赋值直接使用<pre><code class="lang-javascript">console.log(tel);
+--报错;
 </code></pre>
 </li>
-<li>不声明直接赋值使用<pre><code class="lang-javascript">     qq=110;
-     console.log(qq);
-     --110
+<li>不声明直接赋值使用<pre><code class="lang-javascript">    qq=110;
+    console.log(qq);
+    --110
 </code></pre>
 </li>
 </ol>
-<h4 id="-">变量命名规范</h4>
+<h3 id="-">变量命名规范</h3>
 <ul>
 <li>由字母、数字、下划线、美元符号组成；</li>
 <li>严格区分大小写；</li>
@@ -149,7 +149,7 @@
 <p>根据占用数据空间区分数据类型；
 变量会在程序运行过程中，根据等号右边的值来确定；
 变量的数据类型可以变化；</p>
-<h4 id="-">简单数据类型</h4>
+<h3 id="-">简单数据类型</h3>
 <table>
 <thead>
 <tr>
@@ -203,14 +203,14 @@
 |\&quot;|双引号&quot;|
 |\t|tab 缩进|
 |\b|空格|</li>
-<li>检测字符串长度<pre><code class="lang-javascript">  var str = &#39;my name is yyjj&#39;;
-  console.log(str.length); //15
+<li>检测字符串长度<pre><code class="lang-javascript">var str = &#39;my name is yyjj&#39;;
+console.log(str.length); //15
 </code></pre>
 </li>
-<li>字符串拼接<pre><code class="lang-javascript">  //字符串类型+任意类型=拼接后的字符串类型
-  console.log(&#39;我&#39; + 18); //我18
-  console.log(&#39;12&#39; + 18); //1218
-  console.log(&#39;我&#39; + 18 + 12); //我1812
+<li>字符串拼接<pre><code class="lang-javascript">//字符串类型+任意类型=拼接后的字符串类型
+console.log(&#39;我&#39; + 18); //我18
+console.log(&#39;12&#39; + 18); //1218
+console.log(&#39;我&#39; + 18 + 12); //我1812
 </code></pre>
 </li>
 </ul>
@@ -229,11 +229,11 @@
 </ul>
 </li>
 </ol>
-<h4 id="typeof">typeof</h4>
+<h3 id="typeof">typeof</h3>
 <pre><code class="lang-javascript">var num = 10;
 console.log(typeof num); //number
 </code></pre>
-<h4 id="-">字符类型转换</h4>
+<h3 id="-">字符类型转换</h3>
 <ul>
 <li>转换为字符串
 |方式|案例|
@@ -315,36 +315,36 @@ console.log(typeof num); //number
 <li><p>分支结构
 根据不同的条件，执行不同的代码，得到不同的结果</p>
 <ul>
-<li><p>if</p>
-<pre><code class="lang-javascript">  if(条件表达式){
-      //执行语句
-  }else if(){
+<li>if</li>
+</ul>
+<pre><code class="lang-javascript">    if(条件表达式){
+        //执行语句
+    }else if(){
 
-  }else{
+    }else{
 
-  }
-  //三元运算表达式
-  //条件表达式 ? 表达式1:表达式2
-  //若条件表达式为真，则返回表达式1，否则返回表达式2
+    }
+    //三元运算表达式
+    //条件表达式 ? 表达式1:表达式2
+    //若条件表达式为真，则返回表达式1，否则返回表达式2
 </code></pre>
-</li>
-<li><p>switch</p>
+<ul>
+<li>switch</li>
+</ul>
 <pre><code class="lang-javascript">switch (表达式) {
-  case value1:
-      执行语句1;
-      break;
-  case value2:
-      执行语句2;
-      break;
-  default:
-      执行语句;
+    case value1:
+        执行语句1;
+        break;
+    case value2:
+        执行语句2;
+        break;
+    default:
+        执行语句;
 }
 //开发中表达式经常写成变量
 //表达式的结果和case的值相匹配时是全等（数值类型一致）
 //如果当前case没有break，则不会退出switch，继续执行下一个case
 </code></pre>
-</li>
-</ul>
 </li>
 <li><p>循环结构</p>
 <ul>
@@ -379,26 +379,25 @@ console.log(typeof num); //number
 <ol>
 <li><p>创建</p>
 <ol>
-<li><p>new</p>
+<li>new</li>
+</ol>
 <pre><code class="lang-javascript">var 数组名 = new Array();
 var arr = new Array(); //创建一个空数组；
 </code></pre>
-</li>
-<li><p>利用数组字面量创建数组</p>
+<ol start="2">
+<li>利用数组字面量创建数组</li>
+</ol>
 <pre><code class="lang-javascript">var 数组名 = [];
 var 数组名 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
 </code></pre>
 </li>
-</ol>
-</li>
 <li><p>访问数组元素</p>
 <ol>
-<li><p>数组索引（从 0 开始）</p>
+<li>数组索引（从 0 开始）</li>
+</ol>
 <pre><code class="lang-javascript">数组名[索引号];
 //超出的索引输出undefined
 </code></pre>
-</li>
-</ol>
 </li>
 <li><p>遍历数组
 循环</p>
@@ -407,96 +406,98 @@ var 数组名 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
 数组名.length</p>
 </li>
 <li><p>数组转换为字符串</p>
-<pre><code class="lang-javascript"> var arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
- var str = &#39;&#39;;
- for (var i = 0; i &lt; arr.length; i++) {
-     str += arr[i];
- }
+<pre><code class="lang-javascript">var arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+var str = &#39;&#39;;
+for (var i = 0; i &lt; arr.length; i++) {
+    str += arr[i];
+}
 </code></pre>
 </li>
 <li><p>数组新增元素</p>
 <ol>
-<li><p>修改 length 长度</p>
+<li>修改 length 长度</li>
+</ol>
 <pre><code class="lang-javascript">var arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
 arr.length = 5;
 </code></pre>
-</li>
-<li><p>修改索引</p>
+<ol start="2">
+<li>修改索引</li>
+</ol>
 <pre><code class="lang-javascript">var arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
 arr[3] = &#39;d&#39;;
 
 arr[0] = &#39;e&#39;; //也可以替换元素
 </code></pre>
-</li>
-<li><p>push</p>
+<ol start="3">
+<li>push</li>
+</ol>
 <pre><code class="lang-javascript">var arr = [1, 2, 3];
 arr.push(4);
 //在数组末尾添加
 </code></pre>
-</li>
-<li><p>unshift
-用法同 push，在数组头部添加新元素</p>
-</li>
+<ol start="4">
+<li>unshift
+用法同 push，在数组头部添加新元素</li>
 </ol>
 </li>
 <li><p>筛选数组</p>
-<p> 1.</p>
-<pre><code class="lang-javascript"> var arr = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;];
- var newArr = [];
- var j = 0;
- for (var i = 0; i &lt; arr.length; i++) {
-     if (arr[i] &gt; 1) {
-         newArr.push(arr[i]);
-         j++;
-     }
- }
+<p>1.</p>
+<pre><code class="lang-javascript">var arr = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;];
+var newArr = [];
+var j = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+    if (arr[i] &gt; 1) {
+        newArr.push(arr[i]);
+        j++;
+    }
+}
 </code></pre>
-<p> 2.</p>
-<pre><code class="lang-javascript"> var arr = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;];
- var newArr = [];
- for (var i = 0; i &lt; arr.length; i++) {
-     if (arr[i] &gt; 1) {
-         newArr[newArr.length] = arr[i];
-     }
- }
- console.log(newArr);
+<p>2.</p>
+<pre><code class="lang-javascript">var arr = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;];
+var newArr = [];
+for (var i = 0; i &lt; arr.length; i++) {
+    if (arr[i] &gt; 1) {
+        newArr[newArr.length] = arr[i];
+    }
+}
+console.log(newArr);
 </code></pre>
 </li>
 <li><p>数组删除元素（去重）</p>
-<p> <a href="https://www.jb51.net/article/176903.htm">数组去重</a></p>
+<p><a href="https://www.jb51.net/article/176903.htm">数组去重</a></p>
 <ol>
-<li><p>pop()</p>
+<li>pop()</li>
+</ol>
 <pre><code class="lang-javascript">//删除数组最后一个元素
 arr.pop();
 //pop()返回值为删除的元素
 </code></pre>
-</li>
-<li><p>shift()
-用法同 pop()，删除第一个元素</p>
-</li>
-<li>去重<pre><code class="lang-javascript"> //遍历旧数组，然后拿旧数组去查询新数组
- function unique(arr) {
-     var newArr = [];
-     for (var i = 0; i &lt; arr.length; i++) {
-         if (newArr.indexOf(arr[i]) === -1) {
-             newArr.push(arr[i]);
-         }
-     }
-     return newArr;
- }
+<ol start="2">
+<li>shift()
+用法同 pop()，删除第一个元素</li>
+<li>去重<pre><code class="lang-javascript">//遍历旧数组，然后拿旧数组去查询新数组
+function unique(arr) {
+    var newArr = [];
+    for (var i = 0; i &lt; arr.length; i++) {
+        if (newArr.indexOf(arr[i]) === -1) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
 </code></pre>
 </li>
 </ol>
 </li>
 <li><p>数组排序</p>
-<pre><code class="lang-javascript"> var arr = [];
- arr.reserse(); //反转数组
+<pre><code class="lang-javascript">var arr = [];
+arr.reserse(); //反转数组
 
- arr.sort(function (a, b) {
-     return a - b;
-     升序;
-     //return b-a;(降序)
- }); //冒泡排序
+arr.sort(function (a, b) {
+    return a - b;
+    升序;
+    //return b-a;(降序)
+}); //冒泡排序
 </code></pre>
 </li>
 <li><p>获取索引</p>
@@ -518,13 +519,13 @@ lastIndexOf;
 <h2 id="-">函数的两种声明方式</h2>
 <ol>
 <li><p>利用函数关键字自定义韩式（命名函数）</p>
-<pre><code class="lang-javascript"> function fn() {}
- fn();
+<pre><code class="lang-javascript">function fn() {}
+fn();
 </code></pre>
 </li>
 <li><p>函数表达式（匿名函数）</p>
-<pre><code class="lang-javascript"> var 变量名 = function () {};
- 变量名();
+<pre><code class="lang-javascript">var 变量名 = function () {};
+变量名();
 </code></pre>
 </li>
 </ol>
@@ -544,7 +545,7 @@ lastIndexOf;
 <li>属性：事物的特征</li>
 <li>方法：事物的行为</li>
 </ul>
-<h4 id="-">创建对象</h4>
+<h3 id="-">创建对象</h3>
 <ol>
 <li>利用字面量创建</li>
 </ol>
@@ -636,56 +637,61 @@ for (var k in obj) {
 <h2 id="-">基本包装类型</h2>
 <ol>
 <li><p>字符串对象</p>
-<pre><code class="lang-javascript"> var str = &#39;andy&#39;;
- console.log(str.length);
- //把简单数据类型包装成复杂数据类型
- var temp = new String(&#39;andy&#39;);
- //把临时变量的值给str
- str = temp;
- //销毁这个临时变量
- temp = null;
+<pre><code class="lang-javascript">var str = &#39;andy&#39;;
+console.log(str.length);
+//把简单数据类型包装成复杂数据类型
+var temp = new String(&#39;andy&#39;);
+//把临时变量的值给str
+str = temp;
+//销毁这个临时变量
+temp = null;
 </code></pre>
 <ul>
-<li><p>字符串不可变</p>
-<pre><code>  //修改字符串的值时，本质是新开辟一个空间给新字符，原字符不改变
-</code></pre></li>
-<li><p>求某个字符串出现的位置及次数</p>
+<li>字符串不可变</li>
+</ul>
+<pre><code>    //修改字符串的值时，本质是新开辟一个空间给新字符，原字符不改变
+</code></pre><ul>
+<li>求某个字符串出现的位置及次数</li>
+</ul>
 <pre><code class="lang-javascript">var str = &#39;abcoefoxyozzopp&#39;;
 var index = str.indexOf(&#39;o&#39;);
 while (index !== -1) {
-  console.log(index);
-  index = str.indexOf(&#39;o&#39;, index + 1);
+    console.log(index);
+    index = str.indexOf(&#39;o&#39;, index + 1);
 }
 </code></pre>
-</li>
-<li><p>根据位置返回字符</p>
+<ul>
+<li>根据位置返回字符</li>
+</ul>
 <pre><code class="lang-javascript">var str = &#39;andy&#39;;
 console.log(str.charAt(3));
 
 str[index]; //h5 新方法
 </code></pre>
-</li>
-<li><p>返回索引字符的 ASCII 值</p>
+<ul>
+<li>返回索引字符的 ASCII 值</li>
+</ul>
 <pre><code class="lang-javascript">console.log(str.charCodeAt(0)); //97
 </code></pre>
-</li>
-<li><p>拼接、截取字符串</p>
-<pre><code class="lang-javascript">  concat(str1,str2)//等效于+
+<ul>
+<li>拼接、截取字符串</li>
+</ul>
+<pre><code class="lang-javascript">    concat(str1,str2)//等效于+
 
-  substr(&#39;起始位置&#39;，&#39;截取长度&#39;)
+    substr(&#39;起始位置&#39;，&#39;截取长度&#39;)
 </code></pre>
-</li>
-<li><p>replace</p>
+<ul>
+<li>replace</li>
+</ul>
 <pre><code class="lang-javascript">str.replace(&#39;被替换的字符&#39;, &#39;替换的字符&#39;); //只替换第一个字符
 while (str.indexOf(&#39;&#39;) !== -1) {}
 </code></pre>
-</li>
-<li><p>splice</p>
+<ul>
+<li>splice</li>
+</ul>
 <pre><code class="lang-javascript">//字符串转数组
 str.splice(&#39;分隔符&#39;);
 </code></pre>
-</li>
-</ul>
 </li>
 </ol>
 <h2 id="-">简单、复杂类型</h2>
@@ -711,16 +717,16 @@ str.splice(&#39;分隔符&#39;);
 <li>Web API
 浏览器提供的一套操作浏览器功能和页面元素的 api（BOM\DOM）</li>
 </ol>
-<h4 id="dom">DOM</h4>
+<h3 id="dom">DOM</h3>
 <pre><code>文档对象模型，处理可扩展标记语言的编程接口
-</code></pre><h5 id="dom-">DOM 树</h5>
+</code></pre><h4 id="dom-">DOM 树</h4>
 <ol>
 <li>文档：一个页面就是一个文档，DOM 中用 document 表示</li>
 <li>元素：页面中所有标签都是元素，DOM 中用 element 表示</li>
 <li>节点：网页中所有内容都是节点，DOM 中用 node 表示
 ==dom 把以上内容都看作对象==</li>
 </ol>
-<h5 id="-">获取元素</h5>
+<h4 id="-">获取元素</h4>
 <ul>
 <li><p>根据 id 获取
 document.getElementById(id)方法
@@ -746,7 +752,7 @@ document.documentElement</li>
 </ul>
 </li>
 </ul>
-<h5 id="-">事件基础</h5>
+<h4 id="-">事件基础</h4>
 <p>事件：触发响应的机制</p>
 <ol>
 <li><p>事件三要素：</p>
@@ -767,7 +773,7 @@ document.documentElement</li>
 </ul>
 </li>
 </ol>
-<h5 id="-">操作元素</h5>
+<h4 id="-">操作元素</h4>
 <ol>
 <li><p>改变元素内容</p>
 <ul>
@@ -788,77 +794,77 @@ document.documentElement</li>
 元素.style.样式属性（驼峰）= &#39;&#39;;</p>
 </li>
 </ol>
-<h5 id="-">节点操作</h5>
+<h4 id="-">节点操作</h4>
 <ol>
-<li>父级节点<pre><code class="lang-javascript"> //最近的父节点，找不到返回空
- 元素.parentNode;
+<li>父级节点<pre><code class="lang-javascript">//最近的父节点，找不到返回空
+元素.parentNode;
 </code></pre>
 </li>
 <li><p>子节点</p>
-<pre><code class="lang-javascript"> //所有的子节点，包含元素、文本节点
- 元素.childNodes;
+<pre><code class="lang-javascript">//所有的子节点，包含元素、文本节点
+元素.childNodes;
 
- //所有子元素节点
- 元素.children;
+//所有子元素节点
+元素.children;
 
- 元素.firstElementChild; //ie9+
+元素.firstElementChild; //ie9+
 
- 元素.lastElementChild; //ie9+
+元素.lastElementChild; //ie9+
 
- 元素.children[0];
- 元素.children[元素.children.length - 1];
+元素.children[0];
+元素.children[元素.children.length - 1];
 </code></pre>
 </li>
 <li><p>兄弟节点</p>
-<pre><code class="lang-javascript"> //包含元素、文本节点
- 元素.nextSibling;
- 元素.previousSibling;
+<pre><code class="lang-javascript">//包含元素、文本节点
+元素.nextSibling;
+元素.previousSibling;
 
- 元素.nextElementSibling; //元素节点
- 元素.previousElementSibling; //
+元素.nextElementSibling; //元素节点
+元素.previousElementSibling; //
 
- function getNextElementSibling(element) {
-     var el = element;
-     while ((el = el.nextSibling)) {
-         if (el.nodeType == 1) {
-             return el;
-         }
-     }
-     return null;
- }
+function getNextElementSibling(element) {
+    var el = element;
+    while ((el = el.nextSibling)) {
+        if (el.nodeType == 1) {
+            return el;
+        }
+    }
+    return null;
+}
 </code></pre>
 </li>
 <li><p>节点创建和添加</p>
-<pre><code class="lang-javascript"> document.createElement(&#39;tagName&#39;); //创建
+<pre><code class="lang-javascript">document.createElement(&#39;tagName&#39;); //创建
 
- parent.appendChild(child); //在后面添加
+parent.appendChild(child); //在后面添加
 
- parent.insertBefore(child, parent.children[0]);
+parent.insertBefore(child, parent.children[0]);
 
- //效率best
- var array = [];
- for (var i = 0; i &lt; 1000; i--) {
-     array.push(&#39;&lt;div&gt;&lt;/div&gt;&#39;);
- }
- document.body.innerHtml = array.join(&#39;&#39;);
+//效率best
+var array = [];
+for (var i = 0; i &lt; 1000; i--) {
+    array.push(&#39;&lt;div&gt;&lt;/div&gt;&#39;);
+}
+document.body.innerHtml = array.join(&#39;&#39;);
 </code></pre>
 </li>
 <li><p>删除节点</p>
-<pre><code class="lang-javascript"> element.removeChild(element.child[0]);
+<pre><code class="lang-javascript">element.removeChild(element.child[0]);
 </code></pre>
 </li>
 <li><p>复制节点</p>
-<pre><code class="lang-javascript"> element.cloneNode(element.child[0]);
+<pre><code class="lang-javascript">element.cloneNode(element.child[0]);
 </code></pre>
 </li>
 </ol>
 <h2 id="-">事件</h2>
-<h4 id="-">注册事件</h4>
+<h3 id="-">注册事件</h3>
 <pre><code>两种方式：传统、方法监听
 传统DOM绑定只有第一个生效；脚本绑定只有最后一个生效
 方法监听都生效
 </code></pre><ol>
-<li>addEventListener//i9+<pre><code class="lang-javascript">     eventTarget.addEventListener(&#39;type&#39;,listener[,useCapture])
+<li>addEventListener//i9+<pre><code class="lang-javascript">    eventTarget.addEventListener(&#39;type&#39;,listener[,useCapture])
 </code></pre>
 <ul>
 <li>type:事件类型，如 click 、mouseover</li>
@@ -867,11 +873,11 @@ document.documentElement</li>
 </ul>
 </li>
 <li><p>删除事件(解绑)</p>
-<pre><code class="lang-javascript">    eventTarget.removeEventListener(&#39;type&#39;,listener[,useCapture])
+<pre><code class="lang-javascript">   eventTarget.removeEventListener(&#39;type&#39;,listener[,useCapture])
 </code></pre>
 </li>
 </ol>
-<h4 id="dom-">DOM 事件流</h4>
+<h3 id="dom-">DOM 事件流</h3>
 <p>事件传播的过程
 三阶段：</p>
 <ul>
@@ -882,7 +888,7 @@ document.documentElement</li>
 <strong>onclick 和 attachEvent 只能得到冒泡阶段</strong></p>
 </li>
 </ul>
-<h4 id="-">常见的对象属性和方法</h4>
+<h3 id="-">常见的对象属性和方法</h3>
 <table>
 <thead>
 <tr>
@@ -921,7 +927,7 @@ document.documentElement</li>
 </tr>
 </tbody>
 </table>
-<h4 id="-">事件委托</h4>
+<h3 id="-">事件委托</h3>
 <p>注册事件写在父元素，利用 e.属性完成事件</p>
 <pre><code>// 给父层元素绑定事件
 document.getElementById(&#39;list&#39;).addEventListener(&#39;click&#39;, function (e) {
@@ -933,7 +939,7 @@ document.getElementById(&#39;list&#39;).addEventListener(&#39;click&#39;, functi
     console.log(&#39;the content is: &#39;, target.innerHTML);
   }
 });
-</code></pre><h4 id="-">鼠标事件对象</h4>
+</code></pre><h3 id="-">鼠标事件对象</h3>
 <table>
 <thead>
 <tr>
@@ -976,7 +982,7 @@ document.getElementById(&#39;list&#39;).addEventListener(&#39;click&#39;, functi
 <li>BOM 学习的是浏览器窗口交互的一些对象</li>
 <li>BOM 是浏览器厂商在各自浏览器上定义的，兼容性差</li>
 </ul>
-<h4 id="-">常用事件</h4>
+<h3 id="-">常用事件</h3>
 <ol>
 <li>窗口加载事件</li>
 </ol>
@@ -992,7 +998,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function () {});
 </ol>
 <pre><code class="lang-javascript">window.addEventListener(&#39;resize&#39;, function () {});
 </code></pre>
-<h4 id="-">定时器</h4>
+<h3 id="-">定时器</h3>
 <ol>
 <li>setTimeout()</li>
 </ol>
@@ -1015,7 +1021,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function () {});
 <li>clearInterval
 同 clearTimer()</li>
 </ol>
-<h5 id="this-">this 指向问题</h5>
+<h4 id="this-">this 指向问题</h4>
 <p>指向调用者</p>
 <pre><code class="lang-javascript">//全局作用域或普通函数中指向window
 console.log(this);
@@ -1039,8 +1045,8 @@ function Fun() {
 }
 var fun = new fun();
 </code></pre>
-<h4 id="js-">js 执行队列</h4>
-<h5 id="-">同步、异步</h5>
+<h3 id="js-">js 执行队列</h3>
+<h4 id="-">同步、异步</h4>
 <ol>
 <li>同步任务
 同步任务在主线程上执行，形成一个执行栈</li>
@@ -1052,13 +1058,13 @@ js 异步通过回调函数实现，异步任务会添加到任务队列（消�
 </ul>
 </li>
 </ol>
-<h5 id="-">执行机制</h5>
+<h4 id="-">执行机制</h4>
 <ol>
 <li>先执行栈中的同步任务</li>
 <li>异步任务（回调函数）放入任务队列</li>
 <li>同步任务执行完毕，依次执行任务队列中的任务，被读取的任务结束等待状态，进入执行栈</li>
 </ol>
-<h4 id="location-">location 对象</h4>
+<h3 id="location-">location 对象</h3>
 <p>用于获取或设置窗体的 URL，并且可以解析 URL</p>
 <table>
 <thead>
@@ -1116,9 +1122,9 @@ js 异步通过回调函数实现，异步任务会添加到任务队列（消�
 </tr>
 </tbody>
 </table>
-<h4 id="navigator-">navigator 对象</h4>
+<h3 id="navigator-">navigator 对象</h3>
 <p>包含浏览器的相关信息</p>
-<h4 id="histor">histor</h4>
+<h3 id="histor">histor</h3>
 <table>
 <thead>
 <tr>
@@ -1142,7 +1148,7 @@ js 异步通过回调函数实现，异步任务会添加到任务队列（消�
 </tbody>
 </table>
 <h2 id="offset-client-scroll">offset\client\scroll</h2>
-<h4 id="offset">offset</h4>
+<h3 id="offset">offset</h3>
 <p>动态的得到元素的偏移量</p>
 <table>
 <thead>
@@ -1174,13 +1180,13 @@ js 异步通过回调函数实现，异步任务会添加到任务队列（消�
 </tr>
 </tbody>
 </table>
-<h5 id="client">client</h5>
+<h4 id="client">client</h4>
 <p>与 offset 相似，不包含边框</p>
-<h5 id="-">立即执行函数</h5>
+<h4 id="-">立即执行函数</h4>
 <p>独立创建了一个作用域，里面所有的变量都是局部变量，不会命名冲突</p>
 <pre><code class="lang-javascript">(function () {})();
 </code></pre>
-<h5 id="scroll">scroll</h5>
+<h4 id="scroll">scroll</h4>
 <table>
 <thead>
 <tr>
@@ -1237,7 +1243,7 @@ js 异步通过回调函数实现，异步任务会添加到任务队列（消�
 }
 </code></pre>
 <h2 id="-">移动端网页特效</h2>
-<h4 id="-">触屏事件</h4>
+<h3 id="-">触屏事件</h3>
 <ol>
 <li><p>| 触屏 touch 事件 |                                 |
 | :-------------- | :------------------------------ |
@@ -1364,7 +1370,7 @@ element.addEventListener(&#39;touchmove&#39;, function (e) {
 </code></pre></li>
 </ol>
 <h2 id="-">数据可视化</h2>
-<h4 id="-">什么是数据可视化</h4>
+<h3 id="-">什么是数据可视化</h3>
 <ol>
 <li>目的<ul>
 <li>借助图形化手段，清晰有效的表达与沟通信息</li>
@@ -1382,7 +1388,7 @@ element.addEventListener(&#39;touchmove&#39;, function (e) {
 </ul>
 </li>
 </ol>
-<h4 id="echarts">ECharts</h4>
+<h3 id="echarts">ECharts</h3>
 <ol>
 <li>基本使用<ul>
 <li>引入文件</li>
@@ -1394,7 +1400,7 @@ element.addEventListener(&#39;touchmove&#39;, function (e) {
 </li>
 </ol>
 <h2 id="es6">es6</h2>
-<h4 id="-">面向对象概述</h4>
+<h3 id="-">面向对象概述</h3>
 <ul>
 <li>pop/面向过程：按照步骤解决问题<ol>
 <li>优点：性能较高，适合跟硬件联系紧密的东西</li>
@@ -1411,103 +1417,103 @@ element.addEventListener(&#39;touchmove&#39;, function (e) {
 </ul>
 </li>
 </ul>
-<h4 id="-">类和对象</h4>
+<h3 id="-">类和对象</h3>
 <ul>
 <li>类：设计图</li>
 <li><p>对象：通过设计图产生的具体物品</p>
 </li>
 <li><p>创建类</p>
-<pre><code class="lang-javascript"> class Star {}
- new Star();
+<pre><code class="lang-javascript">class Star {}
+new Star();
 </code></pre>
 </li>
 <li><p>类 constructor 构造函数</p>
-<pre><code class="lang-javascript"> class Star {
-     constructor(uname, age) {
-         this.uname = uname;
-         this.age = age;
-     }
- }
- var ldh = new Star(&#39;ldh&#39;);
- var zxy = new Star(&#39;zxy&#39;);
- //通过calss关键字创建类，类名首字母大写
- //constructor对象可以接受传递过来的参数，同时返回实例对象
- //生成实例new不能略
+<pre><code class="lang-javascript">class Star {
+    constructor(uname, age) {
+        this.uname = uname;
+        this.age = age;
+    }
+}
+var ldh = new Star(&#39;ldh&#39;);
+var zxy = new Star(&#39;zxy&#39;);
+//通过calss关键字创建类，类名首字母大写
+//constructor对象可以接受传递过来的参数，同时返回实例对象
+//生成实例new不能略
 </code></pre>
 </li>
 <li><p>类中添加公有方法</p>
-<pre><code class="lang-javascript"> class Star {
-     constructor(uname, age) {
-         this.uname = uname;
-         this.age = age;
-     }
-     sing(sang) {
-         console.log(sang);
-     }
- }
- var ldh = new Star(&#39;ldh&#39;, 18);
- var zxy = new Star(&#39;zxy&#39;, 18);
- ldh.sing(&#39;a&#39;);
- //多个函数方法之间不需要逗号
+<pre><code class="lang-javascript">class Star {
+    constructor(uname, age) {
+        this.uname = uname;
+        this.age = age;
+    }
+    sing(sang) {
+        console.log(sang);
+    }
+}
+var ldh = new Star(&#39;ldh&#39;, 18);
+var zxy = new Star(&#39;zxy&#39;, 18);
+ldh.sing(&#39;a&#39;);
+//多个函数方法之间不需要逗号
 </code></pre>
 </li>
 <li><p>类的继承</p>
-<pre><code class="lang-javascript"> class Father {
-     constructor(x, y) {
-         this.x = x;
-         this.y = y;
-     }
-     sum() {
-         console.log(this.x + this.y);
-     }
- }
- class Son extends Father {
-     constructor(x, y) {
-         super(x, y); //调用父类的constructor
-     }
- }
- var son = new Son(1, 2);
- son.sum();
+<pre><code class="lang-javascript">class Father {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    sum() {
+        console.log(this.x + this.y);
+    }
+}
+class Son extends Father {
+    constructor(x, y) {
+        super(x, y); //调用父类的constructor
+    }
+}
+var son = new Son(1, 2);
+son.sum();
 </code></pre>
 </li>
 <li><p>super 关键字</p>
-<pre><code class="lang-javascript"> class Father {
-     say() {
-         return &#39;f&#39;;
-     }
- }
- class Son extends Father {
-     say() {
-         console.log(super.say() + &#39;s&#39;);
-     }
- }
- var son = new Son();
- son.say();
+<pre><code class="lang-javascript">class Father {
+    say() {
+        return &#39;f&#39;;
+    }
+}
+class Son extends Father {
+    say() {
+        console.log(super.say() + &#39;s&#39;);
+    }
+}
+var son = new Son();
+son.say();
 
- //执行子类方法采用就近原则
+//执行子类方法采用就近原则
 
- class Father {
-     constructor(x, y) {
-         this.x = x;
-         this.y = y;
-     }
-     sum() {
-         console.log(this.x + this.y);
-     }
- }
- class Son extends Father {
-     constructor(x, y) {
-         super(x, y); //必须在子类this前调用
-         this.x = x;
-         this.y = y;
-     }
-     subtract() {
-         console.log(this.x - this.y);
-     }
- }
- var son = new Son(1, 2);
- son.subtract();
- son.sum();
+class Father {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    sum() {
+        console.log(this.x + this.y);
+    }
+}
+class Son extends Father {
+    constructor(x, y) {
+        super(x, y); //必须在子类this前调用
+        this.x = x;
+        this.y = y;
+    }
+    subtract() {
+        console.log(this.x - this.y);
+    }
+}
+var son = new Son(1, 2);
+son.subtract();
+son.sum();
 </code></pre>
 </li>
 <li><p>注意点</p>
@@ -1523,7 +1529,7 @@ element.addEventListener(&#39;touchmove&#39;, function (e) {
 </li>
 </ul>
 <h2 id="-">构造函数和原型</h2>
-<h4 id="-">概述</h4>
+<h3 id="-">概述</h3>
 <p><strong>构造函数存在浪费内存的问题</strong></p>
 <pre><code class="lang-javascript">//创建函数
 var obj1 = new Object();
@@ -1539,7 +1545,7 @@ var ldh = new Star(&#39;ldh&#39;);
 //实例成员只能通过实例对象来访问
 //静态成员只能通过构造函数访问
 </code></pre>
-<h4 id="-prototype">原型 prototype</h4>
+<h3 id="-prototype">原型 prototype</h3>
 <pre><code class="lang-javascript">//  共享的函数可以存放在 原型对象 内
 function Star(uname) {
     this.uname = uname; //实例成员
@@ -1552,7 +1558,7 @@ var ldh = new Star(&#39;ldh&#39;);
 //在实例对象身上系统自己添加一个__proto__指向我们构造函数的原型对象
 //方法的查找原则：首先看实例对象身上是否有查找的方法，若没有，因为有__proto__存在，则去构造函数原型对象prototype上去找
 </code></pre>
-<h5 id="-constructor">构造函数 constructor</h5>
+<h4 id="-constructor">构造函数 constructor</h4>
 <p>用于记录该对象引用于哪个构造函数</p>
 <pre><code class="lang-javascript">function Star(uname) {
     this.uname = uname;
@@ -1564,11 +1570,11 @@ Star.prototype = {
 console.log(Star.prototype.constructor); //Star(uname){}
 console.log(ldh.__proto__.constructor); //Star(uname){}
 </code></pre>
-<h5 id="-">构造函数、实例、原型对象三者关系</h5>
+<h4 id="-">构造函数、实例、原型对象三者关系</h4>
 <p><img src="/media/img/构造函数.PNG" alt=""></p>
-<h5 id="-">原型链</h5>
+<h4 id="-">原型链</h4>
 <p><img src="/media/img/原型链.PNG" alt=""></p>
-<h5 id="js-">js 的成员查找机制</h5>
+<h4 id="js-">js 的成员查找机制</h4>
 <ol>
 <li>当访问一个对象的属性（包括方法）时，首先查找这个==对象自身==有没有该属性</li>
 <li>如果没有就查找它的原型（也就是<strong>proto</strong>指向的==prototype 原型对象==）</li>
@@ -1576,12 +1582,12 @@ console.log(ldh.__proto__.constructor); //Star(uname){}
 <li>依次类推一直找到 Object 为止（==null==）</li>
 <li><strong>proto</strong>对象原型的意义就在于为对象成员查找机制提供一个方向</li>
 </ol>
-<h5 id="-this-">原型对象的 this 指向</h5>
+<h4 id="-this-">原型对象的 this 指向</h4>
 <ol>
 <li>在构造函数中，里面的 this 指向对象实例</li>
 <li>原型对象函数里面的 this 指向实例对象</li>
 </ol>
-<h5 id="-">扩展内置对象</h5>
+<h4 id="-">扩展内置对象</h4>
 <pre><code class="lang-javascript">Array.prototype.sum = function () {
     var sum = 0;
     for (var i = 0; i &lt; this.length; i++) {
@@ -1592,8 +1598,8 @@ console.log(ldh.__proto__.constructor); //Star(uname){}
 var arr = [1, 2, 3];
 console.log(arr.sum());
 </code></pre>
-<h4 id="-">继承</h4>
-<h5 id="call">call</h5>
+<h3 id="-">继承</h3>
+<h4 id="call">call</h4>
 <pre><code class="lang-javascript">// 调用函数，并修改this指向
 function fn(x, y) {
     console.log(this);
@@ -1605,7 +1611,7 @@ var o = {
 //fn.call();
 fn.call(o, 1, 2); //此时this指向o
 </code></pre>
-<h5 id="-">利用父构造函数继承属性</h5>
+<h4 id="-">利用父构造函数继承属性</h4>
 <pre><code class="lang-javascript">function Father(uname, age) {
     //this指向父构造函数的实例对象
     this.uname = uname;
@@ -1620,7 +1626,7 @@ function Son(uname, age) {
 }
 Son.prototype = Father.prototype;
 </code></pre>
-<h5 id="-">利用原型对象继承方法</h5>
+<h4 id="-">利用原型对象继承方法</h4>
 <pre><code class="lang-javascript">function Father(uname, age) {
     //this指向父构造函数的实例对象
     this.uname = uname;
@@ -1638,90 +1644,90 @@ Son.prototype = new Father();
 Son.prototype.constructor = Son;
 </code></pre>
 <h2 id="-">函数进阶</h2>
-<h4 id="-">函数定义</h4>
+<h3 id="-">函数定义</h3>
 <ol>
 <li>声明函数</li>
 <li>匿名函数</li>
-<li>new Function()<pre><code class="lang-javascript"> var f = new Function(&#39;a&#39;, &#39;b&#39;, &#39;console.log(a+b)&#39;);
- //所有函数都是Function的实例
- //函数也属于对象
+<li>new Function()<pre><code class="lang-javascript">var f = new Function(&#39;a&#39;, &#39;b&#39;, &#39;console.log(a+b)&#39;);
+//所有函数都是Function的实例
+//函数也属于对象
 </code></pre>
 </li>
 </ol>
-<h4 id="-">函数调用方式</h4>
+<h3 id="-">函数调用方式</h3>
 <ol>
-<li>普通函数<pre><code class="lang-javascript"> fn();
- fn.call();
+<li>普通函数<pre><code class="lang-javascript">fn();
+fn.call();
 </code></pre>
 </li>
 <li><p>对象的方法</p>
-<pre><code class="lang-javascript"> var o = {
-     sayHi: function () {},
- };
- o.sayHi();
+<pre><code class="lang-javascript">var o = {
+    sayHi: function () {},
+};
+o.sayHi();
 </code></pre>
 </li>
 <li><p>构造函数</p>
-<pre><code class="lang-javascript"> function Star() {}
- new Star();
+<pre><code class="lang-javascript">function Star() {}
+new Star();
 </code></pre>
 </li>
 <li><p>绑定事件函数</p>
-<pre><code class="lang-javascript"> btn.onclick = function () {};
- //触发事件调用
+<pre><code class="lang-javascript">btn.onclick = function () {};
+//触发事件调用
 </code></pre>
 </li>
 <li><p>定时器函数</p>
-<pre><code class="lang-javascript"> setInterval(function () {}, 1000); //定时器自动调用
+<pre><code class="lang-javascript">setInterval(function () {}, 1000); //定时器自动调用
 </code></pre>
 </li>
 <li><p>立即执行函数</p>
-<pre><code class="lang-javascript"> (function () {})();
- //自动调用
+<pre><code class="lang-javascript">(function () {})();
+//自动调用
 </code></pre>
 </li>
 </ol>
-<h4 id="-this-">函数内部 this 指向</h4>
+<h3 id="-this-">函数内部 this 指向</h3>
 <ol>
-<li>普通函数<pre><code class="lang-javascript"> fn();
- fn.call();
- //指向window
+<li>普通函数<pre><code class="lang-javascript">fn();
+fn.call();
+//指向window
 </code></pre>
 </li>
 <li><p>对象的方法</p>
-<pre><code class="lang-javascript"> var o = {
-     sayHi: function () {},
- };
- o.sayHi();
- //指向对象o
+<pre><code class="lang-javascript">var o = {
+    sayHi: function () {},
+};
+o.sayHi();
+//指向对象o
 </code></pre>
 </li>
 <li><p>构造函数</p>
-<pre><code class="lang-javascript"> function Star() {}
- var ldh = new Star();
- //指向ldh实例对象
+<pre><code class="lang-javascript">function Star() {}
+var ldh = new Star();
+//指向ldh实例对象
 </code></pre>
 </li>
 <li><p>绑定事件函数</p>
-<pre><code class="lang-javascript"> btn.onclick = function () {};
- //触发事件调用
- //指向btn
+<pre><code class="lang-javascript">btn.onclick = function () {};
+//触发事件调用
+//指向btn
 </code></pre>
 </li>
 <li><p>定时器函数</p>
-<pre><code class="lang-javascript"> setInterval(function () {}, 1000); //定时器自动调用
+<pre><code class="lang-javascript">setInterval(function () {}, 1000); //定时器自动调用
 
- //指向window
+//指向window
 </code></pre>
 </li>
 <li><p>立即执行函数</p>
-<pre><code class="lang-javascript"> (function () {})();
- //自动调用
- //指向window
+<pre><code class="lang-javascript">(function () {})();
+//自动调用
+//指向window
 </code></pre>
 </li>
 </ol>
-<h4 id="call-">call 方法</h4>
+<h3 id="call-">call 方法</h3>
 <pre><code class="lang-javascript">var o = {
     name: &#39;andy&#39;,
 };
@@ -1734,7 +1740,7 @@ function Son() {
     Father.call(this);
 }
 </code></pre>
-<h4 id="apply-">apply 方法</h4>
+<h3 id="apply-">apply 方法</h3>
 <pre><code class="lang-javascript">var o = {
     name: &#39;andy&#39;,
 };
@@ -1745,32 +1751,32 @@ fn.apply(o);
 var arr = [1, 12, 33];
 Math.max.apply(Math, arr);
 </code></pre>
-<h4 id="bind-">bind 方法</h4>
+<h3 id="bind-">bind 方法</h3>
 <ul>
 <li>改变函数的调用者</li>
 <li>语法规范同 apply，不会调用函数</li>
 <li>返回值为函数的拷贝</li>
 </ul>
-<h5 id="bind-">bind 应用</h5>
+<h4 id="bind-">bind 应用</h4>
 <pre><code class="lang-javascript">btn.onclick = function () {
     setTimerout(function () {}.bind(this), 1000);
 };
 </code></pre>
-<h4 id="-ie10-">严格模式//ie10+</h4>
+<h3 id="-ie10-">严格模式//ie10+</h3>
 <ol>
 <li>消除了 js 语法的一些不合理之处</li>
 <li>消除了一些不安全之处</li>
 <li>提高了编译效率</li>
 <li>禁用了一些未来可能会定义的语法，为新版本铺垫</li>
 </ol>
-<h5 id="-">开启严格模式</h5>
+<h4 id="-">开启严格模式</h4>
 <ul>
 <li>为整个脚本
 写在开头&#39;use strict&#39;</li>
 <li>为个别函数
 写在函数内部&#39;use strict&#39;</li>
 </ul>
-<h5 id="-">严格模式的变化</h5>
+<h4 id="-">严格模式的变化</h4>
 <ol>
 <li>变量必须先声明再使用</li>
 <li>严禁删除已经声明的变量</li>
@@ -1779,12 +1785,12 @@ Math.max.apply(Math, arr);
 <li>函数不能有重名参数</li>
 <li>函数必须声明在顶层</li>
 </ol>
-<h4 id="-">高阶函数</h4>
+<h3 id="-">高阶函数</h3>
 <ul>
 <li>作为参数的或 return 的是函数</li>
 </ul>
-<h4 id="-">闭包</h4>
-<h5 id="-">定义</h5>
+<h3 id="-">闭包</h3>
+<h4 id="-">定义</h4>
 <blockquote>
 <p>闭包指有权访问另一个函数作用域中变量的函数。</p>
 </blockquote>
@@ -1798,7 +1804,7 @@ Math.max.apply(Math, arr);
 }
 fn();
 </code></pre>
-<h5 id="-">作用</h5>
+<h4 id="-">作用</h4>
 <p><strong>主要作用：延伸变量的作用范围</strong></p>
 <pre><code class="lang-javascript">function fn() {
     var num = 10;
@@ -1809,7 +1815,7 @@ fn();
 }
 var f = fn();
 </code></pre>
-<h5 id="-">案例</h5>
+<h4 id="-">案例</h4>
 <ol>
 <li><pre><code class="lang-javascript">for (var i = 0; i &lt; lis.length; i++) {
     (function (i) {
@@ -1851,10 +1857,10 @@ var f = fn();
 };
 car.price();
 </code></pre>
-<h4 id="-">递归</h4>
+<h3 id="-">递归</h3>
 <p>如果一个函数在内部可以调用其本身，那么就是递归函数。
 <strong>为避免栈溢出，要添加推出条件 return</strong></p>
-<h5 id="-id-">根据 id 返回数据对象</h5>
+<h4 id="-id-">根据 id 返回数据对象</h4>
 <pre><code class="lang-javascript">var data = [
     {
         id: 1,
@@ -1891,8 +1897,8 @@ function getID(json, id) {
 }
 console.log(getID(data, 11));
 </code></pre>
-<h4 id="-">拷贝</h4>
-<h5 id="-">浅拷贝</h5>
+<h3 id="-">拷贝</h3>
+<h4 id="-">浅拷贝</h4>
 <pre><code class="lang-javascript">var obj = {
     id: 1,
     name: &#39;andy&#39;,
@@ -1905,7 +1911,7 @@ var o = {};
 Object.assign(o, obj);
 console.log(o);
 </code></pre>
-<h5 id="-">深拷贝</h5>
+<h4 id="-">深拷贝</h4>
 <pre><code class="lang-javascript">var obj = {
     id: 1,
     name: &#39;andy&#39;,
@@ -1944,7 +1950,7 @@ console.log(o);
 <li>对新人来说晦涩难懂</li>
 <li>实际开发一般直接复制写好的正则表达式</li>
 </ul>
-<h4 id="-">使用</h4>
+<h3 id="-">使用</h3>
 <ol>
 <li>通过 RegExp 创建</li>
 </ol>
@@ -1955,12 +1961,12 @@ console.log(o);
 </ol>
 <pre><code class="lang-javascript">var rg = /123/;
 </code></pre>
-<h5 id="-">测试正则</h5>
+<h4 id="-">测试正则</h4>
 <pre><code class="lang-javascript">var rg = /123/;
 console.log(rg.test(123));
 </code></pre>
-<h4 id="-">正则表达式中的特殊字符</h4>
-<h5 id="-">边界符</h5>
+<h3 id="-">正则表达式中的特殊字符</h3>
+<h4 id="-">边界符</h4>
 <table>
 <thead>
 <tr>
@@ -1979,7 +1985,7 @@ console.log(rg.test(123));
 </tr>
 </tbody>
 </table>
-<h5 id="-">字符类</h5>
+<h4 id="-">字符类</h4>
 <table>
 <thead>
 <tr>
@@ -2006,7 +2012,7 @@ console.log(rg.test(123));
 </tr>
 </tbody>
 </table>
-<h5 id="-">量词符</h5>
+<h4 id="-">量词符</h4>
 <table>
 <thead>
 <tr>
@@ -2044,7 +2050,7 @@ console.log(rg.test(123));
 <pre><code class="lang-javascript">var reg = /^[a-zA-Z0-9_-]{6,16}$/;
 console.log(reg.test(&#39;aaaaaa&#39;)); //true
 </code></pre>
-<h5 id="-">预定义类</h5>
+<h4 id="-">预定义类</h4>
 <table>
 <thead>
 <tr>
@@ -2079,14 +2085,14 @@ console.log(reg.test(&#39;aaaaaa&#39;)); //true
 </tr>
 </tbody>
 </table>
-<h4 id="-">正则替换</h4>
+<h3 id="-">正则替换</h3>
 <pre><code class="lang-javascript">var str = &#39;andy和red&#39;;
 var newstr = str.replace(/andy|red/gi, &#39;dady&#39;);
 //正则后加g，全局匹配
 //加i，忽略大小写
 </code></pre>
 <h2 id="es6-">es6 新增语法</h2>
-<h4 id="let">let</h4>
+<h3 id="let">let</h3>
 <ul>
 <li>let 声明的变量只在所在块级有效</li>
 </ul>
@@ -2110,7 +2116,7 @@ if (true) {
     let num = 20;
 }
 </code></pre>
-<h5 id="-">经典面试题</h5>
+<h4 id="-">经典面试题</h4>
 <pre><code class="lang-javascript">var arr = [];
 for (var i = 0; i &lt; 2; i++) {
     arr[i] = function () {
@@ -2130,18 +2136,18 @@ for (let i = 0; i &lt; 2; i++) {
 arr[0](); //0
 arr[1](); //1
 </code></pre>
-<h4 id="const">const</h4>
+<h3 id="const">const</h3>
 <p>作用：声明常量</p>
 <ul>
 <li>块级作用域</li>
 <li>声明时必须赋初始值</li>
 <li>声明的常量值不能修改，数组内部值可以修改,不能重新赋值</li>
 </ul>
-<h4 id="-">解构赋值</h4>
+<h3 id="-">解构赋值</h3>
 <pre><code class="lang-javascript">let ary = [1, 2, 3];
 let [a, b, c] = ary;
 </code></pre>
-<h5 id="-">对象解构</h5>
+<h4 id="-">对象解构</h4>
 <pre><code class="lang-javascript">let ary = { name: &#39;zs&#39;, age: 18 };
 let { name, age } = ary;
 console.log(name);
@@ -2151,12 +2157,12 @@ let { name: myname, age: myage } = ary;
 console.log(myname);
 console.log(myage);
 </code></pre>
-<h4 id="-">箭头函数</h4>
+<h3 id="-">箭头函数</h3>
 <pre><code class="lang-javascript">const fn = () =&gt; {};
 </code></pre>
-<h5 id="-this">箭头函数 this</h5>
+<h4 id="-this">箭头函数 this</h4>
 <p>指向函数定义位置的上下文 this</p>
-<h5 id="-">箭头函数面试题</h5>
+<h4 id="-">箭头函数面试题</h4>
 <pre><code class="lang-javascript">age = 100;
 var obj = {
     age: 20,
@@ -2167,7 +2173,7 @@ var obj = {
 obj.say(); //100
 //对象不能产生作用域
 </code></pre>
-<h4 id="-">剩余参数</h4>
+<h3 id="-">剩余参数</h3>
 <p>剩余参数语法允许我们将一个不定数量的参数表示为一个数组</p>
 <pre><code class="lang-javascript">const sum = (...args) =&gt; {
     let total = 0;
@@ -2178,7 +2184,7 @@ obj.say(); //100
 sum(10, 20);
 sum(10, 20, 30);
 </code></pre>
-<h5 id="-">剩余参数和结构</h5>
+<h4 id="-">剩余参数和结构</h4>
 <pre><code class="lang-javascript">let students = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
 let [s1, ...s2] = students;
 console.log(s1);
@@ -2186,13 +2192,13 @@ console.log(s2);
 //a
 //(2) [&quot;b&quot;, &quot;c&quot;]
 </code></pre>
-<h4 id="-">扩展运算符</h4>
+<h3 id="-">扩展运算符</h3>
 <p>允许运算符可以将数组或者对象转为用逗号分隔的参数序列</p>
 <pre><code class="lang-javascript">let ary = [1, 2, 3]
 ...ary//1,2,3
 console.log(...ary) //1 2 3
 </code></pre>
-<h5 id="-">运用</h5>
+<h4 id="-">运用</h4>
 <pre><code class="lang-javascript">//数组合并
 //1.
 let ary1 = [1, 2, 3];
@@ -2203,7 +2209,7 @@ ary1.push(...ary2);
 
 //将伪数组转化为真数组
 </code></pre>
-<h4 id="array-">Array 扩展方法</h4>
+<h3 id="array-">Array 扩展方法</h3>
 <pre><code class="lang-javascript">//将伪数组转化为真数组
 var arrayLike = {
     0: &#39;a&#39;,
@@ -2245,8 +2251,8 @@ console.log(target); //1
 <pre><code class="lang-javascript">//includes方法
 [1, 2, 3].includes(2);
 </code></pre>
-<h4 id="string-">String 扩展方法</h4>
-<h5 id="-">模板字符串</h5>
+<h3 id="string-">String 扩展方法</h3>
+<h4 id="-">模板字符串</h4>
 <ul>
 <li>以<code>字符串</code>表示</li>
 <li>内部可以换行</li>
@@ -2256,17 +2262,17 @@ console.log(target); //1
 let sayHello = `hello,i&#39;m zs`;
 console.log(sayHello);
 </code></pre>
-<h5 id="startswith-endswith-">startsWith()\endsWith()</h5>
+<h4 id="startswith-endswith-">startsWith()\endsWith()</h4>
 <ul>
 <li>startsWith(),判断参数字符串是否在原字符串头部</li>
 <li>endsWith(),判断参数字符串是否在原字符串结尾</li>
 </ul>
-<h5 id="repeat-">repeat()</h5>
+<h4 id="repeat-">repeat()</h4>
 <p>&#39;x&#39;.repeat(3)//&#39;xxx&#39;</p>
 <ul>
 <li>将原字符串重复 x 次，输出新字符串</li>
 </ul>
-<h4 id="set">Set</h4>
+<h3 id="set">Set</h3>
 <p><strong>类似数组，没有重复值</strong></p>
 <pre><code class="lang-javascript">var ary = [1, 1, 2, 3];
 var s1 = new Set(ary);
@@ -2292,16 +2298,16 @@ s1.forEach((value) =&gt; {
 });
 </code></pre>
 <h2 id="-">请按后端交互</h2>
-<h4 id="-">服务器和客户端</h4>
-<h5 id="-">服务器</h5>
+<h3 id="-">服务器和客户端</h3>
+<h4 id="-">服务器</h4>
 <p>负责存放对外提供资源的电脑叫服务器</p>
-<h5 id="-">客户端</h5>
+<h4 id="-">客户端</h4>
 <p>负责获取和消费资源的电脑叫服务器</p>
-<h4 id="url">URL</h4>
+<h3 id="url">URL</h3>
 <ul>
 <li>统一资源定位符</li>
 </ul>
-<h5 id="-">组成</h5>
+<h4 id="-">组成</h4>
 <ol>
 <li>客户端和服务器之间的==通信协议==</li>
 <li>存有资源的==服务器名称==</li>
@@ -2313,7 +2319,7 @@ s1.forEach((value) =&gt; {
 <li><a href="http://www.cnblogs.com：服务器名称">www.cnblogs.com：服务器名称</a></li>
 <li>lll/p/2222.html：资源在服务器上具体的存放位置</li>
 </ol>
-<h4 id="-">网页打开的过程</h4>
+<h3 id="-">网页打开的过程</h3>
 <ul>
 <li>客户端<ol>
 <li>打开浏览器</li>
@@ -2330,19 +2336,19 @@ s1.forEach((value) =&gt; {
 </ul>
 <p><strong>过程分为请求-处理-响应三个过程</strong>
 <strong>网页中的每一个资源都是通过请求-处理-响应的方式从服务器获取回来的</strong></p>
-<h5 id="-">网页如何请求数据</h5>
+<h4 id="-">网页如何请求数据</h4>
 <ol>
 <li>发起数据请求</li>
 <li>服务器处理请求</li>
 <li>服务器发送数据</li>
 </ol>
-<h5 id="-">资源请求方式</h5>
+<h4 id="-">资源请求方式</h4>
 <ul>
 <li>get :用于获取服务器数据</li>
 <li>push:用于提交数据</li>
 </ul>
-<h4 id="ajax">Ajax</h4>
-<h5 id="-get-">$.get()</h5>
+<h3 id="ajax">Ajax</h3>
+<h4 id="-get-">$.get()</h4>
 <pre><code class="lang-javascript">$.get(&#39;url&#39;, { data }, callback);
 </code></pre>
 <table>
@@ -2375,7 +2381,7 @@ s1.forEach((value) =&gt; {
 </tr>
 </tbody>
 </table>
-<h5 id="-post-">$.post()</h5>
+<h4 id="-post-">$.post()</h4>
 <pre><code class="lang-javascript">$.post(&#39;url&#39;, { data }, function (res) {});
 </code></pre>
 <table>
@@ -2408,7 +2414,7 @@ s1.forEach((value) =&gt; {
 </tr>
 </tbody>
 </table>
-<h5 id="-ajax-">$.ajax()</h5>
+<h4 id="-ajax-">$.ajax()</h4>
 <pre><code class="lang-javascript">$.ajax({
     type: &#39;&#39;, //请求的方式
     url: &#39;&#39;, //请求的url地址
@@ -2416,13 +2422,13 @@ s1.forEach((value) =&gt; {
     success: function (res) {}, //成功后的回调函数
 });
 </code></pre>
-<h4 id="-">接口</h4>
+<h3 id="-">接口</h3>
 <p><strong>使用 ajax 请求数据时，被请求的 url 地址，就叫做接口</strong></p>
-<h5 id="-">接口的测试工具</h5>
+<h4 id="-">接口的测试工具</h4>
 <ul>
 <li>postman</li>
 </ul>
-<h5 id="-">接口文档</h5>
+<h4 id="-">接口文档</h4>
 <ul>
 <li>组成<ol>
 <li>接口名称</li>
@@ -2436,24 +2442,24 @@ s1.forEach((value) =&gt; {
 </ul>
 <h2 id="form-">form 表单</h2>
 <p>表单在网页中负责数据采集功能</p>
-<h4 id="-">表单的组成</h4>
+<h3 id="-">表单的组成</h3>
 <ul>
 <li>表单标签</li>
 <li>表单域</li>
 <li>表单按钮</li>
 </ul>
-<h4 id="-form-"><form>标签</h4>
+<h3 id="-form-"><form>标签</h3>
 <ol>
 <li>action：向何处发送表单，默认为当前 url
 提交后，立即跳转到 action 指定的 url</li>
 <li><p>target：在何处打开 action URL</p>
-<p> | 值        | 描述                     |
- | :-------- | :----------------------- |
- | _blank   | 在新窗口打开             |
- | _self    | 默认。在相同框架中打开   |
- | _parent  | 在父框架打开 /很少用     |
- | _top     | 在整个窗口打开 /很少用   |
- | framename | 在指定的框架打开 /很少用 |</p>
+<p>| 值        | 描述                     |
+| :-------- | :----------------------- |
+| _blank   | 在新窗口打开             |
+| _self    | 默认。在相同框架中打开   |
+| _parent  | 在父框架打开 /很少用     |
+| _top     | 在整个窗口打开 /很少用   |
+| framename | 在指定的框架打开 /很少用 |</p>
 </li>
 <li><p>method：以何种方式把表单提交到 action URL</p>
 <ul>
@@ -2462,14 +2468,14 @@ s1.forEach((value) =&gt; {
 </ul>
 </li>
 <li><p>enctype：发送数据前如何对数据进行编码</p>
-<p> | 值                                | 描述                                     |
- | :-------------------------------- | :--------------------------------------- |
- | application/x-www-form-urlencoded | 发送前编码所有字符（默认）               |
- | multipart/form-data               | 不对字符编码//上传文件时，必填该值       |
- | text/plain                        | 空格转化为加号，不对特殊字符编码//很少用 |</p>
+<p>| 值                                | 描述                                     |
+| :-------------------------------- | :--------------------------------------- |
+| application/x-www-form-urlencoded | 发送前编码所有字符（默认）               |
+| multipart/form-data               | 不对字符编码//上传文件时，必填该值       |
+| text/plain                        | 空格转化为加号，不对特殊字符编码//很少用 |</p>
 </li>
 </ol>
-<h4 id="-">表单同步提交</h4>
+<h3 id="-">表单同步提交</h3>
 <ul>
 <li>缺点<ol>
 <li>提交后，页面后跳转，用户体验差</li>
@@ -2479,13 +2485,13 @@ s1.forEach((value) =&gt; {
 <li>解决
 表单只采集数据，ajax 负责将数据提交到服务器</li>
 </ul>
-<h4 id="ajax-">ajax 提交表单</h4>
-<h5 id="-">监听表单提交事件</h5>
+<h3 id="ajax-">ajax 提交表单</h3>
+<h4 id="-">监听表单提交事件</h4>
 <pre><code class="lang-javascript">$(&#39;#form&#39;).submit(function (e) {});
 
 $(&#39;#form&#39;).on(&#39;submit&#39;, function (e) {});
 </code></pre>
-<h5 id="-">阻止表单默认提交行为</h5>
+<h4 id="-">阻止表单默认提交行为</h4>
 <pre><code class="lang-javascript">$(&#39;#form&#39;).submit(function (e) {
     e.preventDefault();
 });
@@ -2494,7 +2500,7 @@ $(&#39;#form&#39;).on(&#39;submit&#39;, function (e) {
     e.preventDefault();
 });
 </code></pre>
-<h5 id="-">快速获取表单数据</h5>
+<h4 id="-">快速获取表单数据</h4>
 <p><strong>$(selector).serialize()</strong>
 可以一次性获取表单的所有数据
 ==使用 serialize()时，必须为每个表单元素添加 name 属性==</p>
@@ -2503,7 +2509,7 @@ $(&#39;#form&#39;).on(&#39;submit&#39;, function (e) {
     var data = $(this).serialize();
 });
 </code></pre>
-<h4 id="-">模板引擎</h4>
+<h3 id="-">模板引擎</h3>
 <p>根据指定的模板结构和数据，自动生成一个完整的 HTML 页面</p>
 <ul>
 <li>好处：<ol>
@@ -2513,7 +2519,7 @@ $(&#39;#form&#39;).on(&#39;submit&#39;, function (e) {
 </ol>
 </li>
 </ul>
-<h5 id="art-template">art-template</h5>
+<h4 id="art-template">art-template</h4>
 <ul>
 <li>使用步骤<ol>
 <li>导入 art-template</li>
@@ -2526,14 +2532,14 @@ $(&#39;#form&#39;).on(&#39;submit&#39;, function (e) {
 <li><p>标准语法</p>
 <ol>
 <li><p>输出</p>
-<p> |                |
- | :------------- |
- | {{value}}      |
- | {{obj.key}}    |
- | {{obj[&#39;key&#39;]}} |
- | {{a?b:c}}      |
- | {{a| |b}}    |
- | {{a+b}}        |</p>
+<p>|                |
+| :------------- |
+| {{value}}      |
+| {{obj.key}}    |
+| {{obj[&#39;key&#39;]}} |
+| {{a?b:c}}      |
+| {{a| |b}}    |
+| {{a+b}}        |</p>
 </li>
 <li><p>原文输出
 {{@ value}}
@@ -2548,19 +2554,19 @@ $(&#39;#form&#39;).on(&#39;submit&#39;, function (e) {
 <li><p>过滤器
 {{value|<strong>filterName</strong>}}
 template.defaults.imports.<strong>filterName</strong>=function(value){ return 处理的结果}</p>
-<pre><code class="lang-javascript"> template.defaults.imports.dataFormat = function (date) {
-     var y = date.getFullYear();
-     var m = date.getMonth() + 1;
-     var d = date.getDate();
-     return y + &#39;-&#39; + m + &#39;-&#39; + d;
- };
+<pre><code class="lang-javascript">template.defaults.imports.dataFormat = function (date) {
+    var y = date.getFullYear();
+    var m = date.getMonth() + 1;
+    var d = date.getDate();
+    return y + &#39;-&#39; + m + &#39;-&#39; + d;
+};
 </code></pre>
 </li>
 </ol>
 </li>
 </ul>
 <h2 id="xmlhttprequest">XMLHttpRequest</h2>
-<h4 id="xhr-get-">xhr get 请求</h4>
+<h3 id="xhr-get-">xhr get 请求</h3>
 <ol>
 <li>创建 xhr 对象</li>
 <li>调用 xhr.open()函数</li>
@@ -2582,7 +2588,7 @@ xhr.onreadystatechange=function(){
 }
 
 </code></pre>
-<h4 id="xhr-readystate-">xhr readyState 属性</h4>
+<h3 id="xhr-readystate-">xhr readyState 属性</h3>
 <table>
 <thead>
 <tr>
@@ -2619,22 +2625,22 @@ xhr.onreadystatechange=function(){
 </tr>
 </tbody>
 </table>
-<h4 id="xhr-get-">xhr 带参数的 get 请求</h4>
+<h3 id="xhr-get-">xhr 带参数的 get 请求</h3>
 <p>在 url 后拼接参数</p>
 <pre><code class="lang-javascript">xhr.open(&#39;GET&#39;，&#39;http://www.liulongbin.top:3006/api/getbooks?id=1&#39;)
 </code></pre>
-<h4 id="xhr-">xhr 查询字符串</h4>
+<h3 id="xhr-">xhr 查询字符串</h3>
 <ul>
 <li><p>定义：查询字符串（URL 参数）是指在 url 的末尾加上用于向服务器发送信息的字符串（变量）</p>
 </li>
 <li><p>格式：将英文的 <strong>?</strong> 放在 url 末尾，再加上 <strong>参数=值</strong> ，想加上多个参数的话，以 <strong>&amp;</strong>进行分隔</p>
 </li>
 </ul>
-<h4 id="-url-">什么是 url 编码</h4>
+<h3 id="-url-">什么是 url 编码</h3>
 <ul>
 <li><strong>原则</strong>：使用安全的字符（没有特殊用途或特殊意义的可打印字符）去表示不安全的字符</li>
 </ul>
-<h4 id="-url-">如何进行 url 编码</h4>
+<h3 id="-url-">如何进行 url 编码</h3>
 <ul>
 <li>encodeURI()</li>
 <li>decodeURI()</li>
@@ -2643,7 +2649,7 @@ xhr.onreadystatechange=function(){
 
 console.log(decodeURI(&#39;%E4%BD%A0%E5%A5%BD&#39;)); //你好
 </code></pre>
-<h4 id="xhr-post-">xhr post 请求</h4>
+<h3 id="xhr-post-">xhr post 请求</h3>
 <ol>
 <li>创建 xhr 对象</li>
 <li>调用 xhr.open()函数</li>
@@ -2664,18 +2670,18 @@ xhr.onreadystatechange = function () {
 </code></pre>
 <h2 id="-">数据交换格式</h2>
 <p>服务器端与客户端之间进行数据传输与交换的格式</p>
-<h4 id="json">json</h4>
+<h3 id="json">json</h3>
 <ul>
 <li>概念 JSON 全称 JavaScript Object Notation，即 JavaScript 对象表示法，json 本质是字符串</li>
 </ul>
-<h5 id="json-">json 的两种结构</h5>
+<h4 id="json-">json 的两种结构</h4>
 <ul>
 <li><p>对象结构：对象结构在 json 中表示为{ }括起来的内容。数据结构为{key:value,key:value,...}的键值对结构。其中，key 必须是使用英文的双引号包裹的字符串，value 的数据类型可以是数字、字符串、布尔值、null、数组、对象 6 种类型</p>
 </li>
 <li><p>数组结构：数组结构在 json 中表示为{ }括起来的内容。数据结构为{&quot;java&quot;,&quot;javascript&quot;,30,true...},数组中数据的类型可以是数字、字符串、布尔值、null、数组、对象 6 种类型</p>
 </li>
 </ul>
-<h5 id="json-">json 注意事项</h5>
+<h4 id="json-">json 注意事项</h4>
 <ol>
 <li>属性名必须使用双引号包裹</li>
 <li>字符串类型的值必须使用双引号包裹</li>
@@ -2688,17 +2694,17 @@ xhr.onreadystatechange = function () {
 </li>
 <li>本质：用字符串表示 javascript 对象或数组数据</li>
 </ol>
-<h5 id="json-js-">json 和 js 对象的转换</h5>
+<h4 id="json-js-">json 和 js 对象的转换</h4>
 <pre><code class="lang-javascript">var obj = JSON.parse(&#39;{&quot;a&quot;:&quot;hello&quot;}&#39;);
 console.log(obj);
 
 var json = JSON.stringify({ a: &#39;hello&#39; });
 console.log(json);
 </code></pre>
-<h5 id="-">序列化、反序列化</h5>
+<h4 id="-">序列化、反序列化</h4>
 <p>把数据对象转化为字符串的过程，叫做序列化
 把字符串转化为数据对象的过程，叫做反序列化</p>
-<h4 id="xhr-level2">xhr level2</h4>
+<h3 id="xhr-level2">xhr level2</h3>
 <p>旧版缺点</p>
 <ol>
 <li>支支持文本数据的传输，无法用来读取和上传文件</li>
@@ -2711,13 +2717,13 @@ console.log(json);
 <li>可以上传文件</li>
 <li>可以获取数据传输的进度信息</li>
 </ol>
-<h5 id="-">设置请求时限</h5>
+<h4 id="-">设置请求时限</h4>
 <pre><code class="lang-javascript">xhr.timeout = 3000;
 xhr.ontimeout = function (event) {
     alert(&#39;请求超时&#39;);
 };
 </code></pre>
-<h5 id="formdata-">FormData 管理表单数据</h5>
+<h4 id="formdata-">FormData 管理表单数据</h4>
 <pre><code class="lang-javascript">var fd = new FormData();
 
 fd.append(&#39;uname&#39;, &#39;zs&#39;);
@@ -2736,7 +2742,7 @@ form.addEventListener(&#39;submit&#39;, function (e) {
     myAjax({});
 });
 </code></pre>
-<h5 id="-">上传文件</h5>
+<h4 id="-">上传文件</h4>
 <ol>
 <li>定义 UI 结构</li>
 <li>验证是否选择了文件</li>
@@ -2747,8 +2753,8 @@ form.addEventListener(&#39;submit&#39;, function (e) {
 <pre><code class="lang-javascript">var fd = new FormData();
 fd.append(&#39;&#39;, files[0]);
 </code></pre>
-<h4 id="jquery-">jQuery 高级用法</h4>
-<h5 id="-">上传文件</h5>
+<h3 id="jquery-">jQuery 高级用法</h3>
+<h4 id="-">上传文件</h4>
 <pre><code class="lang-javascript">$.ajax({
     method: &#39;POST&#39;,
     url: &#39;http://....&#39;,
@@ -2758,7 +2764,7 @@ fd.append(&#39;&#39;, files[0]);
     success: function (res) {},
 });
 </code></pre>
-<h5 id="loading-">loading 效果</h5>
+<h4 id="loading-">loading 效果</h4>
 <pre><code class="lang-javascript">$(document).ajaxStart(function () {
     $(&#39;#loading&#39;).show();
 });
@@ -2767,16 +2773,16 @@ $(document).ajaxStop(function () {
 });
 // $(document).ajaxStart()会监听当前文档内所有Ajax请求
 </code></pre>
-<h4 id="axios">axios</h4>
+<h3 id="axios">axios</h3>
 <p>专注于网络数据请求的库</p>
-<h5 id="axios-get-post-">axios GET\POST 请求</h5>
+<h4 id="axios-get-post-">axios GET\POST 请求</h4>
 <pre><code class="lang-javascript">axios.get(&#39;地址&#39;?key=value&amp;key2=value2).then(function(res){response},function(err){err})
 
 axios.post(&#39;地址&#39;,{key:value,key2:value2}).then(function(res){response},function(err){err})
 
 </code></pre>
 <h2 id="-jsonp">跨域和 jsonp</h2>
-<h4 id="-">同源策略</h4>
+<h3 id="-">同源策略</h3>
 <p>同源：如果两个页面的<strong>协议、域名</strong>和<strong>端口</strong>都相同，则两个页面具有相同的源
 同源策略：浏览器提供的一个安全功能</p>
 <ol>
@@ -2784,27 +2790,27 @@ axios.post(&#39;地址&#39;,{key:value,key2:value2}).then(function(res){response
 <li>无法接触非同源的 DOM</li>
 <li>无法向非同源地址发送 Ajax 请求</li>
 </ol>
-<h4 id="-">跨域</h4>
+<h3 id="-">跨域</h3>
 <p>不同源就是跨域</p>
-<h5 id="-">拦截跨域请求</h5>
+<h4 id="-">拦截跨域请求</h4>
 <ul>
 <li>跨域请求可以正常发起</li>
 <li>浏览器能正常接收跨域响应的数据</li>
 <li>同源策略拦截数据</li>
 </ul>
-<h5 id="-">实现跨域数据请求</h5>
+<h4 id="-">实现跨域数据请求</h4>
 <ul>
 <li>jsonp：临时解决方案，只支持 get</li>
 <li>cors：官方方法，部分低版本浏览器不支持</li>
 </ul>
-<h4 id="jsonp">jsonp</h4>
+<h3 id="jsonp">jsonp</h3>
 <p><strong>原理：sctipt 标签不受同源策略影响</strong></p>
 <h2 id="-">防抖和节流</h2>
 <ul>
 <li>防抖策略：当事件被触发后，延迟 n 秒后再执行回调，如果在这 n 秒内事件再次触发，则重新计时</li>
 <li>节流策略：减少一段时间内事件的触发频率</li>
 </ul>
-<h4 id="-">输入框防抖</h4>
+<h3 id="-">输入框防抖</h3>
 <pre><code class="lang-javascript">var timer = null;
 function debounceSearch(keyup) {
     timer = setTimeout(function () {
@@ -2816,7 +2822,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
     debounceSearch(keywords);
 });
 </code></pre>
-<h4 id="-">输入框缓存建议列表</h4>
+<h3 id="-">输入框缓存建议列表</h3>
 <pre><code class="lang-javascript">var cacheObj = {};
 function renderSuggestList(res) {
     var k = $(&#39;#ipt&#39;).val().trim();
@@ -2830,7 +2836,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
     debounceSearch(keywords);
 });
 </code></pre>
-<h4 id="-">节流和防抖的区别</h4>
+<h3 id="-">节流和防抖的区别</h3>
 <ul>
 <li>防抖：如果事件频繁触发，防抖能保证只有最后一次触发生效</li>
 <li>节流：如果事件频繁触发，节流能够减少事件触发的频率，节流是有选择的执行一部分事件</li>
@@ -2846,7 +2852,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
 <li>通信协议：通信双方必须遵守的规则和约定</li>
 <li>http 协议：规定了客户端与服务器之间进行网页内容传输时必须遵守的传输协议</li>
 </ul>
-<h4 id="http-">HTTP 请求消息</h4>
+<h3 id="http-">HTTP 请求消息</h3>
 <p>客户端发起的请求叫做 HTTP 请求，客户端发送到服务器的消息叫做 HTTP 请求消息</p>
 <ul>
 <li>组成：<ol>
@@ -2857,7 +2863,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
 </ol>
 </li>
 </ul>
-<h4 id="http-">HTTP 响应消息</h4>
+<h3 id="http-">HTTP 响应消息</h3>
 <ul>
 <li>组成：<ol>
 <li>状态行：HTTP 协议版本、状态码、状态码的描述，三者之间以空格分开</li>
@@ -2867,7 +2873,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
 </ol>
 </li>
 </ul>
-<h4 id="-">请求方法</h4>
+<h3 id="-">请求方法</h3>
 <p>表明要对服务器上的资源执行的操作</p>
 <table>
 <thead>
@@ -2924,7 +2930,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
 </tr>
 </tbody>
 </table>
-<h4 id="http-">http 响应状态码</h4>
+<h3 id="http-">http 响应状态码</h3>
 <ul>
 <li>组成：三个十进制数字，第一个定义了状态码的类型，后两个用来对状态码进行细分</li>
 </ul>
@@ -2959,7 +2965,7 @@ $(&#39;#ipt&#39;).on(&#39;keyup&#39;, function () {
 </tbody>
 </table>
 <h2 id="node">NODE</h2>
-<h4 id="fs-">fs 文件系统模块</h4>
+<h3 id="fs-">fs 文件系统模块</h3>
 <ul>
 <li>fs.readFile():用来读取指定文件中的内容</li>
 <li>fs.writeFile():用来向指定的文件中写入内容</li>
@@ -2979,7 +2985,7 @@ const fs = require(&#39;fs&#39;);
 //options：可选，表示写入格式，默认utf8
 //callback：必选，文件写入完成后的回调函数
 </code></pre>
-<h5 id="fs-">fs-路径动态拼接问题</h5>
+<h4 id="fs-">fs-路径动态拼接问题</h4>
 <p>代码在执行的时候，会以执行 node 命令时所处的目录，动态拼接处被操作文件的完整路径</p>
 <ul>
 <li>解决方法：<ol>
@@ -2988,7 +2994,7 @@ const fs = require(&#39;fs&#39;);
 </ol>
 </li>
 </ul>
-<h4 id="path-">path 路径模块</h4>
+<h3 id="path-">path 路径模块</h3>
 <ul>
 <li>path.join()，用来将多个路径片段拼接成一个完整的路径字符串</li>
 <li>path.basename()，用来从路径字符串中，将文件名解析出来</li>
@@ -2996,32 +3002,32 @@ const fs = require(&#39;fs&#39;);
 <pre><code class="lang-javascript">//导入path
 const path = require(&#39;path&#39;);
 </code></pre>
-<h5 id="-">路径拼接</h5>
+<h4 id="-">路径拼接</h4>
 <pre><code class="lang-javascript">path.join(&#39;/a&#39;, &#39;/b/c&#39;, &#39;../&#39;, &#39;./d&#39;, &#39;e&#39;);
 //\a\b\d\e
 </code></pre>
-<h5 id="-">获取路径名</h5>
+<h4 id="-">获取路径名</h4>
 <pre><code class="lang-javascript">path.basename(path[,ext])
 //path&lt;string&gt;必选，表示一个路径字符串
 //ext&lt;string&gt;可选，表示移除的文件扩展名
 //返回：&lt;string&gt;表示路径的最后一部分
 </code></pre>
-<h5 id="-">获取文件扩展名</h5>
+<h4 id="-">获取文件扩展名</h4>
 <pre><code class="lang-javascript">path.extname(path);
 //path&lt;string&gt;，必选，表示一个路径的字符串
 //返回：&lt;string&gt;返回得到的扩展名字符串
 </code></pre>
-<h4 id="http-">HTTP 模块</h4>
+<h3 id="http-">HTTP 模块</h3>
 <p>http 模块是 node.js 提供的、用来创建 web 服务器的模块。通过 http 模块提供的 http.createServer()方法，就能方便的把一台普通电脑，变成一台 web 服务器，从而对外提供资源服务</p>
 <pre><code class="lang-javascript">const http = require(&#39;http&#39;);
 </code></pre>
-<h5 id="-">服务器相关概念</h5>
+<h4 id="-">服务器相关概念</h4>
 <ol>
 <li>IP 地址：互联网上每台电脑的唯一标识</li>
 <li>域名和域名服务器：域名服务器就是提供 IP 地址和域名之间的转换服务的服务器</li>
 <li>端口号：相当于门牌号</li>
 </ol>
-<h4 id="-">创建基本服务器</h4>
+<h3 id="-">创建基本服务器</h3>
 <ol>
 <li>导入 HTTP 模块</li>
 <li>创建服务器实例</li>
@@ -3046,7 +3052,7 @@ server.listen(8080, function () {
     console.log(&#39;server running at http://127.0.0.1:8080&#39;);
 });
 </code></pre>
-<h5 id="-url-html-">根据不同的 url 响应不同的 html 内容</h5>
+<h4 id="-url-html-">根据不同的 url 响应不同的 html 内容</h4>
 <ol>
 <li>获取 url 地址</li>
 <li>设置默认响应内容</li>
@@ -3086,18 +3092,18 @@ server.listen(8080, function () {
 <li>提高了代码的可维护性</li>
 <li>可以实现按需加载</li>
 </ol>
-<h4 id="-">相关概念</h4>
+<h3 id="-">相关概念</h3>
 <ul>
 <li>使用什么样的语法格式来引用模块</li>
 <li>在模块中使用什么样的语法格式向外暴露成员</li>
 </ul>
-<h4 id="-">模块分类</h4>
+<h3 id="-">模块分类</h3>
 <ul>
 <li>内置模块：</li>
 <li>自定义模块</li>
 <li>第三方模块</li>
 </ul>
-<h5 id="-">加载模块</h5>
+<h4 id="-">加载模块</h4>
 <pre><code class="lang-javascript">//内置模块
 const fs = require(&#39;fs&#39;);
 //自定义模块
@@ -3106,24 +3112,24 @@ const custom = require(&#39;./custom.js&#39;);
 const moment = require(&#39;moment&#39;);
 //使用require()方法加载其他模块时，会执行被加载模块中的代码
 </code></pre>
-<h5 id="require-">require()注意点</h5>
+<h4 id="require-">require()注意点</h4>
 <ul>
 <li>.js 后缀名可以省略</li>
 </ul>
-<h4 id="-">模块作用域</h4>
+<h3 id="-">模块作用域</h3>
 <ol>
 <li>module 对象：在每个.js 自定义模块中都有一个 module 对象，它里面存储了和当前模块有关的信息</li>
 <li>modele.exports：将模块内的成员共享出去，供外界使用；外界用 require()方法导入自定义模块时，得到的就是 module.exports 所指向的对象</li>
 <li>exports 对象：exports 和 module.exports 指向同一对象</li>
 </ol>
-<h5 id="modele-exports">modele.exports</h5>
+<h4 id="modele-exports">modele.exports</h4>
 <pre><code class="lang-javascript">module.exports.username = &#39;zs&#39;;
 module.exports.sayHello = function () {
     console.log(&#39;hi&#39;);
 };
 </code></pre>
 <p><strong>使用 require()方法导入模块时，导入的结果，永远以 module.exports 指向的对象为准</strong></p>
-<h4 id="commonjs">CommonJS</h4>
+<h3 id="commonjs">CommonJS</h3>
 <ol>
 <li>每个模块内部，module 变量代表当前模块</li>
 <li>module 变量是一个对象，它的 exports 属性是对外接口</li>
@@ -3141,7 +3147,7 @@ module.exports.sayHello = function () {
 <li>使用 require()导入格式化时间的包</li>
 <li>参考 moment 的官方 API 文档对时间进行格式化</li>
 </ol>
-<h4 id="npm-">npm 安装</h4>
+<h3 id="npm-">npm 安装</h3>
 <ul>
 <li>npm install 包的完整名称</li>
 <li><p>简写：npm i 包的完整名称</p>
@@ -3158,7 +3164,7 @@ module.exports.sayHello = function () {
 </ol>
 </li>
 </ul>
-<h4 id="-">包管理文件</h4>
+<h3 id="-">包管理文件</h3>
 <p>package.json:</p>
 <ol>
 <li>项目的名称、版本号、描述</li>
@@ -3166,28 +3172,28 @@ module.exports.sayHello = function () {
 <li>哪些包只在开发期间会用到</li>
 <li>哪些包在开发和部署时都会用到</li>
 </ol>
-<h5 id="dependencies-">dependencies 节点</h5>
+<h4 id="dependencies-">dependencies 节点</h4>
 <p>记录安装的包</p>
-<h5 id="-">一次性安装所有包</h5>
+<h4 id="-">一次性安装所有包</h4>
 <ul>
 <li>npm install:一次性下载所有包</li>
 </ul>
-<h5 id="-">卸载包</h5>
+<h4 id="-">卸载包</h4>
 <ul>
 <li>npm uninstall 包名</li>
 </ul>
-<h5 id="devdependencies-">devDependencies 节点</h5>
+<h4 id="devdependencies-">devDependencies 节点</h4>
 <p>记录只在开发阶段会用到的包</p>
-<h5 id="-">包的分类</h5>
+<h4 id="-">包的分类</h4>
 <ul>
 <li>开发依赖包：被记录到 devDependencies 节点中，只在开发期间使用</li>
 <li>核心依赖包：被记录到 dependencies 节点中，在开发和项目上线后都会用到</li>
 <li>全局包：-g 参数</li>
 </ul>
-<h5 id="-">发布包</h5>
+<h4 id="-">发布包</h4>
 <pre><code>//包目录下
 npm publish
-</code></pre><h5 id="-">模块的加载机制</h5>
+</code></pre><h4 id="-">模块的加载机制</h4>
 <ul>
 <li>模块第一次加载后会被缓存。优先从缓存加载模块</li>
 <li>内置模块的加载优先级最高</li>
@@ -3210,9 +3216,9 @@ npm publish
 </ul>
 <h2 id="express">express</h2>
 <p>用来创建 Web 服务器</p>
-<h4 id="-">安装</h4>
+<h3 id="-">安装</h3>
 <pre><code>npm i express@4.17.1
-</code></pre><h4 id="-">使用</h4>
+</code></pre><h3 id="-">使用</h3>
 <pre><code class="lang-js">//导入
 const express = require(&#39;express&#39;);
 //创建web服务器
@@ -3222,7 +3228,7 @@ app.listen(80, () =&gt; {
     console.log(&#39;express server running at http://127.0.0.1:8080&#39;);
 });
 </code></pre>
-<h4 id="-">监听请求</h4>
+<h3 id="-">监听请求</h3>
 <pre><code class="lang-js">//get
 app.get(&#39;请求url&#39;, function (req, res) {
     res.send({ name: &#39;zs&#39;, age: &#39;18&#39;, gender: &#39;男&#39; });
@@ -3232,7 +3238,7 @@ app.post(&#39;请求url&#39;, function (req, res) {
     res.send(&#39;请求成功&#39;);
 });
 </code></pre>
-<h4 id="-url-">获取 url 中的参数</h4>
+<h3 id="-url-">获取 url 中的参数</h3>
 <pre><code class="lang-js">//req.query对象可以访问到客户端通过查询字符串的形式，发送到服务器的查询参数
 app.get(&#39;/&#39;, (req, res) =&gt; {
     console.log(req.query);
@@ -3244,15 +3250,15 @@ app.get(&#39;/user:id&#39;, function (req, res) {
 });
 </code></pre>
 <p><strong>通过 req.params 对象，可以访问到 url 中，通过:（冒号）匹配到的动态参数</strong></p>
-<h4 id="-">托管静态资源</h4>
+<h3 id="-">托管静态资源</h3>
 <pre><code class="lang-js">app.use(express.static(&#39;public&#39;));
 
 //添加前缀地址
 app.use(&#39;/static&#39;, express.static(&#39;public&#39;));
 </code></pre>
-<h4 id="nodemon">nodemon</h4>
+<h3 id="nodemon">nodemon</h3>
 <p>自动重启项目</p>
-<h4 id="express-">express 中的路由</h4>
+<h3 id="express-">express 中的路由</h3>
 <ul>
 <li>在 Express 中，路由指的是客户端的请求和服务器处理函数之间的映射关系</li>
 <li>组成：<ol>
@@ -3265,13 +3271,13 @@ app.use(&#39;/static&#39;, express.static(&#39;public&#39;));
 </code></pre>
 </li>
 </ul>
-<h5 id="-">路由的匹配过程</h5>
+<h4 id="-">路由的匹配过程</h4>
 <p>每当一个请求到达服务器之后，需要先经过路由的匹配，只有匹配成功才会处理对应函数</p>
-<h5 id="-">最简单用法</h5>
+<h4 id="-">最简单用法</h4>
 <pre><code class="lang-js">//挂载路由
 app.get(&#39;/&#39;, (req, res) =&gt; {});
 </code></pre>
-<h5 id="-">模块化路由</h5>
+<h4 id="-">模块化路由</h4>
 <ol>
 <li>创建路由模块对应的.js 文件</li>
 <li>调用 express.Router()函数创建路由对象</li>
@@ -3286,28 +3292,28 @@ router.get(&#39;/&#39;, (req, res) =&gt; {});
 
 module.exports = router;
 </code></pre>
-<h5 id="-">注册路由模块</h5>
+<h4 id="-">注册路由模块</h4>
 <pre><code class="lang-js">//导入路由模块
 const router = require(&#39;./router.js&#39;);
 app.use(router);
 </code></pre>
 <p><strong>app.use 的作用就是注册全局中间件</strong></p>
-<h5 id="-">为路由模块添加访问前缀</h5>
+<h4 id="-">为路由模块添加访问前缀</h4>
 <pre><code class="lang-js">app.use(&#39;/api&#39;, router);
 </code></pre>
 <h2 id="-">中间件</h2>
-<h4 id="express-">Express 中间件的调用流程</h4>
+<h3 id="express-">Express 中间件的调用流程</h3>
 <p>当一个请求到达 express 服务器之后，可以连续调用多个中间件，从而对这次请求进行预处理</p>
-<h4 id="express-">Express 中间件格式</h4>
+<h3 id="express-">Express 中间件格式</h3>
 <p>Express 的中间件，本质上就是一个 function 处理函数，<strong>中间件函数的形参列表中，必须包含 next 参数。而路由处理函数中只包含 req、res</strong></p>
-<h5 id="next-">next 函数</h5>
+<h4 id="next-">next 函数</h4>
 <p>是实现多个中间件连续调用的关键，它表示把流派关系转交给下一个中间件或路由</p>
-<h4 id="-">定义中间件函数</h4>
+<h3 id="-">定义中间件函数</h3>
 <pre><code class="lang-js">const mw = function (req, res, next) {
     next();
 };
 </code></pre>
-<h4 id="-">全局生效中间件</h4>
+<h3 id="-">全局生效中间件</h3>
 <p>客户端发起任何请求，到达服务器之后，都会触发的中间件，叫做全局生效的中间件。</p>
 <pre><code class="lang-js">const mw = function (req, res, next) {
     next();
@@ -3319,9 +3325,9 @@ app.use(function (req, res, next) {
     next();
 };)
 </code></pre>
-<h4 id="-">中间件的作用</h4>
+<h3 id="-">中间件的作用</h3>
 <p>多个中间件之间，共享同一份 req 和 res。基于这样的特性，我们可以在上游的中间件中，统一为 req、res 对象添加自定义的属性或方法，供下游的中间件或路由进行使用。</p>
-<h4 id="-">局部生效的中间件</h4>
+<h3 id="-">局部生效的中间件</h3>
 <p>不使用 app.use()定义的中间件，叫做局部生效中间件</p>
 <pre><code class="lang-js">const mw1 = function (req, res, next) {
     next();
@@ -3331,12 +3337,12 @@ const mw2 = function (req, res, next) {
 };
 app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 </code></pre>
-<h4 id="-">中间件的注意事项</h4>
+<h3 id="-">中间件的注意事项</h3>
 <ol>
 <li>要在路由之前注册中间件</li>
 <li>不要忘记调用 next 函数</li>
 </ol>
-<h4 id="express-">Express 中间件的分类</h4>
+<h3 id="express-">Express 中间件的分类</h3>
 <ol>
 <li>应用级别的中间件：
 通过 app.use()或 app.get()、app.post()，绑定到 app 实例上的中间件，叫应用级别中间件</li>
@@ -3353,7 +3359,7 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 </li>
 <li>第三方中间件</li>
 </ol>
-<h4 id="-">自定义中间件</h4>
+<h3 id="-">自定义中间件</h3>
 <ol>
 <li>定义中间件</li>
 <li>监听 req 的 data 事件</li>
@@ -3362,7 +3368,7 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 <li>将解析出来的数据对象挂载为 req.body</li>
 <li>将自定义中间件封装为模块</li>
 </ol>
-<h4 id="-express-">使用 Express 写接口</h4>
+<h3 id="-express-">使用 Express 写接口</h3>
 <ol>
 <li>创建基本服务器</li>
 <li>创建 api 路由模块</li>
@@ -3370,13 +3376,13 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 <li>编写 post 请求</li>
 </ol>
 <h2 id="cors-jsonp">cors+jsonp</h2>
-<h4 id="-">接口跨域问题</h4>
+<h3 id="-">接口跨域问题</h3>
 <p>解决方法：</p>
 <ol>
 <li>cors（主流）</li>
 <li>jsonp</li>
 </ol>
-<h4 id="cors-">cors 中间件</h4>
+<h3 id="cors-">cors 中间件</h3>
 <ul>
 <li>使用：<ol>
 <li>运行 npm i cors 安装中间件</li>
@@ -3390,7 +3396,7 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 </ol>
 </li>
 </ul>
-<h5 id="cors-">cors 响应头部</h5>
+<h4 id="cors-">cors 响应头部</h4>
 <ul>
 <li><p>Access-Cintrol-Allow-Origin：指定允许访问的外域资源 URL
 <strong>*</strong>代表允许任何域的请求</p>
@@ -3398,17 +3404,14 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 </code></pre>
 </li>
 <li><p>Access-Cintrol-Allow-Header：对额外的请求头进行声明，否则请求失败</p>
-<pre><code class="lang-js">res.setHeader(
-    &#39;Access-Cintrol-Allow-Header&#39;,
-    &#39;Content-type,X-Custom-Header&#39;
-);
+<pre><code class="lang-js">res.setHeader(&#39;Access-Cintrol-Allow-Header&#39;, &#39;Content-type,X-Custom-Header&#39;);
 </code></pre>
 </li>
 <li>Access-Cintrol-Allow-Methods：默认只支持 GET、POST、HEAD 请求，若希望通过其他方式请求资源，则需要指明所允许使用的 HTTP 方法<pre><code class="lang-js">res.setHeader(&#39;Access-Cintrol-Allow-Methods&#39;, &#39;GET,POST,HEAD,DELETE&#39;);
 </code></pre>
 <strong>*</strong>代表支持任何请求方式</li>
 </ul>
-<h5 id="cors-">cors 请求分类</h5>
+<h4 id="cors-">cors 请求分类</h4>
 <ul>
 <li>简单请求：<ol>
 <li>请求方式：get、post、head 三者之一</li>
@@ -3430,7 +3433,7 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 </li>
 </ul>
 <h2 id="-">数据库</h2>
-<h4 id="-">常见数据库及分类</h4>
+<h3 id="-">常见数据库及分类</h3>
 <ol>
 <li>MySQL 数据库（Community+Enterprise）</li>
 <li>Oracle（收费）</li>
@@ -3440,19 +3443,19 @@ app.get(&#39;/&#39;, mw1, mw2, function (req, res) {});
 Mongodb 属于新型数据库，弥补了传统型数据库的缺陷</li>
 </ol>
 <h2 id="sql">sql</h2>
-<h4 id="select-">select 语句</h4>
+<h3 id="select-">select 语句</h3>
 <pre><code class="lang-sql">select username,password from user
 </code></pre>
-<h4 id="insert-into-">insert into 语句</h4>
+<h3 id="insert-into-">insert into 语句</h3>
 <pre><code class="lang-sql">insert into table_name(list1,list2,...) values(value1,value2)
 </code></pre>
-<h4 id="update-">update 语句</h4>
+<h3 id="update-">update 语句</h3>
 <pre><code class="lang-sql">update table_name set list_name = new_value where list_name = xxx
 </code></pre>
-<h4 id="delete-">delete 语句</h4>
+<h3 id="delete-">delete 语句</h3>
 <pre><code class="lang-sql">delete from table_name where list_name = xxx
 </code></pre>
-<h4 id="where-">where 子句</h4>
+<h3 id="where-">where 子句</h3>
 <pre><code class="lang-sql">... where list_name 运算符 xxx
 </code></pre>
 <table>
@@ -3497,25 +3500,25 @@ Mongodb 属于新型数据库，弥补了传统型数据库的缺陷</li>
 </tr>
 </tbody>
 </table>
-<h4 id="and-or-">and\or 运算符</h4>
+<h3 id="and-or-">and\or 运算符</h3>
 <p>在 where 子句中把多个条件结合起来</p>
-<h4 id="order-by-">order by 子句</h4>
+<h3 id="order-by-">order by 子句</h3>
 <pre><code class="lang-sql">... order by desc --降序，asc为升序
 -- 多重排序,先按status降序，再按username升序排列
 select * form user order by status DESC,username ASC
 </code></pre>
-<h4 id="count-">count 函数</h4>
+<h3 id="count-">count 函数</h3>
 <pre><code class="lang-sql">select count(*) from table_name where ...
 --as 关键字，起别名
 select count(*) as total from table_name where ...
 </code></pre>
-<h4 id="-mysql">在项目中操作 mysql</h4>
+<h3 id="-mysql">在项目中操作 mysql</h3>
 <ol>
 <li>安装 MySQL 数据库的第三方模块（<strong>mysql</strong>）</li>
 <li>通过 MySQL 模块连接到 MySQL 数据库</li>
 <li>通过 mysql 模块执行 sql 语句</li>
 </ol>
-<h5 id="-mysql-">安装、配置 mysql 模块</h5>
+<h4 id="-mysql-">安装、配置 mysql 模块</h4>
 <pre><code>npm i mysql
 </code></pre><pre><code class="lang-js">//配置
 const mysql = require(&#39;mysql&#39;);
@@ -3526,14 +3529,14 @@ const db = mysql.createPool({
     database: &#39;test&#39;,
 });
 </code></pre>
-<h5 id="-">测试是否正常工作</h5>
+<h4 id="-">测试是否正常工作</h4>
 <pre><code class="lang-js">db.query(&#39;select 1&#39;, (err, results) =&gt; {
     if (err) return console.log(err.message);
 
     console.log(results);
 });
 </code></pre>
-<h5 id="-">查询数据</h5>
+<h4 id="-">查询数据</h4>
 <p><strong>select 语句，执行结果为数组</strong></p>
 <pre><code class="lang-js">const sqlStr = &#39;select * from user&#39;;
 db.query(sqlStr, (err, results) =&gt; {
@@ -3542,7 +3545,7 @@ db.query(sqlStr, (err, results) =&gt; {
     console.log(results);
 });
 </code></pre>
-<h5 id="-">插入数据</h5>
+<h4 id="-">插入数据</h4>
 <pre><code class="lang-js">const user_in = { username: &#39;ccc&#39;, password: &#39;2222&#39;, status: 1 };
 const sqlStr = &#39;insert into user (id,username,password,status) values(?,?,?,?)&#39;;
 db.query(
@@ -3566,7 +3569,7 @@ db.query(sqlStr, user_in, (err, results) =&gt; {
     }
 });
 </code></pre>
-<h5 id="-">更新数据</h5>
+<h4 id="-">更新数据</h4>
 <pre><code class="lang-js">const user_in2 = { id: 2, username: &#39;bbb&#39;, status: 1 };
 const sqlStr2 = &#39;update user set username=? where id=?&#39;;
 db.query(sqlStr2, [user_in2.username, user_in2.id], (err, results) =&gt; {
@@ -3585,7 +3588,7 @@ db.query(sqlStr2, [user_in2, user_in2.id], (err, results) =&gt; {
     }
 });
 </code></pre>
-<h5 id="-">删除数据</h5>
+<h4 id="-">删除数据</h4>
 <p><strong>推荐根据唯一标识删除数据</strong></p>
 <pre><code class="lang-js">const sqlStr3 = &#39;delete from user where id=?&#39;;
 
@@ -3627,10 +3630,10 @@ db.query(&#39;update user set status =1 where id=?&#39;, 3, (err, results) =&gt;
 <li>服务端渲染推荐 session</li>
 <li>前后端分离推荐 jwt</li>
 </ol>
-<h4 id="session-">session 认证机制</h4>
-<h5 id="http-">http 协议的无状态性</h5>
+<h3 id="session-">session 认证机制</h3>
+<h4 id="http-">http 协议的无状态性</h4>
 <p>客户端的每次 HTTP 请求都是独立的，服务器不会主动保留每次 HTTP 请求的状态</p>
-<h6 id="-">突破无状态限制</h6>
+<h5 id="-">突破无状态限制</h5>
 <ul>
 <li>cookie：存储在浏览器的一段不超过 4KB 的字符串。由一个名称、一个值和其它用于控制有效期、安全性、使用范围的可选属性组成</li>
 <li>不同域名下 cookie 各自独立</li>
@@ -3642,7 +3645,15 @@ db.query(&#39;update user set status =1 where id=?&#39;, 3, (err, results) =&gt;
 </ol>
 </li>
 </ul>
-<h5 id="session-">session 中间件使用</h5>
+<h4 id="session-">session 工作原理</h4>
+<ol>
+<li>用户第一次请求服务器时，服务器端会生成一个 sessionid</li>
+<li>服务器端将生成的 sessionid 返回给客户端，通过 set-cookie</li>
+<li>客户端收到 sessionid 会将它保存在 cookie 中，当客户端再次访问服务端时会带上这个 sessionid</li>
+<li>当服务端再次接收到来自客户端的请求时，会先去检查是否存在 sessionid，不存在就新建一个 sessionid 重复 1,2 的流程，如果存在就去遍历服务端的 session 文件，找到与这个 sessionid 相对应的文件，文件中的键值便是 sessionid，值为当前用户的一些信息</li>
+<li>此后的请求都会交换这个 Session ID，进行有状态的会话。</li>
+</ol>
+<h4 id="session-">session 中间件使用</h4>
 <ul>
 <li>安装</li>
 </ul>
@@ -3682,6 +3693,2166 @@ res.send({
 <pre><code class="lang-js">//仅当前用户
 req.session.destroy();
 </code></pre>
+<h2 id="jwt">JWT</h2>
+<p><strong>当前端存在跨域问题的时候，使用 JWT</strong></p>
+<h3 id="jwt-">JWT 原理</h3>
+<p>用户信息通过 Token 字符串的形式，保存在客户端浏览器中。服务器通过还原 Token 字符串的形式来认证用户的身份</p>
+<h3 id="jwt-">JWT 的组成</h3>
+<ul>
+<li>Header（头部）
+安全相关</li>
+<li>Payload（有效荷载）
+用户信息</li>
+<li>Signature（签名）
+安全相关</li>
+</ul>
+<p>三者之间以“,”分隔</p>
+<h3 id="jwt-">JWT 使用</h3>
+<ol>
+<li><p>把 JWT 放在 HTTP 请求头部的 Authorization 字段中</p>
+<pre><code>Authorization:Bearer&lt;token&gt;
+</code></pre></li>
+<li><p>安装相关包</p>
+<pre><code>npm i jsonwebtoken express-jwt
+</code></pre><ul>
+<li>jsonwebtoken 用于生成 JWT 字符串</li>
+<li>express-jwt 用于将 JWT 字符串解析还原成 JSON 对象</li>
+</ul>
+</li>
+<li>导入<pre><code class="lang-js">const jwt = require(&#39;jsonwebtoken&#39;);
+const expressJWT = require(&#39;express-jwt&#39;);
+</code></pre>
+</li>
+<li>定义 secret 密钥<pre><code class="lang-js">const secretKey = &#39;xxxxx&#39;;
+</code></pre>
+</li>
+<li>生成 JWT 字符串<pre><code class="lang-js">const tokenStr = jwt.sign({ username: userinfo.username }, secretKey, {
+    expiresin: &#39;1h&#39;,
+});
+//参数一：信息
+//参数二：加密的密钥
+//参数三：token有效期
+res.send({
+    status: 200,
+    message: &#39;&#39;,
+    token: tokenStr,
+});
+</code></pre>
+</li>
+<li>还原 JWT 字符串<pre><code class="lang-js">//使用app.use()注册中间件
+//expressJWT({ secret: secreKey })用来解析Token中间件
+//.unless({ path: [/^\/api\//] })用来指定哪些接口不需要访问权限
+app.use(expressJWT({ secret: secreKey }).unless({ path: [/^\/api\//] }));
+</code></pre>
+</li>
+<li>捕获解析 JWT 失败产生的错误<pre><code class="lang-js">app.use((err, req, res, next) =&gt; {
+    if (err.name === &#39;UnauthorizedError&#39;) {
+        return re.send({ status: 401, message: &#39;无效token&#39; });
+    }
+    res.send({ status: 500, message: &#39;未知错误&#39; });
+});
+</code></pre>
+</li>
+</ol>
+<h2 id="vue">Vue</h2>
+<ul>
+<li>概述：渐进式 JavaScript 框架
+声明式渲染-&gt;组件系统-&gt;客户端路由-&gt;集中式状态管理-&gt;项目构建</li>
+</ul>
+<h3 id="vue-">Vue 基本使用</h3>
+<ul>
+<li>传统方法<pre><code class="lang-html">&lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var msg = &#39;helloWord&#39;;
+    var div = document.getElementById(&#39;msg&#39;);
+    div.innerHTML = msg;
+&lt;/script&gt;
+</code></pre>
+</li>
+<li>Vue 方法<pre><code class="lang-html">&lt;div id=&quot;app&quot;&gt;{{msg}}&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    new Vue({
+        el: &#39;#app&#39;,
+        data: {
+            msg: &#39;helloWord&#39;,
+        },
+    });
+&lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="vue-">Vue 模板语法</h3>
+<ul>
+<li>插值表达式</li>
+<li>指令</li>
+<li>事件绑定</li>
+<li>属性绑定</li>
+<li>样式绑定</li>
+<li>分支循环结构</li>
+</ul>
+<h4 id="-">指令</h4>
+<ul>
+<li>指令的本质就是自定义属性</li>
+<li>格式：以 v-开始</li>
+</ul>
+<h5 id="v-cloak">v-cloak</h5>
+<ul>
+<li>插值表达式存在问题：”闪动“</li>
+<li>解决方法：使用 v-cloak</li>
+<li>原理：先隐藏，替换好值后再显示最终的值</li>
+</ul>
+<pre><code class="lang-html">&lt;style type=&quot;text/css&quot;&gt;
+    [v-cloak] {
+        display: none;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;app&quot; v-cloak&gt;{{msg}}&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    new Vue({
+        el: &#39;#app&#39;,
+        data: {
+            msg: &#39;helloWord&#39;,
+        },
+    });
+&lt;/script&gt;
+</code></pre>
+<h3 id="-">修改数组的两个特殊情况</h3>
+<ol>
+<li>arr.leength=0,不具备响应特性</li>
+<li>arr[0]=100,不具备响应特性</li>
+</ol>
+<h3 id="-">修改对象的特殊情况</h3>
+<p>添加 obj.x,x 属性，也不具备响应特性</p>
+<h3 id="-">修改方法；</h3>
+<ol>
+<li>vm.$set(target,propertyName/index,value)</li>
+<li>Vue.set(target,propertyName/index,value)</li>
+<li>vm.forceupdate()</li>
+</ol>
+<h3 id="-">生命周期</h3>
+<pre><code>```js
+    beforeCreate() {
+        // console.log(&#39;hello&#39;);
+        // console.log(this)//yes
+        // console.log(this.title)//no
+        // console.log(document.querySelector(&#39;#root&#39;))//maybe,模板未渲染
+        //应用场景：给实例自定义内容
+        // this.x=100//yes
+    },
+    created() {
+        // console.log(this)//yes
+        // console.log(this.title)//yes
+        // console.log(document.querySelector(&#39;#root&#39;))//maybe
+        //应用场景：修改data的值
+        // this.title=&#39;world&#39;
+    },
+    beforeMount() {
+        // console.log(this)//yes
+        // console.log(this.title)//yes
+        // console.log(document.querySelector(&#39;#root&#39;))//maybe
+        //应用场景：修改data的值
+        // this.title=&#39;world&#39;
+    },
+    mounted() {
+        // console.log(this)//yes
+        // console.log(this.title)//yes
+        // console.log(document.querySelector(&#39;#root&#39;))//yes
+        // //应用场景：一般在第一次页面渲染完毕后的工作都在这完成
+        // setTimeout(() =&gt; {
+        //     this.title=&#39;world&#39;
+        // },5000)
+        // //ajax放这；
+    },
+    beforeUpdata(){
+        //将要发生数据更新时执行
+    },
+    updated(){
+        //数据后更新时执行
+    },
+    beforeDestroy(){
+
+    },
+    destroyed(){
+
+    }
+```
+</code></pre><h3 id="-">模板语法</h3>
+<ol>
+<li>v-once：只渲染一次</li>
+<li>v-html：输出 html（慎用！）</li>
+<li>v-text：完全替换原内容</li>
+<li>v-bind：绑定属性</li>
+<li>v-on：绑定函数</li>
+<li>v-model：双向绑定数据</li>
+</ol>
+<h3 id="vue-">Vue 常用特性</h3>
+<ul>
+<li>表单操作</li>
+<li>自定义指令</li>
+<li>计算属性</li>
+<li>过滤器</li>
+<li>侦听器</li>
+<li>生命周期</li>
+</ul>
+<h4 id="-">表单操作</h4>
+<ul>
+<li>input 单行文本</li>
+<li>textarea 多行文本</li>
+<li>radio 单选框</li>
+<li>checkbox 多选框</li>
+</ul>
+<h5 id="-">表单域修饰符</h5>
+<ul>
+<li>number：转化为数值</li>
+<li>trim：去掉开始和结尾的空格</li>
+<li>lazy：将 input 事件切换为 change 事件</li>
+</ul>
+<pre><code class="lang-html">&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot; /&gt;
+</code></pre>
+<h4 id="-">自定义指令</h4>
+<pre><code class="lang-js">//默认获取焦点
+Vue.directive(&#39;focus&#39;, {
+    inserted: function (el) {
+        //获取元素焦点
+        el.focus();
+    },
+});
+</code></pre>
+<pre><code class="lang-html">&lt;input type=&quot;text&quot; v-focus /&gt;
+</code></pre>
+<pre><code class="lang-js">//改变元素背景颜色
+Vue.directive(&#39;color&#39;, {
+    inserted: function (el, binding) {
+        el.style.backgroundColor = binding.value.color;
+    },
+});
+</code></pre>
+<pre><code class="lang-html">&lt;input type=&quot;text&quot; v-color=&quot;yellow&quot; /&gt;
+</code></pre>
+<h4 id="-">计算属性</h4>
+<pre><code class="lang-js">var vm = new Vue({
+    computed: {
+        //反转字符串
+        reversedMessage: function () {
+            return this.msg.split(&#39;&#39;).reverse().join(&#39;&#39;);
+        },
+    },
+});
+</code></pre>
+<h5 id="-">计算属性和方法的区别</h5>
+<ul>
+<li>计算属性是基于他们的依赖(data 数据)进行缓存的</li>
+<li>方法不存在缓存</li>
+</ul>
+<h4 id="-">侦听器</h4>
+<p>数据一旦发生变化就通知侦听器所绑定方法</p>
+<pre><code class="lang-js">var vm = new Vue({
+    watch: {
+        firstName: function (val) {
+            //val表示变化之后的值
+            this.fullName = val + &#39;&#39; + this.lastName;
+        },
+        lastName: function (val) {
+            this.fullName = this.firstName + &#39;&#39; + val;
+        },
+    },
+});
+</code></pre>
+<h4 id="-">过滤器</h4>
+<pre><code class="lang-js">Vue.filter(&#39;过滤器名称&#39;，function(value，arg){
+    //业务逻辑
+})
+</code></pre>
+<pre><code class="lang-html">&lt;div&gt;{{msg | 过滤器名称(arg)}}&lt;/div&gt;
+</code></pre>
+<h3 id="vue-">Vue 组件化</h3>
+<h4 id="-">使用</h4>
+<ul>
+<li>注意事项：<ol>
+<li>data 必须是函数</li>
+<li>组件的模板必须是单个根元素</li>
+<li>组件模板内容可以是模板字符串</li>
+</ol>
+</li>
+</ul>
+<pre><code class="lang-js">Vue.component(组件名称, {
+    data: 组件数据,
+    template: 组件模板内容,
+});
+</code></pre>
+<pre><code class="lang-js">Vue.component(&#39;button-counter&#39;, {
+    data: function () {
+        return {
+            count: 0,
+        };
+    },
+    template: &#39;&lt;button v-on:click=&quot;handle&quot;&gt;点击了{{count}}次&lt;/button&gt;&#39;,
+    methods: {
+        handle: function () {
+            this.count++;
+        },
+    },
+});
+</code></pre>
+<pre><code class="lang-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;button-counter&gt;&lt;/button-counter&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="vue-">Vue 调试工具用法</h3>
+<ol start="4">
+<li>打开 chrome 开发者模式</li>
+<li>加载 devtools 扩展</li>
+</ol>
+<h3 id="-">组件间数据交互</h3>
+<h4 id="-">父组件向子组件传值</h4>
+<ol>
+<li><p>组件内部通过 props 接受传递过来的值</p>
+<pre><code class="lang-js">Vue.component(&#39;menu-item&#39;, {
+    props: [&#39;title&#39;],
+    template: &#39;&lt;div&gt;{{title}}&lt;/div&gt;&#39;,
+});
+</code></pre>
+<pre><code class="lang-html">&lt;menu-item title=&quot;来自父组件的数据&quot;&gt;&lt;/menu-item&gt;
+
+&lt;menu-item :title=&quot;title&quot;&gt;&lt;/menu-item&gt;
+</code></pre>
+<p><strong>在 props 中使用驼峰形式，模板需要使用单横的形式，字符串形式的模板没有这个限制</strong></p>
+</li>
+<li><p>子组件向父组件传值</p>
+<pre><code class="lang-js">
+</code></pre>
+</li>
+<li><p>兄弟组件传值</p>
+</li>
+</ol>
+<h3 id="-">组件插槽</h3>
+<ul>
+<li><p>作用：</p>
+<ul>
+<li><p>父组件向子组件传递内容</p>
+<pre><code class="lang-js">// slot标签表示插槽位置
+Vue.component(&#39;alert-box&#39;, {
+    template: `
+        &lt;div class=&quot;demo-alert-box&quot; &gt;
+            &lt;strong&gt;Error&lt;/strong&gt;
+            &lt;slot&gt;&lt;slot&gt;
+        &lt;/div&gt;
+    `,
+});
+</code></pre>
+<pre><code class="lang-html">&lt;alert-box&gt;something bad&lt;/alert-box&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="promise">promise</h2>
+<h3 id="-">前后端交互模式</h3>
+<ol>
+<li>接口调用方式：<ul>
+<li>原生 ajax</li>
+<li>基于 jQuery 的 ajax</li>
+<li>fetch</li>
+<li>axios</li>
+</ul>
+</li>
+<li>Restful 形式的 URL<ul>
+<li>http 请求方式：<ol>
+<li>GET 查询</li>
+<li>POST 添加</li>
+<li>PUT 修改</li>
+<li>DELETE 删除</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="promise-">promise 用法</h3>
+<ul>
+<li>异步效果分析<ol>
+<li>定时任务</li>
+<li>ajax</li>
+<li>事件函数</li>
+</ol>
+</li>
+<li>多次异步调用的依赖关系 - 多次异步调用的结果顺序不确定 - 异步调用结果如果存在依赖需要嵌套</li>
+</ul>
+<p>Promise 是异步编程的一种解决方案，从语法上讲，Promise 是一个对象，从它可以获取异步操作的消息。
+好处：</p>
+<ul>
+<li>可以避免多层异步调用嵌套问题（回调地狱）</li>
+<li>Promise 对象提供了简洁的 API，使得控制异步操作更加容易</li>
+</ul>
+<h4 id="promise-">promise 基本用法</h4>
+<ul>
+<li>实例化 Promise 对象，构建函数中传递函数，该函数用于处理异步任务</li>
+<li>resolve 和 reject 两个参数用于处理成功和失败两种情况，并通过 p.then 获取处理结果</li>
+</ul>
+<pre><code class="lang-js">var p = new Promise(function (resolve, reject) {
+    //成功时调用 resolve()
+    //失败时调用 reject()
+});
+p.then(
+    function (ret) {
+        //从resolve得到正常结果
+    },
+    function (ret) {
+        //从reject得到错误信息
+    }
+);
+</code></pre>
+<h4 id="-promise-ajax-">基于 Promise 处理 Ajax 请求</h4>
+<pre><code class="lang-js">function queryData(url) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState != 4) return;
+            if (xhr.status == 200) {
+                resolve(xhr.responseText);
+            } else {
+                reject(&#39;出错了&#39;);
+            }
+        };
+        xhr.open(&#39;get&#39;, url);
+        xhr.send(null);
+    });
+}
+queryData(&#39;http://localhost:3000/data&#39;).then(
+    function (data) {
+        console.log(data);
+    },
+    function (err) {
+        console.log(err);
+    }
+);
+</code></pre>
+<h4 id="then-">then 参数中的返回值</h4>
+<ol>
+<li>返回 Promise 实例对象<ul>
+<li>返回的该实例对象会调用下一个 then</li>
+</ul>
+</li>
+<li>返回普通值<ul>
+<li>返回的普通值会直接传递给下一个 then，通过 then 参数中函数的参数接收该值</li>
+</ul>
+</li>
+</ol>
+<h4 id="promise-api">promise 常用 api</h4>
+<ol>
+<li><p>实例方法</p>
+<ul>
+<li>p.then()得到异步任务的正确结果</li>
+<li>p.catch()获取异常信息</li>
+<li>p.finally()成功与否都会执行（尚且不是正是标准）</li>
+</ul>
+<pre><code class="lang-js">queryData()
+    .then(function (data) {
+        //成功时执行
+        console.log(data);
+    })
+    .catch(function (data) {
+        //失败时执行
+        console.log(data);
+    })
+    .finally(function () {
+        //成功与否都会执行
+        console.log(&#39;finshed&#39;);
+    });
+</code></pre>
+</li>
+<li><p>对象方法</p>
+<ul>
+<li>Promise.all()并发处理多个异步任务，所有任务都执行完成才能得到结果</li>
+<li>Promise.race()并发处理多个异步任务，只要有一个任务完成就能得到结果<pre><code class="lang-js">Promise.all([p1, p2, p3]),
+  then((result) =&gt; {
+      console.log(result);
+  });
+Promise.race([p1, p2, p3]),
+  then((result) =&gt; {
+      console.log(result);
+  });
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="-fetch-">接口调用-fetch 用法</h3>
+<ol>
+<li>基本特征：<ul>
+<li>更加简单的数据获取方式，功能强大、更灵活，可以看作 xhr 的升级版</li>
+<li>基于 promise 实现</li>
+</ul>
+</li>
+<li>语法结构：<pre><code class="lang-js">fetch(url).then(fn2).then(fn3)....catch(fn)
+</code></pre>
+</li>
+</ol>
+<h4 id="-">基本用法</h4>
+<pre><code class="lang-js">fetch(&#39;/abc&#39;)
+    .then((data) =&gt; {
+        //text()方法属于fetchAPI的一部分，它返回一个Promise对象，用与获取后台返回的数据
+        return data.text();
+    })
+    .then((ret) =&gt; {
+        //这里得到的才是最终数据
+        console.log(ret);
+    });
+</code></pre>
+<h4 id="fetch-">fetch 请求参数</h4>
+<ol>
+<li>常用配置选项<ul>
+<li>method(String):HTTP 请求方式，默认为 GET（GET、POST、PUT、DELETE）</li>
+<li>body(String):HTTP 的请求参数</li>
+<li>headers(Object):HTTP 的请求头，默认为 0</li>
+</ul>
+</li>
+<li>get<pre><code class="lang-js">fetch(&#39;/abc/123&#39;, {
+    method: &#39;get&#39;,
+})
+    .then((data) =&gt; {
+        return data.text();
+    })
+    .then((ret) =&gt; {
+        //这里得到的才是最终数据
+        console.log(ret);
+    });
+</code></pre>
+</li>
+<li>delete<pre><code class="lang-js">fetch(&#39;/abc/123&#39;, {
+    method: &#39;delete&#39;,
+})
+    .then((data) =&gt; {
+        return data.text();
+    })
+    .then((ret) =&gt; {
+        //这里得到的才是最终数据
+        console.log(ret);
+    });
+</code></pre>
+</li>
+<li>post<pre><code class="lang-js">fetch(&#39;/books&#39;, {
+    method: &#39;post&#39;,
+    //body:JSON.stringify({
+    //    uname:&#39;zs&#39;,
+    //    pwd:&#39;123&#39;
+    //}),
+    body: &#39;uname=lisi&amp;pwd=123&#39;,
+    headers: {
+        //&#39;Content-Type&#39;: &#39;application/json&#39;
+        &#39;Content-Type&#39;: &#39;application/x-www-form-urlencode&#39;,
+    },
+})
+    .then((data) =&gt; {
+        return data.text();
+    })
+    .then((ret) =&gt; {
+        //这里得到的才是最终数据
+        console.log(ret);
+    });
+</code></pre>
+</li>
+<li>put<pre><code class="lang-js">fetch(&#39;/books&#39;, {
+    method: &#39;put&#39;,
+    //body:JSON.stringify({
+    //    uname:&#39;zs&#39;,
+    //    pwd:&#39;123&#39;
+    //}),
+    body: &#39;uname=lisi&amp;pwd=123&#39;,
+    headers: {
+        //&#39;Content-Type&#39;: &#39;application/json&#39;
+        &#39;Content-Type&#39;: &#39;application/x-www-form-urlencode&#39;,
+    },
+})
+    .then((data) =&gt; {
+        return data.text();
+    })
+    .then((ret) =&gt; {
+        //这里得到的才是最终数据
+        console.log(ret);
+    });
+</code></pre>
+</li>
+</ol>
+<h4 id="fetch-">fetch 响应结果</h4>
+<p>响应数据格式：</p>
+<ul>
+<li>text()：将返回体处理成字符串类型</li>
+<li>json()：返回结果 heJSON.parse(responseText)一样<pre><code class="lang-js">fetch(&#39;/abc&#39;)
+    .then((data) =&gt; {
+        return data.json();
+    })
+    .then((ret) =&gt; {
+        //这里得到的才是最终数据
+        console.log(ret);
+    });
+</code></pre>
+</li>
+</ul>
+<h3 id="-axios-">接口调用-axios 用法</h3>
+<ol>
+<li>特征：<ul>
+<li>支持浏览器和 node.js</li>
+<li>支持 promise</li>
+<li>能拦截请求和响应</li>
+<li>自动转换 JSON 数据</li>
+</ul>
+</li>
+<li>基本用法<pre><code class="lang-js">axios.get(&#39;/getdata&#39;).then((ret) =&gt; {
+    console.log(ret.data);
+});
+</code></pre>
+</li>
+</ol>
+<h4 id="-api">常用 API</h4>
+<ul>
+<li>get：查询数据</li>
+<li>post：添加数据</li>
+<li>put：修改数据</li>
+<li><p>delete：删除数据</p>
+</li>
+<li><p>get 传递参数</p>
+<ul>
+<li>通过 url 传递参数</li>
+<li>通过 params 选项传递参数</li>
+</ul>
+<pre><code class="lang-js">axios.get(&#39;/getdata?id=123&#39;).then((ret) =&gt; {
+    console.log(ret.data);
+});
+
+axios
+    .get(&#39;/getdata?id=123&#39;, {
+        params: {
+            id: 123,
+        },
+    })
+    .then((ret) =&gt; {
+        console.log(ret.data);
+    });
+</code></pre>
+</li>
+<li><p>delete 传递参数</p>
+<pre><code>- 通过 url 传递参数
+- 通过 params 选项传递参数
+
+```js
+axios.delete(&#39;/getdata?id=123&#39;).then((ret) =&gt; {
+    console.log(ret.data);
+});
+
+axios
+    .delete(&#39;/getdata?id=123&#39;, {
+        params: {
+            id: 123,
+        },
+    })
+    .then((ret) =&gt; {
+        console.log(ret.data);
+    });
+```
+</code></pre></li>
+<li><p>post 传递参数</p>
+<ul>
+<li>通过选项传递参数(默认 json)</li>
+<li>通过 URLSearchParams 传递参数（application/x-www-form-urlencoded）<pre><code class="lang-js">axios
+  .post(&#39;/adata&#39;, {
+      uname: &#39;jelly&#39;,
+      pwd: 123,
+  })
+  .then((ret) =&gt; {
+      console.log(ret.data);
+  });
+</code></pre>
+<pre><code class="lang-js">const params = new URLSearchParams();
+params.append(&#39;param1&#39;, &#39;value1&#39;);
+params.append(&#39;param2&#39;, &#39;value2&#39;);
+axios.post(&#39;/adata&#39;, params).then((ret) =&gt; {
+  console.log(ret.data);
+});
+</code></pre>
+</li>
+</ul>
+</li>
+<li>put 传递参数
+put 传递参数<ul>
+<li>通过选项传递参数(默认 json)</li>
+<li>通过 URLSearchParams 传递参数（application/x-www-form-urlencoded）<pre><code class="lang-js">axios
+  .put(&#39;/adata&#39;, {
+      uname: &#39;jelly&#39;,
+      pwd: 123,
+  })
+  .then((ret) =&gt; {
+      console.log(ret.data);
+  });
+</code></pre>
+<pre><code class="lang-js">const params = new URLSearchParams();
+params.append(&#39;param1&#39;, &#39;value1&#39;);
+params.append(&#39;param2&#39;, &#39;value2&#39;);
+axios.put(&#39;/adata&#39;, params).then((ret) =&gt; {
+  console.log(ret.data);
+});
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="axios-">axios 响应结果</h4>
+<ul>
+<li>data：实际响应回来的数据</li>
+<li>headers：响应头部</li>
+<li>status：响应状态码</li>
+<li>statusText：响应状态信息</li>
+</ul>
+<h4 id="axios-">axios 全局配置</h4>
+<ul>
+<li>axios.defaults.timeout=3000;超时时间</li>
+<li>axios.defaults.baseURL=&#39;<a href="http://localhost:3000/app&#39;;默认地址">http://localhost:3000/app&#39;;默认地址</a></li>
+<li>axios.defaults.headers[&#39;mytoken&#39;]=&#39;asfa5s4f5a4f5a&#39;;设置请求头</li>
+</ul>
+<h4 id="axios-">axios 拦截器</h4>
+<ol>
+<li>请求拦截器
+在请求之前设置一些信息<pre><code class="lang-js">axios.interceptors.request.use(
+    function (config) {
+        //在请求之前设置一些信息
+        return config;
+    },
+    function (err) {
+        //处理错误信息
+    }
+);
+</code></pre>
+</li>
+<li>响应拦截器
+在获取数据前对数据做一些加工处理<pre><code class="lang-js">axios.interceptors.response.use(
+    function (res) {
+        //在获取数据前对数据做一些加工处理
+        return res;
+    },
+    function (err) {
+        //处理错误信息
+    }
+);
+</code></pre>
+</li>
+</ol>
+<h3 id="-async-await-">接口调用-async/await 用法</h3>
+<h4 id="-">基本用法</h4>
+<ul>
+<li>async/await 是 es7 引入的新语法，可以更方便的进行异步操作</li>
+<li>async 关键字用于函数上（async 函数的返回值是 Promise 实例对象）</li>
+<li>await 关键字用于 async 函数当中（await 可以得到异步的结果）</li>
+</ul>
+<pre><code class="lang-js">async function queryData(id) {
+    const ret = await axios.get(&#39;/data&#39;);
+    return ret;
+}
+queryData.then((ret) =&gt; {
+    console.log(ret);
+});
+</code></pre>
+<h4 id="-">处理多个异步请求</h4>
+<pre><code class="lang-js">async function queryData(id) {
+    const info = await axios.get(&#39;/async&#39;);
+    const ret = await axios.get(&#39;/data?info=&#39; + info.data);
+    return ret;
+}
+queryData.then((ret) =&gt; {
+    console.log(ret);
+});
+</code></pre>
+<h2 id="vue-">vue 路由</h2>
+<h3 id="-">路由的基本概念与原理</h3>
+<p>路由的本质就是对应关系</p>
+<ul>
+<li>后端路由<ul>
+<li>概念：根据不同的用户请求，返回不同的内容</li>
+<li>本质：URL 请求地址与服务器资源之间的对应关系</li>
+</ul>
+</li>
+<li>前端路由<ul>
+<li>概念：根据不同的用户事件，显示不同的页面内容</li>
+<li>本质：用户事件与事件处理函数之间的对应关系</li>
+</ul>
+</li>
+</ul>
+<h3 id="vue-router-">vue-router 的基本使用</h3>
+<ol>
+<li><p>功能：</p>
+<ul>
+<li>支持 HTML5 历史模式或 hash 模式</li>
+<li>支持嵌套路由</li>
+<li>支持路由参数</li>
+<li>支持编程式路由</li>
+<li>支持命名路由</li>
+</ul>
+</li>
+<li><p>使用步骤：</p>
+<ol>
+<li>引入相关的库文件<pre><code class="lang-js">//1.导入vue文件
+//2.导入vue-router文件
+</code></pre>
+</li>
+<li>添加路由链接<pre><code class="lang-html">&lt;!-- router-link是vue中提供的标签，默认会被渲染为a标签 --&gt;
+&lt;!-- to属性默认会被渲染为href属性 --&gt;
+&lt;!-- to属性的默认值会被渲染为#开头的hash地址 --&gt;
+&lt;router-link to=&quot;/user&quot;&gt;User&lt;/router-link&gt;
+&lt;router-link to=&quot;/register&quot;&gt;Register&lt;/router-link&gt;
+</code></pre>
+</li>
+<li>添加路由填充位<pre><code class="lang-html">&lt;!-- 路由填充位 --&gt;
+&lt;!-- 将来通过规则匹配到的组件，将会被渲染到router-view所在位置 --&gt;
+&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre>
+</li>
+<li>定义路由组件<pre><code class="lang-js">var User = {
+    template: &#39;&lt;div&gt;User&lt;/div&gt;&#39;,
+};
+var Register = {
+    template: &#39;&lt;div&gt;Register&lt;/div&gt;&#39;,
+};
+</code></pre>
+</li>
+<li>配置路由规划并创建路由实例<pre><code class="lang-js">var router = new VueRouter({
+    //routes是规则数组
+    routes: [
+        //每个路由规则都是一个配置对象，其中至少包含path和component两个属性
+        //path表示当前路由规则匹配的hash地址
+        //component表示当前路由规则对应要展示的组件
+        { path: &#39;/user&#39;, component: User },
+        { path: &#39;/register&#39;, component: Register },
+    ],
+});
+</code></pre>
+</li>
+<li>把路由挂载到 Vue 实例中<pre><code class="lang-js">new Vue({
+    el: &#39;#app&#39;,
+    //为了能够让路由规则生效，必须把路由对象挂载到vue实例对象上
+    router,
+});
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>路由重定向</p>
+<p>路由重定向指的是：用户在访问地址 A 的时候，强制用户跳转到地址 C，conger 展示特定的组件页面</p>
+<p>通过路由规则的 redirect 属性，指定一个新的路 地址，可以很方便的设置路由的重定向</p>
+<pre><code class="lang-js">var router = new VueRouter({
+    //routes是规则数组
+    routes: [
+        { path: &#39;/&#39;, redirect: &#39;/user&#39; },
+        { path: &#39;/user&#39;, component: User },
+        { path: &#39;/register&#39;, component: Register },
+    ],
+});
+</code></pre>
+</li>
+</ol>
+<h3 id="vue-router-">vue-router 嵌套路由</h3>
+<ol>
+<li>嵌套路由功能分析<ul>
+<li>点击父级路由链接显示模板内容</li>
+<li>模板内容中又有自己路由链接</li>
+<li>点击子级路由链接显示子级模板内容</li>
+</ul>
+</li>
+</ol>
+<h3 id="vue-router-">vue-router 动态路由匹配</h3>
+<p>应用场景：通过动态路由参数的模式进行路由匹配</p>
+<pre><code class="lang-js">var router = new VueRouter({
+    routes: [{ path: &#39;/user/:id&#39;, component: User }],
+});
+const User = {
+    //路由组件中通过$route.params获取路由参数
+    template: &#39;&lt;div&gt;User{{$route.params.id}}&lt;/div&gt;&#39;,
+};
+</code></pre>
+<pre><code class="lang-js">var router = new VueRouter({
+    //如果props被设置为true，route.params将会被设置为组件属性
+    routes: [{ path: &#39;/user/:id&#39;, component: User },props:true],
+});
+const User = {
+    props:[&#39;id&#39;], //使用props接收参数
+    template: &#39;&lt;div&gt;User{{id}}&lt;/div&gt;&#39;,
+};
+</code></pre>
+<h3 id="vue-router-">vue-router 命名路由</h3>
+<p>为了更加方便的表示路由的路径，可以给路由规则起一个别名，即为“命名路由”。</p>
+<pre><code class="lang-js">const router = new VueRouter({
+    routes: [
+        {
+            path: &#39;/user/:id&#39;,
+            name: &#39;user&#39;,
+            component: User,
+        },
+    ],
+});
+</code></pre>
+<pre><code class="lang-html">&lt;router-link :to=&quot;{name:&#39;user&#39;,params:{id:1}}&quot;&gt;&lt;/router-link&gt;
+</code></pre>
+<h3 id="vue-router-">vue-router 编程式导航</h3>
+<ul>
+<li>声明式导航：通过点击链接实现导航的方式，叫做声明式导航
+例如：普通网页中的<a></a>链接或 Vue 中的<router-link></router-link></li>
+<li>编程式导航：通过 JavaScript 形式的 API 实现导航的方式
+例如：普通网页中的 location.href</li>
+</ul>
+<p>常见的编程式导航 API：</p>
+<ul>
+<li>this.$router.push(&#39;hash 地址&#39;)</li>
+<li>this.$router.go(n)</li>
+</ul>
+<pre><code class="lang-js">const User = {
+    template: &#39;&lt;div&gt;&lt;button @click=&quot;goRegister&quot;&gt;跳转到注册页面&lt;/button&gt;&lt;/div&gt;&#39;,
+    methods: {
+        goRegister: function () {
+            //用编程的方式控制路由跳转
+            this.$router.push(&#39;/register&#39;);
+        },
+    },
+};
+</code></pre>
+<pre><code class="lang-js">//后退
+
+[methods:{
+    goBack(){
+        this.$router.go(-1)
+    }
+}]
+</code></pre>
+<h2 id="-">前端工程化</h2>
+<h3 id="-">模块化相关规划</h3>
+<ul>
+<li>传统开发模式的主要问题<ol>
+<li>命名冲突</li>
+<li>文件依赖</li>
+</ol>
+</li>
+<li><p>解决方法</p>
+<ul>
+<li>模块化就是把单独的一个功能封装到一个模块文件中，模块之间相互隔离，但是可以通过特定的接口公开内部成员，也可以依赖别的模块</li>
+<li>模块化的好处：方便代码的重用，从而提升开发效率，方便后期维护</li>
+</ul>
+</li>
+<li><p>es6 模块化规范定义</p>
+<ul>
+<li>每个 js 文件都是一个独立的模块</li>
+<li>导入模块成员使用 import 关键字</li>
+<li>暴露模块成员使用 export 关键字</li>
+</ul>
+</li>
+</ul>
+<h4 id="node-js-babel-es6-">node.js 中通过 babel 体验 es6 模块化</h4>
+<ol>
+<li><pre><code>npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/node
+</code></pre></li>
+<li><pre><code>npm install --save @babel/polyfill
+</code></pre></li>
+<li>项目中创建文件 babel.config.js</li>
+<li>babel.config.js 文件内容：<pre><code class="lang-js">const presets = [
+    [
+        &#39;@babel/env&#39;,
+        {
+            targets: {
+                edge: &#39;17&#39;,
+                firefox: &#39;60&#39;,
+                chrome: &#39;67&#39;,
+                safari: &#39;11.1&#39;,
+            },
+        },
+    ],
+];
+module.exports = presets;
+</code></pre>
+</li>
+<li>通过 npx babel-node index.js 执行代码</li>
+</ol>
+<h4 id="es6-">es6 模块化的基本语法</h4>
+<ol>
+<li><p>默认导出、导入</p>
+<ul>
+<li><p>默认导出语法 export default 默认导出的成员</p>
+<pre><code class="lang-js">//当前文件模块 m1.js
+
+//定义私有成员 a 和 b
+let a=10
+let b=20
+//外界访问不到变量 c ,因为它没有暴露出去
+let c=30
+function shou(){}
+
+//将本模块中的私有成员暴露出去，供其它模块使用
+export dafault{
+    a,b,show
+}
+</code></pre>
+</li>
+<li><p>默认导入语法 import 接收名称 from‘模块标识符’</p>
+<pre><code class="lang-js">//导入模块成员
+import m1 from &#39;./m1.js&#39;;
+
+console.log(m1);
+//打印结果为：
+//{a:10,b:20,show:[Function:show]}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>按需导出导入</p>
+<ul>
+<li><p>按需导出语法 export let s1 = 10</p>
+<pre><code class="lang-js">//当前文件模块为m1.js
+
+//向外按需导出变量s1
+export let s1=&#39;aaa&#39;
+//向外按需导出变量s2
+export let s2=&#39;ccc&#39;
+//向外按需导出方法say
+export function say=function(){}
+
+</code></pre>
+</li>
+<li><p>按需导入语法 import{s1} from‘模块标识符’</p>
+<pre><code class="lang-js">//导入模块成员
+import { s1, s2, as, ss2, say } from &#39;./m1.js&#39;;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>直接导入并执行模块代码</p>
+<pre><code class="lang-js">//当前文件模块为m2.js
+
+//在当前模块中执行一个for循环操作
+for (let i = 0; i &lt; 3; i++) {
+    console.log(i);
+}
+</code></pre>
+<pre><code class="lang-js">//直接导入并执行模块代码
+import &#39;./m2.js&#39;;
+</code></pre>
+</li>
+</ol>
+<h3 id="webpack">webpack</h3>
+<p>webpack 提供了友好的模块化支持，以及代码压缩混淆、处理 js 兼容问题、性能优化等功能</p>
+<h4 id="webpack-">webpack 的基本使用</h4>
+<ol>
+<li>创建列表隔行变色项目<ol>
+<li>新建项目空目录，并运行 npm init -y 命令，初始化包管理配置文件 package.json</li>
+<li>新建 src 源代码目录</li>
+<li>新建 src-&gt;index.html 首页</li>
+<li>初始化首页基本的结构</li>
+<li>运行 npm i jquery -s 命令，安装 jQuery</li>
+<li>通过模块化方式，实现效果</li>
+</ol>
+</li>
+<li>在项目中安装和配置 webpack<ol>
+<li>运行 npm i webpack webpack-cli -D 命令，安装 webpack 相关包</li>
+<li>在项目根目录中，创建名为 webpack.congig.js 的 webpack 配置文件</li>
+<li>在 webpack 配置文件中初始化如下配置：<pre><code class="lang-js">module.exports = {
+    mode: &#39;development&#39;, //mode用来指定构建模式。。。。production/development
+};
+</code></pre>
+</li>
+<li>在 package.json 配置文件中的 script 节点下，新增 dev 脚本如下：<pre><code class="lang-js">&quot;scripts&quot;:{
+    &quot;dev&quot;:&quot;webpack&quot;//script节点下的脚步，可以通过npm run执行
+}
+</code></pre>
+</li>
+<li>在终端运行 npm run dev 命令，启动 webpack 进行项目打包</li>
+</ol>
+</li>
+<li>配置打包的入口与出口
+webpack 的 4.x 版本默认约定：<ul>
+<li>入口：src-&gt;index.js</li>
+<li>出口：dist-&gt;main.js</li>
+<li>如果需要修改打包的入口、出口，可以在 webpack.config.js 中新增如下配置：<pre><code class="lang-js">const path = require(&#39;path&#39;); //导入node.js中操作路径的模块
+module.exports = {
+    entry: path.join(__dirname, &#39;./src/index.js&#39;), //打包入口文件的路径
+    output: {
+        path: path.join(__dirname, &#39;./dist&#39;), //输出文件的存放路径
+        filename: &#39;bundle.js&#39;, //输出文件的名称
+    },
+};
+</code></pre>
+</li>
+</ul>
+</li>
+<li>webpack 的自动打包功能<ol>
+<li>运行 npm i webpack-dev-server -D 命令，安装支持自动打包的工具</li>
+<li>修改 package.json-&gt;script 中的 dev 命令如下：<pre><code class="lang-js">&quot;scripts&quot;:{
+    &quot;dev&quot;:&quot;webpack-dev-server&quot;//script节点下的脚本，可以通过npm run 执行
+}
+</code></pre>
+</li>
+<li>将 src-&gt;index.html 中，script 脚本的引用路径，修改为“/buldle.js”</li>
+<li>运行 npm run dev 命令，重新进行打包</li>
+<li>在浏览器中访问 <a href="http://localhost:8080">http://localhost:8080</a> 地址</li>
+</ol>
+</li>
+<li>配置 html-webpack-plugin 生成预览页面<ol>
+<li>运行 npm i html-webpack-plugin -D 命令，安装生成预览页面的插件</li>
+<li>修改 webpack.config.js 文件头部区域，添加如下配置信息：<pre><code class="lang-js">//导入生成预览页面的插件，得到一个构造函数
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;);
+const htmlPlugin = new HtmlWebpackPlugin({
+    template: &#39;./src/index.html&#39;, //指定要用到的模板文件
+    filename: &#39;index.html&#39;, //指定生成的文件的名称，该文件存放于内存中，在目录中不显示
+});
+</code></pre>
+</li>
+<li>修改 webpack.config.js 文件中向外暴露的配置对象，新增如下配置节点<pre><code class="lang-js">module.exports = {
+    plugins: [htmlPlugin], //plugins数组是webpack打包期间会用到的一些插件列表
+};
+</code></pre>
+</li>
+</ol>
+</li>
+<li>怕配置自动打包相关的参数<pre><code class="lang-js">//package.json中的配置
+//--open 打包完成后自动打开浏览器
+//--host 配置IP地址
+//--port 配置端口
+&quot;scripts&quot;:{
+    &quot;dev&quot;:&quot;webpack-dev-server --open --host 127.0.0.1 --port 8888&quot;,
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="webpack-">webpack 中的加载器</h4>
+<ol>
+<li>通过 loader 打包非 js 模块<ul>
+<li>less-loader 可以打包处理.less 相关的文件</li>
+<li>sass-loader 可以打包处理.scss 相关文件</li>
+<li>url-loader 可以打包处理 css 中与 url 路径相关的文件</li>
+</ul>
+</li>
+<li>基本使用<ol>
+<li>打包处理 css 文件<ol>
+<li>运行 npm i style-loader css-loader -D 命令，安装 css 文件的 loader</li>
+<li>在 webpack.config.js 的 module-&gt;rules 数组中，添加 loader 规则如下：<pre><code class="lang-js">//test表示匹配的文件类型，use表示对应要调用的loader
+module: {
+    ruler: [{ test: /\.css$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;] }];
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>打包处理 less 文件<ol>
+<li>运行 npm i less-loader less -D 命令</li>
+<li>在 webpack.config.js 的 module-&gt;rules 数组中，添加 loader 规则如下：<pre><code class="lang-js">//test表示匹配的文件类型，use表示对应要调用的loader
+module: {
+    ruler: [
+        {
+            test: /\.less$/,
+            use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;less-loader&#39;],
+        },
+    ];
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>打包处理 scss 文件<ol>
+<li>运行 npm i sass-loader node-sass -D 命令</li>
+<li>在 webpack.config.js 的 module-&gt;rules 数组中，添加 loader 规则如下：<pre><code class="lang-js">//test表示匹配的文件类型，use表示对应要调用的loader
+module: {
+    ruler: [
+        {
+            test: /\.sass$/,
+            use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;sass-loader&#39;],
+        },
+    ];
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>配置 postCSS 自动添加 css 的兼容前缀<ol>
+<li>运行 npm i postcss-loader autoprefixer -D 命令</li>
+<li>在项目根目录中创建 postcss 的配置文件 postcss.config.js，并初始化如下配置：<pre><code class="lang-js">const autoprefixer = require(&#39;autoprefixer&#39;); //导入自动添加前缀的插件
+module.exports = {
+    plugins: [autoprefixer], //挂载插件
+};
+</code></pre>
+</li>
+<li>在 webpack.config.js 的 module-&gt;rules 数组中，添加 loader 规则如下：<pre><code class="lang-js">//test表示匹配的文件类型，use表示对应要调用的loader
+module: {
+    ruler: [
+        {
+            test: /\.css$/,
+            use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;postcss-loader&#39;],
+        },
+    ];
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>打包样式表中的图片和字体文件<ol>
+<li>运行 npm i url-loader file-loader -D 命令</li>
+<li>在 webpack.config.js 的 module-&gt;rules 数组中，添加 loader 规则如下：<pre><code class="lang-js">module: {
+    ruler: [
+        {
+            test: /\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/,
+            use: &#39;url-loader?limit=16940&#39;, //其中 ? 之后的是loader的参数项。
+            //limit用来指定图片的大小，单位byte
+        },
+    ];
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>打包处理 js 文件中的高级语法<ol>
+<li>安装 babel 转换器相关的包：npm i babel-loader @babel/core @babel/runtime -D</li>
+<li>安装 babel 语法插件相关的包：npm i @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D</li>
+<li>在项目根目录中，创建 babel 配置文件 babel.config.js 并初始化配置如下：<pre><code class="lang-js">module.exports = {
+    presets: [&#39;@babel/preset-env&#39;],
+    plugins: [
+        &#39;@babel/plugin-transform-runtime&#39;,
+        &#39;@babel/plugin-proposal-class-properties&#39;,
+    ],
+};
+</code></pre>
+</li>
+<li>在 webpack.config.js 的 module-&gt;rules 数组中，添加 loader 规则如下：<pre><code class="lang-js">//exclude为排除项，表示babel-loader不需要处理node_modules中的js文件
+{test:/\.js$/,use:&#39;babel-loader&#39;,exclude:/node_modules/}
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="vue-">Vue 单文件组件</h3>
+<p>单文件组件：</p>
+<ul>
+<li>template 组件的模板区域</li>
+<li>script 业务逻辑区域</li>
+<li>style 样式区域</li>
+</ul>
+<pre><code class="lang-html">&lt;template&gt;
+    &lt;!-- 定义Vue组件的模板内容 --&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    // 定义Vue组件的业务逻辑
+    export default {
+        data() {
+            return {};
+        }, //私有数据
+        methods: {}, //处理函数
+        //。。。其他业务逻辑
+    };
+&lt;/script&gt;
+&lt;style scoped&gt;
+    /* 定义组件的样式 */
+&lt;/style&gt;
+</code></pre>
+<ul>
+<li>在 webpack 中配置 vue 组件的加载器<ol>
+<li>运行 npm i vue-loader vue-template-compiler -D 命令</li>
+<li>在 webpack.config.js 配置文件中，添加 vue-loader 的配置如下：<pre><code class="lang-js">const VueLoaderPlugin = require(&#39;vue-loader/lib/plugin&#39;);
+module.exports = {
+    modules: {
+        rules: [
+            //其他规则
+            { test: /\.vue$/, loader: &#39;vue-loader&#39; },
+        ],
+    },
+    plugins: [
+        //...其他插件
+        new VueLoaderPlugin(),
+    ],
+};
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>在 webpack 项目中使用 Vue</p>
+<ol>
+<li>运行 npm i vue -s 安装 vue</li>
+<li>在 src-&gt;index.js 入口文件中，通过 import Vue from &#39;vue&#39; 来导入 vue 构造函数</li>
+<li>创建 vue 的实例对象，并指定要控制的 el 区域</li>
+<li><p>通过人的人函数渲染 App 跟组件</p>
+<pre><code class="lang-js">//导入Vue构造函数
+import Vue from &#39;vue&#39;;
+//导入app组件
+import App from &#39;./components/App.vue&#39;;
+
+const vm = new Vue({
+    el: &#39;#app&#39;,
+    //通过render函数，把指定的组件渲染到el区域中
+    render: (h) =&gt; h(App),
+});
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>webpack 打包发布</p>
+<pre><code class="lang-js">//在package.json文件中配置webpack打包命令
+//该命令默认加载根目录中的webpack.config.js配置文件
+&quot;scripts&quot;:{
+    //用于打包的命令
+    &quot;build&quot;:&quot;webpack -p&quot;,
+
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="vue-">Vue 脚手架</h3>
+<p>用于快速生成 Vue 项目基础架构</p>
+<h4 id="-">安装</h4>
+<pre><code>npm install -g @vue/cli
+</code></pre><h4 id="-">创建项目</h4>
+<pre><code>&lt;!-- 1. 基于交互式命令行的方式，创建新版vue项目 --&gt;
+vue create my-project
+
+&lt;!-- 2. 基于图形化界面的方式，创建新版vue项目 --&gt;
+vue ui
+
+&lt;!-- 基于2.x的旧模板，创建旧版vue项目 --&gt;
+npm install -g @vue/cli-init
+vue init webpack my-project
+</code></pre><h4 id="-">脚手架自定义配置</h4>
+<ol>
+<li>在项目的根目录创建文件 vue.config.js</li>
+<li>在该文件中进行相关配置，从而覆盖默认配置<pre><code class="lang-js">module.exports = {
+    devServer: {
+        port: 8888,
+        open: true,
+    },
+};
+</code></pre>
+</li>
+</ol>
+<h3 id="element-ui-">Element-UI 的基本使用</h3>
+<h4 id="-">安装</h4>
+<ol>
+<li>安装依赖包 npm i element-ui -S</li>
+<li>导入 Element-UI 相关资源<pre><code class="lang-js">//导入组件库
+import ElementUI from &#39;element-ui&#39;;
+//导入组件相关样式
+import &#39;element-ui/lib/theme-chalk/index.css&#39;;
+//配置Vue插件
+Vue.use(ElementUI);
+</code></pre>
+</li>
+</ol>
+<h2 id="veux">veux</h2>
+<p>是实现组件全局状态（数据）管理的一种机制，可以方便的实现组件之间数据的共享</p>
+<h3 id="vuex-">vuex 的基本使用</h3>
+<ol>
+<li>安装依赖包<pre><code>npm i vuex --save
+</code></pre></li>
+<li>导入 vuex 包<pre><code class="lang-js">import Vuex from &#39;vuex&#39;;
+Vue.use(Vuex);
+</code></pre>
+</li>
+<li>创建 store 对象<pre><code class="lang-js">const store = new Vuex.store({
+    //state 中存放的就是全局共享数据
+    state: {
+        count: 0,
+    },
+});
+</code></pre>
+</li>
+<li>将 store 对象挂载到 vue 实例中<pre><code class="lang-js">new Vue({
+    el: &#39;#app&#39;,
+    store,
+});
+</code></pre>
+</li>
+</ol>
+<h3 id="vuex-">vuex 的核心概念</h3>
+<ul>
+<li><p>state：提供唯一的公共数据源，所有共享的数据都要统一放到 store 的 state 中进行存储</p>
+<ul>
+<li><p>组件访问 state 中数据的方式：</p>
+<ol>
+<li><pre><code class="lang-js">this.$store.state.全局数据名称;
+</code></pre>
+</li>
+<li><code>`</code>js
+//从vuex中按需导入mapState函数
+import {mapState} from &#39;vuex&#39;</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    //将全局数据，映射为当前组件的计算属性
+    new Vue({
+        el: &#39;#app&#39;,
+        store,
+        computed:{
+            ...mapState({&#39;count&#39;})
+        }
+    })
+    ```
+</code></pre><ul>
+<li><p>mutation：用于修改 store 中的数据，可以监控数据的变化
+<strong>mutation 代码中不能写异步代码</strong></p>
+<pre><code class="lang-js">//定义mutation
+const store = new Vuex.store({
+    //state 中存放的就是全局共享数据
+    state: {
+        count: 0,
+    },
+    mutations: {
+        add(state) {
+            //变更状态
+            state.count++
+        },
+    },
+})
+
+//触发mutation
+methods:{
+    handle1(){
+        //触发方式1
+        this.$store.commit(&#39;add&#39;)
+    }
+}
+
+//带参数的mutation
+mutations: {
+        addN(state,step) {
+            //变更状态
+            state.count += step
+        },
+    },
+methods:{
+    handle1(){
+        //触发方式1
+        this.$store.commit(&#39;addN&#39;,3)
+    }
+}
+</code></pre>
+<ul>
+<li><p>触发 mutation 的第二种方法</p>
+<pre><code class="lang-js">//按需导入mapMutations
+import {mapMutations} from &#39;vuex&#39;
+
+//映射到methods函数
+methods:{
+    ...mapMutations({&#39;add&#39;,&#39;addN&#39;})
+    addHandler(){
+        this.add()
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>action：用于处理异步任务</p>
+<pre><code class="lang-js">//定义action
+const store = new Vuex.store({
+    //state 中存放的就是全局共享数据
+    state: {
+        count: 0,
+    },
+    mutations: {
+        add(state) {
+            //变更状态
+            state.count++;
+        },
+    },
+    action: {
+        addAsync(context) {
+            setTimeout(() =&gt; {
+                context.commit(&#39;add&#39;);
+            }, 1000);
+        },
+    },
+});
+
+//触发action
+this.$store.dispatch(&#39;addAsync&#39;);
+</code></pre>
+<ul>
+<li>第二种触发</li>
+</ul>
+<pre><code class="lang-js">    //按需导入mapMutations
+    import {mapActions} from &#39;vuex&#39;
+
+    //映射到methods函数
+    methods:{
+        ...mapActions({&#39;addAsync&#39;})
+        addAsyncHandler(){
+            this.addAsync()
+        }
+    }
+
+</code></pre>
+</li>
+<li><p>getter：用于对 store 中的数据进行加工形成新的数据</p>
+<pre><code class="lang-js">//定义getter
+const store = newVuex.store({
+    state: {
+        count: 0,
+    },
+    getters: {
+        showNum: (state) =&gt; {
+            return &#39;当前最新的数量是【&#39; + state.count + &#39;】&#39;;
+        },
+    },
+});
+//用法同state
+</code></pre>
+</li>
+</ul>
+<h2 id="react">React</h2>
+<p>用于构建用户界面的 JavaScript 库
+特点：</p>
+<ul>
+<li>声明式</li>
+<li>基于组件</li>
+<li>学习一次，随处使用</li>
+</ul>
+<h3 id="-">基本使用</h3>
+<ul>
+<li><p>安装</p>
+<pre><code>npm i react react-dom
+</code></pre><ol>
+<li>引入 react 和 react-dom 两个 js 文件</li>
+<li>创建 react 元素<pre><code class="lang-js">const title = React.createElement(&#39;h1&#39;, null, &#39;Hello React&#39;);
+</code></pre>
+</li>
+<li><p>渲染 react 元素到页面中</p>
+<pre><code class="lang-html">&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    //参数一：元素名称
+    //参数二：元素属性
+    //参数三及之后：元素的子节点
+    const title = React.createElement(&#39;h1&#39;, null, &#39;Hello React&#39;);
+    //渲染元素
+    //参数一：要渲染的元素
+    //参数二：挂载点
+    ReactDom.render(title, document.getElementById(&#39;root&#39;));
+&lt;/script&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="jsx">JSX</h2>
+<p>JavaScript XML 的简写</p>
+<h3 id="-">基本使用</h3>
+<ol>
+<li>使用 jsx 创建 react 元素<pre><code class="lang-jsx">const title = &lt;h1&gt;Hello&lt;/h1&gt;;
+</code></pre>
+</li>
+<li>使用 ReactDOM.render()方法渲染 react 元素到页面中<pre><code class="lang-jsx">ReactDOM.render(title, root);
+</code></pre>
+</li>
+<li>注意点<ol>
+<li>React 元素的属性名使用驼峰命名法</li>
+<li>特殊属性名：class-&gt;className\for-&gt;htmlFor\tabindedx-&gt;tabIndex</li>
+<li>没有子节点的元素可以使用‘/&gt;’结束</li>
+</ol>
+</li>
+</ol>
+<h3 id="-jsx-javascript">在 JSX 中使用 JavaScript</h3>
+<ul>
+<li>数据存储在 js 中</li>
+<li>语法{JavaScript 表达式}</li>
+<li>注意点<ul>
+<li>{}中可以使用任意合法的 js 表达式</li>
+<li>jsx 自身也是 js 表达式</li>
+<li>对象是个例外</li>
+<li>不能再{}中出现语句（if、for 等）</li>
+</ul>
+</li>
+</ul>
+<h3 id="jsx-">jsx 条件渲染</h3>
+<ul>
+<li>根据条件渲染特定的 jsx 结构</li>
+</ul>
+<pre><code class="lang-js">const loadData = () =&gt; {
+    if (isLoading) {
+        return &lt;div&gt;加载中。。。&lt;/div&gt;;
+    }
+    return &lt;div&gt;加载完成&lt;/div&gt;;
+};
+const dv = &lt;div&gt;{loadData()}&lt;/div&gt;;
+</code></pre>
+<h3 id="jsx-">jsx 列表渲染</h3>
+<ul>
+<li>如果要渲染一组数据，应该要使用数组的 map()方法</li>
+<li>注意：渲染列表时应该添加 key 属性，key 属性值要唯一</li>
+<li>原则：map()遍历谁，就给谁添加 key 属性</li>
+<li>注意：尽量避免使用索引作为 key</li>
+</ul>
+<pre><code class="lang-js">const songs=[
+    {id:1,name:&#39;a&#39;},
+    {id:2,name:&#39;b&#39;},
+    {id:3,name:&#39;c&#39;},
+]
+const list=(
+    &lt;ul&gt;
+        {songs.map(item=&gt;&lt;li key={item.id}&gt;{item.name}&lt;li/&gt;)}
+    &lt;/ul&gt;
+)
+</code></pre>
+<h3 id="-">样式处理</h3>
+<ol>
+<li>行内样式-style</li>
+<li>类名-className</li>
+</ol>
+<h2 id="react-">React 组件</h2>
+<h3 id="-">组件介绍</h3>
+<ul>
+<li>组件是 React 的一等公民</li>
+<li>组件表示页面的部分功能</li>
+<li>特点：可复用、独立、可组合</li>
+</ul>
+<h3 id="-">组件的两种创建方式</h3>
+<ol>
+<li>使用函数创建组件<ul>
+<li>函数组件：使用 js 的函数创建的组件</li>
+<li>约定一：函数名必须以大写字母开头</li>
+<li>约定二：函数组件必须有返回值，表示该组件的结构<pre><code class="lang-js">function Hello() {
+  return &lt;div&gt;hello components&lt;/div&gt;;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>使用类创建组件<ul>
+<li>类组件：使用 es6 的 class 创建的组件</li>
+<li>约定一：类名大写开头</li>
+<li>约定二：应该继承 React.Component 父类</li>
+<li>约定三：必须提供 render()方法</li>
+<li>约定四：render 方法必须有返回值<pre><code class="lang-js">class Hello extends React.Component {
+  render() {
+      return &lt;div&gt;Hello class component&lt;/div&gt;;
+  }
+}
+ReactDOM.render(&lt;Hello /&gt;, root);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>抽离为独立 js 文件<ol>
+<li>创建 js 文件</li>
+<li>在文件中导入 React</li>
+<li>创建组件</li>
+<li>在文件中导出组件</li>
+<li>在 index.js 中导入组件</li>
+<li>渲染组件</li>
+</ol>
+</li>
+</ol>
+<h3 id="-">事件处理</h3>
+<ul>
+<li>事件绑定<ul>
+<li>语法：on+事件名称={事件处理程序}<pre><code class="lang-js">class App extends React.Component {
+  handleClick() {
+      console.log(&#39;单击事件触发了&#39;);
+  }
+  render() {
+      return &lt;button onclick={this.handleClick}&gt;&lt;/button&gt;;
+  }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>事件对象</p>
+<ul>
+<li>可以通过事件处理程序的参数获取到事件对象</li>
+<li>React 中的事件对象叫做：合成事件（对象）</li>
+<li>合成事件：兼容所有浏览器</li>
+</ul>
+<pre><code class="lang-js">function handleClick(e) {
+    e.preventDefalut();
+    console.log(&#39;事件对象&#39;, e);
+}
+&lt;a onClick={handleClick}&gt;&lt;/a&gt;;
+</code></pre>
+</li>
+</ul>
+<h3 id="-">有状态组件和无状态组件</h3>
+<ul>
+<li>函数组件又叫做无状态组件，类组件又叫做有状态组件</li>
+<li>状态（state）即数据</li>
+<li>函数组件没有自己的状态，只负责数据显示（静）</li>
+<li>类组件有自己的状态，负责更新 UI（动）</li>
+</ul>
+<h3 id="-state-setstate">组件中的 state 和 setState</h3>
+<ol>
+<li>state 的基本使用<ul>
+<li>状态是组件内部的私有数据，只能在组件内部使用</li>
+<li>state 的值是对象，表示一个组件中可以有多个数据<pre><code class="lang-js">class App extends React.Component {
+  //constructor() {
+  //    super();
+  //    //初始化state
+  //    this.state = {
+  //        count: 0,
+  //    };
+  //}
+  //简化语法
+  state = {
+      count: 0,
+  };
+  render() {
+      return &lt;div&gt;count:{this.state.count}&lt;/div&gt;;
+  }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>setState()修改状态<ul>
+<li>状态是可变的</li>
+<li>语法：this.setState({要修改的数据})</li>
+<li>注意：不能直接修改 state 中的值</li>
+<li>setState 作用：<ol>
+<li>修改 state</li>
+<li>更新 UI</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="-jsx-">从 jsx 中抽离事件处理程序</h4>
+<pre><code class="lang-js">class App extends React.Component {
+    onIncrement() {
+        this.setState({
+            count: this.state.count + 1,
+        });
+    }
+    render() {
+        return &lt;button onclick={() =&gt; this.onIncrement}&gt;&lt;/button&gt;;
+    }
+}
+</code></pre>
+<h3 id="-this-">事件绑定 this 指向</h3>
+<ul>
+<li>箭头函数自身不绑定 this</li>
+</ul>
+<h3 id="-">表单处理</h3>
+<ol>
+<li><p>受控组件</p>
+<ul>
+<li>html 的表单元素是可输入的，也就是自己的可变状态</li>
+<li>React 中可变状态通常保存在 state 中，并且只能通过 setState()方法来修改</li>
+<li>react 将 state 与表单元素值 value 绑定到一起，由 state 的值来控制表单元素的值</li>
+</ul>
+<pre><code class="lang-js">&lt;input type=&quot;text&quot; value={this.state.txt} /&gt;
+</code></pre>
+<ul>
+<li><p>使用：</p>
+<pre><code class="lang-js">state = { txt: &#39;&#39; };
+
+&lt;input
+    type=&quot;text&quot;
+    value={this.state.txt}
+    onChange={(e) =&gt; this.setState({ txt: e.target.value })}
+/&gt;;
+</code></pre>
+</li>
+<li><p>多表单元素优化</p>
+<ol>
+<li>给表单元素添加 name 属性，名称与 state 相同</li>
+<li>根据表单元素获取对应值</li>
+<li>在 change 事件处理程序中通过[name]来修改对应 state</li>
+</ol>
+<pre><code class="lang-js">handleChange = (e) =&gt; {
+    const target = e.target;
+
+    const value = target.type === &#39;checkbox&#39; ? target.checked : target.value;
+    const name = target.name;
+    this.setStare({
+        [name]: value,
+    });
+};
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>非受控组件（DOM 方式）</p>
+<ul>
+<li>借助 ref，使用原生 DOM 方式来获取表单元素</li>
+<li><p>ref 作用：获取 DOM 或组件</p>
+</li>
+<li><p>使用步骤：</p>
+<ol>
+<li>调用 React.createRef()方法创建一个 ref 对象<pre><code class="lang-js">const constructor(){
+    super()
+    this.txtRef=React.createRef()
+}
+</code></pre>
+</li>
+<li>将创建好的 ref 对象添加到文本框中<pre><code class="lang-js">&lt;input typr=&#39;text&#39; ref={this.txtRef}&gt;
+</code></pre>
+</li>
+<li>通过 ref 对象获取到文本框的值<pre><code class="lang-js">console.log(this.txtRef.current.value);
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="-">组件高阶</h2>
+<h3 id="-props">组件的 props</h3>
+<ul>
+<li>组件是封闭的，要接收外部数据应该通过 props 来实现</li>
+<li>props 的作用：接收传递给组件的数据</li>
+<li>传递数据：给组件标签添加属性<pre><code class="lang-js">&lt;Hello name=&quot;jack&quot; age={19} /&gt;
+</code></pre>
+</li>
+<li><p>接收数据：函数组件通过参数 props 接收数据，类组件通过 this.props 接收数据</p>
+<pre><code class="lang-js">//函数组件
+function Hello(props){contructor
+    console.log(props)
+    return &lt;div&gt;{props.name} &lt;div/&gt;
+}
+</code></pre>
+<pre><code class="lang-js">//类组件
+class Hello extends Reacct.Component{
+    render(){
+        return &lt;div&gt;{thsi.props.age}&lt;div/&gt;
+    }
+}
+
+</code></pre>
+</li>
+<li><p>特点：</p>
+<ol>
+<li>可以传递任意类型的数据</li>
+<li>props 是只读的对象，只能读取属性的值，无法修改对象</li>
+<li>注意：使用类组件时，如果写了构造函数，应该将 props 传递给 super()，否则，无法在构造函数中获得 props</li>
+</ol>
+</li>
+</ul>
+<h3 id="-">组件通讯的三种方式</h3>
+<ol>
+<li>父-&gt;子<ol>
+<li>父组件提供要传递到 state 数据</li>
+<li>给父组件添加属性，值为 state 中的数据</li>
+<li>子组件中通过 props 接收父组件中传递的数据<pre><code class="lang-js">class Parent extends React.Component{
+ state={lastName:&#39;ye&#39;}
+ render(){
+     return(
+         &lt;div&gt;
+             &lt;Child name={this.state.lastName}&gt;
+         &lt;div/&gt;
+     )
+ }
+}
+</code></pre>
+<pre><code class="lang-js">function Child(props){
+ return &lt;div&gt;{props.name}&lt;div/&gt;
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>子-&gt;父
+<strong>思路：利用回调函数，父组件提供回调，子组件调用，将要传递到数据作为回调函数的参数</strong><ol>
+<li>父组件提供一个回调函数（用于接收数据）</li>
+<li>将该函数作为属性的值，传递给子组件<pre><code class="lang-js">class Parent extends React.Component{
+  getChildMsg=(msg)=&gt;{
+      console.log(msg)
+  }
+  render(){
+      return (
+          &lt;div&gt;
+              &lt;Child getMsg={this.getChildMsg}&gt;
+          &lt;div/&gt;
+      )
+  }
+}
+</code></pre>
+</li>
+<li>子组件通过 props 调用回调函数</li>
+<li>将子组件的数据作为参数传递给回调函数<pre><code class="lang-js">class Child extends React.Component{
+ state={childMsg:&#39;React&#39;}
+ handleClick=()=&gt;{
+     this.props.getMsg(this.state.childMsg)
+ }
+ return (
+     &lt;button onclick={this.handleClick}&gt;&lt;button/&gt;
+ )
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>兄弟组件<ul>
+<li>将共享状态提升到最近的公共组件中，由公共父组件管理这个状态</li>
+<li>公共父组件职责：<ol>
+<li>提供共享状态</li>
+<li>提供操作共享状态的方法</li>
+</ol>
+</li>
+<li>子组件通过 props 操作</li>
+</ul>
+</li>
+</ol>
+<h3 id="context">Context</h3>
+<p><strong>作用：跨组件传递数据</strong></p>
+<ul>
+<li>使用步骤：<ol>
+<li>调用 React.createContext()创建 Provider 和 Consumer 两个组件<pre><code class="lang-js">const { Provider, Consumer } = React.createContext();
+</code></pre>
+</li>
+<li>使用 Provider 组件作为父节点<pre><code class="lang-js">&lt;Provider&gt;
+ &lt;div className=&#39;App&#39;&gt;
+     &lt;Child/&gt;
+ &lt;/div&gt;
+&lt;Provider/&gt;
+</code></pre>
+</li>
+<li>设置 value 属性，表示要传递的数据<pre><code class="lang-js">&lt;Provider value=&#39;pink&#39;&gt;
+</code></pre>
+</li>
+<li>调用 Consumer 组件接收数据<pre><code class="lang-js">&lt;Consumer&gt;{(data) =&gt; &lt;span&gt;{data}&lt;/span&gt;}&lt;/Consumer&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="props-">props 深入</h3>
+<ol>
+<li>children 属性<ul>
+<li>children 属性：表示组件标签的子节点。当组件标签有子节点时，props 就会有该属性</li>
+</ul>
+</li>
+<li>props 校验<ul>
+<li>对于组件来说，props 是外来的，无法保证组件使用者传入什么格式的数据</li>
+<li>安装 npm i props-types</li>
+<li>导入<pre><code class="lang-js">App.propTypes = {
+  //约束类型
+  colors: PropTypes.array,
+};
+</code></pre>
+</li>
+</ul>
+</li>
+<li>约束规则： 1. 常见类型：array\bool\func\number\object\string 2. React 元素类型：element 3. 必填项：isRequired 4. 特定结构的对象：shape({})</li>
+<li><p>props 默认值</p>
+</li>
+<li><p>场景：分页组件-&gt;每页显示条数</p>
+</li>
+</ol>
+<pre><code class="lang-js">function App(props) {
+    return &lt;div&gt;{props.pageSize}&lt;/div&gt;;
+}
+// 设置默认值
+App.defaultProps = {
+    pageSize: 10,
+};
+</code></pre>
+<h3 id="-">组件的生命周期</h3>
+<p><strong>意义：组件的声明周期有助于理解组件的运行方式，完成更复杂的组件功能，分析组件的错误原因</strong></p>
+<ul>
+<li>生命周期的每个阶段总是伴随着一些方法调用，这些方法就是生命周期的钩子函数</li>
+<li>只有类组件有生命周期</li>
+</ul>
+<h4 id="-">创建时</h4>
+<ul>
+<li>执行时机：组件创建时（页面加载）</li>
+<li>执行顺序：constructor()-&gt;render()-&gt;componentDidMount
+|钩子函数|触发时机|作用|
+|:---:|:---:|:---:|
+|constructor|创建组件时，最先执行|初始化 state、为事件处理函数绑定 this|
+|render|每次组件渲染时都会触发|渲染 UI（不能调用 setState()）|
+|componentDidMount|组件挂载（完成 DOM 渲染）后|发送网络请求、DOM 操作|</li>
+</ul>
+<h4 id="-">更新时</h4>
+<ul>
+<li>new props</li>
+<li>setState</li>
+<li>forecUpdate</li>
+<li>执行顺序：render-&gt;cpmonentDidUpdate()
+|钩子函数|触发时机|作用|
+|:---:|:---:|:---:|
+|componentDidUpdate|组件更新（完成 DOM 渲染）后|送网络请求、DOM 操作(setState()必须在 if 条件中)|</li>
+</ul>
+<h4 id="-">卸载时</h4>
+<ul>
+<li>组件从页面消失时
+|钩子函数|触发时机|作用|
+|:---:|:---:|:---:|
+|componentWillUnmount|组件从页面消失|执行清理工作|</li>
+</ul>
+<h3 id="render-props-">render-props 和高阶组件</h3>
+<ul>
+<li><p>组件复用的方法：</p>
+<ol>
+<li><p>render props 模式</p>
+</li>
+<li><p>使用步骤 ；</p>
+<ol>
+<li>创建组件，在组件中提供复用状态逻辑代码</li>
+<li>将要复用的状态作为 props.render(state)方法的参数，暴露到组件外部</li>
+<li>使用 props.render()的返回值作为要渲染的内容</li>
+<li>推荐用 children 代替 render</li>
+<li>优化：</li>
+<li>添加校验：函数、必填</li>
+<li>组件卸载时接触事件绑定</li>
+</ol>
+</li>
+<li><p>高阶组件（HOC）
+采用包装模式实现状态逻辑的复用</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="react-">React 原理</h2>
+<h3 id="setstate-">setState()的说明</h3>
+<ol>
+<li><p>更新数据</p>
+<ul>
+<li>是异步更新数据的</li>
+</ul>
+<pre><code class="lang-js">this.state = { count: 1 };
+this.setState({
+    count: this.state.count + 1,
+});
+console.log(this.state.count); //1
+</code></pre>
+<ul>
+<li>后面的 setState()不要依赖前面的 setState()</li>
+<li>可以调用多次 setState()，只会触发一次重新渲染</li>
+</ul>
+</li>
+<li><p>推荐语法</p>
+<ul>
+<li>使用 setState((state,props)=&gt;{})语法<pre><code class="lang-js">this.setState((state, pprops) =&gt; {
+  return {
+      count: state.count + 1,
+  };
+});
+</code></pre>
+</li>
+</ul>
+</li>
+<li>第二个参数<ul>
+<li>在状态更新（页面完成重新渲染）后立即执行某个操作</li>
+<li>语法：setState(update[,callback])<pre><code class="lang-js">this.setState(
+  (state, props) =&gt; {},
+  () =&gt; {
+      console.log(&#39;aa&#39;);
+  }
+);
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="jsx-">JSX 语法的转化过程</h3>
+<ul>
+<li>是 createElement()方法的简化语法</li>
+</ul>
+<p>jsx 语法-&gt;createElement()-&gt;React 元素</p>
+<h3 id="-">组件更新机制</h3>
+<ul>
+<li>父组件更新时，直属子组件会一起更新</li>
+</ul>
+<h3 id="-">组件性能优化</h3>
+<ul>
+<li>减轻 state：只存储跟组件渲染相关的数据</li>
+<li>避免不必要的重新渲染</li>
+<li>纯组件：自动实现了 shouldComponentUpdate 钩子</li>
+</ul>
+<h3 id="-dom-diff-">虚拟 DOM 和 Diff 算法</h3>
+<p>虚拟 DOM：本质上就是一个 js 对象，用来描述你希望看到的内容（UI）</p>
+<ul>
+<li>执行过程<ol>
+<li>初次渲染时，React 会根据初始 state（Model），创建一个虚拟 DOM 对象（树）</li>
+<li>根据虚拟 DOM 生成真正的 DOM，渲染到页面中</li>
+<li>当数据变化后（setState()）,重新根据新的数据，创建新的虚拟 DOM 对象（树）</li>
+<li>与上一次得到的虚拟 DOM 对象，使用 Diff 算法对比，得到需要更新的内容</li>
+<li>最终，React 只将变化的内容更新（patch）到 DOM 中，重新渲染页面</li>
+</ol>
+</li>
+</ul>
+<h2 id="react-">react 路由</h2>
+<h3 id="react-">react 路由介绍</h3>
+<ul>
+<li>功能：让用户从一个视图（页面）跳转到另一个试图（页面）</li>
+<li>前端路由是一套映射规则，在 React 中，是 URl 路径与组件的对应关系</li>
+</ul>
+<h3 id="-">路由的基本使用</h3>
+<ol>
+<li><p>安装</p>
+<pre><code class="lang-js">yarn add react-roter-dom
+</code></pre>
+</li>
+<li><p>导入三个核心组件：Router/Route/Link</p>
+<pre><code class="lang-js">import { BrowserRouter as Router, route, Link } from &#39;react-router-dom&#39;;
+</code></pre>
+</li>
+<li>使用 Router 组件包裹整个应用<pre><code class="lang-js">const App = () =&gt; {
+    &lt;Router&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/Router&gt;;
+};
+</code></pre>
+</li>
+<li>使用 Link 组件作为导航菜单（路由路口）<pre><code class="lang-js">&lt;Link to=&quot;/first&quot;&gt;页面一&lt;/Link&gt;
+</code></pre>
+</li>
+<li>使用 Route 组件配置路由规则和要展示的组件（路由出口）<pre><code class="lang-js">const App = () =&gt; {
+    &lt;Router&gt;
+        &lt;div&gt;
+            &lt;Link to=&quot;/first&quot;&gt;页面一&lt;/Link&gt;
+            &lt;Route path=&quot;/first&quot; component={First}&gt;&lt;/Route&gt;
+        &lt;/div&gt;
+    &lt;/Router&gt;;
+};
+</code></pre>
+</li>
+<li>常用组件<ul>
+<li>Router 组件：包裹整个应用，一个 React 应用只需要使用一次</li>
+<li>Link 组件：用于指定导航链接（a 标签）</li>
+<li>Route 组件：指定路由展示组件相关信息<pre><code class="lang-js">// path属性：路由规则
+// component属性：展示组件
+// Route组件写在哪，渲染出来的组件就展示在哪
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="-">路由的执行过程</h3>
+<ol>
+<li>点击 a 标签，修改浏览器地址栏的 url</li>
+<li>React 路由监听到地址栏 url 的变化</li>
+<li>React 路由内部遍历所有 Route 组件，使用路由规则（path）与 pathname 进行匹配</li>
+<li>当路由规则（path）能够匹配地址栏的 pathname 时，就展示组件的内容</li>
+</ol>
+<h3 id="-">编程式导航</h3>
+<ul>
+<li>编程式导航：通过 js 代码实现页面跳转</li>
+</ul>
+<pre><code class="lang-js">class Login extends Component {
+    handleLogin = () =&gt; {
+        //...
+        this.props.history.push(&#39;/home&#39;);
+    };
+    render() {
+        //...
+    }
+}
+</code></pre>
+<h3 id="-">默认路由</h3>
+<ul>
+<li>默认路由：path=&#39;/&#39;</li>
+</ul>
+<h3 id="-">匹配模式</h3>
+<ol>
+<li>模糊匹配模式<ul>
+<li>规则：只要 pathname 以’path‘开头就会匹配成功</li>
+</ul>
+</li>
+<li>精确匹配<ul>
+<li>给 route 组件添加 exact 属性</li>
+</ul>
+</li>
+</ol>
 
           	</article>
         </div>
